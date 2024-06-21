@@ -16,4 +16,15 @@
     max-width: 100%;
     height: auto;
   }
+
+  .carousel-item img {
+    width: 80%;
+    height: auto;
+    /* max-height: 300px; */
+    object-fit: cover;
+  }
+  
+  .carousel-dots .slick-active {
+    background-color: var(--primary-color);
+  }
   
