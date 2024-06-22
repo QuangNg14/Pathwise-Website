@@ -7,6 +7,9 @@ import MentorCarousel from "@/components/MentorCarousel/MentorCarousel";
 import LandYourDreamJob from "@/components/LandYourDreamJob/LandYourDreamJob";
 import Features from "@/components/Features/Features";
 import AchievementGallery from "@/components/AchievementGallery/AchievementGallery";
+import Community from "@/components/Community/Community";
+import FAQ from "@/components/FAQ/FAQ";
+import Footer from "@/components/footer/footer";
 
 const { Header, Content } = Layout;
 const { Title, Text } = Typography;
@@ -119,6 +122,9 @@ export default function Home() {
           <LandYourDreamJob />
           <Features />
           <AchievementGallery />
+          <Community/>
+          <FAQ/>
+          <Footer/>
         </div>
       </Content>
     </Layout>

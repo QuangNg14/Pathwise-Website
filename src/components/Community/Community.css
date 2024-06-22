@@ -1,0 +1,36 @@
+.community-container {
+    text-align: center;
+    padding: 20px;
+    height: 563px
+  }
+  
+  .community-title {
+    display: "block";
+    font-weight: 400px;
+    font-size: 50px;
+    line-height: 65.35px,
+  }
+  
+  .image-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .clickable-image {
+    cursor: pointer;
+  }
+  
+  .community-image {
+    width: 300px;
+    max-width: 350px;
+    height: auto;
+    margin-bottom: 16px;
+  }
+  
+  .image-description {
+    margin-top: 16px; /* Space between image and text */
+    font-size: 16px; /* Adjust font size as needed */
+  }
+  

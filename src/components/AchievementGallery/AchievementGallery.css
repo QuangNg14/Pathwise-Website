@@ -27,4 +27,8 @@
   .carousel-dots .slick-active {
     background-color: var(--primary-color);
   }
+
+  .slick-arrow .slick-next .slick-prev{
+    color: #ffffff !important
+  }
   

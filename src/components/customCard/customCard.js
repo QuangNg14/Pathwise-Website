@@ -5,7 +5,7 @@ const { Title, Text } = Typography;
 
 const CustomCard = ({ imgSrc, imgAlt, title, description }) => (
   <Card
-    style={{ width: 300, borderRadius: "8px", overflow: "hidden", height: 505 }}
+    style={{ borderRadius: "8px", overflow: "hidden", height: 505, flex: "1 1 30%", margin: "10px" }}
   >
     <img
       src={imgSrc}
@@ -23,7 +23,7 @@ const CustomCard = ({ imgSrc, imgAlt, title, description }) => (
       style={{
         fontWeight: 700,
         marginBottom: "8px",
-        fontSize: 30,
+        fontSize: 28,
         lineHeight: "36.31px",
         display: "block",
       }}

@@ -1,0 +1,48 @@
+.footer {
+    background: #0F2442;
+    color: #fff;
+    padding: 20px;
+    font-size: 14px;
+    height: 300px;
+    width: "100%";
+    margin-top: 50px;
+  }
+  
+  .footer .logo {
+    margin-bottom: 20px;
+    gap: 151px;
+    background-color: red;
+    padding: 10px, 50px, 10px, 50px;
+    gap: 10px;  
+    width: 140px; /* Full-width for small screens */
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer .ant-typography {
+    color: #ffffff; /* Ensure all text is white */
+  }
+  
+  .footer-link {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff; /* Links are also white */
+  }
+  
+  .footer .logo img {
+    width: 100%; /* as specified */
+    height: auto; /* as specified */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 576px) {
+    .footer .ant-col {
+      margin-top: 10px;
+    }
+    .footer .logo {
+      margin-bottom: 10px;
+    }
+  }
+  

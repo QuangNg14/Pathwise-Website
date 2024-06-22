@@ -14,13 +14,13 @@ const contentStyle = {
 };
 
 const ServiceRow = () => (
-  <Row gutter={16} style={{ padding: "64px 120px 80px 120px", height: 665 }}>
+  <Row gutter={16} style={{ padding: "64px 120px 80px 120px", height: 665, width: "100%" }}>
     <Col span={6}>
       <Text
         style={{
           display: "block",
           fontWeight: 400,
-          fontSize: 54,
+          fontSize: 50,
           lineHeight: "65.35px",
         }}
         level={2}
