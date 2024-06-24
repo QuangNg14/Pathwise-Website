@@ -30,7 +30,7 @@ const mentors = [
   },
   {
     name: "Bùi Đình Trí",
-    title: "Mindset Coach",
+    title: "Tech Mentor",
     company: "Risk Analyst at BlackStone",
     companyLogos: [
       "https://static.stocktitan.net/company-logo/bx.png",
