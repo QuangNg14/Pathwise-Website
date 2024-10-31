@@ -13,7 +13,7 @@ html, body, #__next {
 }
 
 .site-layout-content {
-  padding: 50px;
+  /* padding: 50px; */
   min-height: 280px;
   background: #fff;
 }

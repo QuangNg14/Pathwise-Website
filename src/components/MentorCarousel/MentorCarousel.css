@@ -1,134 +1,160 @@
 .mentor-carousel-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 40px 0;
-    background-color: var(--primary-color);
-    position: relative;
-  }
-  
-  .carousel-slide {
-    display: flex;
-    justify-content: center;
-    padding: 0 15px; /* Add padding to ensure equal spacing */
-  }
-  
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 0;
+  background-color: var(--primary-color);
+  position: relative;
+}
+
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+  padding: 0 15px;
+}
+
+.mentor-card {
+  background-color: white;
+  border-radius: 15px;
+  text-align: center;
+  padding: 10px;
+  width: 320px; /* Adjust width as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute space inside the card */
+  min-height: 320px; /* Set a minimum height for consistency */
+  max-height: 500px; /* Set a max height if needed */
+}
+
+.mentor-image {
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 50% !important;
+  object-fit: cover;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.company-logo {
+  margin-top: 10px;
+}
+
+.company-logo img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.mentor-name {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.mentor-title,
+.mentor-company {
+  font-size: 1em;
+  color: #555;
+}
+
+.company-logos {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.company-logos img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.slick-prev,
+.slick-next {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slick-prev {
+  left: -50px;
+}
+
+.slick-next {
+  right: -50px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 20px;
+  color: #1d2c5e;
+}
+
+.carousel-dots {
+  position: absolute !important;
+  bottom: -35px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.carousel-dots .slick-dots {
+  display: flex !important;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.carousel-dots .slick-dots li {
+  margin: 0 5px;
+}
+
+.carousel-dots .slick-dots li button:before {
+  font-size: 12px;
+  color: white;
+}
+
+.carousel-dots .slick-dots li.slick-active button:before {
+  color: white;
+}
+
+.logo-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
   .mentor-card {
-    background-color: white;
-    border-radius: 15px;
-    text-align: center;
-    padding: 10px;
-    width: 320px; /* Adjust width as needed */
+    width: 280px;
+    min-height: 400px;
   }
-  
-  .mentor-image {
-    width: 100px !important;
-    height: 100px !important;
-    border-radius: 50% !important; /* Make the image circular */
-    object-fit: cover;
-    margin: auto;
-    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .mentor-card {
+    width: 90%;
+    margin: 0 auto;
+    min-height: 380px;
   }
-  
-  .company-logo {
-    margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+  .mentor-card {
+    width: 100%;
+    min-height: 360px;
   }
-  
-  .company-logo img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-  }
-  
-  .mentor-name {
-    font-size: 1.25em;
-    font-weight: bold;
-  }
-  
-  .mentor-title,
-  .mentor-company {
-    font-size: 1em;
-    color: #555;
-  }
-  
-  .company-logos {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  
-  .company-logos img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin: 0 5px;
-  }
-  
-  .slick-prev,
-  .slick-next {
-    background-color: rgba(255, 255, 255, 0.8); /* Brighter background color */
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  .slick-prev {
-    left: -50px; /* Adjust to position the button */
-  }
-  
-  .slick-next {
-    right: -50px; /* Adjust to position the button */
-  }
-  
-  .slick-prev:before,
-  .slick-next:before {
-    font-size: 20px;
-    color: #1d2c5e; /* Brighter arrow color */
-  }
-  
-  .carousel-dots {
-    position: absolute !important;
-    bottom: -35px !important; /* Ensure dots are not covered */
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    display: flex !important;
-    justify-content: center !important;
-  }
-  
-  .carousel-dots .slick-dots {
-    display: flex !important;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-  
-  .carousel-dots .slick-dots li {
-    margin: 0 5px;
-  }
-  
-  .carousel-dots .slick-dots li button:before {
-    font-size: 12px;
-    color: white;
-  }
-  
-  .carousel-dots .slick-dots li.slick-active button:before {
-    color: white;
-  }
-  
-  .logo-avatar {
-    width: 100px; /* Adjust the size as needed */
-    height: 100px; /* Adjust the size as needed */
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto; /* Center the logo if needed */
-  }
-  
+}

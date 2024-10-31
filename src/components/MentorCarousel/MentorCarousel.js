@@ -16,6 +16,26 @@ const MentorCarousel = ({ mentors }) => {
         infinite={true}
         centerMode={true}
         centerPadding="15px"
+        responsive={[
+          {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 3,
+            },
+          },
+          {
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 2,
+            },
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+            },
+          },
+        ]}
       >
         {mentors.map((mentor, index) => (
           <div key={index} className="carousel-slide">

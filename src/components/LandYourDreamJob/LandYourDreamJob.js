@@ -35,11 +35,11 @@ const LandYourDreamJob = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           if (entry.target === researchLabRef.current) {
-            animateCount(setResearchLabCount, 6);
+            animateCount(setResearchLabCount, 10);
           } else if (entry.target === dellInternshipRef.current) {
-            animateCount(setDellInternshipCount, 4);
+            animateCount(setDellInternshipCount, 7);
           } else if (entry.target === dowJonesInternshipRef.current) {
-            animateCount(setDowJonesInternshipCount, 10);
+            animateCount(setDowJonesInternshipCount, 12);
           }
         } else {
           if (entry.target === researchLabRef.current) {
@@ -74,12 +74,16 @@ const LandYourDreamJob = () => {
           Chúng mình đã giúp <span className="primary-color">30+ Mentees</span>{" "}
           đạt được nhiều{" "}
           <span className="primary-color">interviews và job offer</span> từ các
-          công ty lớn ở Mỹ như Dell, Amazon, JP Morgan, Dow Jones, TikTok,
-          Google và ở Việt Nam như Viettel, Momo, FPT, Rockship.{" "}
+          công ty lớn ở Mỹ như Meta, Microsoft, Palantir, Bank of America, Dell,
+          DoorDash, Stripe, Amazon, Morgan Stanley, TikTok và ở Việt Nam như
+          Viettel, Momo, FPT, Rockship.{" "}
         </Text>
         <Text className="description">
           Các mentors có kinh nghiệm ở nhiều lĩnh vực như{" "}
-          <span className="primary-color">Software, Finance, Consulting</span>.
+          <span className="primary-color">
+            Software, Data, Finance, Consulting
+          </span>
+          .
         </Text>
         <Row gutter={16} className="statistics">
           <Col span={8} className="stat-item" ref={researchLabRef}>
