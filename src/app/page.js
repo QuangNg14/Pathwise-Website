@@ -1,7 +1,6 @@
 "use client";
 import { Layout, Row, Col, Typography, Button } from "antd";
 import { useState } from "react";
-import ServiceRow from "@/components/componentForMainPage/serviceRow/serviceRow";
 import HeaderComponent from "@/components/header/header";
 import MentorCarousel from "@/components/componentForMainPage/MentorCarousel/MentorCarousel";
 import LandYourDreamJob from "@/components/componentForMainPage/LandYourDreamJob/LandYourDreamJob";
