@@ -1,14 +1,17 @@
 "use client";
 import { Layout, Row, Col, Typography, Button } from "antd";
 import { useState } from "react";
-import ServiceRow from "@/components/serviceRow/serviceRow";
+import ServiceRow from "@/components/componentForMainPage/serviceRow/serviceRow";
 import HeaderComponent from "@/components/header/header";
-import MentorCarousel from "@/components/MentorCarousel/MentorCarousel";
-import LandYourDreamJob from "@/components/LandYourDreamJob/LandYourDreamJob";
-import Features from "@/components/Features/Features";
-import AchievementGallery from "@/components/AchievementGallery/AchievementGallery";
-import MenteeShowcase from "@/components/MenteeShowcase/MenteeShowcase";
-import PeerToPeerMentoring from "@/components/PeerToPeerMentoring/PeerToPeerMentoring";
+import MentorCarousel from "@/components/componentForMainPage/MentorCarousel/MentorCarousel";
+import LandYourDreamJob from "@/components/componentForMainPage/LandYourDreamJob/LandYourDreamJob";
+import Features from "@/components/componentForMainPage/Features/Features";
+import AchievementGallery from "@/components/componentForMainPage/AchievementGallery/AchievementGallery";
+import MenteeShowcase from "@/components/componentForMainPage/MenteeShowcase/MenteeShowcase";
+import PeerToPeerMentoring from "@/components/componentForMainPage/PeerToPeerMentoring/PeerToPeerMentoring";
+import Community from "@/components/componentForMainPage/Community/Community";
+import FAQ from "@/components/componentForMainPage/FAQ/FAQ";
+import Footer from "@/components/Footer/Footer";
 
 const { Header, Content } = Layout;
 const { Title, Text } = Typography;
@@ -85,65 +88,40 @@ export default function Home() {
       <HeaderComponent current={current} handleClick={handleClick} />
       <Content>
         <div className="site-layout-content">
-          {/* <Row style={{ padding: "80px 120px 80px 120px" }}>
-            <Col span={14} style={{ height: "520px" }}>
-              <Title
-                style={{ fontWeight: 400, fontSize: 72, lineHeight: "93.6px" }}
-              >
-                Peer-to-peer mentoring
-              </Title>
-              <Text
-                style={{ fontWeight: 400, fontSize: 24, lineHeight: "29.05px" }}
-              >
-                Các mentors có kinh nghiệm làm việc ở các công ty Big Tech và
-                ngân hàng lớn giúp bạn land được internships/jobs tiếp theo
-              </Text>
-              <div className="buttons-container">
-                <Button className="custom-button">Tư vấn du học &rarr;</Button>
-                <Button className="custom-button">
-                  Tư vấn tìm việc &rarr;
-                </Button>
-                <Button className="custom-button">Sửa CV &rarr;</Button>
-                <Button className="custom-button">Phỏng vấn thử &rarr;</Button>
-              </div>
-            </Col>
-            <Col span={10}>
-              <img
-                src="https://media.licdn.com/dms/image/D4D12AQHCmuoeL378Uw/article-cover_image-shrink_720_1280/0/1694448835716?e=2147483647&v=beta&t=d0X3A6-qbmPi50t7eTUykXF5RLOq--_L036h2wJmHVA"
-                alt="Peer-to-peer mentoring"
-                width={500}
-                height={300}
-              />
-            </Col>
-          </Row>
+          <PeerToPeerMentoring />
+          <LandYourDreamJob />
           <Row
             gutter={16}
             style={{
               padding: "64px 120px 80px 120px",
-              backgroundColor: "#F5F6F9",
+              // background:
+              //   "linear-gradient(135deg, rgba(255, 154, 139, 0.2), rgba(252, 194, 235, 0.2)), #ffffff",
+              backgroundColor: "#fce4ec",
+              width: "100%",
             }}
           >
             <Col span={24} style={{ marginBottom: 40 }}>
               <Title
                 level={2}
                 style={{
-                  fontWeight: 400,
-                  fontSize: 54,
+                  fontWeight: 700,
+                  fontSize: 40,
                   lineHeight: "65.35px",
                   textAlign: "center",
+                  color: "#0F2442",
                 }}
               >
                 Meet your mentor
               </Title>
             </Col>
             <MentorCarousel mentors={mentors} />
-          </Row> */}
-          <PeerToPeerMentoring />
-          <ServiceRow />
-          <LandYourDreamJob />
-          <MenteeShowcase />
+          </Row>
           <Features />
+          <MenteeShowcase />
           <AchievementGallery />
+          <Community />
+          <FAQ />
+          <Footer />
         </div>
       </Content>
     </Layout>
