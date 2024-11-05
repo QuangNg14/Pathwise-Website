@@ -4,9 +4,8 @@ import React, { useState } from "react";
 // import OffersSection from "@/components/componentForActivitiesPage/OffersSection/OffersSection";
 import dynamic from "next/dynamic";
 import { Layout } from "antd";
-import CompanyInterviews from "@/components/componentForResultsPage/CompanyInterviews/CompanyInterviews";
-import Footer from "@/components/Footer/Footer";
 import HeaderComponent from "@/components/header/header";
+import FooterComponent from "@/components/footer/Footer";
 
 // Dynamically import the InterviewRoundsSection component
 const InterviewRoundsSection = dynamic(
@@ -37,7 +36,7 @@ const Results = () => {
       <OffersSection />
       {/* <CompanyInterviews /> */}
       <InterviewRoundsSection />
-      <Footer />
+      <FooterComponent />
     </Layout>
   );
 };

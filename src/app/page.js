@@ -10,7 +10,7 @@ import MenteeShowcase from "@/components/componentForMainPage/MenteeShowcase/Men
 import PeerToPeerMentoring from "@/components/componentForMainPage/PeerToPeerMentoring/PeerToPeerMentoring";
 import Community from "@/components/componentForMainPage/Community/Community";
 import FAQ from "@/components/componentForMainPage/FAQ/FAQ";
-import Footer from "@/components/Footer/Footer";
+import FooterComponent from "@/components/footer/Footer";
 
 const { Header, Content } = Layout;
 const { Title, Text } = Typography;
@@ -120,7 +120,7 @@ export default function Home() {
           <AchievementGallery />
           <Community />
           <FAQ />
-          <Footer />
+          <FooterComponent />
         </div>
       </Content>
     </Layout>

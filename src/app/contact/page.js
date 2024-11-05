@@ -1,6 +1,6 @@
 "use client";
 import ContactSection from "@/components/componentForContactPage/ContactSection/ContactSection";
-import Footer from "@/components/Footer/Footer";
+import FooterComponent from "@/components/footer/Footer";
 import HeaderComponent from "@/components/header/header";
 import { Layout } from "antd";
 import React from "react";
@@ -16,7 +16,7 @@ const Contact = () => {
     <Layout>
       <HeaderComponent current={current} handleClick={handleClick} />
       <ContactSection />
-      <Footer />
+      <FooterComponent />
     </Layout>
   );
 };

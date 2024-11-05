@@ -1,6 +1,6 @@
 "use client";
 import AboutUs from "@/components/componentForAboutPage/AboutUs/AboutUs";
-import Footer from "@/components/Footer/Footer";
+import FooterComponent from "@/components/footer/Footer";
 import HeaderComponent from "@/components/header/header";
 import { Layout } from "antd";
 import React from "react";
@@ -16,7 +16,7 @@ const About = () => {
     <Layout>
       <HeaderComponent current={current} handleClick={handleClick} />
       <AboutUs />
-      <Footer />
+      <FooterComponent />
     </Layout>
   );
 };
