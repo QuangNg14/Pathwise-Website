@@ -1,34 +1,52 @@
 import React from "react";
 import { Row, Col, Typography, Button } from "antd";
 import "./PeerToPeerMentoring.css";
+import { useRouter } from "next/navigation";
 
 const { Title, Text } = Typography;
 
 const PeerToPeerMentoring = () => {
+  const router = useRouter();
   return (
     <div className="peer-mentoring-container">
       <Row className="peer-mentoring-row" align="middle">
         <Col xs={24} md={14} className="text-column">
-          <Title
-            level={1}
-            className="peer-mentoring-title"
-            style={{
-              fontWeight: 700,
-              fontSize: 40,
-              lineHeight: "65.35px",
-              color: "#0F2442",
-            }}
-          >
-            Peer-to-peer mentoring
+          <Title level={1} className="peer-mentoring-title">
+            Peer-to-peer Mentoring
           </Title>
           <Text className="peer-mentoring-text">
             Our mentors from Big Tech and major financial firms help you secure
-            your next internships/jobs.
+            your next internships and jobs.
           </Text>
           <div className="buttons-container">
-            <Button className="custom-button">Career Advice &rarr;</Button>
-            <Button className="custom-button">Resume Review &rarr;</Button>
-            <Button className="custom-button">Mock Interviews &rarr;</Button>
+            <Button
+              className="custom-button"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSf44FrJ2powtp9MMvGfHcz8F7irZLyfjxaCkIpr-HAr0Fl4oQ/viewform?pli=1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Register Now
+            </Button>
+            <Button
+              className="custom-button"
+              href="https://docs.google.com/presentation/d/14pTfUPVtN8RYuKgmeKDaTrgdQ8lbT0XGkvVEZIElhto/edit?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn More
+            </Button>
+            <Button
+              className="custom-button"
+              onClick={() => router.push("/activities")}
+            >
+              Resume Review
+            </Button>
+            <Button
+              className="custom-button"
+              onClick={() => router.push("/activities")}
+            >
+              Mock Interview
+            </Button>
           </div>
         </Col>
         <Col xs={24} md={10} className="image-column">

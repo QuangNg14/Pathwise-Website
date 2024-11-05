@@ -25,7 +25,7 @@ const mentors = [
       "https://www.microsoft.com/en-us/education/blog/wp-content/themes/xtheme-moray/dist/images/default-avatar.png",
       "https://1000logos.net/wp-content/uploads/2021/10/Meta-Symbol.png",
       "https://www.nvidia.com/content/dam/en-zz/Solutions/about-nvidia/logo-and-brand/02-nvidia-logo-color-grn-500x200-4c25-p@2x.png",
-      "https://seeklogo.com/images/T/tiktok-logo-1F4A5DCD45-seeklogo.com.png",
+      // "https://seeklogo.com/images/T/tiktok-logo-1F4A5DCD45-seeklogo.com.png",
     ],
     image:
       "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730176141/mfece5cphz0s7qxfjnpj.jpg",
@@ -62,7 +62,7 @@ const mentors = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8hAsysD0m0IDmWJRxIm5ES4xPxeieL56zZQ&s",
     ],
     image:
-      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730177777/n2i5vai8ckoagxbb3gm5.jpg",
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730775955/ceb48mc3glt4vp9w3cxq.jpg",
   },
   {
     name: "Jonathan Cheng",
@@ -96,7 +96,7 @@ export default function Home() {
               padding: "64px 120px 80px 120px",
               // background:
               //   "linear-gradient(135deg, rgba(255, 154, 139, 0.2), rgba(252, 194, 235, 0.2)), #ffffff",
-              backgroundColor: "#fce4ec",
+              backgroundColor: "var(--mentor-color)",
               width: "100%",
             }}
           >

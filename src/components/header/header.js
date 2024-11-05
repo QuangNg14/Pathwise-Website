@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout, Row, Col, Typography, Menu } from "antd";
-import Link from "next/link"; // Import Link from next/link
+import Link from "next/link";
 
 const { Header } = Layout;
 const { Title } = Typography;
@@ -49,7 +49,13 @@ const HeaderComponent = ({ current, handleClick }) => (
             key="home"
             style={{ borderBottom: "none", marginRight: "20px" }}
           >
-            <Link href="/" passHref>
+            <Link
+              href="/"
+              passHref
+              style={{
+                color: current === "home" ? "var(--primary-color)" : "inherit",
+              }}
+            >
               Home
             </Link>
           </Menu.Item>
@@ -57,7 +63,14 @@ const HeaderComponent = ({ current, handleClick }) => (
             key="activities"
             style={{ borderBottom: "none", marginRight: "20px" }}
           >
-            <Link href="/activities" passHref>
+            <Link
+              href="/activities"
+              passHref
+              style={{
+                color:
+                  current === "activities" ? "var(--primary-color)" : "inherit",
+              }}
+            >
               What we do
             </Link>
           </Menu.Item>
@@ -65,7 +78,14 @@ const HeaderComponent = ({ current, handleClick }) => (
             key="services"
             style={{ borderBottom: "none", marginRight: "20px" }}
           >
-            <Link href="/services" passHref>
+            <Link
+              href="/services"
+              passHref
+              style={{
+                color:
+                  current === "services" ? "var(--primary-color)" : "inherit",
+              }}
+            >
               Services
             </Link>
           </Menu.Item>
@@ -73,7 +93,14 @@ const HeaderComponent = ({ current, handleClick }) => (
             key="results"
             style={{ borderBottom: "none", marginRight: "20px" }}
           >
-            <Link href="/results" passHref>
+            <Link
+              href="/results"
+              passHref
+              style={{
+                color:
+                  current === "results" ? "var(--primary-color)" : "inherit",
+              }}
+            >
               Results
             </Link>
           </Menu.Item>
@@ -81,8 +108,29 @@ const HeaderComponent = ({ current, handleClick }) => (
             key="about"
             style={{ borderBottom: "none", marginRight: "20px" }}
           >
-            <Link href="/about" passHref>
+            <Link
+              href="/about"
+              passHref
+              style={{
+                color: current === "about" ? "var(--primary-color)" : "inherit",
+              }}
+            >
               About Us
+            </Link>
+          </Menu.Item>
+          <Menu.Item
+            key="contact"
+            style={{ borderBottom: "none", marginRight: "20px" }}
+          >
+            <Link
+              href="/contact"
+              passHref
+              style={{
+                color:
+                  current === "contact" ? "var(--primary-color)" : "inherit",
+              }}
+            >
+              Contact
             </Link>
           </Menu.Item>
         </Menu>

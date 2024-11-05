@@ -35,7 +35,8 @@ const offersData = [
     year: "Sophomore",
     major: "Computer Science",
     offers: ["Morgan Stanley - Software Engineer Intern"],
-    avatar: "https://via.placeholder.com/100", // Placeholder avatar image
+    avatar:
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730773203/jafp7uywccmrdsibqcus.jpg", // Placeholder avatar image
   },
   {
     name: "Bảo Nhi",

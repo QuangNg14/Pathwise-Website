@@ -1,13 +1,13 @@
 "use client";
-import AboutUs from "@/components/componentForAboutPage/AboutUs/AboutUs";
+import ContactSection from "@/components/componentForContactPage/ContactSection/ContactSection";
 import Footer from "@/components/Footer/Footer";
 import HeaderComponent from "@/components/header/header";
 import { Layout } from "antd";
 import React from "react";
 import { useState } from "react";
 
-const About = () => {
-  const [current, setCurrent] = useState("about");
+const Contact = () => {
+  const [current, setCurrent] = useState("contact");
 
   const handleClick = (e) => {
     setCurrent(e.key);
@@ -15,10 +15,10 @@ const About = () => {
   return (
     <Layout>
       <HeaderComponent current={current} handleClick={handleClick} />
-      <AboutUs />
+      <ContactSection />
       <Footer />
     </Layout>
   );
 };
 
-export default About;
+export default Contact;

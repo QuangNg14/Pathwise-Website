@@ -11,10 +11,10 @@ const ServiceRow = () => (
     <Col xs={24} lg={6}>
       <Text
         style={{
-          display: "block",
-          fontWeight: 400,
-          fontSize: 50,
+          fontWeight: 700,
+          fontSize: 40,
           lineHeight: "65.35px",
+          color: "#0F2442",
         }}
         level={2}
       >

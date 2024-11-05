@@ -123,6 +123,25 @@ const ServicesSection = () => {
       {services.map((service, index) => (
         <ServiceCard key={index} service={service} />
       ))}
+      {/* Global Action Buttons */}
+      <div className="global-action-buttons">
+        <Button
+          className="custom-action-button"
+          href="https://docs.google.com/presentation/d/14pTfUPVtN8RYuKgmeKDaTrgdQ8lbT0XGkvVEZIElhto/edit?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn More
+        </Button>
+        <Button
+          className="custom-action-button"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSf44FrJ2powtp9MMvGfHcz8F7irZLyfjxaCkIpr-HAr0Fl4oQ/viewform?pli=1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Register Now
+        </Button>
+      </div>
     </div>
   );
 };
