@@ -80,19 +80,19 @@ const ServiceCard = ({ service }) => {
       </div>
       <div className="service-info">
         <div className="info-item">
-          <CalendarOutlined style={{ color: "var(--primary-color)" }} />
+          <CalendarOutlined className="icon" />
           <Text>{service.start}</Text>
         </div>
         <div className="info-item">
-          <ClockCircleOutlined style={{ color: "var(--primary-color)" }} />
+          <ClockCircleOutlined className="icon" />
           <Text>{service.duration}</Text>
         </div>
         <div className="info-item">
-          <UsergroupAddOutlined style={{ color: "var(--primary-color)" }} />
+          <UsergroupAddOutlined className="icon" />
           <Text>{service.people}</Text>
         </div>
         <div className="info-item">
-          <DollarOutlined style={{ color: "var(--primary-color)" }} />
+          <DollarOutlined className="icon" />
           <Text>{service.fee}</Text>
         </div>
       </div>
@@ -123,7 +123,6 @@ const ServicesSection = () => {
       {services.map((service, index) => (
         <ServiceCard key={index} service={service} />
       ))}
-      {/* Global Action Buttons */}
       <div className="global-action-buttons">
         <Button
           className="custom-action-button"

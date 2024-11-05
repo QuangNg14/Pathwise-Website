@@ -2,7 +2,7 @@ import React from "react";
 import { Typography, Carousel } from "antd";
 import "./AchievementGallery.css";
 
-const { Title, Text } = Typography;
+const { Title } = Typography;
 
 const AchievementGallery = () => {
   const images = [
@@ -20,20 +20,21 @@ const AchievementGallery = () => {
 
   return (
     <div className="trusted-by-container">
-      <Text
-        style={{
-          display: "block",
-          fontWeight: 700,
-          fontSize: 40,
-          lineHeight: "65.35px",
-          marginBottom: 40,
-          alignSelf: "center",
-          color: "white",
-        }}
-        level={2}
-      >
-        Chia sẻ của các Mentees
-      </Text>
+      <div className="title-container">
+        <Title
+          level={2}
+          className="title-text"
+          style={{
+            fontWeight: 700,
+            fontSize: 40,
+            lineHeight: "65.35px",
+            textAlign: "center",
+            color: "white",
+          }}
+        >
+          Chia sẻ của các Mentees
+        </Title>
+      </div>
       <Carousel
         dots={{ className: "carousel-dots" }}
         arrows={true}

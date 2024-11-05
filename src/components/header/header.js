@@ -1,142 +1,140 @@
-import React from "react";
-import { Layout, Row, Col, Typography, Menu } from "antd";
+import React, { useState } from "react";
+import { Layout, Row, Col, Typography, Menu, Button, Drawer } from "antd";
 import Link from "next/link";
+import { MenuOutlined } from "@ant-design/icons";
 
 const { Header } = Layout;
 const { Title } = Typography;
 
-const HeaderComponent = ({ current, handleClick }) => (
-  <Header
-    style={{
-      position: "sticky",
-      top: 0,
-      zIndex: 1,
-      width: "100%",
-      backgroundColor: "white",
-      height: "70px",
-    }}
-  >
-    <Row style={{ width: "100%" }}>
-      <Col
-        span={10}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          paddingLeft: "20px",
-        }}
-      >
-        <Title level={3} style={{ margin: 0, color: "var(--primary-color)" }}>
-          <Link href="/" passHref style={{ color: "var(--primary-color)" }}>
-            PATHWISE
-          </Link>
-        </Title>
-      </Col>
-      <Col span={14}>
-        <Menu
-          theme="light"
-          mode="horizontal"
-          selectedKeys={[current]}
-          onClick={handleClick}
-          style={{
-            borderBottom: "none",
-            justifyContent: "flex-end",
-            fontWeight: 400,
-            fontSize: 16,
-            color: "var(--primary-color)",
-          }}
-        >
-          <Menu.Item
-            key="home"
-            style={{ borderBottom: "none", marginRight: "20px" }}
-          >
+const HeaderComponent = ({ current, handleClick }) => {
+  const [drawerVisible, setDrawerVisible] = useState(false);
+
+  const showDrawer = () => {
+    setDrawerVisible(true);
+  };
+
+  const closeDrawer = () => {
+    setDrawerVisible(false);
+  };
+
+  return (
+    <Header
+      style={{
+        position: "sticky",
+        top: 0,
+        zIndex: 1,
+        width: "100%",
+        backgroundColor: "white",
+        height: "70px",
+      }}
+    >
+      <Row justify="space-between" align="middle" style={{ width: "100%" }}>
+        <Col xs={18} sm={18} md={10} lg={10}>
+          <Title level={3} style={{ margin: 0, color: "var(--primary-color)" }}>
             <Link
               href="/"
               passHref
-              style={{
-                color: current === "home" ? "var(--primary-color)" : "inherit",
-              }}
+              style={{ margin: 0, color: "var(--primary-color)" }}
             >
-              Home
+              PATHWISE
             </Link>
-          </Menu.Item>
-          <Menu.Item
-            key="activities"
-            style={{ borderBottom: "none", marginRight: "20px" }}
+          </Title>
+        </Col>
+
+        {/* Desktop Menu */}
+        <Col xs={0} sm={0} md={14} lg={14}>
+          <Menu
+            theme="light"
+            mode="horizontal"
+            selectedKeys={[current]}
+            onClick={handleClick}
+            style={{
+              borderBottom: "none",
+              justifyContent: "flex-end",
+              fontWeight: 400,
+              fontSize: 16,
+              color: "var(--primary-color)",
+            }}
           >
-            <Link
-              href="/activities"
-              passHref
-              style={{
-                color:
-                  current === "activities" ? "var(--primary-color)" : "inherit",
-              }}
-            >
-              What we do
-            </Link>
-          </Menu.Item>
-          <Menu.Item
-            key="services"
-            style={{ borderBottom: "none", marginRight: "20px" }}
-          >
-            <Link
-              href="/services"
-              passHref
-              style={{
-                color:
-                  current === "services" ? "var(--primary-color)" : "inherit",
-              }}
-            >
-              Services
-            </Link>
-          </Menu.Item>
-          <Menu.Item
-            key="results"
-            style={{ borderBottom: "none", marginRight: "20px" }}
-          >
-            <Link
-              href="/results"
-              passHref
-              style={{
-                color:
-                  current === "results" ? "var(--primary-color)" : "inherit",
-              }}
-            >
-              Results
-            </Link>
-          </Menu.Item>
-          <Menu.Item
-            key="about"
-            style={{ borderBottom: "none", marginRight: "20px" }}
-          >
-            <Link
-              href="/about"
-              passHref
-              style={{
-                color: current === "about" ? "var(--primary-color)" : "inherit",
-              }}
-            >
-              About Us
-            </Link>
-          </Menu.Item>
-          <Menu.Item
-            key="contact"
-            style={{ borderBottom: "none", marginRight: "20px" }}
-          >
-            <Link
-              href="/contact"
-              passHref
-              style={{
-                color:
-                  current === "contact" ? "var(--primary-color)" : "inherit",
-              }}
-            >
-              Contact
-            </Link>
-          </Menu.Item>
+            {[
+              "home",
+              "activities",
+              "services",
+              "results",
+              "about",
+              "contact",
+            ].map((key) => (
+              <Menu.Item
+                key={key}
+                style={{ borderBottom: "none", marginRight: "20px" }}
+              >
+                <Link href={`/${key === "home" ? "" : key}`} passHref>
+                  <span
+                    style={{
+                      color:
+                        current === key ? "var(--primary-color)" : "inherit",
+                    }}
+                  >
+                    {key.charAt(0).toUpperCase() + key.slice(1)}
+                  </span>
+                </Link>
+              </Menu.Item>
+            ))}
+          </Menu>
+        </Col>
+
+        {/* Mobile Menu Button */}
+        <Col xs={6} sm={6} md={0} lg={0}>
+          <Button
+            icon={<MenuOutlined />}
+            onClick={showDrawer}
+            style={{
+              border: "none",
+              backgroundColor: "transparent",
+              color: "var(--primary-color)",
+            }}
+          />
+        </Col>
+      </Row>
+
+      {/* Drawer for Mobile Menu */}
+      <Drawer
+        title="PATHWISE"
+        placement="right"
+        onClose={closeDrawer}
+        visible={drawerVisible}
+        bodyStyle={{ padding: 0 }}
+      >
+        <Menu
+          mode="vertical"
+          selectedKeys={[current]}
+          onClick={handleClick}
+          style={{ borderRight: "none" }}
+        >
+          {[
+            "home",
+            "activities",
+            "services",
+            "results",
+            "about",
+            "contact",
+          ].map((key) => (
+            <Menu.Item key={key} onClick={closeDrawer}>
+              <Link href={`/${key === "home" ? "" : key}`} passHref>
+                <span
+                  style={{
+                    color: current === key ? "var(--primary-color)" : "inherit",
+                  }}
+                >
+                  {key.charAt(0).toUpperCase() + key.slice(1)}
+                </span>
+              </Link>
+            </Menu.Item>
+          ))}
         </Menu>
-      </Col>
-    </Row>
-  </Header>
-);
+      </Drawer>
+    </Header>
+  );
+};
 
 export default HeaderComponent;

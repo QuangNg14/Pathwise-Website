@@ -89,32 +89,7 @@ export default function Home() {
         <div className="site-layout-content">
           <PeerToPeerMentoring />
           <LandYourDreamJob />
-          <Row
-            gutter={16}
-            style={{
-              padding: "64px 120px 80px 120px",
-              // background:
-              //   "linear-gradient(135deg, rgba(255, 154, 139, 0.2), rgba(252, 194, 235, 0.2)), #ffffff",
-              backgroundColor: "var(--mentor-color)",
-              width: "100%",
-            }}
-          >
-            <Col span={24} style={{ marginBottom: 40 }}>
-              <Title
-                level={2}
-                style={{
-                  fontWeight: 700,
-                  fontSize: 40,
-                  lineHeight: "65.35px",
-                  textAlign: "center",
-                  color: "#0F2442",
-                }}
-              >
-                Meet your mentor
-              </Title>
-            </Col>
-            <MentorCarousel mentors={mentors} />
-          </Row>
+          <MentorCarousel mentors={mentors} />
           <Features />
           <MenteeShowcase />
           <AchievementGallery />

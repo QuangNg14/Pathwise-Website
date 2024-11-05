@@ -8,8 +8,7 @@
     #ff99bb 50%,
     #a18cd1 75%,
     #fbc2eb 100%
-  ); /* Gradient background */
-  color: #fff;
+  );
   overflow: hidden;
 }
 
@@ -23,19 +22,18 @@
   border-radius: 15px;
   text-align: center;
   padding: 10px;
-  width: 320px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  width: 90%; /* Use full width for responsiveness */
+  max-width: 320px;
   min-height: 320px;
   max-height: 500px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
 }
 
 .mentor-image {
   width: 100px !important;
   height: 100px !important;
-  border-radius: 50% !important;
+  border-radius: 50%;
   object-fit: cover;
   margin: auto;
   margin-top: 20px;
@@ -99,29 +97,6 @@
   bottom: -35px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  display: flex !important;
-  justify-content: center !important;
-}
-
-.carousel-dots .slick-dots {
-  display: flex !important;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.carousel-dots .slick-dots li {
-  margin: 0 5px;
-}
-
-.carousel-dots .slick-dots li button:before {
-  font-size: 12px;
-  color: white;
-}
-
-.carousel-dots .slick-dots li.slick-active button:before {
-  color: white;
 }
 
 .logo-avatar {
@@ -129,7 +104,6 @@
   height: 30px;
   border-radius: 50%;
   object-fit: cover;
-  display: block;
 }
 
 @media (max-width: 1200px) {
@@ -145,11 +119,23 @@
     margin: 0 auto;
     min-height: 380px;
   }
+
+  .mentor-carousel-container {
+    padding: 20px 0; /* Reduce padding on smaller screens */
+  }
 }
 
 @media (max-width: 480px) {
   .mentor-card {
     width: 100%;
     min-height: 360px;
+  }
+
+  .mentor-carousel-container {
+    padding: 10px 0;
+  }
+
+  .carousel-dots .slick-dots li button:before {
+    font-size: 10px;
   }
 }

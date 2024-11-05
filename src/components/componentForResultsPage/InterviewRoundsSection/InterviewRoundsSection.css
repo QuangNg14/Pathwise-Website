@@ -6,15 +6,14 @@
 }
 
 .interview-rounds-section {
-  padding: 80px 120px;
-  /* background-color: var(--background-color); */
+  padding: 40px 10px;
   color: var(--text-color);
 }
 
 .section-title {
   text-align: center;
   color: var(--primary-color);
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   font-size: 24px;
 }
 
@@ -22,81 +21,43 @@
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  position: relative;
-  padding: 20px;
   background-color: #222;
   border-radius: 10px;
-}
-
-.chart-and-details {
-  display: flex;
-  gap: 20px;
-  position: relative;
-}
-
-.chart {
-  flex: 1;
+  padding: 20px;
 }
 
 .company-details {
-  width: 250px;
   background-color: #333;
-  padding: 20px;
-  border-radius: 8px;
   color: var(--text-color);
-  font-size: 14px;
-  position: absolute;
-  right: -280px;
-  top: 0;
+  padding: 15px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
 }
 
 .company-details h3 {
-  margin-top: 0;
   color: var(--secondary-color);
-}
-
-.company-details p {
-  margin: 5px 0;
 }
 
 .note {
-  margin-top: 20px;
   font-size: 14px;
   color: var(--secondary-color);
   text-align: center;
-}
-
-.axis text {
-  fill: var(--text-color);
-  font-size: 14px;
-}
-
-.legend {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-}
-
-.legend text {
-  fill: white; /* Set legend text color to white */
-  font-size: 14px;
-}
-
-.legend rect {
-  stroke: white; /* Add border to legend rectangles for better visibility */
+  margin-top: 20px;
 }
 
 @media (max-width: 768px) {
-  .chart-and-details {
-    flex-direction: column;
-    align-items: center;
+  .section-title {
+    font-size: 20px;
   }
 
   .company-details {
-    width: 100%;
-    right: 0;
-    top: 20px;
+    font-size: 14px;
+  }
+
+  .chart-container {
+    padding: 20px;
+    height: auto; /* Let height adjust automatically */
   }
 }

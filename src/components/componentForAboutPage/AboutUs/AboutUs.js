@@ -39,17 +39,17 @@ const teamMembers = [
     image:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730176141/tfiotmhqb6vpkofuh5py.jpg",
   },
-  {
-    name: "Lam Nguyen",
-    role: "Mentor",
-    description: [
-      "Anh Lâm hiện đang là thực tập Kỹ sư Phần mềm tại Microsoft (các năm 2022, 2023, 2024) và Amazon (thu 2023).",
-      "Đạt học bổng toàn phần bậc cao học ngành Khoa học Máy tính tại Đại học Case Western Reserve.",
-      "Phó Chủ tịch của Hacker Society, luôn có tên trong danh sách danh dự Dean’s High Honors List, và được chọn tham gia đội tuyển ICPC khu vực Đông Bắc Trung Hoa Kỳ (ECNA) 3 năm liên tiếp.",
-    ],
-    image:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730177777/n2i5vai8ckoagxbb3gm5.jpg",
-  },
+  //   {
+  //     name: "Lam Nguyen",
+  //     role: "Mentor",
+  //     description: [
+  //       "Anh Lâm hiện đang là thực tập Kỹ sư Phần mềm tại Microsoft (các năm 2022, 2023, 2024) và Amazon (thu 2023).",
+  //       "Đạt học bổng toàn phần bậc cao học ngành Khoa học Máy tính tại Đại học Case Western Reserve.",
+  //       "Phó Chủ tịch của Hacker Society, luôn có tên trong danh sách danh dự Dean’s High Honors List, và được chọn tham gia đội tuyển ICPC khu vực Đông Bắc Trung Hoa Kỳ (ECNA) 3 năm liên tiếp.",
+  //     ],
+  //     image:
+  //       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730177777/n2i5vai8ckoagxbb3gm5.jpg",
+  //   },
 ];
 
 const AboutUs = () => (

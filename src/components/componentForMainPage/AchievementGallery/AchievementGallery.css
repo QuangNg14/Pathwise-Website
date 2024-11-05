@@ -4,6 +4,22 @@
     padding: 40px 0;
     background-color: var(--primary-color);
     position: relative;
+    text-align: center;
+  }
+
+  .title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .title-text {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.2;
+    color: white;
+    margin: 0;
   }
   
   .carousel-item {

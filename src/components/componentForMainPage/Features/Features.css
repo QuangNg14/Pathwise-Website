@@ -1,13 +1,15 @@
 .features-container {
-  padding: 64px 120px 80px 120px;
+  padding: 64px 20px;
   background-color: #fff;
+  text-align: center;
 }
 
 .feature-title {
-  font-size: 54px;
-  font-weight: 400;
+  font-size: clamp(28px, 5vw, 40px); /* Responsive font size */
+  font-weight: 700;
   line-height: 1.2;
-  color: var(--primary-color);
+  color: #0f2442;
+  margin-bottom: 24px;
 }
 
 .feature-item {
@@ -15,13 +17,14 @@
   padding: 20px;
   border-radius: 8px;
   height: 100%;
+  text-align: left; /* Align text to the left within the card */
 }
 
 .feature-heading {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   line-height: 1.5;
-  color: var(--primary-color);
+  color: #0f2442;
 }
 
 .feature-content {
@@ -30,4 +33,44 @@
   line-height: 1.5;
   color: #333;
   margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .features-container {
+    padding: 32px 10px;
+  }
+
+  .feature-title {
+    font-size: 32px;
+  }
+
+  .feature-item {
+    padding: 15px;
+  }
+
+  .feature-heading {
+    font-size: 18px;
+  }
+
+  .feature-content {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .feature-title {
+    font-size: 28px;
+  }
+
+  .feature-item {
+    padding: 10px;
+  }
+
+  .feature-heading {
+    font-size: 16px;
+  }
+
+  .feature-content {
+    font-size: 14px;
+  }
 }

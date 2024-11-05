@@ -26,13 +26,21 @@
 .service-info {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap; /* Allows icons to wrap on small screens */
+  gap: 10px; /* Space between items */
   margin: 15px 0;
 }
 
 .info-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.icon {
+  font-size: 18px;
+  color: var(--primary-color);
 }
 
 .expand-button {
@@ -58,6 +66,7 @@
   justify-content: center;
   gap: 15px;
   margin-top: 30px;
+  flex-wrap: wrap; /* Makes buttons stack on small screens */
 }
 
 .custom-action-button {
@@ -72,4 +81,30 @@
 
 .custom-action-button:hover {
   background-color: var(--secondary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .service-info {
+    justify-content: space-between; /* Distribute items evenly */
+  }
+
+  .info-item {
+    flex: 1 1 45%; /* Makes each item take 45% of the width on mobile */
+    justify-content: center; /* Centers items on small screens */
+    font-size: 12px;
+  }
+
+  .expand-button,
+  .custom-action-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .info-item {
+    flex: 1 1 100%; /* Each item takes full width on very small screens */
+    justify-content: flex-start;
+  }
 }

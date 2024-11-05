@@ -67,7 +67,7 @@ const LandYourDreamJob = () => {
           <span className="primary-color">interviews và job offer</span> từ các
           công ty lớn ở Mỹ như Meta, Microsoft, Palantir, Bank of America, Dell,
           DoorDash, Stripe, Amazon, Morgan Stanley, TikTok và ở Việt Nam như
-          Viettel, Momo, FPT, Rockship.{" "}
+          Viettel, Momo, FPT, Rockship.
         </Text>
         <Text className="description">
           Các mentors có kinh nghiệm ở nhiều lĩnh vực như{" "}
@@ -77,17 +77,29 @@ const LandYourDreamJob = () => {
           .
         </Text>
         <Row gutter={[16, 16]} className="statistics">
-          <Col xs={24} sm={8} className="stat-item" ref={researchLabRef}>
+          <Col xs={24} sm={8} md={8} className="stat-item" ref={researchLabRef}>
             <Text className="stat-number">{researchLabCount}</Text>
             <Text className="stat-description">
               offers ở research lab và các data programs
             </Text>
           </Col>
-          <Col xs={24} sm={8} className="stat-item" ref={dellInternshipRef}>
+          <Col
+            xs={24}
+            sm={8}
+            md={8}
+            className="stat-item"
+            ref={dellInternshipRef}
+          >
             <Text className="stat-number">{dellInternshipCount}</Text>
             <Text className="stat-description">offers internship ở Mỹ</Text>
           </Col>
-          <Col xs={24} sm={8} className="stat-item" ref={dowJonesInternshipRef}>
+          <Col
+            xs={24}
+            sm={8}
+            md={8}
+            className="stat-item"
+            ref={dowJonesInternshipRef}
+          >
             <Text className="stat-number">{dowJonesInternshipCount}</Text>
             <Text className="stat-description">
               offers internship ở Việt Nam

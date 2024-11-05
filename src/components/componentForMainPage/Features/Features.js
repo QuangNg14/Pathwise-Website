@@ -7,25 +7,15 @@ const { Title, Text } = Typography;
 const Features = () => {
   return (
     <div className="features-container">
-      <Row gutter={[16, 16]}>
-        <Col xs={24} md={4}>
-          <Title
-            level={2}
-            className="feature-title"
-            style={{
-              fontWeight: 700,
-              fontSize: 40,
-              lineHeight: "65.35px",
-              textAlign: "center",
-              color: "#0F2442",
-            }}
-          >
+      <Row gutter={[16, 16]} justify="center">
+        <Col xs={24} md={24} lg={4}>
+          <Title level={2} className="feature-title">
             Features
           </Title>
         </Col>
-        <Col xs={24} md={20}>
+        <Col xs={24} md={24} lg={20}>
           <Row gutter={[16, 16]}>
-            <Col xs={24} sm={12}>
+            <Col xs={24} sm={12} md={12} lg={12} xl={6}>
               <Card className="feature-item" bordered={false}>
                 <Title level={4} className="feature-heading">
                   12 tuần hướng dẫn
@@ -38,7 +28,7 @@ const Features = () => {
                 </Text>
               </Card>
             </Col>
-            <Col xs={24} sm={12}>
+            <Col xs={24} sm={12} md={12} lg={12} xl={6}>
               <Card className="feature-item" bordered={false}>
                 <Title level={4} className="feature-heading">
                   Hướng dẫn trực tiếp
@@ -49,7 +39,7 @@ const Features = () => {
                 </Text>
               </Card>
             </Col>
-            <Col xs={24} sm={12}>
+            <Col xs={24} sm={12} md={12} lg={12} xl={6}>
               <Card className="feature-item" bordered={false}>
                 <Title level={4} className="feature-heading">
                   Mock interview
@@ -61,7 +51,7 @@ const Features = () => {
                 </Text>
               </Card>
             </Col>
-            <Col xs={24} sm={12}>
+            <Col xs={24} sm={12} md={12} lg={12} xl={6}>
               <Card className="feature-item" bordered={false}>
                 <Title level={4} className="feature-heading">
                   Hỗ trợ networking
