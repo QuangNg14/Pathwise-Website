@@ -7,7 +7,7 @@ import {
   InstagramOutlined,
   LinkedinOutlined,
 } from "@ant-design/icons";
-import "./footer.css";
+import "./Footer.css";
 
 const { Title } = Typography;
 
