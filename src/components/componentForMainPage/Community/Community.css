@@ -7,7 +7,7 @@
 }
 
 .community-title-wrapper {
-  background-color: var(--secondary-color);
+  /* background-color: var(--secondary-color); */
   padding: 10px 20px;
   border-radius: 20px;
   display: inline-block;
@@ -15,8 +15,9 @@
 }
 
 .community-title {
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 700;
+  line-height: 65.35px;
   color: white;
 }
 

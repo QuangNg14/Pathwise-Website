@@ -49,7 +49,7 @@ const MenteeShowcase = () => {
           fontSize: 40,
           lineHeight: "65.35px",
           textAlign: "center",
-          color: "#0F2442",
+          color: "white",
         }}
       >
         Học Viên Tiêu Biểu Của Pathwise

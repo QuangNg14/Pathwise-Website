@@ -13,6 +13,7 @@ const MentorCarousel = ({ mentors }) => {
         padding: "64px 20px", // Adjust padding for responsiveness
         backgroundColor: "var(--mentor-color)",
         width: "100%",
+        marginTop: 40,
       }}
     >
       <Row justify="center">

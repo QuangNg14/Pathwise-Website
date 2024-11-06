@@ -9,7 +9,17 @@ const Features = () => {
     <div className="features-container">
       <Row gutter={[16, 16]} justify="center">
         <Col xs={24} md={24} lg={4}>
-          <Title level={2} className="feature-title">
+          <Title
+            level={2}
+            className="feature-title"
+            style={{
+              fontWeight: 700,
+              fontSize: 40,
+              lineHeight: "65.35px",
+              textAlign: "center",
+              // color: "white",
+            }}
+          >
             Features
           </Title>
         </Col>

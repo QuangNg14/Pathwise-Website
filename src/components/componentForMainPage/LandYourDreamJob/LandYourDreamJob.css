@@ -7,7 +7,8 @@
   text-align: center;
   padding: 20px;
   height: auto;
-  overflow-x: hidden; /* Prevent horizontal overflow */
+  overflow-x: hidden;
+  margin-top: 20px
 }
 
 .small-container {
@@ -35,14 +36,16 @@
 
 .statistics {
   display: flex;
-  flex-wrap: wrap; /* Allows items to wrap on small screens */
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
   margin-top: 30px;
   gap: 16px;
 }
 
 .stat-item {
   text-align: center;
+  flex: 1 1 200px;
+  max-width: 300px;
 }
 
 .stat-number {
@@ -50,7 +53,7 @@
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 10px;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   display: block;
   animation: count-animation 2s ease-in-out;
 }
@@ -59,6 +62,7 @@
   font-size: 24px;
   font-weight: 400;
   line-height: 1.2;
+  color: var(--secondary-color);
 }
 
 /* Large Image Styling */
@@ -115,7 +119,16 @@
   }
 
   .statistics {
-    flex-direction: column; /* Stack statistics vertically on small screens */
+    flex-direction: column;
+    gap: 8px; /* Reduce gap between stat items */
+  }
+
+  .stat-item {
+    max-width: 100%;
+  }
+
+  .image-container {
+    margin-top: 20px; /* Reduce vertical space above image */
   }
 
   .large-image {

@@ -20,7 +20,7 @@ const FooterComponent = () => {
           <Col xs={24} sm={12} md={6} lg={6} className="footer-logo-col">
             <div className="footer-logo">
               <img
-                src="https://res.cloudinary.com/dbqcioj2g/image/upload/v1730672180/xywohx68q89slpnh7kho.png"
+                src="http://res.cloudinary.com/dbqcioj2g/image/upload/v1730876558/zxwden7fmhxztxduhauv.png"
                 alt="Logo"
               />
               <div className="social-icons">
@@ -58,7 +58,11 @@ const FooterComponent = () => {
 
           {/* Information Links */}
           <Col xs={12} sm={6} md={4} lg={4}>
-            <Title level={4} className="footer-title">
+            <Title
+              level={4}
+              className="footer-title"
+              style={{ color: "white" }}
+            >
               Information
             </Title>
             <Link href="#" className="footer-link">
@@ -80,7 +84,11 @@ const FooterComponent = () => {
 
           {/* Company Links */}
           <Col xs={12} sm={6} md={4} lg={4}>
-            <Title level={4} className="footer-title">
+            <Title
+              level={4}
+              className="footer-title"
+              style={{ color: "white" }}
+            >
               Company
             </Title>
             <Link href="#" className="footer-link">
@@ -96,7 +104,11 @@ const FooterComponent = () => {
 
           {/* Resource Links */}
           <Col xs={12} sm={6} md={4} lg={4}>
-            <Title level={4} className="footer-title">
+            <Title
+              level={4}
+              className="footer-title"
+              style={{ color: "white" }}
+            >
               Resource
             </Title>
             <Link href="#" className="footer-link">
@@ -115,7 +127,11 @@ const FooterComponent = () => {
 
           {/* Industry Tracks Links */}
           <Col xs={12} sm={6} md={4} lg={4}>
-            <Title level={4} className="footer-title">
+            <Title
+              level={4}
+              className="footer-title"
+              style={{ color: "white" }}
+            >
               Industry Tracks
             </Title>
             <Link href="#" className="footer-link">
