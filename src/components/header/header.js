@@ -24,43 +24,29 @@ const HeaderComponent = ({ current, handleClick }) => {
         zIndex: 1,
         width: "100%",
         backgroundColor: "white",
-        height: "80px", // Increased height to accommodate larger logo
+        height: "70px",
         display: "flex",
-        alignItems: "center", // Center items vertically
+        alignItems: "center",
         padding: "0 20px",
       }}
     >
-      <Row
-        justify="space-between"
-        align="middle"
-        style={{ width: "100%" }}
-        gutter={16}
-      >
-        {/* Logo Column */}
-        <Col
-          xs={18}
-          sm={18}
-          md={10}
-          lg={10}
-          style={{ display: "flex", alignItems: "center" }}
-        >
+      <Row justify="space-between" align="middle" style={{ width: "100%" }}>
+        <Col xs={18} sm={18} md={10} lg={10}>
           <Link href="/" passHref>
-            <img
-              src="http://res.cloudinary.com/dbqcioj2g/image/upload/v1730672180/xywohx68q89slpnh7kho.png"
-              style={{ height: "150px", width: "auto", marginLeft: 40 }} // Adjusted logo size
-              alt="Pathwise Logo"
-            />
+            <div className="logo-container">
+              <img
+                src="http://res.cloudinary.com/dbqcioj2g/image/upload/v1730672180/xywohx68q89slpnh7kho.png"
+                // className="logo-image" // This class applies the height adjustment
+                height={150}
+                className="logo-image"
+                alt="Pathwise Logo"
+              />
+            </div>
           </Link>
         </Col>
 
         {/* Desktop Menu */}
-        <Col
-          xs={0}
-          sm={0}
-          md={14}
-          lg={14}
-          style={{ display: "flex", justifyContent: "flex-end" }}
-        >
+        <Col xs={0} sm={0} md={14} lg={14}>
           <Menu
             theme="light"
             mode="horizontal"
@@ -68,12 +54,10 @@ const HeaderComponent = ({ current, handleClick }) => {
             onClick={handleClick}
             style={{
               borderBottom: "none",
+              justifyContent: "flex-end",
               fontWeight: 400,
               fontSize: 16,
               color: "var(--primary-color)",
-              backgroundColor: "transparent",
-              display: "flex",
-              alignItems: "center",
             }}
           >
             {[
@@ -104,7 +88,7 @@ const HeaderComponent = ({ current, handleClick }) => {
         </Col>
 
         {/* Mobile Menu Button */}
-        <Col xs={6} sm={6} md={0} lg={0} className="menu-button-col">
+        <Col xs={6} sm={6} md={0} lg={0}>
           <Button
             icon={<MenuOutlined />}
             onClick={showDrawer}
@@ -112,6 +96,7 @@ const HeaderComponent = ({ current, handleClick }) => {
               border: "none",
               backgroundColor: "transparent",
               color: "var(--primary-color)",
+              marginLeft: 20,
             }}
           />
         </Col>

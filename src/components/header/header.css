@@ -5,7 +5,6 @@
   z-index: 1;
   width: 100%;
   background-color: white;
-  height: 80px; /* Increased height to accommodate larger logo */
   display: flex;
   align-items: center; /* Center items vertically */
   padding: 0 20px;
@@ -91,3 +90,17 @@
     font-size: 1.5em; /* Smaller title font on mobile */
   }
 }
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px; /* Set fixed height for container */
+  width: auto; /* Width will adjust based on image */
+  padding-left: 10px; /* Optional: Adds a small left padding if needed */
+}
+
+.logo-image {
+  margin-left: 40px;
+}
+
