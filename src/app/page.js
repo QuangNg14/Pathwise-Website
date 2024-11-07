@@ -28,6 +28,7 @@ const mentors = [
     ],
     image:
       "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730176141/mfece5cphz0s7qxfjnpj.jpg",
+    linkedin: "https://www.linkedin.com/in/quang1401/",
   },
   {
     name: "Tri Bui",
@@ -40,6 +41,7 @@ const mentors = [
     ],
     image:
       "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730176141/f1w7t0ajkwplx9n8jtim.jpg",
+    linkedin: "https://www.linkedin.com/in/tribuidinh/",
   },
   {
     name: "Anh Ngo",
@@ -52,6 +54,7 @@ const mentors = [
     ],
     image:
       "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730176141/tfiotmhqb6vpkofuh5py.jpg",
+    linkedin: "https://www.linkedin.com/in/anhmngo/",
   },
   {
     name: "Lam Nguyen",
@@ -63,6 +66,7 @@ const mentors = [
     ],
     image:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730775955/ceb48mc3glt4vp9w3cxq.jpg",
+    linkedin: "https://www.linkedin.com/in/ltn18/",
   },
   {
     name: "Jonathan Cheng",
@@ -73,6 +77,7 @@ const mentors = [
     ],
     image:
       "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730176141/s1qbmncykt4nr2ywxjyf.jpg",
+    linkedin: "https://www.linkedin.com/in/jonatche1/",
   },
 ];
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { Layout, Row, Col, Typography, Carousel, Card } from "antd";
+import { LinkedinOutlined } from "@ant-design/icons";
 import "antd/dist/reset.css";
 import "./MentorCarousel.css";
 
@@ -10,7 +11,7 @@ const MentorCarousel = ({ mentors }) => {
   return (
     <Layout
       style={{
-        padding: "64px 20px", // Adjust padding for responsiveness
+        padding: "64px 20px",
         backgroundColor: "var(--mentor-color)",
         width: "100%",
         marginTop: 40,
@@ -24,7 +25,7 @@ const MentorCarousel = ({ mentors }) => {
               fontWeight: 700,
               textAlign: "center",
               color: "#0F2442",
-              fontSize: "clamp(24px, 5vw, 40px)", // Responsive font size
+              fontSize: "clamp(24px, 5vw, 40px)",
             }}
           >
             Meet your mentor
@@ -86,6 +87,16 @@ const MentorCarousel = ({ mentors }) => {
                       />
                     ))}
                   </div>
+                  {/* LinkedIn Link */}
+                  <a
+                    href={mentor.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                  >
+                    <LinkedinOutlined className="linkedin-icon" />
+                    <span>LinkedIn</span>
+                  </a>
                 </div>
               </Card>
             </div>

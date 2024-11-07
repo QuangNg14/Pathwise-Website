@@ -14,7 +14,6 @@ const AchievementGallery = () => {
     "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730770551/ootijxr52oanrnyy2wkz.png",
     "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730770551/g3gwfrzrlqof6xucus6y.png",
     "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730770551/s2bnotjycfbrn3fwjmgh.png",
-    "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730770551/e4g4zvyqozlteei9hhwz.png",
     "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730770551/uz887niohjebt8z4zum7.png",
   ];
 

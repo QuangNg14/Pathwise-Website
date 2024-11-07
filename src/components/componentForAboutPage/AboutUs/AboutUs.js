@@ -29,7 +29,7 @@ const teamMembers = [
   },
   {
     name: "Anh Ngo",
-    role: "Mentor",
+    role: "Co-Founder",
     description: [
       "Chị Minh Anh hiện đang làm chuyên viên phân tích ngân hàng đầu tư (Investment Banking Summer Analyst) tại Deutsche Bank.",
       "Chị cũng đã đạt học bổng ngành Kinh Tế tại Đại học Pennsylvania (UPenn).",

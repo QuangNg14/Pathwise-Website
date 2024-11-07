@@ -100,12 +100,13 @@ const interviewData = [
 
 const InterviewRoundsSection = () => {
   const chartRef = useRef();
+  const tooltipRef = useRef();
   const [selectedCompany, setSelectedCompany] = useState(null);
 
   useEffect(() => {
     const updateChartDimensions = () => {
       const width = chartRef.current.offsetWidth;
-      const height = width * 1.5; // Increase aspect ratio for better readability on mobile
+      const height = window.innerWidth <= 768 ? width * 1.5 : width * 0.75; // Use taller aspect ratio on mobile
 
       return { width, height };
     };
@@ -130,7 +131,7 @@ const InterviewRoundsSection = () => {
         .scaleBand()
         .domain(interviewData.map((d) => d.company))
         .range([0, adjustedHeight])
-        .padding(0.6); // Adjusted padding for more space between rows on mobile
+        .padding(0.6);
 
       const x = d3
         .scaleLinear()
@@ -158,18 +159,9 @@ const InterviewRoundsSection = () => {
         .call(d3.axisLeft(y).tickSize(0))
         .selectAll("text")
         .style("text-anchor", "end")
-        .style("font-size", "14px") // Increased font size for readability
+        .style("font-size", "14px")
         .style("cursor", "pointer")
-        .style("fill", "white")
-        .on("mouseover", function (event, company) {
-          d3.select(this).style("fill", "var(--secondary-color)");
-          const companyData = interviewData.find((d) => d.company === company);
-          setSelectedCompany(companyData);
-        })
-        .on("mouseout", function () {
-          d3.select(this).style("fill", "white");
-          setSelectedCompany(null);
-        });
+        .style("fill", "white");
 
       svg
         .append("g")
@@ -177,6 +169,9 @@ const InterviewRoundsSection = () => {
         .call(d3.axisBottom(x).ticks(Math.min(6, width / 100)))
         .selectAll("text")
         .style("font-size", "12px");
+
+      // Tooltip div setup
+      const tooltip = d3.select(tooltipRef.current);
 
       svg
         .selectAll("g.layer")
@@ -191,39 +186,23 @@ const InterviewRoundsSection = () => {
         .attr("width", (d) => x(d[1]) - x(d[0]))
         .attr("height", y.bandwidth())
         .on("mouseover", function (event, d) {
-          d3.select(this).attr("opacity", 0.8);
-          setSelectedCompany(d.data);
+          // Display tooltip
+          tooltip.style("opacity", 1).html(
+            `<strong>${d.data.company}</strong><br/>
+               First Round: ${d.data.FirstRound}<br/>
+               Virtual Onsite: ${d.data.VirtualOnsite}<br/>
+               Final Round: ${d.data.FinalRound}`
+          );
+        })
+        .on("mousemove", function (event) {
+          // Position tooltip to the right of the cursor
+          tooltip
+            .style("left", event.pageX + 15 + "px")
+            .style("top", event.pageY - 30 + "px");
         })
         .on("mouseout", function () {
-          d3.select(this).attr("opacity", 1);
-          setSelectedCompany(null);
+          tooltip.style("opacity", 0);
         });
-
-      const legend = svg
-        .selectAll(".legend")
-        .data(["FirstRound", "VirtualOnsite", "FinalRound"])
-        .enter()
-        .append("g")
-        .attr("class", "legend")
-        .attr("transform", (d, i) => `translate(0, ${i * 25})`);
-
-      legend
-        .append("rect")
-        .attr("x", adjustedWidth + 20)
-        .attr("y", 10)
-        .attr("width", 18)
-        .attr("height", 18)
-        .style("fill", (d) => color(d));
-
-      legend
-        .append("text")
-        .attr("x", adjustedWidth + 45)
-        .attr("y", 19)
-        .attr("dy", ".35em")
-        .style("text-anchor", "start")
-        .text((d) => d)
-        .style("font-size", "14px")
-        .style("fill", "white");
     };
 
     renderChart();
@@ -238,26 +217,7 @@ const InterviewRoundsSection = () => {
         Top Interview Progress of our Mentees by Rounds
       </Title>
       <div className="chart-container" ref={chartRef}></div>
-      {selectedCompany && (
-        <div className="company-details">
-          <h3>{selectedCompany.company}</h3>
-          <p>
-            <strong>First Round:</strong> {selectedCompany.FirstRound}
-          </p>
-          <p>
-            <strong>Virtual Onsite:</strong> {selectedCompany.VirtualOnsite}
-          </p>
-          <p>
-            <strong>Final Round:</strong> {selectedCompany.FinalRound}
-          </p>
-          <p>
-            <strong>Total Interviews:</strong>{" "}
-            {selectedCompany.FirstRound +
-              selectedCompany.VirtualOnsite +
-              selectedCompany.FinalRound}
-          </p>
-        </div>
-      )}
+      <div ref={tooltipRef} className="tooltip"></div>
       <p className="note">
         Note: In some cases, there are more final rounds than first rounds as
         some internships directly invite candidates to the final rounds, while

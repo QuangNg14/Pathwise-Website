@@ -11,27 +11,28 @@
   
   .footer-logo-col {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
   }
   
   .footer-logo {
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
   }
   
-  .footer-logo img {
-    width: 250px;
+  .logo-image-2 {
+    width: 180px; /* Adjust width as needed */
     margin-bottom: 10px;
   }
   
   .social-icons {
-    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
   }
   
   .social-icon {
     font-size: 20px;
-    margin-right: 10px;
     color: #fff;
     transition: color 0.3s;
   }
@@ -78,16 +79,10 @@
   
   /* Responsive adjustments */
   @media (max-width: 768px) {
-    .footer-logo {
-      text-align: center;
-    }
-  
     .footer-title, .footer-link, .contact-email {
       text-align: center;
     }
-  }
   
-  @media (max-width: 576px) {
     .footer-logo img {
       width: 150px;
     }
@@ -96,3 +91,4 @@
       padding: 0 10px;
     }
   }
+  

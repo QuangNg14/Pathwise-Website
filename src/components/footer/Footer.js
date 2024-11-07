@@ -15,13 +15,14 @@ const FooterComponent = () => {
   return (
     <div className="footer">
       <div className="footer-container">
-        <Row gutter={[16, 16]}>
+        <Row gutter={[16, 16]} justify="start">
           {/* Logo Section */}
-          <Col xs={24} sm={12} md={6} lg={6} className="footer-logo-col">
+          <Col xs={24} sm={12} md={8} lg={8} className="footer-logo-col">
             <div className="footer-logo">
               <img
                 src="http://res.cloudinary.com/dbqcioj2g/image/upload/v1730876558/zxwden7fmhxztxduhauv.png"
                 alt="Logo"
+                className="logo-image-2"
               />
               <div className="social-icons">
                 <a
@@ -69,9 +70,6 @@ const FooterComponent = () => {
               Outcomes Report
             </Link>
             <Link href="#" className="footer-link">
-              Application Process
-            </Link>
-            <Link href="#" className="footer-link">
               Fellow Stories
             </Link>
             <Link href="#" className="footer-link">
@@ -93,9 +91,6 @@ const FooterComponent = () => {
             </Title>
             <Link href="#" className="footer-link">
               About Us
-            </Link>
-            <Link href="#" className="footer-link">
-              Manifesto
             </Link>
             <Link href="#" className="footer-link">
               Contact Us
@@ -145,9 +140,6 @@ const FooterComponent = () => {
             </Link>
             <Link href="#" className="footer-link">
               Data
-            </Link>
-            <Link href="#" className="footer-link">
-              Marketing
             </Link>
           </Col>
         </Row>
