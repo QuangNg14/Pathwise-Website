@@ -37,6 +37,13 @@
   margin-bottom: 30px;
 }
 
+.highlighted-outcomes {
+  color: var(--primary-color); /* Apply primary color */
+  font-weight: bold;
+  border-bottom: 2px solid var(--primary-color); /* Bottom border */
+  padding-bottom: 2px; /* Adds some space between text and border */
+}
+
 .buttons-container {
   display: flex;
   gap: 15px;

@@ -14,6 +14,14 @@ const FAQ = () => {
       ],
     },
     {
+      question: "Tại sao nên tham gia làm mentee vào Pathwise?",
+      answer: [
+        "Hiệu quả - Tập trung vào những kiến thức cụ thể và cô đọng nhất để phục vụ quá trình ứng tuyển vào các tập đoàn lớn.",
+        "Tiết kiệm - Chi phí được tối ưu sao cho phù hợp với sinh viên nhất, và đảm bảo tiết kiệm hơn từ 60-70% so với thị trường.",
+        "Quan tâm - Tất cả mentee đều được chăm sóc 1-1, với các kênh riêng và các buổi session cá nhân hóa cụ thể, và số lượng mentee được giới hạn để đảm bảo chất lượng tối đa.",
+      ],
+    },
+    {
       question: "Ai có thể tham gia vào chương trình Pathwise?",
       answer: [
         "Tất cả các bạn sinh viên đang theo học đại học ở Việt Nam, Mỹ, Úc, Canada và Singapore mà muốn tìm kiếm cơ hội thực tập hoặc làm việc trong các research lab hay các công ty đều có thể tham gia. Mỗi đợt chương trình chỉ lấy 1 số lượng mentee có hạn nên hãy đăng ký tham gia sớm nhất nhé.",
@@ -28,14 +36,6 @@ const FAQ = () => {
         "Thời điểm đó bọn anh chỉ hy vọng có người đồng hành chỉ dẫn cho mình trong việc tìm kiếm và nộp đơn công ty hiệu quả, các tips và tricks để tăng khả năng nhận được phỏng vấn, cách luyện tập các đề thi sao cho đúng trọng tâm nhất, tìm kiếm network chất lượng, các tips phỏng vấn, hỗ trợ về nguồn tài liệu,...",
         "Và điều khó hơn là một người đã từng trải qua những quá trình mình gặp phải để có được những tư vấn sát nhất, hiểu được vấn đề đang diễn ra trực tiếp trên thị trường tuyển dụng, và trải qua cả những lúc “trầm cảm” , “nghi ngờ bản thân” - “imposter syndrome :)” - chứ không phải những mentor đã có nhiều năm kinh nghiệm trên thị trường lao động.",
         "“Đó là khi bọn anh tìm đến một người bạn khiến bọn anh cảm thấy yên tâm và tin tưởng”. Người có năng lực trong lĩnh vực công nghệ, đặc biệt phần mềm (software). Hiểu biết, tìm tòi với những kinh nghiệm đi trước hơn hẳn so với các bạn cùng tuổi (2002). Kinh nghiệm và kiến thức sâu nhưng đủ bao quát, hiệu quả và tiết kiệm nhất.",
-      ],
-    },
-    {
-      question: "Tại sao nên tham gia làm mentee vào Pathwise?",
-      answer: [
-        "Hiệu quả - Tập trung vào những kiến thức cụ thể và cô đọng nhất để phục vụ quá trình ứng tuyển vào các tập đoàn lớn.",
-        "Tiết kiệm - Chi phí được tối ưu sao cho phù hợp với sinh viên nhất, và đảm bảo tiết kiệm hơn từ 60-70% so với thị trường.",
-        "Quan tâm - Tất cả mentee đều được chăm sóc 1-1, với các kênh riêng và các buổi session cá nhân hóa cụ thể, và số lượng mentee được giới hạn để đảm bảo chất lượng tối đa.",
       ],
     },
   ];

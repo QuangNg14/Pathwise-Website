@@ -31,10 +31,10 @@ const Features = () => {
                   12 tuần hướng dẫn
                 </Title>
                 <Text className="feature-content">
-                  về toàn bộ quá trình apply internship từ resume, portfolio,
-                  personal projects đến behavioral và technical interviews. Hàm
-                  lượng kiến thức và thông tin được tổng hợp cần thiết, đúng
-                  trọng tâm và cá nhân hóa
+                  về toàn bộ quá trình apply internship từ resume, personal
+                  projects đến behavioral và technical interviews. Được đặt
+                  meeting tư vấn 1-1 hàng tuần để giải đáp mọi thắc mắc, hỗ trợ
+                  interview không giới hạn
                 </Text>
               </Card>
             </Col>

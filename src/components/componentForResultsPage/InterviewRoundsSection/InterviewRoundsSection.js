@@ -31,7 +31,7 @@ const interviewData = [
   { company: "Ebay", FirstRound: 0, VirtualOnsite: 2, FinalRound: 0 },
   { company: "Stripe", FirstRound: 1, VirtualOnsite: 1, FinalRound: 1 },
   { company: "Affirm", FirstRound: 2, VirtualOnsite: 0, FinalRound: 2 },
-  { company: "Arista Network", FirstRound: 1, VirtualOnsite: 1, FinalRound: 0 },
+  { company: "Arista Network", FirstRound: 1, VirtualOnsite: 2, FinalRound: 2 },
   { company: "Whatnot", FirstRound: 1, VirtualOnsite: 0, FinalRound: 0 },
   { company: "Hubspot", FirstRound: 3, VirtualOnsite: 0, FinalRound: 2 },
   { company: "Morgan Stanley", FirstRound: 0, VirtualOnsite: 0, FinalRound: 1 },
@@ -105,14 +105,14 @@ const InterviewRoundsSection = () => {
   useEffect(() => {
     const updateChartDimensions = () => {
       const width = chartRef.current.offsetWidth;
-      const height = width * 1; // Increased aspect ratio for better readability
+      const height = width * 1.5; // Increase aspect ratio for better readability on mobile
 
       return { width, height };
     };
 
     const renderChart = () => {
       const { width, height } = updateChartDimensions();
-      const margin = { top: 20, right: 20, bottom: 50, left: 150 }; // Increase left margin for readability
+      const margin = { top: 20, right: 20, bottom: 50, left: 150 };
       const adjustedWidth = width - margin.left - margin.right;
       const adjustedHeight = height - margin.top - margin.bottom;
 
@@ -130,7 +130,7 @@ const InterviewRoundsSection = () => {
         .scaleBand()
         .domain(interviewData.map((d) => d.company))
         .range([0, adjustedHeight])
-        .padding(0.4); // Adjusted padding for spacing between rows
+        .padding(0.6); // Adjusted padding for more space between rows on mobile
 
       const x = d3
         .scaleLinear()
@@ -158,7 +158,7 @@ const InterviewRoundsSection = () => {
         .call(d3.axisLeft(y).tickSize(0))
         .selectAll("text")
         .style("text-anchor", "end")
-        .style("font-size", "12px") // Smaller font for labels on mobile
+        .style("font-size", "14px") // Increased font size for readability
         .style("cursor", "pointer")
         .style("fill", "white")
         .on("mouseover", function (event, company) {

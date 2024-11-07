@@ -12,11 +12,12 @@ const PeerToPeerMentoring = () => {
       <Row className="peer-mentoring-row" align="middle">
         <Col xs={24} md={12} lg={10} className="text-column">
           <Title level={1} className="peer-mentoring-title">
-            Peer-to-peer Mentoring
+            Mentoring with Proven{" "}
+            <span className="highlighted-outcomes">Results</span>
           </Title>
           <Text className="peer-mentoring-text">
-            Our mentors from Big Tech and major financial firms help you secure
-            your next internships and jobs!
+            Get targeted, affordable, and personalized 1-on-1 guidance optimized
+            for students applying to jobs at top companies!
           </Text>
           <div className="buttons-container">
             <Button

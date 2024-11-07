@@ -32,9 +32,10 @@ const mentors = [
   {
     name: "Tri Bui",
     title: "Mentor",
-    company: "Risk Analyst at BlackStone",
+    company: "Founder Startups/Software Engineer",
     companyLogos: [
-      "https://static.stocktitan.net/company-logo/bx.png",
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730944880/vmuja8lp8yh8xiz7fqhc.jpg",
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730944880/kj3ugorhpoalspe5lsur.jpg",
       "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/30cd1378bfa8b1b15fd194651407a294",
     ],
     image:

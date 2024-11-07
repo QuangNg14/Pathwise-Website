@@ -96,6 +96,7 @@ const HeaderComponent = ({ current, handleClick }) => {
               border: "none",
               backgroundColor: "transparent",
               color: "var(--primary-color)",
+              boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
               marginLeft: 20,
             }}
           />

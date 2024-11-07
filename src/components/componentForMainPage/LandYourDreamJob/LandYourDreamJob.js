@@ -37,7 +37,7 @@ const LandYourDreamJob = () => {
           if (entry.target === researchLabRef.current) {
             animateCount(setResearchLabCount, 10);
           } else if (entry.target === dellInternshipRef.current) {
-            animateCount(setDellInternshipCount, 8);
+            animateCount(setDellInternshipCount, 9);
           } else if (entry.target === dowJonesInternshipRef.current) {
             animateCount(setDowJonesInternshipCount, 12);
           }
@@ -67,14 +67,13 @@ const LandYourDreamJob = () => {
           <span className="primary-color">interviews và job offer</span> từ các
           công ty lớn ở Mỹ như Meta, Microsoft, Palantir, Bank of America, Dell,
           DoorDash, Stripe, Amazon, Morgan Stanley, TikTok và ở Việt Nam như
-          Viettel, Momo, FPT, Rockship.
+          Viettel, Momo, FPT, Rockship.{" "}
         </Text>
         <Text className="description">
           Các mentors có kinh nghiệm ở nhiều lĩnh vực như{" "}
           <span className="primary-color">
             Software, Data, Finance, Consulting
           </span>
-          .
         </Text>
         <Row gutter={[16, 16]} className="statistics">
           <Col xs={24} sm={8} md={8} className="stat-item" ref={researchLabRef}>

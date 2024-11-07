@@ -79,7 +79,10 @@ const offersData = [
     school: "Soka University of America",
     year: "Junior",
     major: "Computer Science",
-    offers: ["Lilly - Software Engineer Intern"],
+    offers: [
+      "HubSpot - Software Engineer Intern",
+      "Lilly - Software Engineer Intern",
+    ],
     avatar:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660432/nmvxrcs0pmcswsjwpkcl.jpg", // Placeholder avatar image
   },

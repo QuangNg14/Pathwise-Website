@@ -23,7 +23,7 @@ const services = [
     start: "Jan 2025",
     duration: "12 tuần",
     people: "5 - 10 mentee",
-    fee: "Có chi phí",
+    fee: "Chi phí - liên hệ",
   },
   {
     title: "Internships/New Grad Finding for Juniors & Seniors",
@@ -37,7 +37,7 @@ const services = [
     start: "May 2025",
     duration: "12 tuần",
     people: "10 - 15 mentee",
-    fee: "Có chi phí",
+    fee: "Chi phí - liên hệ",
   },
   {
     title: "Investment Banking & Finance (Coming Soon)",
@@ -51,7 +51,7 @@ const services = [
     start: "May 2025",
     duration: "6 tuần",
     people: "~5 mentee",
-    fee: "Có chi phí",
+    fee: "Chi phí - liên hệ",
   },
   {
     title: "Frequent Workshops and Fireside chat with Professionals",
