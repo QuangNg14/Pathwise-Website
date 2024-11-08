@@ -66,6 +66,7 @@ const HeaderComponent = ({ current, handleClick }) => {
               "services",
               "results",
               "about",
+              "blog",
               "contact",
             ].map((key) => (
               <Menu.Item
@@ -123,6 +124,7 @@ const HeaderComponent = ({ current, handleClick }) => {
             "services",
             "results",
             "about",
+            "blog",
             "contact",
           ].map((key) => (
             <Menu.Item key={key} onClick={closeDrawer}>
