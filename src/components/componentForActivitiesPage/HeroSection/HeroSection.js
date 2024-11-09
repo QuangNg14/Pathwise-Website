@@ -20,7 +20,7 @@ const HeroSection = () => {
             giúp các bạn muốn apply vào các ngành Software, Data và Finance.
           </Text>
           <a
-            href="https://docs.google.com/presentation/d/14pTfUPVtN8RYuKgmeKDaTrgdQ8lbT0XGkvVEZIElhto/edit?usp=sharing"
+            href="https://www.facebook.com/pathwise.techmentorship"
             target="_blank"
             rel="noopener noreferrer"
             className="hero-button"
