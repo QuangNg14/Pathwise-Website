@@ -72,6 +72,19 @@
     border-radius: 5px;
     text-transform: uppercase;
   }
+
+  .linkedin-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    color: #0077b5;
+    margin-top: 10px;
+  }
+  
+  .linkedin-icon {
+    font-size: 18px;
+    margin-right: 5px;
+  }
   
   @media (max-width: 768px) {
     .about-us-container {

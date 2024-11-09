@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col, Typography } from "antd";
+import { LinkedinOutlined } from "@ant-design/icons";
 import "./AboutUs.css";
 
 const { Title, Text } = Typography;
@@ -8,6 +9,7 @@ const teamMembers = [
   {
     name: "Quang Nguyen",
     role: "Founder",
+    linkedin: "https://www.linkedin.com/in/quang1401/",
     description: [
       "Anh Nhật Quang hiện đang làm Kỹ sư phần mềm tại Microsoft, và anh cũng từng làm thực tập vị trí kĩ sư phần mềm tại NVIDIA (hè 2023) và Facebook (hè 2022).",
       "Đạt học bổng toàn phần ngành Khoa học Máy tính trị giá $73,000/năm cho 4 năm học tại Đại học Rice.",
@@ -19,6 +21,7 @@ const teamMembers = [
   {
     name: "Tri Bui",
     role: "Co-Founder",
+    linkedin: "https://www.linkedin.com/in/tribuidinh/",
     description: [
       "Anh Đình Trí hiện đang làm Quản trị Rủi ro tại công ty Revantage thuộc tập đoàn Blackstone và thực tập Kỹ sư Phần mềm tại Daikin, DetectAuto, và Deloitte Vietnam.",
       "Founder/CEO của Công ty TNHH Esmart Solutions, cung cấp giải pháp truyền thông và công nghệ cho các doanh nghiệp vừa và nhỏ tại Việt Nam.",
@@ -30,6 +33,7 @@ const teamMembers = [
   {
     name: "Anh Ngo",
     role: "Co-Founder",
+    linkedin: "https://www.linkedin.com/in/anhmngo/",
     description: [
       "Chị Minh Anh hiện đang làm chuyên viên phân tích ngân hàng đầu tư (Investment Banking Summer Analyst) tại Deutsche Bank.",
       "Chị cũng đã đạt học bổng ngành Kinh Tế tại Đại học Pennsylvania (UPenn).",
@@ -39,17 +43,6 @@ const teamMembers = [
     image:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730176141/tfiotmhqb6vpkofuh5py.jpg",
   },
-  //   {
-  //     name: "Lam Nguyen",
-  //     role: "Mentor",
-  //     description: [
-  //       "Anh Lâm hiện đang là thực tập Kỹ sư Phần mềm tại Microsoft (các năm 2022, 2023, 2024) và Amazon (thu 2023).",
-  //       "Đạt học bổng toàn phần bậc cao học ngành Khoa học Máy tính tại Đại học Case Western Reserve.",
-  //       "Phó Chủ tịch của Hacker Society, luôn có tên trong danh sách danh dự Dean’s High Honors List, và được chọn tham gia đội tuyển ICPC khu vực Đông Bắc Trung Hoa Kỳ (ECNA) 3 năm liên tiếp.",
-  //     ],
-  //     image:
-  //       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730177777/n2i5vai8ckoagxbb3gm5.jpg",
-  //   },
 ];
 
 const AboutUs = () => (
@@ -80,6 +73,15 @@ const AboutUs = () => (
               {paragraph}
             </Text>
           ))}
+          <a
+            href={member.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="linkedin-link"
+          >
+            <LinkedinOutlined className="linkedin-icon" />
+            <span>LinkedIn</span>
+          </a>
         </Col>
         <Col xs={24} md={10} className="image-column">
           <div className="role-label">{member.role.toUpperCase()}</div>
