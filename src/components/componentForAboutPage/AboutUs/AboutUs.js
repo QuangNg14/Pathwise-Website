@@ -35,7 +35,7 @@ const teamMembers = [
     role: "Co-Founder",
     linkedin: "https://www.linkedin.com/in/anhmngo/",
     description: [
-      "Chị Minh Anh hiện đang làm chuyên viên phân tích ngân hàng đầu tư (Investment Banking Summer Analyst) tại Deutsche Bank.",
+      "Chị Minh Anh hiện đang làm chuyên viên phân tích ngân hàng đầu tư (Investment Banking Analyst) tại Deutsche Bank.",
       "Chị cũng đã đạt học bổng ngành Kinh Tế tại Đại học Pennsylvania (UPenn).",
       "Phó Chủ tịch của Câu lạc bộ Tài chính Wharton và là thành viên của Hội đồng Tư vấn Sinh viên Quốc tế tại UPenn.",
       "Có nhiều kinh nghiệm làm việc tại UPenn Career Services, đã hỗ trợ sửa resume và định hướng nghề nghiệp cho hơn 200 sinh viên.",
