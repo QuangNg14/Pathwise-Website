@@ -15,7 +15,7 @@ const blogPosts = [
     excerpt: "Improve your tech resume with these tips.",
   },
   {
-    id: "2",
+    id: "response",
     title: "The 10 Best Job Search Websites",
     date: "November 1, 2024",
     excerpt: "Top sites to find your dream tech job.",

@@ -1,3 +1,5 @@
+<img src="/images/resume_heading.png" alt="Jake's Resume Heading" width="100%" height="auto">
+
 # Các mẹo để tạo Resume trong ngành Tech hiệu quả
 
 **Bởi Quang Nguyen, ngày 09 tháng 11 năm 2024**
