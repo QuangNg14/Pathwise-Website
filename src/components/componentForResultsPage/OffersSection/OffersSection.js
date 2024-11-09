@@ -17,18 +17,18 @@ const offersData = [
   //   avatar:
   //     "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730615998/wzq64kqpmmkkdsypdf1f.jpg", // Placeholder avatar image
   // },
-  {
-    name: "Gia Hy",
-    school: "University of South Florida",
-    year: "Sophomore",
-    major: "Computer Science",
-    offers: [
-      "Meta - Software Engineer Intern",
-      "Microsoft - Software Engineer Intern",
-    ],
-    avatar:
-      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730616070/bh5pqnyayotoxprcoafs.jpg", // Placeholder avatar image
-  },
+  // {
+  //   name: "Gia Hy",
+  //   school: "University of South Florida",
+  //   year: "Sophomore",
+  //   major: "Computer Science",
+  //   offers: [
+  //     "Meta - Software Engineer Intern",
+  //     "Microsoft - Software Engineer Intern",
+  //   ],
+  //   avatar:
+  //     "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730616070/bh5pqnyayotoxprcoafs.jpg", // Placeholder avatar image
+  // },
   {
     name: "Trương Khánh Hưng",
     school: "University of South Florida",

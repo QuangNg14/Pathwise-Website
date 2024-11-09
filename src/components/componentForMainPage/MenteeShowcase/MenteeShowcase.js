@@ -21,12 +21,19 @@ const mentors = [
     image:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/mzb59fgv7xsx2kvnkpyp.jpg", // Placeholder avatar image
   },
+  // {
+  //   name: "Gia Hy",
+  //   image:
+  //     "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730616070/bh5pqnyayotoxprcoafs.jpg",
+  //   university: "University of South Florida",
+  //   offers: "Meta, Microsoft",
+  // },
   {
-    name: "Gia Hy",
+    name: "Phạm Thục Quyên",
+    university: "Washington and Lee University",
+    offers: "Bank of America",
     image:
-      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730616070/bh5pqnyayotoxprcoafs.jpg",
-    university: "University of South Florida",
-    offers: "Meta, Microsoft",
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/aj9loljr04mndd17yxxr.jpg", // Placeholder avatar image
   },
   {
     name: "Trương Khánh Hưng",
