@@ -1,18 +1,17 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import rehypeRaw from "rehype-raw"; // Import rehypeRaw
+import rehypeRaw from "rehype-raw";
 import "./IndividualBlogPost.css";
 
-export default function IndividualBlogPost({ content, id }) {
+export default function IndividualBlogPost({ content }) {
   return (
     <div className="individual-blog-layout">
       <div className="content-container">
-        <h1 className="blog-title">{id.replace("-", " ").toUpperCase()}</h1>
         <ReactMarkdown
           className="blog-content"
           remarkPlugins={[remarkGfm]}
-          rehypePlugins={[rehypeRaw]} // Enable rehypeRaw
+          rehypePlugins={[rehypeRaw]}
         >
           {content}
         </ReactMarkdown>
@@ -21,10 +20,19 @@ export default function IndividualBlogPost({ content, id }) {
         <h5>Popular Posts</h5>
         <ul>
           <li>
-            <a href="#">Post 1</a>
+            <a href="#">Is Pathrise Worth It?</a>
           </li>
           <li>
-            <a href="#">Post 2</a>
+            <a href="#">A Review Of We Work Remotely To Find Remote Jobs</a>
+          </li>
+          <li>
+            <a href="#">What To Include In A Tech Resume</a>
+          </li>
+          <li>
+            <a href="#">Best Practices for Creating a Tech Resume</a>
+          </li>
+          <li>
+            <a href="#">A Review Of Bootcamp Digital</a>
           </li>
         </ul>
       </aside>

@@ -9,7 +9,7 @@ import { useState } from "react";
 // Sample blog post data
 const blogPosts = [
   {
-    id: "1",
+    id: "resume",
     title: "6 Best Practices for Creating the Ultimate Tech Resume",
     date: "November 14, 2023",
     excerpt: "Improve your tech resume with these tips.",

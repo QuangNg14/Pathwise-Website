@@ -1,73 +1,87 @@
 /* IndividualBlogPost.css */
 
 .individual-blog-layout {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-container {
+  flex: 1 1 70%;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+}
+
+.blog-content {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3 {
+  margin-top: 1.5em;
+  font-weight: bold;
+  color: #444;
+}
+
+.blog-content p {
+  margin-bottom: 1em;
+}
+
+.blog-content ul {
+  list-style-type: disc;
+  margin-left: 1em;
+}
+
+.sidebar {
+  flex: 1 1 25%;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  color: #666;
+}
+
+.sidebar h5 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 0.9rem;
+}
+
+.sidebar li {
+  margin-bottom: 8px;
+}
+
+.sidebar li a {
+  color: #888;
+  text-decoration: none;
+}
+
+.sidebar li a:hover {
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .individual-blog-layout {
+    flex-direction: column;
     padding: 20px;
   }
-  
-  .content-container {
-    flex: 1 1 60%;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
-  
-  .blog-title {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-  }
-  
-  .blog-content {
-    font-size: 1.1rem;
-    line-height: 1.8;
-  }
-  
-  .blog-content h1,
-  .blog-content h2,
-  .blog-content h3 {
-    margin-top: 1.5em;
-    font-weight: bold;
-  }
-  
-  .blog-content p {
-    margin-bottom: 1em;
-  }
-  
-  .blog-content ul {
-    list-style-type: disc;
-    margin-left: 1em;
-  }
-  
+
+  .content-container,
   .sidebar {
-    flex: 1 1 30%;
-    padding: 20px;
-    margin-left: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
+    width: 100%;
+    margin: 0 0 20px 0;
   }
-  
-  .sidebar ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  
-  .sidebar li {
-    margin-bottom: 10px;
-  }
-  
-  @media (max-width: 768px) {
-    .individual-blog-layout {
-      flex-direction: column;
-    }
-  
-    .content-container,
-    .sidebar {
-      width: 100%;
-      margin: 0;
-    }
-  }
-  
+}
