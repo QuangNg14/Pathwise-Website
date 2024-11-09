@@ -21,7 +21,7 @@ const blogPosts = [
     excerpt: "Top sites to find your dream tech job.",
   },
   {
-    id: "3",
+    id: "techlayoff",
     title: "Should you ask for a raise or look for a new job?",
     date: "October 11, 2024",
     excerpt: "Advice on career advancement decisions.",

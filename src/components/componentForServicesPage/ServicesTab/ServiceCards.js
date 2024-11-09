@@ -126,7 +126,7 @@ const ServicesSection = () => {
       <div className="global-action-buttons">
         <Button
           className="custom-action-button"
-          href="https://docs.google.com/presentation/d/14pTfUPVtN8RYuKgmeKDaTrgdQ8lbT0XGkvVEZIElhto/edit?usp=sharing"
+          href="https://www.facebook.com/pathwise.techmentorship"
           target="_blank"
           rel="noopener noreferrer"
         >
