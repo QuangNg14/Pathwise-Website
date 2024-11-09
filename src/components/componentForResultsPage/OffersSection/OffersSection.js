@@ -32,7 +32,7 @@ const offersData = [
   {
     name: "Trương Khánh Hưng",
     school: "University of South Florida",
-    year: "Sophomore",
+    year: "Junior",
     major: "Computer Science",
     offers: ["Morgan Stanley - Software Engineer Intern"],
     avatar:
@@ -74,18 +74,18 @@ const offersData = [
     avatar:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/dqo5ywsyrbu5xithxktk.jpg", // Placeholder avatar image
   },
-  {
-    name: "Nguyệt Hà",
-    school: "Soka University of America",
-    year: "Junior",
-    major: "Computer Science",
-    offers: [
-      "HubSpot - Software Engineer Intern",
-      "Lilly - Software Engineer Intern",
-    ],
-    avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660432/nmvxrcs0pmcswsjwpkcl.jpg", // Placeholder avatar image
-  },
+  // {
+  //   name: "Nguyệt Hà",
+  //   school: "Soka University of America",
+  //   year: "Junior",
+  //   major: "Computer Science",
+  //   offers: [
+  //     "HubSpot - Software Engineer Intern",
+  //     "Lilly - Software Engineer Intern",
+  //   ],
+  //   avatar:
+  //     "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660432/nmvxrcs0pmcswsjwpkcl.jpg", // Placeholder avatar image
+  // },
 ];
 
 const OffersSection = () => {

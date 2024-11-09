@@ -17,7 +17,7 @@ const mentors = [
   {
     name: "Nguyễn Thu Huệ",
     university: "DePauw University",
-    offers: "Bank of America - Software Engineer Intern",
+    offers: "Bank of America",
     image:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/mzb59fgv7xsx2kvnkpyp.jpg", // Placeholder avatar image
   },
