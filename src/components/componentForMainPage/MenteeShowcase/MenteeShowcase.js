@@ -7,12 +7,19 @@ const { Title, Text } = Typography;
 const { Meta } = Card;
 
 const mentors = [
+  // {
+  //   name: "Hoàng Quỳnh Hương",
+  //   image:
+  //     "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730615998/wzq64kqpmmkkdsypdf1f.jpg",
+  //   university: "New York University",
+  //   offers: "Meta, Paypal",
+  // },
   {
-    name: "Hoàng Quỳnh Hương",
+    name: "Nguyễn Thu Huệ",
+    university: "DePauw University",
+    offers: "Bank of America - Software Engineer Intern",
     image:
-      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730615998/wzq64kqpmmkkdsypdf1f.jpg",
-    university: "New York University",
-    offers: "Meta, Paypal",
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/mzb59fgv7xsx2kvnkpyp.jpg", // Placeholder avatar image
   },
   {
     name: "Gia Hy",
