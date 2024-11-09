@@ -1,36 +1,24 @@
-// components/componentForBlogPage/IndividualBlogPost/IndividualBlogPost.js
-
 import React from "react";
-import { Typography, Layout } from "antd";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw"; // Import rehypeRaw
 import "./IndividualBlogPost.css";
 
-const { Title, Paragraph } = Typography;
-
 export default function IndividualBlogPost({ content, id }) {
-  console.log(content);
   return (
-    <Layout className="individual-blog-layout">
+    <div className="individual-blog-layout">
       <div className="content-container">
-        <Title level={1} className="blog-title">
-          {id.replace("-", " ").toUpperCase()}
-        </Title>
+        <h1 className="blog-title">{id.replace("-", " ").toUpperCase()}</h1>
         <ReactMarkdown
           className="blog-content"
           remarkPlugins={[remarkGfm]}
-          components={{
-            h1: ({ node, ...props }) => <Title level={1} {...props} />,
-            h2: ({ node, ...props }) => <Title level={2} {...props} />,
-            h3: ({ node, ...props }) => <Title level={3} {...props} />,
-            p: ({ node, ...props }) => <Paragraph {...props} />,
-          }}
+          rehypePlugins={[rehypeRaw]} // Enable rehypeRaw
         >
           {content}
         </ReactMarkdown>
       </div>
       <aside className="sidebar">
-        <Title level={5}>Popular Posts</Title>
+        <h5>Popular Posts</h5>
         <ul>
           <li>
             <a href="#">Post 1</a>
@@ -40,6 +28,6 @@ export default function IndividualBlogPost({ content, id }) {
           </li>
         </ul>
       </aside>
-    </Layout>
+    </div>
   );
 }
