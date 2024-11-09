@@ -12,7 +12,7 @@ const mentors = [
     image:
       "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730615998/wzq64kqpmmkkdsypdf1f.jpg",
     university: "New York University",
-    offers: "Paypal",
+    offers: "Meta, Paypal",
   },
   {
     name: "Gia Hy",

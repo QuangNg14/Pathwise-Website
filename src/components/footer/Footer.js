@@ -8,10 +8,12 @@ import {
   LinkedinOutlined,
 } from "@ant-design/icons";
 import "./Footer.css";
+import { useRouter } from "next/navigation";
 
 const { Title } = Typography;
 
 const FooterComponent = () => {
+  const router = useRouter();
   return (
     <div className="footer">
       <div className="footer-container">
@@ -66,18 +68,18 @@ const FooterComponent = () => {
             >
               Information
             </Title>
-            <Link href="#" className="footer-link">
+            <a className="footer-link" onClick={() => router.push("/results")}>
               Outcomes Report
-            </Link>
-            <Link href="#" className="footer-link">
+            </a>
+            <a className="footer-link" onClick={() => router.push("/results")}>
               Fellow Stories
-            </Link>
-            <Link href="#" className="footer-link">
+            </a>
+            <a className="footer-link" onClick={() => router.push("/about")}>
               Our Mentors
-            </Link>
-            <Link href="#" className="footer-link">
+            </a>
+            <a className="footer-link" onClick={() => router.push("/")}>
               FAQ
-            </Link>
+            </a>
           </Col>
 
           {/* Company Links */}
@@ -89,12 +91,12 @@ const FooterComponent = () => {
             >
               Company
             </Title>
-            <Link href="#" className="footer-link">
+            <a className="footer-link" onClick={() => router.push("/about")}>
               About Us
-            </Link>
-            <Link href="#" className="footer-link">
+            </a>
+            <a className="footer-link" onClick={() => router.push("/contact")}>
               Contact Us
-            </Link>
+            </a>
           </Col>
 
           {/* Resource Links */}
@@ -108,9 +110,6 @@ const FooterComponent = () => {
             </Title>
             <Link href="#" className="footer-link">
               Blog
-            </Link>
-            <Link href="#" className="footer-link">
-              Events
             </Link>
             <Link href="#" className="footer-link">
               Privacy Policy
@@ -129,18 +128,15 @@ const FooterComponent = () => {
             >
               Industry Tracks
             </Title>
-            <Link href="#" className="footer-link">
+            <a className="footer-link" onClick={() => router.push("/services")}>
               Software Engineering
-            </Link>
-            <Link href="#" className="footer-link">
-              Consulting
-            </Link>
-            <Link href="#" className="footer-link">
-              Investment Banking
-            </Link>
-            <Link href="#" className="footer-link">
+            </a>
+            <a className="footer-link" onClick={() => router.push("/services")}>
               Data
-            </Link>
+            </a>
+            <a className="footer-link" onClick={() => router.push("/services")}>
+              Investment Banking
+            </a>
           </Col>
         </Row>
 

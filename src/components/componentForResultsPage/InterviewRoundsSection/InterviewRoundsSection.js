@@ -7,7 +7,7 @@ import { useState } from "react";
 const { Title } = Typography;
 
 const interviewData = [
-  { company: "Joby Aviation", FirstRound: 0, VirtualOnsite: 0, FinalRound: 1 },
+  // { company: "Joby Aviation", FirstRound: 0, VirtualOnsite: 0, FinalRound: 1 },
   { company: "Salesforce", FirstRound: 0, VirtualOnsite: 0, FinalRound: 1 },
   { company: "Duolingo", FirstRound: 1, VirtualOnsite: 0, FinalRound: 1 },
   { company: "Robinhood", FirstRound: 2, VirtualOnsite: 0, FinalRound: 3 },
@@ -21,7 +21,7 @@ const interviewData = [
   //   { company: "Rippling", FirstRound: 1, VirtualOnsite: 0, FinalRound: 0 },
   { company: "Microsoft", FirstRound: 0, VirtualOnsite: 0, FinalRound: 4 },
   { company: "Palantir", FirstRound: 5, VirtualOnsite: 1, FinalRound: 1 },
-  { company: "Amazon", FirstRound: 0, VirtualOnsite: 0, FinalRound: 1 },
+  { company: "Amazon", FirstRound: 0, VirtualOnsite: 0, FinalRound: 2 },
   { company: "Goldman Sachs", FirstRound: 2, VirtualOnsite: 0, FinalRound: 1 },
   { company: "Meta", FirstRound: 1, VirtualOnsite: 0, FinalRound: 6 },
   { company: "Apple", FirstRound: 2, VirtualOnsite: 0, FinalRound: 0 },
@@ -38,7 +38,7 @@ const interviewData = [
   { company: "Paypal", FirstRound: 1, VirtualOnsite: 0, FinalRound: 1 },
   { company: "SIG", FirstRound: 3, VirtualOnsite: 0, FinalRound: 0 },
   { company: "Plaid", FirstRound: 2, VirtualOnsite: 0, FinalRound: 2 },
-  { company: "Dell", FirstRound: 1, VirtualOnsite: 0, FinalRound: 1 },
+  { company: "Dell", FirstRound: 1, VirtualOnsite: 0, FinalRound: 2 },
   //   { company: "Alcon", FirstRound: 0, VirtualOnsite: 0, FinalRound: 1 },
   { company: "Scale AI", FirstRound: 1, VirtualOnsite: 0, FinalRound: 0 },
   //   { company: "Liberty Mutual", FirstRound: 1, VirtualOnsite: 0, FinalRound: 0 },
