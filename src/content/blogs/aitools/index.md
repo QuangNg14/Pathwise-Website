@@ -1,3 +1,5 @@
+<img src="/images/aitools.jpg" alt="Chatgpt vs Gemini" width="100%" height="auto">
+
 # CHATGPT 4.0 VS GEMINI ADVANCED: ĐÂU LÀ LỰA CHỌN HOÀN HẢO CHO BẠN?
 
 ### (Phần 1)

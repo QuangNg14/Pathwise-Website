@@ -1,3 +1,5 @@
+<img src="/images/getinternship.jpg" alt="Get Internship" width="100%" height="auto">
+
 # Bí kíp "cưa đổ" internship mùa hè cho sinh viên năm nhất, năm hai
 
 ### Phần 1: Chuẩn bị kỹ lưỡng - Nền tảng quan trọng!

@@ -1,3 +1,5 @@
+<img src="/images/tech_layoffs.jpg" alt="Tech Layoffs" width="100%" height="auto">
+
 # 2023 - Năm đen tối của ngành công nghệ tại Mỹ
 
 ---
