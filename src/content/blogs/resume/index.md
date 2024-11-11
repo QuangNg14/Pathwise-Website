@@ -32,13 +32,11 @@ Nên đặt mục tiêu để CV của bạn khớp từ 45% đến 65% với m�
 
 Hãy cân nhắc phân chia phần kỹ năng của bạn thành các danh mục khác nhau, đặc biệt đối với các phần mềm như thư viện, framework, cơ sở dữ liệu hoặc ngôn ngữ lập trình. Cách này giúp hệ thống ATS dễ dàng hiểu độ sâu rộng kiến thức của bạn mà cũng giúp người đọc dễ dàng hiểu hơn.
 
-Tuy nhiên, đừng nhồi nhét từ khóa. “Hãy nghĩ về CV của bạn như một cuộc trò chuyện - bạn muốn hệ thống ATS và người đọc nghe thấy giọng nói của bạn trong CV,” Jonny gợi ý. “Giọng nói của bạn có thể nổi bật hơn bằng cách tăng số lượng từ khóa, nhưng cũng có thể giảm đi độ 'nhiễu' bằng cách loại bỏ các dự án hoặc kinh nghiệm không liên quan.”
-
 ## 3. Tập Trung Vào Tác Động và Số Liệu Cụ Thể
 
 Lưu ý quan trọng: Các ứng viên khác có thể có kinh nghiệm và kỹ năng tương tự, nếu không muốn nói là giống nhau, trong lịch sử làm việc của họ. Việc định lượng thành tích của bạn sẽ giúp bạn nổi bật và làm rõ giá trị mà bạn mang lại cho công ty.
 
-Jonny chia sẻ thêm: “Cuối cùng, điều mà mọi người quan tâm nhất là bạn có thể hoàn thành công việc hay không? Bạn đã đạt được kết quả gì? Bạn có thể chứng minh điều đó cho công ty của tôi không?” Điều này cho phép nhà tuyển dụng thấy rõ không chỉ những gì bạn đã làm mà còn là tác động của những gì bạn đã làm.
+Cuối cùng, điều mà mọi người quan tâm nhất là bạn có thể hoàn thành công việc hay không? Bạn đã đạt được kết quả gì? Bạn có thể chứng minh điều đó cho công ty của tôi không? Điều này cho phép nhà tuyển dụng thấy rõ không chỉ những gì bạn đã làm mà còn là tác động của những gì bạn đã làm.
 
 Một công thức đơn giản để nhớ là “Hoàn thành X để đạt Y, được đo bằng Z.” Chẳng hạn, thay vì nói “cải thiện hiệu suất website,” bạn có thể nói “tăng thời gian tải trang web lên 30%,” giúp tạo ra một hình ảnh rõ ràng hơn về tác động của bạn.
 
@@ -61,8 +59,6 @@ Lưu ý rằng việc đề cập đến “kỹ năng làm việc nhóm” quá
 Phần tiêu đề và tóm tắt nghề nghiệp thường là những gì nhà tuyển dụng thấy đầu tiên khi nhìn vào CV. Bằng cách đưa vào các từ khóa và thông tin liên quan, bạn có thể ngay lập tức cho thấy mình là một ứng viên phù hợp.
 
 Cách đơn giản nhất để áp dụng điều này là thêm một tiêu đề cụ thể cho vai trò bạn nhắm tới, ví dụ “Lập Trình Viên Web” hoặc “Nhà Khoa Học Dữ Liệu.”
-
-Jonny gợi ý một công thức đơn giản - nêu bốn điều trong bốn câu:
 
 - **Bạn là ai**: Nêu ngắn gọn chức danh và một mô tả về trình độ của bạn, như “Lập trình viên full-stack với 10+ năm kinh nghiệm phát triển ứng dụng web sử dụng HTML, CSS, JavaScript và React.”
 - **Bằng chứng về năng lực của bạn**: Mô tả dự án gần đây nhất của bạn, kèm theo đường link đến hồ sơ hoặc GitHub nếu có.
