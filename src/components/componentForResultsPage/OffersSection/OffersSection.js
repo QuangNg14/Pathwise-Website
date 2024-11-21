@@ -5,30 +5,61 @@ import "./OffersSection.css";
 const { Title, Text } = Typography;
 
 const offersData = [
-  // {
-  //   name: "Hoàng Quỳnh Hương",
-  //   school: "New York University",
-  //   year: "Junior",
-  //   major: "Computer Science",
-  //   offers: [
-  //     "Meta - Software Engineer Intern",
-  //     "Paypal - Software Engineer Intern",
-  //   ],
-  //   avatar:
-  //     "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730615998/wzq64kqpmmkkdsypdf1f.jpg", // Placeholder avatar image
-  // },
-  // {
-  //   name: "Gia Hy",
-  //   school: "University of South Florida",
-  //   year: "Sophomore",
-  //   major: "Computer Science",
-  //   offers: [
-  //     "Meta - Software Engineer Intern",
-  //     "Microsoft - Software Engineer Intern",
-  //   ],
-  //   avatar:
-  //     "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730616070/bh5pqnyayotoxprcoafs.jpg", // Placeholder avatar image
-  // },
+  {
+    name: "Hoàng Quỳnh Hương",
+    school: "New York University",
+    year: "Junior",
+    major: "Computer Science",
+    offers: [
+      "Meta - Software Engineer Intern",
+      "Paypal - Software Engineer Intern",
+      "Ebay - Software Engineer Intern",
+    ],
+    avatar:
+      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730615998/wzq64kqpmmkkdsypdf1f.jpg", // Placeholder avatar image
+  },
+  {
+    name: "Gia Hy",
+    school: "University of South Florida",
+    year: "Sophomore",
+    major: "Computer Science",
+    offers: [
+      "Meta - Software Engineer Intern",
+      "Microsoft - Software Engineer Intern",
+    ],
+    avatar:
+      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730616070/bh5pqnyayotoxprcoafs.jpg", // Placeholder avatar image
+  },
+  {
+    name: "Doãn Hoàng",
+    school: "University of Washington",
+    year: "Junior",
+    major: "Computer Science",
+    offers: ["Meta - Software Engineer Intern"],
+    avatar:
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1732175391/h5mjcbs57zg3lwwc4jyx.jpg", // Placeholder avatar image
+  },
+  {
+    name: "Cao Phương An",
+    school: "Texas Christian University",
+    year: "Sophomore",
+    major: "Data Science",
+    offers: ["Alcon - Data Science Intern"],
+    avatar:
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1732175391/shehrfpv16a1wqairtrs.jpg", // Placeholder avatar image
+  },
+  {
+    name: "Minh Thiều",
+    school: "University of South Florida",
+    year: "Junior",
+    major: "Statistics",
+    offers: [
+      "Ebay - Data Science Intern",
+      "Microsoft - Financial Analyst Intern",
+    ],
+    avatar:
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1732175391/ce0qiw285pc5uf7igsbu.jpg", // Placeholder avatar image
+  },
   {
     name: "Trương Khánh Hưng",
     school: "University of South Florida",
@@ -74,18 +105,27 @@ const offersData = [
     avatar:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/dqo5ywsyrbu5xithxktk.jpg", // Placeholder avatar image
   },
-  // {
-  //   name: "Nguyệt Hà",
-  //   school: "Soka University of America",
-  //   year: "Junior",
-  //   major: "Computer Science",
-  //   offers: [
-  //     "HubSpot - Software Engineer Intern",
-  //     "Lilly - Software Engineer Intern",
-  //   ],
-  //   avatar:
-  //     "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660432/nmvxrcs0pmcswsjwpkcl.jpg", // Placeholder avatar image
-  // },
+  {
+    name: "Minh Đỗ",
+    school: "DePauw University",
+    year: "Senior",
+    major: "Actuarial Science, Computer Science",
+    offers: [
+      "UnitedHealth Group - Actuarial Analyst Intern",
+      "Kuvare Holdings - Actuarial Analyst Intern",
+    ],
+    avatar:
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1732175391/rqnz7pcokxynvmcmzkq1.jpg", // Placeholder avatar image
+  },
+  {
+    name: "Hà Nguyễn",
+    school: "",
+    year: "Junior",
+    major: "Computer Science",
+    offers: ["HubSpot - Software Engineer Intern"],
+    // avatar:
+    //   "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660432/nmvxrcs0pmcswsjwpkcl.jpg", // Placeholder avatar image
+  },
 ];
 
 const OffersSection = () => {
