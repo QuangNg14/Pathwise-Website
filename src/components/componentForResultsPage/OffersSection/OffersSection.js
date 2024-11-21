@@ -117,15 +117,15 @@ const offersData = [
     avatar:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1732175391/rqnz7pcokxynvmcmzkq1.jpg", // Placeholder avatar image
   },
-  {
-    name: "Hà Nguyễn",
-    school: "",
-    year: "Junior",
-    major: "Computer Science",
-    offers: ["HubSpot - Software Engineer Intern"],
-    // avatar:
-    //   "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660432/nmvxrcs0pmcswsjwpkcl.jpg", // Placeholder avatar image
-  },
+  // {
+  //   name: "Hà Nguyễn",
+  //   school: "",
+  //   year: "Junior",
+  //   major: "Computer Science",
+  //   offers: ["HubSpot - Software Engineer Intern"],
+  //   // avatar:
+  //   //   "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660432/nmvxrcs0pmcswsjwpkcl.jpg", // Placeholder avatar image
+  // },
 ];
 
 const OffersSection = () => {
