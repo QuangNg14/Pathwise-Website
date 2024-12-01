@@ -37,7 +37,7 @@ const LandYourDreamJob = () => {
           if (entry.target === researchLabRef.current) {
             animateCount(setResearchLabCount, 10);
           } else if (entry.target === dellInternshipRef.current) {
-            animateCount(setDellInternshipCount, 9);
+            animateCount(setDellInternshipCount, 18);
           } else if (entry.target === dowJonesInternshipRef.current) {
             animateCount(setDowJonesInternshipCount, 12);
           }

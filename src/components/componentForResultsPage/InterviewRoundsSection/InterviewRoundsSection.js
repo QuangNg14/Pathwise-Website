@@ -101,7 +101,6 @@ const interviewData = [
 const InterviewRoundsSection = () => {
   const chartRef = useRef();
   const tooltipRef = useRef();
-  const [selectedCompany, setSelectedCompany] = useState(null);
 
   useEffect(() => {
     const updateChartDimensions = () => {
@@ -113,7 +112,7 @@ const InterviewRoundsSection = () => {
 
     const renderChart = () => {
       const { width, height } = updateChartDimensions();
-      const margin = { top: 20, right: 20, bottom: 50, left: 150 };
+      const margin = { top: 50, right: 30, bottom: 50, left: 150 };
       const adjustedWidth = width - margin.left - margin.right;
       const adjustedHeight = height - margin.top - margin.bottom;
 
@@ -203,6 +202,37 @@ const InterviewRoundsSection = () => {
         .on("mouseout", function () {
           tooltip.style("opacity", 0);
         });
+
+      // Add legend
+      const legend = svg
+        .append("g")
+        .attr(
+          "transform",
+          `translate(${adjustedWidth - 150},${-margin.top + 10})`
+        );
+
+      const legendItems = ["FirstRound", "VirtualOnsite", "FinalRound"];
+      const legendColors = ["#4f8edb", "#ff9800", "#4caf50"];
+
+      legendItems.forEach((item, index) => {
+        const legendGroup = legend
+          .append("g")
+          .attr("transform", `translate(0, ${index * 20})`);
+
+        legendGroup
+          .append("rect")
+          .attr("width", 15)
+          .attr("height", 15)
+          .attr("fill", legendColors[index]);
+
+        legendGroup
+          .append("text")
+          .attr("x", 20)
+          .attr("y", 12)
+          .text(item)
+          .style("font-size", "12px")
+          .style("fill", "white");
+      });
     };
 
     renderChart();

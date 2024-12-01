@@ -7,13 +7,13 @@ const { Title, Text } = Typography;
 const { Meta } = Card;
 
 const mentors = [
-  // {
-  //   name: "Hoàng Quỳnh Hương",
-  //   image:
-  //     "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730615998/wzq64kqpmmkkdsypdf1f.jpg",
-  //   university: "New York University",
-  //   offers: "Meta, Paypal",
-  // },
+  {
+    name: "Hoàng Quỳnh Hương",
+    image:
+      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730615998/wzq64kqpmmkkdsypdf1f.jpg",
+    university: "New York University",
+    offers: "Meta, Paypal, HubSpot",
+  },
   {
     name: "Nguyễn Thu Huệ",
     university: "DePauw University",
@@ -21,26 +21,26 @@ const mentors = [
     image:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/mzb59fgv7xsx2kvnkpyp.jpg", // Placeholder avatar image
   },
-  // {
-  //   name: "Gia Hy",
-  //   image:
-  //     "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730616070/bh5pqnyayotoxprcoafs.jpg",
-  //   university: "University of South Florida",
-  //   offers: "Meta, Microsoft",
-  // },
   {
-    name: "Phạm Thục Quyên",
-    university: "Washington and Lee University",
-    offers: "Bank of America",
+    name: "Gia Hy",
     image:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/aj9loljr04mndd17yxxr.jpg", // Placeholder avatar image
+      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730616070/bh5pqnyayotoxprcoafs.jpg",
+    university: "University of South Florida",
+    offers: "Meta, Microsoft",
   },
+  // {
+  //   name: "Phạm Thục Quyên",
+  //   university: "Washington and Lee University",
+  //   offers: "Bank of America",
+  //   image:
+  //     "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/aj9loljr04mndd17yxxr.jpg", // Placeholder avatar image
+  // },
   {
     name: "Trương Khánh Hưng",
     image:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730773203/jafp7uywccmrdsibqcus.jpg",
     university: "University of South Florida",
-    offers: "Morgan Stanley",
+    offers: "Adobe, Morgan Stanley",
   },
   {
     name: "Bảo Nhi",
