@@ -37,7 +37,7 @@ const LandYourDreamJob = () => {
           if (entry.target === researchLabRef.current) {
             animateCount(setResearchLabCount, 10);
           } else if (entry.target === dellInternshipRef.current) {
-            animateCount(setDellInternshipCount, 18);
+            animateCount(setDellInternshipCount, 20);
           } else if (entry.target === dowJonesInternshipRef.current) {
             animateCount(setDowJonesInternshipCount, 12);
           }
@@ -62,8 +62,8 @@ const LandYourDreamJob = () => {
       <Text className="main-title">Land Your Dream Offers</Text>
       <div className="small-container">
         <Text className="description">
-          Chúng mình đã giúp <span className="primary-color">30+ Mentees</span>{" "}
-          đạt được nhiều{" "}
+          Chỉ trong năm đầu tiên khởi động chương trình 2024, chúng mình đã giúp{" "}
+          <span className="primary-color">30+ Mentees</span> đạt được nhiều{" "}
           <span className="primary-color">interviews và job offer</span> từ các
           công ty lớn ở Mỹ như Meta, Microsoft, Palantir, Bank of America, Dell,
           DoorDash, Stripe, Amazon, Morgan Stanley, TikTok và ở Việt Nam như
