@@ -106,6 +106,15 @@ const offersData = [
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/dqo5ywsyrbu5xithxktk.jpg", // Placeholder avatar image
   },
   {
+    name: "Mentee",
+    school: "Soka Univeristy",
+    year: "Sophomore",
+    major: "Computer Science",
+    offers: ["HubSpot - Software Engineer Intern"],
+    avatar:
+      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", // Placeholder avatar image
+  },
+  {
     name: "Minh Đỗ",
     school: "DePauw University",
     year: "Senior",
@@ -116,15 +125,6 @@ const offersData = [
     ],
     avatar:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1732175391/rqnz7pcokxynvmcmzkq1.jpg", // Placeholder avatar image
-  },
-  {
-    name: "Mentee",
-    school: "Soka Univeristy",
-    year: "Sophomore",
-    major: "Computer Science",
-    offers: ["HubSpot - Software Engineer Intern"],
-    avatar:
-      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", // Placeholder avatar image
   },
 ];
 
