@@ -31,13 +31,13 @@ const offersData = [
       "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730616070/bh5pqnyayotoxprcoafs.jpg", // Placeholder avatar image
   },
   {
-    name: "Doãn Hoàng",
+    name: "Mentee",
     school: "University of Washington",
     year: "Junior",
     major: "Computer Science",
     offers: ["Meta - Software Engineer Intern"],
     avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1732175391/h5mjcbs57zg3lwwc4jyx.jpg", // Placeholder avatar image
+      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", // Placeholder avatar image
   },
   {
     name: "Cao Phương An",
