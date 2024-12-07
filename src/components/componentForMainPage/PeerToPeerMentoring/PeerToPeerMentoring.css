@@ -42,6 +42,13 @@
   font-weight: bold;
   border-bottom: 2px solid var(--primary-color); /* Bottom border */
   padding-bottom: 2px; /* Adds some space between text and border */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+}
+
+.highlighted-outcomes:hover {
+  color: var(--secondary-color); /* Transition to secondary color on hover */
+  border-color: var(--secondary-color); /* Transition border color to secondary color on hover */
 }
 
 .buttons-container {

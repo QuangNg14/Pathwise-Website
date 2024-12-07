@@ -45,7 +45,7 @@ const mentors = [
   },
   {
     name: "Anh Ngo",
-    title: "Mentor",
+    title: "Advisor",
     company: "Investment Banking Analyst at Deutsche Bank",
     companyLogos: [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Deutsche_Bank_logo_without_wordmark.svg/2048px-Deutsche_Bank_logo_without_wordmark.svg.png",

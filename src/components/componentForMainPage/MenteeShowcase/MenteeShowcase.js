@@ -40,7 +40,7 @@ const mentors = [
     image:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730773203/jafp7uywccmrdsibqcus.jpg",
     university: "University of South Florida",
-    offers: "Adobe, Morgan Stanley",
+    offers: "Meta, Adobe, Morgan Stanley",
   },
   {
     name: "Bảo Nhi",

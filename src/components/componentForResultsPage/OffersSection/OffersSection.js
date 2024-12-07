@@ -65,7 +65,11 @@ const offersData = [
     school: "University of South Florida",
     year: "Junior",
     major: "Computer Science",
-    offers: ["Morgan Stanley - Software Engineer Intern"],
+    offers: [
+      "Adobe - Software Engineer Intern",
+      "Morgan Stanley - Software Engineer Intern",
+      "Meta - Production Engineer Intern",
+    ],
     avatar:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730773203/jafp7uywccmrdsibqcus.jpg", // Placeholder avatar image
   },
@@ -77,6 +81,15 @@ const offersData = [
     offers: ["Amazon - Business Intelligence Engineer Intern"],
     avatar:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/sqsmkahbvmgdqb1wlhrh.jpg", // Placeholder avatar image
+  },
+  {
+    name: "Hiệp Nguyễn",
+    school: "Villanova University",
+    year: "Sophomore",
+    major: "Computer Science",
+    offers: ["Dell - Data Science Intern"],
+    avatar:
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733611066/kcjglzb0hqksfrnkm7u2.jpg", // Placeholder avatar image
   },
   {
     name: "Phạm Thục Quyên",
@@ -129,6 +142,17 @@ const offersData = [
 ];
 
 const newGradOffersData = [
+  {
+    name: "Thịnh Nguyễn",
+    school: "University of Massachusetts Amherst",
+    year: "Senior",
+    major: "Computer Science",
+    offers: [
+      "Affirm - Software Engineer, Juniper Networks - Software Engineer",
+    ],
+    avatar:
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733611066/dqqyfsubaiwxmnfdchvy.jpg", // Placeholder avatar image
+  },
   {
     name: "Nguyên Trần",
     school: "Columbia University",

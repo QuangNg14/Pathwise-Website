@@ -13,7 +13,12 @@ const PeerToPeerMentoring = () => {
         <Col xs={24} md={12} lg={10} className="text-column">
           <Title level={1} className="peer-mentoring-title">
             Mentoring with Proven{" "}
-            <span className="highlighted-outcomes">Results</span>
+            <span
+              className="highlighted-outcomes"
+              onClick={() => router.push("/results")}
+            >
+              Results
+            </span>
           </Title>
           <Text className="peer-mentoring-text">
             Get targeted, affordable, and personalized 1-on-1 guidance optimized
@@ -22,9 +27,7 @@ const PeerToPeerMentoring = () => {
           <div className="buttons-container">
             <Button
               className="custom-button register-button"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSf44FrJ2powtp9MMvGfHcz8F7irZLyfjxaCkIpr-HAr0Fl4oQ/viewform?pli=1"
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={() => router.push("/form")}
             >
               Register Now
             </Button>

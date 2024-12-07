@@ -37,9 +37,9 @@ const LandYourDreamJob = () => {
           if (entry.target === researchLabRef.current) {
             animateCount(setResearchLabCount, 10);
           } else if (entry.target === dellInternshipRef.current) {
-            animateCount(setDellInternshipCount, 20);
+            animateCount(setDellInternshipCount, 22);
           } else if (entry.target === dowJonesInternshipRef.current) {
-            animateCount(setDowJonesInternshipCount, 12);
+            animateCount(setDowJonesInternshipCount, 4);
           }
         }
       });
@@ -100,9 +100,7 @@ const LandYourDreamJob = () => {
             ref={dowJonesInternshipRef}
           >
             <Text className="stat-number">{dowJonesInternshipCount}</Text>
-            <Text className="stat-description">
-              offers internship ở Việt Nam
-            </Text>
+            <Text className="stat-description">offers new grad ở Mỹ</Text>
           </Col>
         </Row>
       </div>

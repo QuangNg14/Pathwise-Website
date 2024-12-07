@@ -28,7 +28,7 @@ const MentorCarousel = ({ mentors }) => {
               fontSize: "clamp(24px, 5vw, 40px)",
             }}
           >
-            Meet your mentor
+            Meet your mentors
           </Title>
         </Col>
       </Row>
