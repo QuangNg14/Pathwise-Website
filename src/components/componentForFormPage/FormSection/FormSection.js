@@ -19,7 +19,7 @@ const ProgramInfoSection = () => (
   <div className="program-info-section">
     <Card className="program-info-card" bordered={false}>
       <Title level={3} className="program-info-title">
-        Peer-to-peer Mentorship for Intern/New Grad Jobs
+        Peer-to-peer Mentorship for Job Search
       </Title>
       <Text className="program-info-description">
         Pathwise Mentorship là một program giúp bạn tìm việc tại các công ty
