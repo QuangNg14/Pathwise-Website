@@ -214,7 +214,7 @@ const FormSection = () => {
             label="Bạn đang học tại trường nào?"
             rules={[{ required: true, message: "Please enter your school" }]}
           >
-            <Input placeholder="Harvard University" />
+            <Input placeholder="University of Pennsylvania" />
           </Form.Item>
 
           <Form.Item
