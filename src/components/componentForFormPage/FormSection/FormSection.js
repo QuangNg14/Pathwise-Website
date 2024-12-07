@@ -22,13 +22,9 @@ const ProgramInfoSection = () => (
         Peer-to-peer Mentorship for Intern/New Grad Jobs
       </Title>
       <Text className="program-info-description">
-        Pathwise Mentorship (
-        <Link href="https://www.thepathwise.org/" target="_blank">
-          https://www.thepathwise.org/
-        </Link>
-        ) là một program giúp bạn tìm việc tại các công ty hàng đầu thế giới với
-        những mentors có kinh nghiệm làm việc ở các tập đoàn lớn tại Mỹ như Big
-        Tech, MBB, Big 4 và Ngân hàng lớn.
+        Pathwise Mentorship là một program giúp bạn tìm việc tại các công ty
+        hàng đầu thế giới với những mentors có kinh nghiệm làm việc ở các tập
+        đoàn lớn tại Mỹ như Big Tech, MBB, Big 4 và Ngân hàng lớn.
       </Text>
       <Text className="program-info-description">
         Được thành lập từ cuối năm 2023, chúng mình đã giúp 20+ bạn mentee đạt
