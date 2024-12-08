@@ -261,7 +261,7 @@ const FormSection = () => {
 
           <Form.Item
             name="resume"
-            label="Bạn hãy tải lên Resume mới nhất của mình (PDF hoặc Word)"
+            label="Bạn hãy tải lên Resume mới nhất của mình (định dạng PDF)"
             rules={[{ required: true, message: "Please upload your resume" }]}
           >
             <Upload
