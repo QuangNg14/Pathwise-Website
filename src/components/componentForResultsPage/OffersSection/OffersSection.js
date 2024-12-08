@@ -148,10 +148,20 @@ const newGradOffersData = [
     year: "Senior",
     major: "Computer Science",
     offers: [
-      "Affirm - Software Engineer, Juniper Networks - Software Engineer",
+      "Affirm - Software Engineer",
+      "Juniper Networks - Software Engineer",
     ],
     avatar:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733611066/dqqyfsubaiwxmnfdchvy.jpg", // Placeholder avatar image
+  },
+  {
+    name: "Linda Nguyễn",
+    school: "University of South Florida",
+    year: "Senior",
+    major: "Computer Science",
+    offers: ["Microsoft - Software Engineer"],
+    avatar:
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733618484/adkwacjsdezx0zy5ksmq.jpg", // Placeholder avatar image
   },
   {
     name: "Nguyên Trần",
