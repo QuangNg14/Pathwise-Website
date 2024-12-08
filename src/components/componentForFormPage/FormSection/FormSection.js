@@ -254,14 +254,14 @@ const FormSection = () => {
 
           <Form.Item
             name="helpDescription"
-            label="(Optional) Bạn hãy trả lời câu hỏi bằng tiếng anh: What do you need help with and what do you want to gain from this program?"
+            label="(Optional) Bạn hãy trả lời câu hỏi bằng tiếng Anh: What do you need help with and what do you want to gain from this program?"
           >
             <TextArea rows={4} placeholder="Be as specific as you can" />
           </Form.Item>
 
           <Form.Item
             name="resume"
-            label="Bạn hãy upload most updated resume của mình"
+            label="Bạn hãy tải lên Resume mới nhất của mình (PDF hoặc Word)"
             rules={[{ required: true, message: "Please upload your resume" }]}
           >
             <Upload
