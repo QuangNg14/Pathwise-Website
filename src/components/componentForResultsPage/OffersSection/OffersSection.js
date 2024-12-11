@@ -40,6 +40,15 @@ const offersData = [
       "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", // Placeholder avatar image
   },
   {
+    name: "Đặng Thanh Vân",
+    school: "Vanderbilt University",
+    year: "Sophomore",
+    major: "Computer Science",
+    offers: ["Google STEP - Software Engineer Intern"],
+    avatar:
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733952244/oueigloxkovcns1mhnpd.jpg", // Placeholder avatar image
+  },
+  {
     name: "Cao Phương An",
     school: "Texas Christian University",
     year: "Sophomore",
