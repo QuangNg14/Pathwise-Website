@@ -110,6 +110,18 @@ const offersData = [
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/mzb59fgv7xsx2kvnkpyp.jpg", // Placeholder avatar image
   },
   {
+    name: "Lê Hoàng Minh",
+    school: "University of California, Berkeley",
+    year: "Master",
+    major: "Statistics",
+    offers: [
+      "Bill.com - Machine Learning Engineer Intern",
+      "Autodesk - Data Engineer Intern",
+    ],
+    avatar:
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733882589/x9rziqrmc1jfpy7e6umh.jpg", // Placeholder avatar image
+  },
+  {
     name: "Hà Duy Linh",
     school: "University of South Florida",
     year: "Sophomore",
