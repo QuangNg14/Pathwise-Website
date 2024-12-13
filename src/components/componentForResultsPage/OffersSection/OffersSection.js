@@ -135,9 +135,33 @@ const offersData = [
     school: "University of South Florida",
     year: "Sophomore",
     major: "Computer Science",
-    offers: ["Actualization AI - Software Engineer Intern"],
+    offers: [
+      "Palantir - Software Engineer Intern",
+      "Ryco.io - Software Engineer Intern",
+    ],
     avatar:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/dqo5ywsyrbu5xithxktk.jpg", // Placeholder avatar image
+  },
+  {
+    name: "Phạm Anh Dũng",
+    school: "University of South Florida",
+    year: "Sophomore",
+    major: "Computer Science",
+    offers: ["Actualization.ai - Software Engineer Intern"],
+    avatar:
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734133665/wo8x573yzafpbbpiucwc.jpg", // Placeholder avatar image
+  },
+  {
+    name: "Tony Nguyễn",
+    school: "University of South Florida",
+    year: "Sophomore",
+    major: "Computer Science",
+    offers: [
+      "Microsoft - Software Engineer Intern",
+      "Dow Jones - Software Engineer Intern",
+    ],
+    avatar:
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734133661/mhep5r2ecn798dnmswcf.jpg", // Placeholder avatar image
   },
   {
     name: "Mentee",
