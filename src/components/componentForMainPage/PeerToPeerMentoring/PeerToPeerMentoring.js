@@ -27,7 +27,7 @@ const PeerToPeerMentoring = () => {
           <div className="buttons-container">
             <Button
               className="custom-button register-button"
-              onClick={() => router.push("/form")}
+              onClick={() => router.push("/apply")}
             >
               Register Now
             </Button>

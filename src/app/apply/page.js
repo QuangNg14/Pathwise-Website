@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import { Layout } from "antd";
 import HeaderComponent from "@/components/header/header";
 import FooterComponent from "@/components/footer/Footer";
-import FormSection from "@/components/componentForFormPage/FormSection/FormSection";
+import ApplySection from "@/components/componentForApplyPage/ApplySection/ApplySection";
 
-const FormPage = () => {
-  const [current, setCurrent] = useState("form");
+const ApplyPage = () => {
+  const [current, setCurrent] = useState("apply");
 
   const handleClick = (e) => {
     setCurrent(e.key);
@@ -15,10 +15,10 @@ const FormPage = () => {
   return (
     <Layout>
       <HeaderComponent current={current} handleClick={handleClick} />
-      <FormSection />
+      <ApplySection />
       <FooterComponent />
     </Layout>
   );
 };
 
-export default FormPage;
+export default ApplyPage;

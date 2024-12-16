@@ -61,11 +61,10 @@ const HeaderComponent = ({ current, handleClick }) => {
             }}
           >
             {[
-              "home",
               "activities",
               "services",
               "results",
-              "form",
+              "apply",
               "about",
               "blog",
               "contact",
@@ -120,11 +119,10 @@ const HeaderComponent = ({ current, handleClick }) => {
           style={{ borderRight: "none" }}
         >
           {[
-            "home",
             "activities",
             "services",
             "results",
-            "form",
+            "apply",
             "about",
             "blog",
             "contact",

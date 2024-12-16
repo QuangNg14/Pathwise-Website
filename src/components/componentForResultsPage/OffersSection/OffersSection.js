@@ -16,7 +16,7 @@ const offersData = [
       "HubSpot - Software Engineer Intern",
     ],
     avatar:
-      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730615998/wzq64kqpmmkkdsypdf1f.jpg", // Placeholder avatar image
+      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730615998/wzq64kqpmmkkdsypdf1f.jpg",
   },
   {
     name: "Gia Hy",
@@ -28,7 +28,7 @@ const offersData = [
       "Microsoft - Software Engineer Intern",
     ],
     avatar:
-      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730616070/bh5pqnyayotoxprcoafs.jpg", // Placeholder avatar image
+      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730616070/bh5pqnyayotoxprcoafs.jpg",
   },
   {
     name: "Mentee",
@@ -37,7 +37,7 @@ const offersData = [
     major: "Computer Science",
     offers: ["Meta - Software Engineer Intern"],
     avatar:
-      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", // Placeholder avatar image
+      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
   },
   {
     name: "Đặng Thanh Vân",
@@ -46,7 +46,7 @@ const offersData = [
     major: "Computer Science",
     offers: ["Google STEP - Software Engineer Intern"],
     avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733952244/oueigloxkovcns1mhnpd.jpg", // Placeholder avatar image
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733952244/oueigloxkovcns1mhnpd.jpg",
   },
   {
     name: "Cao Phương An",
@@ -55,7 +55,7 @@ const offersData = [
     major: "Data Science",
     offers: ["Alcon - Data Science Intern"],
     avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1732175391/shehrfpv16a1wqairtrs.jpg", // Placeholder avatar image
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1732175391/shehrfpv16a1wqairtrs.jpg",
   },
   {
     name: "Minh Thiều",
@@ -67,7 +67,7 @@ const offersData = [
       "Microsoft - Financial Analyst Intern",
     ],
     avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1732175391/ce0qiw285pc5uf7igsbu.jpg", // Placeholder avatar image
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1732175391/ce0qiw285pc5uf7igsbu.jpg",
   },
   {
     name: "Trương Khánh Hưng",
@@ -78,9 +78,10 @@ const offersData = [
       "Adobe - Software Engineer Intern",
       "Morgan Stanley - Software Engineer Intern",
       "Meta - Production Engineer Intern",
+      "Microsoft - Software Engineer Intern",
     ],
     avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730773203/jafp7uywccmrdsibqcus.jpg", // Placeholder avatar image
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730773203/jafp7uywccmrdsibqcus.jpg",
   },
   {
     name: "Bảo Nhi",
@@ -89,7 +90,7 @@ const offersData = [
     major: "Computer Science",
     offers: ["Amazon - Business Intelligence Engineer Intern"],
     avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/sqsmkahbvmgdqb1wlhrh.jpg", // Placeholder avatar image
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/sqsmkahbvmgdqb1wlhrh.jpg",
   },
   {
     name: "Hiệp Nguyễn",
@@ -98,7 +99,7 @@ const offersData = [
     major: "Computer Science",
     offers: ["Dell - Data Science Intern"],
     avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733611066/kcjglzb0hqksfrnkm7u2.jpg", // Placeholder avatar image
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733611066/kcjglzb0hqksfrnkm7u2.jpg",
   },
   {
     name: "Phạm Thục Quyên",
@@ -107,7 +108,7 @@ const offersData = [
     major: "Computer Science",
     offers: ["Bank of America - Software Engineer Intern"],
     avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/aj9loljr04mndd17yxxr.jpg", // Placeholder avatar image
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/aj9loljr04mndd17yxxr.jpg",
   },
   {
     name: "Nguyễn Thu Huệ",
@@ -116,7 +117,7 @@ const offersData = [
     major: "Computer Science",
     offers: ["Bank of America - Software Engineer Intern"],
     avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/mzb59fgv7xsx2kvnkpyp.jpg", // Placeholder avatar image
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/mzb59fgv7xsx2kvnkpyp.jpg",
   },
   {
     name: "Lê Hoàng Minh",
@@ -128,7 +129,7 @@ const offersData = [
       "Autodesk - Data Engineer Intern",
     ],
     avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733882589/x9rziqrmc1jfpy7e6umh.jpg", // Placeholder avatar image
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733882589/x9rziqrmc1jfpy7e6umh.jpg",
   },
   {
     name: "Hà Duy Linh",
@@ -140,7 +141,7 @@ const offersData = [
       "Ryco.io - Software Engineer Intern",
     ],
     avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/dqo5ywsyrbu5xithxktk.jpg", // Placeholder avatar image
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730660431/dqo5ywsyrbu5xithxktk.jpg",
   },
   {
     name: "Phạm Anh Dũng",
@@ -149,7 +150,7 @@ const offersData = [
     major: "Computer Science",
     offers: ["Actualization.ai - Software Engineer Intern"],
     avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734133665/wo8x573yzafpbbpiucwc.jpg", // Placeholder avatar image
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734133665/wo8x573yzafpbbpiucwc.jpg",
   },
   {
     name: "Tony Nguyễn",
@@ -161,7 +162,7 @@ const offersData = [
       "Dow Jones - Software Engineer Intern",
     ],
     avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734133661/mhep5r2ecn798dnmswcf.jpg", // Placeholder avatar image
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734133661/mhep5r2ecn798dnmswcf.jpg",
   },
   {
     name: "Mentee",
@@ -170,7 +171,7 @@ const offersData = [
     major: "Computer Science",
     offers: ["HubSpot - Software Engineer Intern"],
     avatar:
-      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", // Placeholder avatar image
+      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
   },
   {
     name: "Minh Đỗ",
@@ -182,7 +183,7 @@ const offersData = [
       "Kuvare Holdings - Actuarial Analyst Intern",
     ],
     avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1732175391/rqnz7pcokxynvmcmzkq1.jpg", // Placeholder avatar image
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1732175391/rqnz7pcokxynvmcmzkq1.jpg",
   },
 ];
 
@@ -197,7 +198,7 @@ const newGradOffersData = [
       "Juniper Networks - Software Engineer",
     ],
     avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733611066/dqqyfsubaiwxmnfdchvy.jpg", // Placeholder avatar image
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733611066/dqqyfsubaiwxmnfdchvy.jpg",
   },
   {
     name: "Linda Nguyễn",
@@ -206,7 +207,7 @@ const newGradOffersData = [
     major: "Computer Science",
     offers: ["Microsoft - Software Engineer"],
     avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733618484/adkwacjsdezx0zy5ksmq.jpg", // Placeholder avatar image
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733618484/adkwacjsdezx0zy5ksmq.jpg",
   },
   {
     name: "Nguyên Trần",
@@ -215,7 +216,7 @@ const newGradOffersData = [
     major: "Computer Science",
     offers: ["Morgan Stanley - Software Engineer"],
     avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733021477/ngjmq0jn6clk5j8ivhtp.jpg", // Placeholder avatar image
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733021477/ngjmq0jn6clk5j8ivhtp.jpg",
   },
   {
     name: "Xuân Thu",
@@ -224,7 +225,7 @@ const newGradOffersData = [
     major: "Computer Science",
     offers: ["Morgan Stanley - Investment Analyst Parametric"],
     avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733021478/qe4e5kiasugryll3inue.jpg", // Placeholder avatar image
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733021478/qe4e5kiasugryll3inue.jpg",
   },
 ];
 

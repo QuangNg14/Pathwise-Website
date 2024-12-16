@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import { Layout } from "antd";
 import HeaderComponent from "@/components/header/header";
 import FooterComponent from "@/components/footer/Footer";
+import TopCompaniesOffersSection from "@/components/componentForResultsPage/TopCompaniesOffersSection/TopCompaniesOffersSection";
 
 // Dynamically import the InterviewRoundsSection component
 const InterviewRoundsSection = dynamic(
@@ -33,6 +34,7 @@ const Results = () => {
   return (
     <Layout>
       <HeaderComponent current={current} handleClick={handleClick} />
+      <TopCompaniesOffersSection />
       <OffersSection />
       {/* <CompanyInterviews /> */}
       <InterviewRoundsSection />

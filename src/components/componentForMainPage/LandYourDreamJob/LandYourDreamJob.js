@@ -37,9 +37,9 @@ const LandYourDreamJob = () => {
           if (entry.target === researchLabRef.current) {
             animateCount(setResearchLabCount, 10);
           } else if (entry.target === dellInternshipRef.current) {
-            animateCount(setDellInternshipCount, 22);
+            animateCount(setDellInternshipCount, 28);
           } else if (entry.target === dowJonesInternshipRef.current) {
-            animateCount(setDowJonesInternshipCount, 4);
+            animateCount(setDowJonesInternshipCount, 5);
           }
         }
       });
@@ -63,11 +63,10 @@ const LandYourDreamJob = () => {
       <div className="small-container">
         <Text className="description">
           Chỉ trong năm đầu tiên khởi động chương trình 2024, chúng mình đã giúp{" "}
-          <span className="primary-color">30+ Mentees</span> đạt được nhiều{" "}
+          <span className="primary-color">32 bạn mentees</span> đạt được nhiều{" "}
           <span className="primary-color">interviews và job offer</span> từ các
-          công ty lớn ở Mỹ như Meta, Microsoft, Palantir, Bank of America, Dell,
-          DoorDash, Stripe, Amazon, Morgan Stanley, TikTok và ở Việt Nam như
-          Viettel, Momo, FPT, Rockship.{" "}
+          công ty lớn ở Mỹ như Meta, Microsoft, Google, Palantir, Bank of
+          America, Amazon, Morgan Stanley, HubSpot.{" "}
         </Text>
         <Text className="description">
           Các mentors có kinh nghiệm ở nhiều lĩnh vực như{" "}
@@ -106,7 +105,7 @@ const LandYourDreamJob = () => {
       </div>
       <div className="image-container">
         <img
-          src="http://res.cloudinary.com/dbqcioj2g/image/upload/v1730700037/ngysjf1bxfyygeary83o.png"
+          src="http://res.cloudinary.com/dbqcioj2g/image/upload/v1734392777/eqfpg7fkwdmze6datcou.png"
           alt="Dream Job Image"
           className="large-image"
         />

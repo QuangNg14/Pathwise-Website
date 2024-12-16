@@ -10,7 +10,7 @@ import {
   message,
 } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
-import "./FormSection.css";
+import "./ApplySection.css";
 
 const { Title, Text, Link } = Typography;
 const { TextArea } = Input;
@@ -70,7 +70,7 @@ const ProgramInfoSection = () => (
   </div>
 );
 
-const FormSection = () => {
+const ApplySection = () => {
   const [form] = Form.useForm();
   const [fileList, setFileList] = useState([]);
 
@@ -292,4 +292,4 @@ const FormSection = () => {
   );
 };
 
-export default FormSection;
+export default ApplySection;
