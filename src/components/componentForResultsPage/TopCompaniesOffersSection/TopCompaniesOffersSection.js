@@ -35,7 +35,7 @@ const topCompaniesData = [
   },
   {
     count: 1,
-    logo: "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734390597/logos/hxjp5mlfth5phfwtyujf.svg",
+    logo: "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734478460/logos/y06wfyp0w99ft8k2fahd.png",
   },
 ];
 
