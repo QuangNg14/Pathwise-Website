@@ -6,7 +6,7 @@ const { Title } = Typography;
 
 const topCompaniesData = [
   {
-    count: 6,
+    count: 5,
     logo: "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734390598/logos/gaaublizbntaf7iwvzeq.png",
   },
   {
