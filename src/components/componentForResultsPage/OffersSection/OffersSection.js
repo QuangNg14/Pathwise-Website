@@ -138,6 +138,7 @@ const offersData = [
     major: "Computer Science",
     offers: [
       "Palantir - Software Engineer Intern",
+      "Adobe - Software Engineer Intern",
       "Ryco.io - Software Engineer Intern",
     ],
     avatar:
