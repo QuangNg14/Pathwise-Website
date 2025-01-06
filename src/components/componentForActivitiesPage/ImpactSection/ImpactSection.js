@@ -16,10 +16,11 @@ const ImpactSection = () => {
             </Title>
             <Text className="impact-subtitle">Resume + LinkedIn</Text>
             <Text className="impact-description">
-              Hướng dẫn cách xây dựng một resume chuyên nghiệp và giới thiệu các
-              công cụ hỗ trợ xây dựng hồ sơ. Review resume của từng người và có
-              những feedback cụ thể. Hỗ trợ xây dựng một LinkedIn profile chuyên
-              nghiệp. Cách để upload projects và sử dụng hiệu quả Github
+              Learn how to create a professional resume and get introduced to
+              tools for building your profile. Receive specific feedback through
+              individual resume reviews. Get support in creating a professional
+              LinkedIn profile and guidance on how to upload projects and
+              effectively use GitHub.
             </Text>
           </Col>
           <Col xs={24} md={12} className="image-column">
@@ -48,11 +49,11 @@ const ImpactSection = () => {
             </Title>
             <Text className="impact-subtitle">Full-stack + Cloud + AI</Text>
             <Text className="impact-description">
-              Review những ngôn ngữ phổ biến cho các internship jobs hiện nay và
-              các tech-stack thịnh hành HTML/CSS/JavaScript, MERN stack, NET
-              stack + Azure, Python Flask + AWS, Expo React Native. Hướng dẫn
-              xây dựng một personal project from scratch. Hướng dẫn các cách
-              hiệu quả để xây dựng portfolio có các projects.
+              Explore popular programming languages for current internship jobs
+              and trending tech stacks, including HTML/CSS/JavaScript, MERN
+              stack, .NET stack + Azure, Python Flask + AWS, and Expo React
+              Native. Learn how to build a personal project from scratch and
+              effectively create a portfolio showcasing your projects.
             </Text>
           </Col>
         </Row>
@@ -67,10 +68,11 @@ const ImpactSection = () => {
             </Title>
             <Text className="impact-subtitle">Behavioral + Technical</Text>
             <Text className="impact-description">
-              Cách hiệu quả để luyện tập chuẩn bị cho 1 behavioral interview.
-              nghiên cứu đặc điểm của từng công ty và tailor câu trả lời. Hướng
-              dẫn cách để chuẩn bị technical interview qua luyện các bài
-              Leetcode, Object-oriented programming và System Design
+              Learn effective ways to prepare for behavioral interviews by
+              researching the characteristics of each company and tailoring your
+              answers. Get guidance on preparing for technical interviews
+              through practice with LeetCode problems, object-oriented
+              programming, and system design.
             </Text>
           </Col>
           <Col xs={24} md={12} className="image-column">

@@ -28,47 +28,47 @@ const Features = () => {
             <Col xs={24} sm={12} md={12} lg={12} xl={6}>
               <Card className="feature-item" bordered={false}>
                 <Title level={4} className="feature-heading">
-                  12 tuần hướng dẫn
+                  12 Weeks of Guidance
                 </Title>
                 <Text className="feature-content">
-                  về toàn bộ quá trình apply internship từ resume, personal
-                  projects đến behavioral và technical interviews. Được đặt
-                  meeting tư vấn 1-1 hàng tuần để giải đáp mọi thắc mắc, hỗ trợ
-                  interview không giới hạn
+                  Covering the entire internship application process, from
+                  resume and personal projects to behavioral and technical
+                  interviews. Weekly 1-on-1 advisory meetings to address any
+                  questions, with unlimited interview support.
                 </Text>
               </Card>
             </Col>
             <Col xs={24} sm={12} md={12} lg={12} xl={6}>
               <Card className="feature-item" bordered={false}>
                 <Title level={4} className="feature-heading">
-                  Hướng dẫn trực tiếp
+                  Direct Guidance
                 </Title>
                 <Text className="feature-content">
-                  làm các project cá nhân 100% full-stack cùng các mentee khác
-                  và tham gia các job conference hiệu quả
+                  Work on 100% full-stack personal projects with other mentees
+                  and effectively participate in job conferences.
                 </Text>
               </Card>
             </Col>
             <Col xs={24} sm={12} md={12} lg={12} xl={6}>
               <Card className="feature-item" bordered={false}>
                 <Title level={4} className="feature-heading">
-                  Mock interview
+                  Mock Interviews
                 </Title>
                 <Text className="feature-content">
-                  cho từng research lab và các công ty. Nhận được những cập nhật
-                  mới nhất về thị trường job. Hiểu được rõ về các đặc điểm của
-                  từng công ty
+                  Tailored for each research lab and company. Receive the latest
+                  updates on the job market and gain a clear understanding of
+                  each company's unique characteristics.
                 </Text>
               </Card>
             </Col>
             <Col xs={24} sm={12} md={12} lg={12} xl={6}>
               <Card className="feature-item" bordered={false}>
                 <Title level={4} className="feature-heading">
-                  Hỗ trợ networking
+                  Networking Support
                 </Title>
                 <Text className="feature-content">
-                  để phục vụ quá trình xin referral các công ty, apply, và hỗ
-                  trợ thăng tiến trong công việc
+                  Assistance with securing referrals, applying to companies, and
+                  advancing your career.
                 </Text>
               </Card>
             </Col>

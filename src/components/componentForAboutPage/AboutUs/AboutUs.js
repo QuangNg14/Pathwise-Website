@@ -11,9 +11,9 @@ const teamMembers = [
     role: "Founder",
     linkedin: "https://www.linkedin.com/in/quang1401/",
     description: [
-      "Anh Nhật Quang hiện đang làm Kỹ sư phần mềm tại Microsoft, và anh cũng từng làm thực tập vị trí kĩ sư phần mềm tại NVIDIA (hè 2023) và Facebook (hè 2022).",
-      "Đạt học bổng toàn phần ngành Khoa học Máy tính trị giá $73,000/năm cho 4 năm học tại Đại học Rice.",
-      "Chủ tịch câu lạc bộ Rice Apps (Rice Software Engineering Club) tại Đại học Rice, từng mentor và giảng dạy về phát triển web và ứng dụng di động chuyên nghiệp cho hơn 60 thành viên trong câu lạc bộ.",
+      "Quang Nguyen is currently a Software Engineer at Microsoft. He previously interned as a software engineer at NVIDIA (Summer 2023) and Facebook (Summer 2022).",
+      "He received a full-ride scholarship worth $73,000/year for 4 years at Rice University, majoring in Computer Science.",
+      "As the President of Rice Apps (Rice Software Engineering Club) at Rice University, he has mentored and taught over 60 members about professional web and mobile application development.",
     ],
     image:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730786179/qz0r41jqmatncyl9h6py.jpg",
@@ -23,9 +23,9 @@ const teamMembers = [
     role: "Co-Founder",
     linkedin: "https://www.linkedin.com/in/tribuidinh/",
     description: [
-      "Anh Đình Trí hiện đang làm Quản trị Rủi ro tại công ty Revantage thuộc tập đoàn Blackstone và thực tập Kỹ sư Phần mềm tại Daikin, DetectAuto, và Deloitte Vietnam.",
-      "Founder/CEO của Công ty TNHH Esmart Solutions, cung cấp giải pháp truyền thông và công nghệ cho các doanh nghiệp vừa và nhỏ tại Việt Nam.",
-      "Chủ tịch CLB Doanh nhân và CLB Đầu tư tại Macalester College. Đạt nhiều giải thưởng về công nghệ, tài chính và khởi nghiệp với tổng giá trị giải thưởng hơn 15,000 USD.",
+      "Tri Bui currently works in Risk Management at Revantage, a Blackstone portfolio company, and has interned as a Software Engineer at Daikin, DetectAuto, and Deloitte Vietnam.",
+      "Founder/CEO of Esmart Solutions, a company providing communication and technology solutions to small and medium-sized businesses in Vietnam.",
+      "President of the Entrepreneurship and Investment Clubs at Macalester College. He has won multiple awards in technology, finance, and entrepreneurship, with a total value exceeding $15,000.",
     ],
     image:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730786150/vqyqmxshnub26yu08dpr.jpg",
@@ -35,10 +35,10 @@ const teamMembers = [
     role: "Co-Founder",
     linkedin: "https://www.linkedin.com/in/anhmngo/",
     description: [
-      "Chị Minh Anh hiện đang làm chuyên viên phân tích ngân hàng đầu tư (Investment Banking Analyst) tại Deutsche Bank.",
-      "Chị cũng đã đạt học bổng ngành Kinh Tế tại Đại học Pennsylvania (UPenn).",
-      "Phó Chủ tịch của Câu lạc bộ Tài chính Wharton và là thành viên của Hội đồng Tư vấn Sinh viên Quốc tế tại UPenn.",
-      "Có nhiều kinh nghiệm làm việc tại UPenn Career Services, đã hỗ trợ sửa resume và định hướng nghề nghiệp cho hơn 200 sinh viên.",
+      "Anh Ngo is currently an Investment Banking Analyst at Deutsche Bank.",
+      "She received a scholarship to study Economics at the University of Pennsylvania (UPenn).",
+      "Vice President of the Wharton Finance Club and a member of the International Student Advisory Board at UPenn.",
+      "She has extensive experience working at UPenn Career Services, where she has assisted over 200 students with resume reviews and career guidance.",
     ],
     image:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730176141/tfiotmhqb6vpkofuh5py.jpg",
@@ -51,12 +51,12 @@ const AboutUs = () => (
       Founding Team
     </Title>
     <Text className="about-us-intro">
-      Chúng mình là những du học sinh Mỹ đã trải qua nhiều khó khăn trong quá
-      trình học tập và tìm việc làm tại đây. Thấu hiểu những khó khăn của việc
-      nộp hồ sơ hàng trăm chỗ mà không nhận được cái interview nào, Pathwise
-      Mentorship được thành lập với sứ mệnh xây dựng một cộng đồng để truyền lại
-      những kiến thức và kinh nghiệm giúp các bạn Việt Nam tìm được những công
-      việc ước mơ tại nơi đây.
+      We are Vietnamese students in the U.S. who have experienced many
+      challenges during our studies and job search journeys here. Understanding
+      the difficulties of applying to hundreds of positions without receiving a
+      single interview, Pathwise Mentorship was established with the mission to
+      build a community that shares knowledge and experiences to help Vietnamese
+      students achieve their dream jobs in the U.S.
     </Text>
     {teamMembers.map((member, index) => (
       <Row

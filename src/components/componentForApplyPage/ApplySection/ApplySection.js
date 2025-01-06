@@ -22,16 +22,16 @@ const ProgramInfoSection = () => (
         Peer-to-peer Mentorship for Job Search
       </Title>
       <Text className="program-info-description">
-        Pathwise Mentorship là một program giúp bạn tìm việc tại các công ty
-        hàng đầu thế giới với những mentors có kinh nghiệm làm việc ở các tập
-        đoàn lớn tại Mỹ như Big Tech, MBB, Big 4 và Ngân hàng lớn.
+        Pathwise Mentorship is a program that helps you find jobs at top global
+        companies with mentors who have experience working at large corporations
+        in the US, such as Big Tech, MBB, Big 4, and major banks.{" "}
       </Text>
       <Text className="program-info-description">
-        Được thành lập từ cuối năm 2023, chúng mình đã giúp 20+ bạn mentee đạt
-        được nhiều internship/new grad offers mơ ước tại US.
+        Founded at the end of 2023, we have helped over 20 mentees secure
+        multiple dream internship and new grad offers in the US.{" "}
       </Text>
       <Text className="program-info-description">
-        Để biết thêm thông tin chi tiết về chương trình, hãy truy cập:
+        For more detailed information about the program, please visit:{" "}
       </Text>
       <ul className="program-links">
         <li>
@@ -106,19 +106,15 @@ const ApplySection = () => {
       const data = await res.json();
 
       if (data.success) {
-        // Clear the form fields and file list
         form.resetFields();
         setFileList([]);
-
-        // Display success notification
         message.success({
           content:
             "Form submitted successfully! We will review your application and get back to you shortly.",
-          duration: 5, // Notification stays for 5 seconds
+          duration: 5,
           className: "success-message",
         });
       } else {
-        // Display error notification
         message.error({
           content: `Error: ${
             data.message || "Something went wrong. Please try again."
@@ -128,7 +124,6 @@ const ApplySection = () => {
         });
       }
     } catch (error) {
-      // Display network error notification
       message.error({
         content: `Network error: ${error.message}`,
         duration: 5,
@@ -138,7 +133,6 @@ const ApplySection = () => {
   };
 
   const onFinishFailed = (errorInfo) => {
-    // Display validation error notification
     message.error({
       content: "Please fill out all required fields correctly.",
       duration: 5,
@@ -154,9 +148,9 @@ const ApplySection = () => {
           Internship/New Grad Mentorship Application
         </Title>
         <Text className="form-description">
-          Vui lòng điền vào mẫu đơn bên dưới để đăng ký chương trình mentorship
-          của chúng tôi. Chúng tôi sẽ xem xét đơn đăng ký của bạn và phản hồi
-          trong thời gian sớm nhất.
+          Please fill out the form below to register for our mentorship program.
+          We will review your application and get back to you as soon as
+          possible.
         </Text>
         <Form
           form={form}
@@ -168,7 +162,7 @@ const ApplySection = () => {
         >
           <Form.Item
             name="fullName"
-            label="Họ và tên"
+            label="Full Name"
             rules={[{ required: true, message: "Please enter your full name" }]}
           >
             <Input placeholder="John Doe" />
@@ -187,7 +181,7 @@ const ApplySection = () => {
 
           <Form.Item
             name="phoneNumber"
-            label="Số điện thoại"
+            label="Phone Number"
             rules={[
               { required: true, message: "Please enter your phone number" },
             ]}
@@ -197,7 +191,7 @@ const ApplySection = () => {
 
           <Form.Item
             name="location"
-            label="Bạn đang sinh sống ở đâu?"
+            label="Where are you currently located?"
             rules={[{ required: true, message: "Please select your location" }]}
           >
             <Select placeholder="Select your location">
@@ -211,7 +205,7 @@ const ApplySection = () => {
 
           <Form.Item
             name="school"
-            label="Bạn đang học tại trường nào?"
+            label="What school are you currently attending?"
             rules={[{ required: true, message: "Please enter your school" }]}
           >
             <Input placeholder="University of Pennsylvania" />
@@ -219,7 +213,7 @@ const ApplySection = () => {
 
           <Form.Item
             name="currentYear"
-            label="Hiện tại bạn đang là"
+            label="What is your current academic year?"
             rules={[
               { required: true, message: "Please select your current year" },
             ]}
@@ -234,7 +228,7 @@ const ApplySection = () => {
 
           <Form.Item
             name="industryPreference"
-            label="Bạn đang muốn tập trung tìm việc của ngành nào?"
+            label="What industry are you focusing on for job search?"
             rules={[{ required: true, message: "Please select an industry" }]}
           >
             <Select placeholder="Select the industry">
@@ -254,14 +248,14 @@ const ApplySection = () => {
 
           <Form.Item
             name="helpDescription"
-            label="(Optional) Bạn hãy trả lời câu hỏi bằng tiếng Anh: What do you need help with and what do you want to gain from this program?"
+            label="(Optional) Please answer the question in English: What do you need help with and what do you want to gain from this program?"
           >
             <TextArea rows={4} placeholder="Be as specific as you can" />
           </Form.Item>
 
           <Form.Item
             name="resume"
-            label="Bạn hãy tải lên Resume mới nhất của mình (định dạng PDF)"
+            label="Upload your latest Resume (PDF format)"
             rules={[{ required: true, message: "Please upload your resume" }]}
           >
             <Upload
@@ -276,7 +270,7 @@ const ApplySection = () => {
 
           <Form.Item
             name="questionsForUs"
-            label="Bạn có câu hỏi gì cho chúng mình không?"
+            label="Do you have any questions for us?"
           >
             <TextArea rows={2} placeholder="Your question here..." />
           </Form.Item>

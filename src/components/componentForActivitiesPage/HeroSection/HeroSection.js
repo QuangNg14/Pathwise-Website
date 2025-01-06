@@ -10,15 +10,16 @@ const HeroSection = () => {
       <div className="overlay">
         <div className="content">
           <Title className="hero-title" style={{ color: "var(--text-color)" }}>
-            Giới thiệu về Program Pathwise Mentorship
+            Introduction to the Pathwise Mentorship Program
           </Title>
           <Text className="hero-description">
-            Pathwise là một program mentorship peer-to-peer cho sinh viên đại
-            học đang muốn tìm kiếm việc làm tại Mỹ. Chương trình sẽ cung cấp 12
-            tuần hướng dẫn với hàm lượng kiến thức và thông tin được tổng hợp
-            cần thiết, đúng trọng tâm và cá nhân hóa. Chương trình hiện đang
-            giúp các bạn muốn apply vào các ngành Software, Data và Finance.
+            Pathwise is a peer-to-peer mentorship program for university
+            students seeking job opportunities in the USA. The program offers 12
+            weeks of guidance with essential, focused, and personalized
+            knowledge and information. It currently supports students applying
+            to industries such as Software, Data, and Finance.
           </Text>
+          <br />
           <a
             href="https://www.facebook.com/pathwise.techmentorship"
             target="_blank"

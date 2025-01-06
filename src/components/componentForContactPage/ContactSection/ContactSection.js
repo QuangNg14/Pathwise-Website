@@ -16,11 +16,11 @@ const ContactSection = () => {
     <div className="contact-section">
       <div className="contact-content">
         <Title level={2} className="contact-title">
-          Hãy kết nối với chúng mình!{" "}
-          {/* <span className="highlight">Hãy kết nối!!!</span> */}
+          Connect with us!{" "}
+          {/* <span className="highlight">Let’s connect!!!</span> */}
         </Title>
         <Text className="contact-description">
-          Xin vui lòng liên hệ với chúng mình qua những kênh sau.
+          Please feel free to reach out to us through the following channels.
         </Text>
 
         <div className="contact-methods">
@@ -54,7 +54,7 @@ const ContactSection = () => {
               rel="noopener noreferrer"
               className="contact-link"
             >
-              Chia sẻ kinh nghiệm trong lĩnh vực Tech
+              Share experiences in the Tech field
             </a>
           </div>
 
@@ -86,14 +86,14 @@ const ContactSection = () => {
 
           <div className="contact-item">
             <LinkOutlined className="contact-icon" />
-            <Text>Đăng kí tham gia chương trình mentorship: </Text>
+            <Text>Register for the mentorship program: </Text>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSf44FrJ2powtp9MMvGfHcz8F7irZLyfjxaCkIpr-HAr0Fl4oQ/viewform?pli=1" // replace with the actual link
               target="_blank"
               rel="noopener noreferrer"
               className="contact-link"
             >
-              Đăng ký
+              Register
             </a>
           </div>
         </div>

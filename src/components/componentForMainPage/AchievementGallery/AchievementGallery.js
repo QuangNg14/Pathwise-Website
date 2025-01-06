@@ -31,7 +31,7 @@ const AchievementGallery = () => {
             color: "white",
           }}
         >
-          Chia sẻ của các Mentees
+          Mentees Thoughts
         </Title>
       </div>
       <Carousel

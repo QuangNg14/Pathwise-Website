@@ -66,9 +66,9 @@ const MenteeShowcase = () => {
           color: "white",
         }}
       >
-        Học Viên Tiêu Biểu Của Pathwise
+        Students of Pathwise Mentorship
       </Title>
-      <Text className="sub-title">Ngành Software Engineer và Data</Text>
+      <Text className="sub-title">Software Engineer and Data</Text>
 
       <Carousel
         arrows
@@ -108,7 +108,7 @@ const MenteeShowcase = () => {
           className="custom-button"
           onClick={() => router.push("/results")}
         >
-          Tìm Hiểu Thêm
+          Learn More
         </button>
       </div>
     </div>

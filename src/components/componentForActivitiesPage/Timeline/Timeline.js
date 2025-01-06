@@ -9,63 +9,63 @@ const timelineData = [
     title: "Profile Review",
     date: "Week 1 + 2",
     description:
-      "Hướng dẫn cách xây dựng các Resume chuyên nghiệp tuỳ vào từng công ty muốn apply và giới thiệu các công cụ AI hỗ trợ xây dựng hồ sơ. Hoàn thiện hồ sơ LinkedIn và GitHub nếu có.",
+      "Learn how to create professional resumes tailored to each company and get introduced to AI tools for building your profile. Complete your LinkedIn and GitHub profiles if applicable.",
     tag: "Profile",
   },
   {
     title: "Technical Project Planning",
     date: "Week 3",
     description:
-      "Review những ngôn ngữ và công cụ phổ biến cho các internship jobs hiện nay và các tech-stack thịnh hành. Hướng dẫn xây dựng một technical project mà đem lại impact trong cộng đồng.",
+      "Review popular languages and tools for current internship jobs and trending tech stacks. Get guidance on building a technical project that creates a meaningful impact in the community.",
     tag: "Project",
   },
   {
     title: "Workshop",
     date: "Week 4 + 5",
     description:
-      "Tổ chức các buổi workshop hướng dẫn các kiến thức technical để build full stack cloud and AI projects như MERN, Git, AWS, OpenAI API, Java and Golang và công cụ quản lý project Jira.",
+      "Attend workshops to learn technical skills for building full-stack cloud and AI projects using MERN, Git, AWS, OpenAI API, Java, Golang, and project management tools like Jira.",
     tag: "Skills",
   },
   {
     title: "Applications",
     date: "Week 6",
     description:
-      "Hướng dẫn các cách hiệu quả để apply internships trong các ngành software, data và finance ở Mỹ. Giới thiệu những tips and tricks để học viên có khả năng cao nhất được gọi interview.",
+      "Learn effective strategies for applying to internships in software, data, and finance industries in the USA. Discover tips and tricks to maximize your chances of getting interview calls.",
     tag: "Applying",
   },
   {
     title: "Leetcode",
     date: "Week 7 + 8",
     description:
-      "Hướng dẫn học viên chi tiết cách sử dụng Leetcode hiệu quả nhất để ôn tập các câu hỏi về technical. Tổ chức các buổi luyện leetcode theo nhóm hàng tuần và chữa các bài live coding.",
+      "Get detailed guidance on how to use Leetcode effectively to practice technical questions. Participate in weekly group Leetcode sessions with live coding reviews.",
     tag: "Practice",
   },
   {
     title: "Online Assessments",
     date: "Week 9",
     description:
-      "Học viên sẽ được access resource đặc biệt để chuẩn bị riêng cho từng bài kiểm tra online của từng công ty để có kết quả cao nhất.",
+      "Gain access to specialized resources to prepare for online assessments tailored to each company's requirements for the best possible outcomes.",
     tag: "Assessment",
   },
   {
     title: "Behavioral Interview",
     date: "Week 10",
     description:
-      "Học viên sẽ được chuẩn bị chi tiết các câu trả lời theo STAR method được cá nhân hoá với từng bộ hồ sơ, biết về đặc điểm của từng công ty và có thể mock interview với mentor khi cần.",
+      "Prepare personalized answers using the STAR method for each application. Learn about the characteristics of individual companies and conduct mock interviews with a mentor as needed.",
     tag: "Interview",
   },
   {
     title: "Technical Interview",
     date: "Week 11",
     description:
-      "Học viên sẽ được chuẩn bị kĩ lưỡng về nhiều dạng câu hỏi technical như Leetcode, Object-oriented programming, hay system design. Có thể mock interview với mentor khi cần.",
+      "Thorough preparation for various types of technical questions, including Leetcode, object-oriented programming, and system design. Conduct mock interviews with mentors as required.",
     tag: "Interview",
   },
   {
     title: "Networking",
     date: "Week 12",
     description:
-      "Được hướng dẫn cách để nói chuyện với các công ty trong conference, xin referral, cách viết cold email hiệu quả và được add vào network có các mentor và các bạn nhiều kinh nghiệm.",
+      "Learn how to communicate effectively with companies at conferences, request referrals, write impactful cold emails, and join a network of experienced mentors and peers.",
     tag: "Networking",
   },
 ];
@@ -92,6 +92,7 @@ const Timeline = () => {
                 {event.title}
               </Title>
               <Text className="event-description">{event.description}</Text>
+              <br />
               <span className={`event-tag ${event.tag.toLowerCase()}`}>
                 {event.tag}
               </span>

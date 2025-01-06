@@ -62,23 +62,23 @@ const LandYourDreamJob = () => {
       <Text className="main-title">Land Your Dream Offers</Text>
       <div className="small-container">
         <Text className="description">
-          Chỉ trong năm đầu tiên khởi động chương trình 2024, chúng mình đã giúp{" "}
-          <span className="primary-color">32 bạn mentees</span> đạt được nhiều{" "}
-          <span className="primary-color">interviews và job offer</span> từ các
-          công ty lớn ở Mỹ như Meta, Microsoft, Google, Palantir, Bank of
-          America, Amazon, Morgan Stanley, HubSpot.{" "}
+          In the first year of launching the 2024 program, we helped{" "}
+          <span className="primary-color">32 mentees</span> secure multiple{" "}
+          <span className="primary-color">interviews and job offers</span> from
+          major companies in the U.S. like Meta, Microsoft, Google, Palantir,
+          Bank of America, Amazon, Morgan Stanley, and HubSpot.{" "}
         </Text>
         <Text className="description">
-          Các mentors có kinh nghiệm ở nhiều lĩnh vực như{" "}
+          Our mentors have experience in various fields such as{" "}
           <span className="primary-color">
-            Software, Data, Finance, Consulting
+            Software, Data, Finance, and Consulting
           </span>
         </Text>
         <Row gutter={[16, 16]} className="statistics">
           <Col xs={24} sm={8} md={8} className="stat-item" ref={researchLabRef}>
             <Text className="stat-number">{researchLabCount}</Text>
             <Text className="stat-description">
-              offers ở research lab và các data programs
+              offers in research labs and data programs
             </Text>
           </Col>
           <Col
@@ -89,7 +89,9 @@ const LandYourDreamJob = () => {
             ref={dellInternshipRef}
           >
             <Text className="stat-number">{dellInternshipCount}</Text>
-            <Text className="stat-description">offers internship ở Mỹ</Text>
+            <Text className="stat-description">
+              internship offers in the U.S.
+            </Text>
           </Col>
           <Col
             xs={24}
@@ -99,7 +101,9 @@ const LandYourDreamJob = () => {
             ref={dowJonesInternshipRef}
           >
             <Text className="stat-number">{dowJonesInternshipCount}</Text>
-            <Text className="stat-description">offers new grad ở Mỹ</Text>
+            <Text className="stat-description">
+              new grad offers in the U.S.
+            </Text>
           </Col>
         </Row>
       </div>
