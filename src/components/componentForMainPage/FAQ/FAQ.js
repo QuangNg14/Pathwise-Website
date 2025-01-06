@@ -32,10 +32,10 @@ const FAQ = () => {
       answer: [
         "Pathwise started from the competitive and challenging process of applying for internships in the USA. Sending out 300–400 applications and continuously applying without receiving any interviews—or receiving just 1–3 interviews with low success rates—became a familiar story.",
         "At the time, without mentor support, the Pathwise team had to figure things out on their own, searching for answers everywhere. However, the knowledge and materials they found were often vague and ineffective, wasting time and causing confusion.",
-        "When looking for mentors in the market, they encountered mentoring packages costing $100–200 per hour, or $1,000–2,000 for full support packages. Some even required commitments of 10–15% of the mentee’s first-year salary, but none of these packages truly understood their needs.",
+        "When looking for mentors in the market, they encountered mentoring packages costing $100–200 per hour, or $1,000–2,000 for full support packages. Some even required commitments of 10–15% of the mentees first-year salary, but none of these packages truly understood their needs.",
         "During that time, they only hoped for a companion who could guide them through effective company search and application processes, share tips and tricks to increase interview chances, focus on relevant technical preparation, build quality networks, and provide tailored resources.",
-        "The hardest part was finding someone who had gone through similar struggles and could offer practical, empathetic advice based on current recruitment market trends. Someone who also understood feelings like 'imposter syndrome,' self-doubt, or moments of discouragement.",
-        '"That’s when we needed a friend who could make us feel reassured and confident"—a skilled person in technology, especially software, who had deep, broad, and efficient knowledge yet could provide support in a cost-effective way.',
+        "The hardest part was finding someone who had gone through similar struggles and could offer practical, empathetic advice based on current recruitment market trends. Someone who also understood feelings like imposter syndrome, self-doubt, or moments of discouragement.",
+        "Thats when we needed a friend who could make us feel reassured and confident — a skilled person in technology, especially software, who had deep, broad, and efficient knowledge yet could provide support in a cost-effective way.",
         "And so, Pathwise Mentorship was born in December 2023.",
       ],
     },

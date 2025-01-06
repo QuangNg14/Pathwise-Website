@@ -57,7 +57,7 @@ const Features = () => {
                 <Text className="feature-content">
                   Tailored for each research lab and company. Receive the latest
                   updates on the job market and gain a clear understanding of
-                  each company's unique characteristics.
+                  each company unique characteristics.
                 </Text>
               </Card>
             </Col>
