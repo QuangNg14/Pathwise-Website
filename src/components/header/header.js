@@ -65,7 +65,7 @@ const HeaderComponent = ({ current, handleClick }) => {
               "services",
               "results",
               "apply",
-              "about",
+              // "about",
               "blog",
               "contact",
             ].map((key) => (
@@ -123,7 +123,7 @@ const HeaderComponent = ({ current, handleClick }) => {
             "services",
             "results",
             "apply",
-            "about",
+            // "about",
             "blog",
             "contact",
           ].map((key) => (

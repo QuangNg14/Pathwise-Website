@@ -8,7 +8,7 @@ const { Title, Text } = Typography;
 const teamMembers = [
   {
     name: "Quang Nguyen",
-    role: "Founder",
+    role: "Head Mentor",
     linkedin: "https://www.linkedin.com/in/quang1401/",
     description: [
       "Quang Nguyen is currently a Software Engineer at Microsoft. He previously interned as a software engineer at NVIDIA (Summer 2023) and Facebook (Summer 2022).",
@@ -20,7 +20,7 @@ const teamMembers = [
   },
   {
     name: "Tri Bui",
-    role: "Co-Founder",
+    role: "Mentor",
     linkedin: "https://www.linkedin.com/in/tribuidinh/",
     description: [
       "Tri Bui currently works in Risk Management at Revantage, a Blackstone portfolio company, and has interned as a Software Engineer at Daikin, DetectAuto, and Deloitte Vietnam.",
@@ -32,7 +32,7 @@ const teamMembers = [
   },
   {
     name: "Anh Ngo",
-    role: "Co-Founder",
+    role: "Advisor",
     linkedin: "https://www.linkedin.com/in/anhmngo/",
     description: [
       "Anh Ngo is currently an Investment Banking Analyst at Deutsche Bank.",
@@ -46,50 +46,51 @@ const teamMembers = [
 ];
 
 const AboutUs = () => (
-  <div className="about-us-container">
-    <Title level={2} className="about-us-title">
-      Founding Team
-    </Title>
-    <Text className="about-us-intro">
-      We are Vietnamese students in the U.S. who have experienced many
-      challenges during our studies and job search journeys here. Understanding
-      the difficulties of applying to hundreds of positions without receiving a
-      single interview, Pathwise Mentorship was established with the mission to
-      build a community that shares knowledge and experiences to help Vietnamese
-      students achieve their dream jobs in the U.S.
-    </Text>
-    {teamMembers.map((member, index) => (
-      <Row
-        className="member-row"
-        align="middle"
-        justify="center"
-        key={index}
-        gutter={[32, 32]}
-      >
-        <Col xs={24} md={14} className="description-column">
-          <Text className="member-name">{member.name.toUpperCase()}</Text>
-          {member.description.map((paragraph, idx) => (
-            <Text key={idx} className="member-description">
-              {paragraph}
-            </Text>
-          ))}
-          <a
-            href={member.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="linkedin-link"
-          >
-            <LinkedinOutlined className="linkedin-icon" />
-            <span>LinkedIn</span>
-          </a>
-        </Col>
-        <Col xs={24} md={10} className="image-column">
-          <div className="role-label">{member.role.toUpperCase()}</div>
-          <img src={member.image} alt={member.name} className="member-image" />
-        </Col>
-      </Row>
-    ))}
-  </div>
+  <div>In maintenance</div>
+  // <div className="about-us-container">
+  //   <Title level={2} className="about-us-title">
+  //     Our Team
+  //   </Title>
+  //   <Text className="about-us-intro">
+  //     We are Vietnamese students in the U.S. who have experienced many
+  //     challenges during our studies and job search journeys here. Understanding
+  //     the difficulties of applying to hundreds of positions without receiving a
+  //     single interview, Pathwise Mentorship program was established with the
+  //     mission to build a community that shares knowledge and experiences to help
+  //     Vietnamese students achieve their dream jobs.
+  //   </Text>
+  //   {teamMembers.map((member, index) => (
+  //     <Row
+  //       className="member-row"
+  //       align="middle"
+  //       justify="center"
+  //       key={index}
+  //       gutter={[32, 32]}
+  //     >
+  //       <Col xs={24} md={14} className="description-column">
+  //         <Text className="member-name">{member.name.toUpperCase()}</Text>
+  //         {member.description.map((paragraph, idx) => (
+  //           <Text key={idx} className="member-description">
+  //             {paragraph}
+  //           </Text>
+  //         ))}
+  //         <a
+  //           href={member.linkedin}
+  //           target="_blank"
+  //           rel="noopener noreferrer"
+  //           className="linkedin-link"
+  //         >
+  //           <LinkedinOutlined className="linkedin-icon" />
+  //           <span>LinkedIn</span>
+  //         </a>
+  //       </Col>
+  //       <Col xs={24} md={10} className="image-column">
+  //         <div className="role-label">{member.role.toUpperCase()}</div>
+  //         <img src={member.image} alt={member.name} className="member-image" />
+  //       </Col>
+  //     </Row>
+  //   ))}
+  // </div>
 );
 
 export default AboutUs;
