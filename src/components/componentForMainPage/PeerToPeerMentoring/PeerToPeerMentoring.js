@@ -21,7 +21,7 @@ const PeerToPeerMentoring = () => {
             </span>
           </Title>
           <Text className="peer-mentoring-text">
-            Get targeted, affordable, and personalized 1-on-1 guidance optimized
+            Get targeted, effective, and personalized 1-on-1 guidance optimized
             for students applying to jobs at top companies!
           </Text>
           <div className="buttons-container">
