@@ -68,17 +68,17 @@ const mentors = [
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730775955/ceb48mc3glt4vp9w3cxq.jpg",
     linkedin: "https://www.linkedin.com/in/ltn18/",
   },
-  {
-    name: "Jonathan Cheng",
-    title: "Mentor",
-    company: "Associate Consultant at Bain & Company",
-    companyLogos: [
-      "https://banner2.cleanpng.com/20180816/akc/kisspng-bain-company-japan-incorporated-adviesbureau-ba-voyager-consulting-5b750a76cc0a15.3120107615343970468358.jpg",
-    ],
-    image:
-      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730176141/s1qbmncykt4nr2ywxjyf.jpg",
-    linkedin: "https://www.linkedin.com/in/jonatche1/",
-  },
+  // {
+  //   name: "Jonathan Cheng",
+  //   title: "Mentor",
+  //   company: "Associate Consultant at Bain & Company",
+  //   companyLogos: [
+  //     "https://banner2.cleanpng.com/20180816/akc/kisspng-bain-company-japan-incorporated-adviesbureau-ba-voyager-consulting-5b750a76cc0a15.3120107615343970468358.jpg",
+  //   ],
+  //   image:
+  //     "https://res.cloudinary.com/dbqcioj2g/image/upload/v1730176141/s1qbmncykt4nr2ywxjyf.jpg",
+  //   linkedin: "https://www.linkedin.com/in/jonatche1/",
+  // },
 ];
 
 export default function Home() {
