@@ -6,7 +6,7 @@ const { Title } = Typography;
 
 const topCompaniesData = [
   {
-    count: 5,
+    count: 6,
     logo: "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734390598/logos/gaaublizbntaf7iwvzeq.png",
   },
   {
@@ -18,11 +18,11 @@ const topCompaniesData = [
     logo: "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734390599/logos/h5fumaeya8b18unp75dw.png",
   },
   {
-    count: 1,
+    count: 2,
     logo: "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734390599/logos/kjm9iesykorj7fvltdlo.png",
   },
   {
-    count: 1,
+    count: 2,
     logo: "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734390599/logos/txryimdx1cx2axuhooeo.png",
   },
   {
