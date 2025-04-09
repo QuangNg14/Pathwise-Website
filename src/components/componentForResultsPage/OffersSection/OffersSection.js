@@ -58,7 +58,7 @@ const offersData = [
     year: "Sophomore",
     major: "Data Science",
     category: "data",
-    offers: ["Alcon - Data Science Intern"],
+    offers: ["Alcon - Data Science Intern", "Netflix X Formation Program"],
     avatar:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1732175391/shehrfpv16a1wqairtrs.jpg",
   },
@@ -105,6 +105,16 @@ const offersData = [
       "https://res.cloudinary.com/dbqcioj2g/image/upload/v1743519564/zu270d8swx3ag6pm5m9u.jpg",
   },
   {
+    name: "Ngô Phương Anh",
+    school: "Gettysburg College",
+    year: "Sophomore",
+    major: "Computer Science",
+    category: "software",
+    offers: ["A&T Technology Development Program Internship"],
+    avatar:
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1744173236/kflrsx3spzxexjxyo6uf.jpg",
+  },
+  {
     name: "Bảo Trân",
     school: "Lehigh University",
     year: "Junior",
@@ -113,6 +123,16 @@ const offersData = [
     offers: ["AWS - Software Engineer Intern"],
     avatar:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1743519785/qnbpa1u5fxv7d9jpcczk.jpg",
+  },
+  {
+    name: "Lê Duy Khanh",
+    school: "Villanova University",
+    year: "Sophomore",
+    major: "Computer Science",
+    category: "software",
+    offers: ["Perpay - Software Engineer Intern"],
+    avatar:
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1744173067/dy1yr5tksvngh4tmbmzc.jpg",
   },
   {
     name: "Gia Mẫn",
