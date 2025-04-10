@@ -104,16 +104,16 @@ const offersData = [
     avatar:
       "https://res.cloudinary.com/dbqcioj2g/image/upload/v1743519564/zu270d8swx3ag6pm5m9u.jpg",
   },
-  {
-    name: "Ngô Phương Anh",
-    school: "Gettysburg College",
-    year: "Sophomore",
-    major: "Computer Science",
-    category: "software",
-    offers: ["A&T Technology Development Program Internship"],
-    avatar:
-      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1744173236/kflrsx3spzxexjxyo6uf.jpg",
-  },
+  // {
+  //   name: "Ngô Phương Anh",
+  //   school: "Gettysburg College",
+  //   year: "Sophomore",
+  //   major: "Computer Science",
+  //   category: "software",
+  //   offers: ["A&T Technology Development Program Internship"],
+  //   avatar:
+  //     "http://res.cloudinary.com/dbqcioj2g/image/upload/v1744173236/kflrsx3spzxexjxyo6uf.jpg",
+  // },
   {
     name: "Bảo Trân",
     school: "Lehigh University",
@@ -137,7 +137,7 @@ const offersData = [
   {
     name: "Gia Mẫn",
     school: "University of South Florida",
-    year: "Junior",
+    year: "Sophomore",
     major: "Computer Science",
     category: "software",
     offers: ["Goldman Sachs - Software Engineer Intern"],
@@ -256,7 +256,7 @@ const offersData = [
   {
     name: "Phạm Quang Hưng",
     school: "University of South Florida",
-    year: "Junior",
+    year: "Sophomore",
     major: "Computer Science",
     category: "software",
     offers: ["Dell - Software Engineer Intern"],
