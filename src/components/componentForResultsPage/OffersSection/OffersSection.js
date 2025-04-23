@@ -125,6 +125,36 @@ const offersData = [
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1743519785/qnbpa1u5fxv7d9jpcczk.jpg",
   },
   {
+    name: "Cao Minh Hiếu",
+    school: "Georgia State University",
+    year: "Junior",
+    major: "Computer Science",
+    category: "software",
+    offers: ["LexisNexis - Software Engineer Intern"],
+    avatar:
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1745387467/nxztk80xv90dblti1jte.jpg",
+  },
+  {
+    name: "Riley Phan",
+    school: "Texas Christian University",
+    year: "Junior",
+    major: "Computer Science",
+    category: "software",
+    offers: ["Doordash - Software Engineer Intern"],
+    avatar:
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1745387467/xviucp9uwguilicpbaqk.jpg",
+  },
+  {
+    name: "Ngô Nhật Uyên",
+    school: "DePauw University",
+    year: "Freshmen",
+    major: "Computer Science",
+    category: "software",
+    offers: ["Veryable - Software Engineer Intern"],
+    avatar:
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1745387466/bdtn78bvow6jjlmvauco.jpg",
+  },
+  {
     name: "Lê Duy Khanh",
     school: "Villanova University",
     year: "Sophomore",
