@@ -1,6 +1,6 @@
 .services-section {
   padding: 40px 20px;
-  background-color: var(--background-color);
+  background-color: var(--color-background);
   max-width: 100%;
   margin: 0 auto;
 }
@@ -40,11 +40,11 @@
 
 .icon {
   font-size: 18px;
-  color: var(--primary-color);
+  color: var(--color-primary);
 }
 
 .expand-button {
-  background-color: var(--primary-color);
+  background-color: var(--color-primary);
   border: none;
   border-radius: 5px;
   color: white;
@@ -52,7 +52,7 @@
 }
 
 .expand-button:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--color-secondary);
 }
 
 .service-details {
@@ -70,7 +70,7 @@
 }
 
 .custom-action-button {
-  background-color: var(--primary-color);
+  background-color: var(--color-primary);
   color: white;
   border: none;
   padding: 12px 24px;
@@ -80,7 +80,7 @@
 }
 
 .custom-action-button:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--color-secondary);
 }
 
 /* Responsive Adjustments */

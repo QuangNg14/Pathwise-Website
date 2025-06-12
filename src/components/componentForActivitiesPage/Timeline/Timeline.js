@@ -87,7 +87,7 @@ const Timeline = () => {
               <Title
                 level={4}
                 className="event-title"
-                style={{ color: "var(--secondary-color)" }}
+                style={{ color: "var(--color-secondary)" }}
               >
                 {event.title}
               </Title>

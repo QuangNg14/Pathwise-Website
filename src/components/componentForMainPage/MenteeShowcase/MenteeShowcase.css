@@ -1,5 +1,5 @@
 .mentor-showcase-container {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   padding: 50px 0;
   color: #fff;
 }
@@ -63,7 +63,7 @@
 .mentor-company {
   display: block;
   margin-top: 8px;
-  color: var(--primary-color);
+  color: var(--color-primary);
   font-weight: bold;
 }
 

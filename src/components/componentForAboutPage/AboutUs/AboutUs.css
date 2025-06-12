@@ -8,7 +8,7 @@
   .about-us-title {
     text-align: center;
     font-size: 40px;
-    color: var(--primary-color);
+    color: var(--color-primary);
     margin-bottom: 40px;
   }
   
@@ -34,7 +34,7 @@
   .member-name {
     font-size: 24px;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--color-primary);
     margin-bottom: 15px;
     display: block;
   }
@@ -64,7 +64,7 @@
     position: absolute;
     top: 15px;
     right: 15px;
-    background-color: var(--secondary-color);
+    background-color: var(--color-secondary);
     color: #fff;
     font-size: 14px;
     font-weight: 600;

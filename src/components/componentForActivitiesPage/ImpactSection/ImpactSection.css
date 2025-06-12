@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #564497;
-    --secondary-color: #f8a025;
+    --color-primary: #C45A1D;
+    --color-secondary: #E9B260;
   }
   
   .impact-section {
@@ -15,14 +15,14 @@
   .impact-title {
     font-size: 2.5rem; /* Increased font size for impact */
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--color-primary);
   }
   
   .impact-subtitle {
     display: block;
     font-size: 1.5rem; /* Slightly larger subtitle */
     font-weight: 500;
-    color: var(--primary-color);
+    color: var(--color-primary);
     margin: 15px 0;
   }
   

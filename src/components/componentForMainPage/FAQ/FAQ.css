@@ -1,9 +1,9 @@
 /* Root Variables (Assuming these are defined in your globals.css)
 :root {
-  --primary-color: #564497;
-  --secondary-color: #f8a025;
-  --text-color: #0F2442;
-  --background-color: #fff;
+  --color-primary: #564497;
+  --color-secondary: #f8a025;
+  --color-text: #0F2442;
+  --color-background: #fff;
 }
 */
 
@@ -11,7 +11,7 @@
   /* max-width: 1200px; */
   margin: 0 auto;
   padding: 80px 320px;
-  background-color: var(--background-color);
+  background-color: var(--color-background);
 }
 
 .faq-title {
@@ -19,7 +19,7 @@
   font-weight: 700;
   font-size: 48px;
   line-height: 1.2;
-  color: var(--primary-color);
+  color: var(--color-primary);
   text-align: center;
 }
 
@@ -38,7 +38,7 @@
 .faq-panel > .ant-collapse-header {
   font-size: 20px;
   font-weight: 600;
-  color: var(--text-color);
+  color: var(--color-text);
   padding: 16px;
 }
 
@@ -53,7 +53,7 @@
 .faq-answer {
   font-size: 16px;
   line-height: 1.6;
-  /* color: var(--text-color); */
+  /* color: var(--color-text); */
   display: block;
   margin-bottom: 16px;
 }

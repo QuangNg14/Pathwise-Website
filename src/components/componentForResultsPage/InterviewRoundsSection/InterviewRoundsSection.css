@@ -1,18 +1,11 @@
-:root {
-  --primary-color: #564497;
-  --secondary-color: #f8a025;
-  --background-color: #f0d394;
-  --text-color: white;
-}
-
 .interview-rounds-section {
   padding: 40px 10px;
-  color: var(--text-color);
+  color: var(--color-text);
 }
 
 .section-title {
   text-align: center;
-  color: var(--primary-color);
+  color: var(--color-primary);
   margin-bottom: 20px;
   font-size: 24px;
 }
@@ -29,7 +22,7 @@
 
 .company-details {
   background-color: #333;
-  color: var(--text-color);
+  color: var(--color-text);
   padding: 15px;
   margin: 20px auto;
   width: 100%;
@@ -38,7 +31,7 @@
 }
 
 .company-details h3 {
-  color: var(--secondary-color);
+  color: var(--color-secondary);
 }
 
 .tooltip {
@@ -56,7 +49,7 @@
 
 .note {
   font-size: 14px;
-  color: var(--secondary-color);
+  color: var(--color-secondary);
   text-align: center;
   margin-top: 20px;
 }

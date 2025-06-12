@@ -12,7 +12,7 @@ const MentorCarousel = ({ mentors }) => {
     <Layout
       style={{
         padding: "64px 20px",
-        backgroundColor: "var(--mentor-color)",
+        backgroundColor: "var(--color-heading)",
         width: "100%",
         marginTop: 40,
       }}

@@ -1,6 +1,6 @@
 .contact-section {
     padding: 40px 20px;
-    background-color: var(--background-color); /* Use global background color */
+    background-color: var(--color-background); /* Use global background color */
     text-align: left;
     color: var(--primary-text-color);
   }
@@ -18,7 +18,7 @@
   }
   
   .highlight {
-    color: var(--primary-color); /* Use primary color for emphasis */
+    color: var(--color-primary); /* Use primary color for emphasis */
   }
   
   .contact-description {
@@ -43,11 +43,11 @@
   .contact-icon {
     font-size: 20px;
     margin-right: 8px;
-    color: var(--primary-color);
+    color: var(--color-primary);
   }
   
   .contact-link {
-    color: var(--primary-color);
+    color: var(--color-primary);
     text-decoration: none;
     margin-left: 5px;
   }

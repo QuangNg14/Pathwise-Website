@@ -38,11 +38,11 @@
   }
   
   .social-icon:hover {
-    color: var(--secondary-color);
+    color: var(--color-secondary);
   }
   
   .footer-title {
-    color: var(--secondary-color);
+    color: var(--color-secondary);
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 20px;
@@ -57,7 +57,7 @@
   }
   
   .footer-link:hover {
-    color: var(--secondary-color);
+    color: var(--color-secondary);
     text-decoration: underline;
   }
   
@@ -74,7 +74,7 @@
   }
   
   .contact-email a:hover {
-    color: var(--secondary-color);
+    color: var(--color-secondary);
   }
   
   /* Responsive adjustments */

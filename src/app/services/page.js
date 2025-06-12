@@ -12,7 +12,7 @@ const Services = () => {
     setCurrent(e.key);
   };
   return (
-    <Layout style={{ backgroundColor: "var(--background-color)" }}>
+    <Layout style={{ backgroundColor: "var(--color-background)" }}>
       <HeaderComponent current={current} handleClick={handleClick} />
       <ServicesTab />
       <FooterComponent />

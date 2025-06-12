@@ -9,7 +9,7 @@ const HeroSection = () => {
     <div className="hero-section">
       <div className="overlay">
         <div className="content">
-          <Title className="hero-title" style={{ color: "var(--text-color)" }}>
+          <Title className="hero-title" style={{ color: "var(--color-text)" }}>
             Introduction to the Pathwise Mentorship Program
           </Title>
           <Text className="hero-description">

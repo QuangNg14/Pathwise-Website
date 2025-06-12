@@ -5,7 +5,7 @@
 
 .section-title {
   text-align: center;
-  color: #564497;
+  color: var(--color-primary);
   margin-bottom: 30px;
   font-size: 2.5rem;
 }
@@ -15,7 +15,7 @@
 }
 
 .category-title {
-  color: #564497;
+  color: var(--color-primary);
   margin-bottom: 15px;
   font-weight: 500;
   font-size: 1.5rem;
@@ -43,7 +43,7 @@
 
 .company-card .ant-typography {
   font-size: 1.25rem; /* Adjusted font size */
-  color: #564497;
+  color: var(--color-primary);
   font-weight: 500;
   white-space: nowrap; /* Prevent text wrapping */
 }

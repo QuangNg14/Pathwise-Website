@@ -1,5 +1,5 @@
 .form-section {
-    background-color: var(--background-color);
+    background-color: var(--color-background);
     min-height: 100vh;
     display: flex;
     align-items: flex-start;
@@ -25,7 +25,7 @@
   .program-info-card {
     padding: 20px;
     border-radius: 8px;
-    color: var(--text-color);
+    color: var(--color-text);
     background: #fff; /* Light background for emphasis */
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
     border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border for definition */
@@ -64,13 +64,13 @@
   }
   
   .program-links a {
-    color: var(--primary-color);
+    color: var(--color-primary);
     text-decoration: none;
     font-weight: bold;
   }
   
   .program-links a:hover {
-    color: var(--secondary-color);
+    color: var(--color-secondary);
   }
   
   .form-title {
@@ -87,7 +87,7 @@
   
   .submit-button {
     width: 100%;
-    background-color: var(--primary-color);
+    background-color: var(--color-primary);
     border: none;
     color: white;
     font-weight: 600;
@@ -98,7 +98,7 @@
   }
   
   .submit-button:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--color-secondary);
   }
   
   @media (max-width: 768px) {
