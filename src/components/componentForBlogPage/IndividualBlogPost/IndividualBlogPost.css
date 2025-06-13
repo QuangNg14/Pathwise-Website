@@ -13,15 +13,16 @@
 .content-container {
   flex: 1 1 700px;
   padding: 30px;
-  background-color: #fff;
+  background-color: var(--color-bg, #FDF7ED);
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Back Button */
 .go-back-icon {
-  color: #6a67ce;
+  color: var(--color-primary, #C45A1D);
   cursor: pointer;
+  font-family: Inter;
   font-size: 1.2rem;
   display: flex;
   align-items: center;
@@ -30,14 +31,15 @@
 }
 
 .go-back-icon:hover {
-  color: #555;
+  color: #a94a0e;
 }
 
 /* Blog Content */
 .blog-content {
+  font-family: Inter;
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #333;
+  color: var(--color-text, #6D2A1A);
 }
 
 /* Responsive Images */
@@ -55,9 +57,10 @@
 .blog-content h4,
 .blog-content h5,
 .blog-content h6 {
+  font-family: Inter;
   margin-top: 1.5em;
   font-weight: bold;
-  color: #444;
+  color: var(--color-heading, #3E130A);
   line-height: 1.2;
 }
 
@@ -103,10 +106,10 @@
 
 /* Blockquotes */
 .blog-content blockquote {
-  border-left: 4px solid #6a67ce;
+  border-left: 4px solid var(--color-primary, #C45A1D);
   padding-left: 16px;
   margin-left: 0;
-  color: #555;
+  color: var(--color-text, #6D2A1A);
   font-style: italic;
 }
 
@@ -146,28 +149,30 @@
 
 /* Links */
 .blog-content a {
-  color: #6a67ce;
+  color: var(--color-primary, #C45A1D);
   text-decoration: underline;
+  transition: color 0.2s ease;
 }
 
 .blog-content a:hover {
-  color: #333;
+  color: #a94a0e;
 }
 
 /* Sidebar */
 .sidebar {
   flex: 1 1 300px;
   padding: 20px;
-  background-color: #f9f9fc;
+  background-color: #fff;
   border-radius: 8px;
-  color: #666;
+  color: var(--color-text, #6D2A1A);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   height: fit-content;
 }
 
 .sidebar h5 {
+  font-family: Inter;
   font-size: 1.2rem;
-  color: #333;
+  color: var(--color-heading, #3E130A);
   margin-bottom: 15px;
   font-weight: 600;
 }
@@ -183,13 +188,14 @@
 }
 
 .sidebar li a {
-  color: #6a67ce;
+  font-family: Inter;
+  color: var(--color-text, #6D2A1A);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .sidebar li a:hover {
-  color: #333;
+  color: var(--color-primary, #C45A1D);
 }
 
 /* Responsive Adjustments */

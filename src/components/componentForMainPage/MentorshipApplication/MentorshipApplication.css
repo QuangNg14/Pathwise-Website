@@ -1,0 +1,323 @@
+/* Mentorship Application Section */
+.mentorship-app-section {
+  background: #fdf7ed;
+  padding: 80px 0;
+  width: 100%;
+}
+
+.mentorship-app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+  padding: 0 40px;
+}
+
+.mentorship-app-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 496px;
+}
+
+.mentorship-app-title {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: var(--color-dark, #3E130A);
+  margin: 0 0 24px 0;
+}
+
+.mentorship-app-desc {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: var(--color-dark-alt, #6D2A1A);
+  margin-bottom: 40px;
+}
+
+.mentorship-app-image-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.mentorship-app-image {
+  width: 496px;
+  height: 481px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.mentorship-app-right {
+  flex: 1;
+  background: #fdf7ed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 40px;
+}
+
+.mentorship-app-form {
+  width: 100%;
+}
+
+.mentorship-app-form-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 8px;
+}
+
+.mentorship-app-form-col {
+  flex: 1;
+}
+
+.mentorship-app-form .ant-form-item {
+  margin-bottom: 16px;
+}
+
+.mentorship-app-form .ant-form-item-label > label {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-dark, #3E130A);
+  margin-bottom: 6px;
+}
+
+.mentorship-app-form .ant-form-item-label > label.ant-form-item-required::before {
+  content: "";
+}
+
+.mentorship-app-form .ant-form-item-label > label.ant-form-item-required::after {
+  content: "*";
+  color: #ff4d4f;
+  margin-left: 4px;
+}
+
+.mentorship-app-form .ant-input,
+.mentorship-app-form .ant-input-affix-wrapper {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #d9d9d9;
+  border-radius: 0;
+  font-family: Inter;
+  font-size: 16px;
+  color: var(--color-dark-alt, #6D2A1A);
+  box-shadow: none !important;
+  padding: 8px 0;
+}
+
+.mentorship-app-form .ant-input::placeholder,
+.mentorship-app-form .ant-input-affix-wrapper input::placeholder {
+  color: #bfbfbf;
+  font-family: Inter;
+  font-size: 16px;
+}
+
+.mentorship-app-form .ant-input:focus,
+.mentorship-app-form .ant-input-affix-wrapper:focus,
+.mentorship-app-form .ant-input-affix-wrapper-focused {
+  border-bottom: 2px solid var(--color-primary, #C45A1D);
+  background: transparent;
+}
+
+.mentorship-app-form .ant-select {
+  width: 100%;
+}
+
+.mentorship-app-form .ant-select .ant-select-selector {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #d9d9d9;
+  border-radius: 0;
+  font-family: Inter;
+  font-size: 16px;
+  color: var(--color-dark-alt, #6D2A1A);
+  box-shadow: none !important;
+  padding: 8px 0;
+  height: auto;
+}
+
+.mentorship-app-form .ant-select-focused .ant-select-selector,
+.mentorship-app-form .ant-select:hover .ant-select-selector {
+  border-bottom: 2px solid var(--color-primary, #C45A1D);
+  background: transparent;
+}
+
+.mentorship-app-form .ant-select .ant-select-selection-placeholder {
+  color: #bfbfbf;
+  font-family: Inter;
+  font-size: 16px;
+}
+
+.mentorship-app-form .ant-upload {
+  width: 100%;
+}
+
+.mentorship-app-form .ant-upload .ant-btn {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #d9d9d9;
+  border-radius: 0;
+  font-family: Inter;
+  font-size: 16px;
+  color: #bfbfbf;
+  padding: 8px 0;
+  text-align: left;
+  box-shadow: none;
+  height: auto;
+}
+
+.mentorship-app-form .ant-upload .ant-btn:hover {
+  border-bottom: 2px solid var(--color-primary, #C45A1D);
+  color: var(--color-dark-alt, #6D2A1A);
+}
+
+.mentorship-app-form .ant-input[maxlength] {
+  resize: none;
+}
+
+.mentorship-app-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+  gap: 16px;
+}
+
+.mentorship-app-privacy {
+  font-family: Inter;
+  font-size: 14px;
+  color: var(--color-dark-alt, #6D2A1A);
+}
+
+.mentorship-app-privacy a {
+  color: var(--color-primary, #C45A1D);
+  text-decoration: underline;
+}
+
+.mentorship-app-submit {
+  background: var(--color-primary, #C45A1D);
+  color: #fff;
+  border: none;
+  width: 129px;
+  height: 43px;
+  min-width: 120px;
+  padding: 12px 24px;
+  gap: 10px;
+  border-radius: 8px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background 0.2s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mentorship-app-submit:hover {
+  background: #a94a0e;
+  color: #fff;
+}
+
+.waitlist-message {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.waitlist-message .ant-typography {
+  margin: 0;
+  color: var(--color-dark-alt, #6D2A1A);
+}
+
+.waitlist-message a {
+  color: var(--color-primary, #C45A1D);
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .mentorship-app-container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 32px;
+  }
+  
+  .mentorship-app-left {
+    max-width: 100%;
+  }
+  
+  .mentorship-app-title {
+    font-size: 48px;
+  }
+  
+  .mentorship-app-image {
+    width: 100%;
+    max-width: 496px;
+    height: auto;
+    aspect-ratio: 496/481;
+  }
+  
+  .mentorship-app-right {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .mentorship-app-section {
+    padding: 60px 0;
+  }
+  
+  .mentorship-app-container {
+    padding: 0 24px;
+    gap: 32px;
+  }
+  
+  .mentorship-app-title {
+    font-size: 40px;
+  }
+  
+  .mentorship-app-form-row {
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 0;
+  }
+  
+  .mentorship-app-form-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  
+  .mentorship-app-submit {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .mentorship-app-section {
+    padding: 48px 0;
+  }
+  
+  .mentorship-app-container {
+    padding: 0 16px;
+  }
+  
+  .mentorship-app-title {
+    font-size: 32px;
+  }
+  
+  .mentorship-app-desc {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

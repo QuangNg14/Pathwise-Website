@@ -420,30 +420,59 @@ const newGradOffersData = [
   },
 ];
 
-const MenteeCard = ({ mentee }) => (
-  <Col xs={24} sm={12} md={8} lg={6}>
-    <Card className="offer-card" hoverable>
-      <div className="mentee-avatar-container">
-        <img src={mentee.avatar} alt={mentee.name} className="mentee-avatar" />
-      </div>
-      <div className="mentee-details">
-        <Text className="mentee-name">{mentee.name}</Text>
-        <Text className="mentee-info">{`${mentee.school} - ${mentee.year}`}</Text>
-        <Text className="mentee-info">{mentee.major}</Text>
-        <div className="mentee-offers">
-          <Text className="offers-title">Offers:</Text>
-          <ul className="offers-list">
-            {mentee.offers.map((offer, idx) => (
-              <li key={idx} className="offer-text">
-                {offer}
-              </li>
-            ))}
-          </ul>
+const MenteeCard = ({ mentee }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleExpanded = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  const cardClasses = [
+    'offer-card',
+    mentee.offers.length > 1 ? 'has-multiple-offers' : '',
+    isExpanded ? 'expanded' : ''
+  ].filter(Boolean).join(' ');
+
+  return (
+    <Col xs={24} sm={12} md={12} lg={8} xl={6}>
+      <Card 
+        className={cardClasses}
+        hoverable
+      >
+        <div className="card-content">
+          <div className="mentee-avatar-container">
+            <img src={mentee.avatar} alt={mentee.name} className="mentee-avatar" />
+          </div>
+          <div className="mentee-details">
+            <div className="mentee-info-section">
+              <Text className="mentee-name">{mentee.name}</Text>
+              <Text className="mentee-info">{`${mentee.school} - ${mentee.year}`}</Text>
+              <Text className="mentee-info">{mentee.major}</Text>
+            </div>
+            <div className="mentee-offers">
+              <Text className="offers-title">Offers:</Text>
+              <ul className="offers-list">
+                {mentee.offers.map((offer, idx) => (
+                  <li 
+                    key={idx} 
+                    className={`offer-text ${idx === 0 ? 'primary-offer' : 'secondary-offer'}`}
+                  >
+                    {offer}
+                  </li>
+                ))}
+              </ul>
+              {mentee.offers.length > 1 && (
+                <div className="expand-indicator" onClick={toggleExpanded}>
+                  {isExpanded ? '▲ Click to collapse' : `▼ +${mentee.offers.length - 1} more offers`}
+                </div>
+              )}
+            </div>
+          </div>
         </div>
-      </div>
-    </Card>
-  </Col>
-);
+      </Card>
+    </Col>
+  );
+};
 
 const OffersSection = () => {
   const [activeTab, setActiveTab] = useState("software");
@@ -453,7 +482,7 @@ const OffersSection = () => {
       key: "software",
       label: "Software Engineering",
       children: (
-        <Row gutter={[24, 24]}>
+        <Row gutter={[32, 32]}>
           {offersData
             .filter((mentee) => mentee.category === "software")
             .map((mentee, index) => (
@@ -466,7 +495,7 @@ const OffersSection = () => {
       key: "data",
       label: "Data Science/Engineering/Analytics",
       children: (
-        <Row gutter={[24, 24]}>
+        <Row gutter={[32, 32]}>
           {offersData
             .filter((mentee) => mentee.category === "data")
             .map((mentee, index) => (
@@ -479,7 +508,7 @@ const OffersSection = () => {
       key: "finance",
       label: "Finance & Investment Banking",
       children: (
-        <Row gutter={[24, 24]}>
+        <Row gutter={[32, 32]}>
           {offersData
             .filter((mentee) => mentee.category === "finance")
             .map((mentee, index) => (
@@ -492,23 +521,27 @@ const OffersSection = () => {
 
   return (
     <div className="offers-section">
-      <Title level={2} className="section-title">
-        Internship Offers Summer 2025
-      </Title>
-      <Tabs
-        defaultActiveKey="software"
-        items={tabItems}
-        onChange={setActiveTab}
-        className="offers-tabs"
-      />
-      <Title level={2} className="section-title new-grad-title">
-        New Grad Offers 2025
-      </Title>
-      <Row gutter={[24, 24]}>
-        {newGradOffersData.map((mentee, index) => (
-          <MenteeCard key={index} mentee={mentee} />
-        ))}
-      </Row>
+      <div className="offers-content">
+        <Title level={2} className="section-title">
+          Internship Offers Summer 2025
+        </Title>
+        <Tabs
+          defaultActiveKey="software"
+          items={tabItems}
+          onChange={setActiveTab}
+          className="offers-tabs"
+        />
+        <div className="new-grad-section">
+          <Title level={2} className="section-title new-grad-title">
+            New Grad Offers 2025
+          </Title>
+          <Row gutter={[32, 32]}>
+            {newGradOffersData.map((mentee, index) => (
+              <MenteeCard key={index} mentee={mentee} />
+            ))}
+          </Row>
+        </div>
+      </div>
     </div>
   );
 };

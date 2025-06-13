@@ -42,25 +42,27 @@ const topCompaniesData = [
 const TopCompaniesOffersSection = () => {
   return (
     <div className="top-companies-section">
-      <Title level={2} className="section-title">
-        🎉 Top Offers in the US 2025 🎉
-      </Title>
-      <Row gutter={[24, 24]} justify="center">
-        {topCompaniesData.map((company, index) => (
-          <Col xs={12} sm={8} md={6} lg={6} key={index}>
-            <Card hoverable className="company-card" data-animate="fade-in-up">
-              <div className="company-content">
-                <span className="offer-count">{company.count} x</span>
-                <img
-                  src={company.logo}
-                  alt="Company Logo"
-                  className="company-logo"
-                />
-              </div>
-            </Card>
-          </Col>
-        ))}
-      </Row>
+      <div className="top-companies-content">
+        <Title level={2} className="section-title">
+          🎉 Top Offers in the US 2025 🎉
+        </Title>
+        <Row gutter={[24, 24]} justify="center">
+          {topCompaniesData.map((company, index) => (
+            <Col xs={12} sm={8} md={6} lg={6} xl={4} key={index}>
+              <Card hoverable className="company-card">
+                <div className="company-content">
+                  <span className="offer-count">{company.count} x</span>
+                  <img
+                    src={company.logo}
+                    alt="Company Logo"
+                    className="company-logo"
+                  />
+                </div>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </div>
     </div>
   );
 };

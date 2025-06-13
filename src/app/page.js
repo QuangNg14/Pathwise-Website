@@ -11,6 +11,7 @@ import PeerToPeerMentoring from "@/components/componentForMainPage/PeerToPeerMen
 import Community from "@/components/componentForMainPage/Community/Community";
 import FAQ from "@/components/componentForMainPage/FAQ/FAQ";
 import FooterComponent from "@/components/footer/Footer";
+import MentorshipApplication from "@/components/componentForMainPage/MentorshipApplication/MentorshipApplication";
 
 const { Header, Content } = Layout;
 const { Title, Text } = Typography;
@@ -94,13 +95,14 @@ export default function Home() {
       <Content>
         <div className="site-layout-content">
           <PeerToPeerMentoring />
-          <LandYourDreamJob />
-          <MentorCarousel mentors={mentors} />
           <Features />
+          <MentorCarousel mentors={mentors} />
+          <LandYourDreamJob />
           <MenteeShowcase />
-          <AchievementGallery />
-          <Community />
+          {/* <AchievementGallery />
+          <Community /> */}
           <FAQ />
+          <MentorshipApplication />
           <FooterComponent />
         </div>
       </Content>

@@ -41,7 +41,7 @@ export default function BlogPage({ params }) {
   }
 
   return (
-    <Layout>
+    <Layout style={{ backgroundColor: "#fff" }}>
       <HeaderComponent current={current} handleClick={handleClick} />
       <IndividualBlogPost content={content} id={id} />
       <FooterComponent />

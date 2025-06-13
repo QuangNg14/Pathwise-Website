@@ -62,11 +62,9 @@
 /* Company logos carousel */
 .dream-job-logos-section {
   width: 100%;
-  display: flex;
-  justify-content: center;
   max-width: 1200px;
   height: 129.3006134033203px;
-  margin: 0 48px;
+  margin: 0 auto;
   overflow: hidden;
   position: relative;
 }
@@ -147,7 +145,7 @@
   .dream-job-logos-section {
     max-width: 100%;
     height: auto;
-    margin: 0 32px;
+    margin: 0 auto;
   }
   
   .dream-job-logos-carousel {
@@ -221,7 +219,7 @@
   }
   
   .dream-job-logos-section {
-    margin: 0 24px;
+    margin: 0 auto;
   }
   
   .dream-job-logos-carousel {
@@ -280,7 +278,7 @@
   }
   
   .dream-job-logos-section {
-    margin: 0 16px;
+    margin: 0 auto;
   }
   
   .dream-job-logos-carousel {

@@ -34,7 +34,7 @@ const Results = () => {
   return (
     <Layout>
       <HeaderComponent current={current} handleClick={handleClick} />
-      <TopCompaniesOffersSection />
+      {/* <TopCompaniesOffersSection /> */}
       <OffersSection />
       {/* <CompanyInterviews /> */}
       <InterviewRoundsSection />
