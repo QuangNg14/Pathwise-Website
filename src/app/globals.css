@@ -10,7 +10,7 @@
 html, body, #__next {
   height: 100%;
   margin: 0;
-  padding: 20px 40px 20px 40px;
+  padding: 0px 40px 0px 40px;
   font-family: 'Anuphan', sans-serif !important;
   color: var(--color-text);
   /* background: var(--color-background); */

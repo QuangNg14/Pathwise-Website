@@ -95,7 +95,7 @@ export default function Home() {
         <div className="site-layout-content">
           <PeerToPeerMentoring />
           <LandYourDreamJob />
-          {/* <MentorCarousel mentors={mentors} /> */}
+          <MentorCarousel mentors={mentors} />
           <Features />
           <MenteeShowcase />
           <AchievementGallery />

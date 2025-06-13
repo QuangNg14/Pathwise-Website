@@ -5,7 +5,7 @@
   z-index: 1000;
   width: 100%;
   background-color: #fff;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #9A9A9A;
   padding: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
@@ -16,9 +16,9 @@
   align-items: center;
   justify-content: space-between;
   height: 64px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
+  /* max-width: 1200px; */
+  /* margin: 0 auto; */
+  /* padding: 0 40px; */
   width: 100%;
 }
 
@@ -68,7 +68,7 @@
 .custom-menu-item::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: 8px;
   left: 0;
   width: 0;
   height: 2px;
@@ -82,18 +82,24 @@
 
 /* Register button */
 .register-menu-item {
+  width: 120px;
+  height: 43px;
+  min-width: 120px;
+  padding: 12px 24px;
+  gap: 10px;
+  border-radius: 8px;
   background-color: var(--color-primary);
   color: #fff !important;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
+  border: 1px solid var(--color-primary);
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.2s ease;
   box-shadow: 0 2px 8px rgba(196, 90, 29, 0.15);
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   white-space: nowrap;
   position: relative;
   overflow: hidden;
@@ -105,6 +111,7 @@
 
 .register-menu-item:hover {
   background-color: #a94a0e;
+  border-color: #a94a0e;
   color: #fff !important;
   box-shadow: 0 4px 16px rgba(196, 90, 29, 0.25);
   transform: translateY(-1px);
