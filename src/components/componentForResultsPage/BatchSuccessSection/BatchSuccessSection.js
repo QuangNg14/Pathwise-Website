@@ -53,8 +53,8 @@ const BatchSuccessSection = () => {
             <h3 className="highlight-title">Off-Season Success</h3>
             <p className="highlight-description">
               Achieved remarkable results during the challenging Fall-Winter
-              period when most companies aren't actively recruiting for summer
-              internships.
+              period when most companies aren&apos;t actively recruiting for
+              summer internships.
             </p>
           </div>
 
@@ -82,8 +82,8 @@ const BatchSuccessSection = () => {
         <div className="cta-section">
           <h3 className="cta-title">Ready to Join Our Next Success Story?</h3>
           <p className="cta-description">
-            Applications for Batch 5/2025 are now open. Don't miss your chance
-            to be part of our next cohort of successful mentees.
+            Applications for Batch 5/2025 are now open. Don&apos;t miss your
+            chance to be part of our next cohort of successful mentees.
           </p>
           <button className="cta-button" onClick={handleApplyClick}>
             Apply for Batch 5/2025
