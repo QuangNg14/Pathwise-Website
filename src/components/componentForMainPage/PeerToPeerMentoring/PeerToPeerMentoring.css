@@ -1,202 +1,335 @@
-.peer-mentoring-container {
-  background: linear-gradient(
-    135deg,
-    #ff9a8b 0%,
-    #fad0c4 25%,
-    #fbc2eb 50%,
-    #a18cd1 75%,
-    #fad0c4 100%
-  );
-  padding: 80px 40px 80px 100px;
-  color: #0f2442;
+/* Container with proper page padding */
+.peer-to-peer-container {
+  width: 100%;
+  /* background: var(--color-background); */
+  padding: 80px 0;
+  border-bottom: 1px solid #9A9A9A;
 }
 
-.peer-mentoring-row {
+.peer-to-peer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* Row 1 - Title */
+.peer-to-peer-title-row {
+  width: 100%;
+  text-align: left;
+}
+
+.peer-to-peer-title {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 90px;
+  letter-spacing: 0%;
+  color: var(--color-heading);
+  margin: 0;
+}
+
+/* Row 2 - Description and Buttons (2 columns) */
+.peer-to-peer-content-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 60px;
   align-items: center;
 }
 
-.text-column {
-  padding-right: 40px;
+.peer-to-peer-description-column {
+  display: flex;
+  align-items: center;
 }
 
-.peer-mentoring-title {
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 1.2;
-  color: #0f2442;
-  margin-bottom: 20px;
-}
-
-.peer-mentoring-text {
+.peer-to-peer-description {
+  font-family: "Inter", sans-serif;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 30px;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  color: var(--color-text);
+  margin: 0;
 }
 
-.highlighted-outcomes {
-  color: var(--primary-color); /* Apply primary color */
-  font-weight: bold;
-  border-bottom: 2px solid var(--primary-color); /* Bottom border */
-  padding-bottom: 2px; /* Adds some space between text and border */
-  cursor: pointer; /* Change cursor to pointer */
-  transition: color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
-}
-
-.highlighted-outcomes:hover {
-  color: var(--secondary-color); /* Transition to secondary color on hover */
-  border-color: var(--secondary-color); /* Transition border color to secondary color on hover */
-}
-
-.buttons-container {
+.peer-to-peer-buttons-column {
   display: flex;
-  gap: 15px;
-  width: 50%;
-  /* width: 50%; */
-  /* flex-wrap: wrap; */
+  gap: 24px;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-.custom-button {
-  padding: 20px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 15px;
-  border: none;
-  width: 200px;
+/* Enhanced Primary Button with animations */
+.peer-to-peer-primary-btn,
+.peer-to-peer-primary-btn.ant-btn,
+.peer-to-peer-primary-btn.ant-btn-primary {
+  width: 134px !important;
+  height: 43px !important;
+  min-width: 120px !important;
+  padding: 12px 24px !important;
+  gap: 10px;
+  border-radius: 8px !important;
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: #fff !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  box-shadow: 0 2px 8px rgba(196, 90, 29, 0.15) !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid var(--color-primary) !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
-.register-button {
-  background-color: #564497;
-  color: white;
-}
-
-.register-button:hover {
-  background-color: #43327a;
-}
-
-.mentorship-button {
-  background-color: transparent;
-  color: #564497;
-  border: 2px solid #564497;
-}
-
-.mentorship-button:hover {
-  color: #43327a;
-  border-color: #43327a;
-}
-
-.image-column {
-  display: flex;
-  justify-content: center; 
-  align-items: flex-start;
-  margin-top: 30px;
-}
-
-.images-stack {
-  position: relative;
-  width: 320px;
-  max-width: 100%;
-  height: 600px;
-  z-index: 0;
-}
-
-.image {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.image-top {
+.peer-to-peer-primary-btn::before {
+  content: '';
   position: absolute;
   top: 0;
-  left: 60px;
-  z-index: 3;
-  transform: rotate(-5deg);
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
 }
 
-.image-middle {
-  position: absolute;
-  top: 90px;
-  left: 30px;
-  z-index: 2;
-  transform: rotate(0deg);
+.peer-to-peer-primary-btn:hover,
+.peer-to-peer-primary-btn:focus,
+.peer-to-peer-primary-btn.ant-btn:hover,
+.peer-to-peer-primary-btn.ant-btn:focus,
+.peer-to-peer-primary-btn.ant-btn-primary:hover,
+.peer-to-peer-primary-btn.ant-btn-primary:focus {
+  background-color: #a94a0e !important;
+  border-color: #a94a0e !important;
+  color: #fff !important;
+  box-shadow: 0 6px 20px rgba(196, 90, 29, 0.3) !important;
+  transform: translateY(-2px);
 }
 
-.image-bottom {
-  position: absolute;
-  top: 180px;
-  left: 0;
-  z-index: 1;
-  transform: rotate(5deg);
+.peer-to-peer-primary-btn:hover::before {
+  left: 100%;
 }
 
+.peer-to-peer-primary-btn:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 8px rgba(196, 90, 29, 0.2) !important;
+}
+
+/* Enhanced Secondary Button with border and clean animations */
+.peer-to-peer-secondary-btn {
+  width: 180px;
+  height: 43px;
+  min-width: 100px;
+  padding: 12px 24px;
+  gap: 10px;
+  border-radius: 8px;
+  color: var(--color-primary);
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  border: 1px solid var(--color-primary);
+  background: transparent;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.peer-to-peer-secondary-btn:hover,
+.peer-to-peer-secondary-btn:focus {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background: rgba(196, 90, 29, 0.05);
+  box-shadow: 0 2px 8px rgba(196, 90, 29, 0.15);
+}
+
+.peer-to-peer-secondary-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 4px rgba(196, 90, 29, 0.1);
+}
+
+/* Row 3 - Image with enhanced animations */
+.peer-to-peer-image-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.peer-to-peer-image-wrapper {
+  width: 1200px;
+  max-width: 100%;
+}
+
+.peer-to-peer-image-card {
+  width: 1200px;
+  height: 434px;
+  max-width: 100%;
+  border-radius: 16px;
+  border: 1px solid #e5e5e5;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.peer-to-peer-image-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+}
+
+.peer-to-peer-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.peer-to-peer-image-card:hover .peer-to-peer-image {
+  transform: scale(1.05);
+}
+
+/* Divider - hidden on desktop, shown on mobile */
+.peer-to-peer-divider {
+  display: none;
+}
+
+/* Tablet responsive */
 @media (max-width: 992px) {
-  .peer-mentoring-container {
-    padding: 60px 30px;
+  .peer-to-peer-content {
+    padding: 0 32px;
+    gap: 40px;
   }
-
-  .peer-mentoring-title {
-    font-size: 40px;
+  
+  .peer-to-peer-title {
+    font-size: 64px;
+    line-height: 72px;
   }
-
-  .peer-mentoring-text {
-    font-size: 18px;
+  
+  .peer-to-peer-content-row {
+    gap: 40px;
   }
-
-  .image-column {
-    margin-top: 40px;
+  
+  .peer-to-peer-description {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  
+  .peer-to-peer-image-wrapper {
+    width: 100%;
+  }
+  
+  .peer-to-peer-image-card {
+    width: 100%;
+    height: 350px;
   }
 }
 
+/* Mobile responsive - Remove horizontal padding */
 @media (max-width: 768px) {
-  .peer-mentoring-container {
-    padding: 40px 20px;
+  .peer-to-peer-container {
+    padding: 60px 0;
   }
-
-  .peer-mentoring-title {
-    font-size: 32px;
+  
+  .peer-to-peer-content {
+    padding: 0 20px;
+    gap: 32px;
+    max-width: 100%;
   }
-
-  .peer-mentoring-text {
-    font-size: 16px;
+  
+  .peer-to-peer-title {
+    font-size: 48px;
+    line-height: 56px;
+    text-align: left;
   }
-
-  .buttons-container {
+  
+  .peer-to-peer-content-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: left;
+  }
+  
+  .peer-to-peer-description-column {
+    order: 1;
+  }
+  
+  .peer-to-peer-buttons-column {
+    order: 2;
+    justify-content: flex-start;
     flex-direction: column;
-    align-items: flex-start;
+    gap: 16px;
+    align-items: stretch;
   }
-
-  .image-column {
-    margin-top: 20px;
+  
+  .peer-to-peer-description {
+    font-size: 18px;
+    line-height: 26px;
   }
-
-  .images-stack {
-    height: auto;
+  
+  .peer-to-peer-primary-btn,
+  .peer-to-peer-secondary-btn {
+    width: 100% !important;
+    max-width: 100%;
+    min-width: unset !important;
   }
-
-  .image-top,
-  .image-middle,
-  .image-bottom {
-    position: static;
-    transform: none;
-    margin-top: 10px;
+  
+  .peer-to-peer-image-card {
+    height: 280px;
+    border-radius: 12px;
+  }
+  
+  .peer-to-peer-divider {
+    display: block;
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    margin: 40px 0 0 0;
   }
 }
 
-/* Adjust column widths for larger screens */
-@media (min-width: 992px) {
-  .peer-mentoring-row .text-column {
-    flex: 0 0 50%; /* Text takes 35% of the row */
-    max-width: 50%;
+/* Small mobile - Minimal padding */
+@media (max-width: 480px) {
+  .peer-to-peer-container {
+    padding: 48px 0;
   }
+  
+  .peer-to-peer-content {
+    padding: 0 16px;
+    gap: 28px;
+  }
+  
+  .peer-to-peer-title {
+    font-size: 36px;
+    line-height: 42px;
+  }
+  
+  .peer-to-peer-description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .peer-to-peer-image-card {
+    height: 240px;
+  }
+}
 
-  .peer-mentoring-row .image-column {
-    flex: 0 0 50%; /* Images take 65% of the row */
-    max-width: 50%;
+/* Extra small mobile - Maximum space utilization */
+@media (max-width: 360px) {
+  .peer-to-peer-content {
+    padding: 0 12px;
+  }
+  
+  .peer-to-peer-title {
+    font-size: 32px;
+    line-height: 38px;
+  }
+  
+  .peer-to-peer-description {
+    font-size: 15px;
+    line-height: 22px;
   }
 }

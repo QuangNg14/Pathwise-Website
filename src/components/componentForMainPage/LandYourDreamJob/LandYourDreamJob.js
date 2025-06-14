@@ -13,6 +13,16 @@ const LandYourDreamJob = () => {
   const dellInternshipRef = useRef(null);
   const dowJonesInternshipRef = useRef(null);
 
+  // Company logos data
+  const companyLogos = [
+    "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734390598/logos/gaaublizbntaf7iwvzeq.png", // NVIDIA
+    "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734390599/logos/lqooroxhqklyaorccaou.png", // Meta
+    "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734390599/logos/h5fumaeya8b18unp75dw.png", // Microsoft
+    "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734390599/logos/kjm9iesykorj7fvltdlo.png", // Deutsche Bank
+    "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734390599/logos/txryimdx1cx2axuhooeo.png", // EY
+    "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734879271/logos/jbo4ogccxxe7jkzofqfb.png", // BCG
+  ];
+
   useEffect(() => {
     const duration = 2000;
     const increment = 50;
@@ -59,21 +69,50 @@ const LandYourDreamJob = () => {
 
   return (
     <div className="container">
-      <Text className="main-title">Land Your Dream Offers</Text>
+      {/* Header Section with Title and Description Side by Side */}
+      <div className="header-section">
+        <div className="title-container">
+          <Text className="main-title">Land Your Dream Offers</Text>
+        </div>
+        <div className="description-container">
+          <Text className="description">
+            In the first year of launching the 2024 program, we helped{" "}
+            <span className="primary-color">32 mentees</span> secure multiple{" "}
+            <span className="primary-color">interviews and job offers</span> from
+            major companies in the U.S. like Meta, Microsoft, Google, Palantir,
+            Bank of America, Amazon, Morgan Stanley, and HubSpot. Our mentors have experience in various fields such as{" "}
+            <span className="primary-color">
+              Software, Data, Finance, and Consulting
+            </span>
+          </Text>
+        </div>
+      </div>
+      
+      {/* Company Logos Carousel */}
+      <div className="dream-job-logos-section">
+        <div className="dream-job-logos-carousel">
+          {/* First set of logos */}
+          {companyLogos.map((logo, index) => (
+            <img
+              key={`first-${index}`}
+              src={logo}
+              alt={`Company ${index + 1}`}
+              className="dream-job-company-logo"
+            />
+          ))}
+          {/* Duplicate set for seamless loop */}
+          {companyLogos.map((logo, index) => (
+            <img
+              key={`second-${index}`}
+              src={logo}
+              alt={`Company ${index + 1}`}
+              className="dream-job-company-logo"
+            />
+          ))}
+        </div>
+      </div>
+
       <div className="small-container">
-        <Text className="description">
-          In the first year of launching the 2024 program, we helped{" "}
-          <span className="primary-color">32 mentees</span> secure multiple{" "}
-          <span className="primary-color">interviews and job offers</span> from
-          major companies in the U.S. like Meta, Microsoft, Google, Palantir,
-          Bank of America, Amazon, Morgan Stanley, and HubSpot.{" "}
-        </Text>
-        <Text className="description">
-          Our mentors have experience in various fields such as{" "}
-          <span className="primary-color">
-            Software, Data, Finance, and Consulting
-          </span>
-        </Text>
         <Row gutter={[16, 16]} className="statistics">
           <Col xs={24} sm={8} md={8} className="stat-item" ref={researchLabRef}>
             <Text className="stat-number">{researchLabCount}</Text>
@@ -106,13 +145,6 @@ const LandYourDreamJob = () => {
             </Text>
           </Col>
         </Row>
-      </div>
-      <div className="image-container">
-        <img
-          src="http://res.cloudinary.com/dbqcioj2g/image/upload/v1734392777/eqfpg7fkwdmze6datcou.png"
-          alt="Dream Job Image"
-          className="large-image"
-        />
       </div>
     </div>
   );

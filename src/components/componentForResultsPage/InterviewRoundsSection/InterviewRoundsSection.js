@@ -150,7 +150,7 @@ const InterviewRoundsSection = () => {
       const color = d3
         .scaleOrdinal()
         .domain(["FirstRound", "VirtualOnsite", "FinalRound"])
-        .range(["#4f8edb", "#ff9800", "#4caf50"]);
+        .range(["#C45A1D", "#E9B260", "#6D2A1A"]);
 
       const stackedData = d3
         .stack()
@@ -161,16 +161,20 @@ const InterviewRoundsSection = () => {
         .call(d3.axisLeft(y).tickSize(0))
         .selectAll("text")
         .style("text-anchor", "end")
+        .style("font-family", "Inter")
         .style("font-size", "14px")
+        .style("font-weight", "500")
         .style("cursor", "pointer")
-        .style("fill", "white");
+        .style("fill", "#3E130A");
 
       svg
         .append("g")
         .attr("transform", `translate(0,${adjustedHeight})`)
         .call(d3.axisBottom(x).ticks(Math.min(6, width / 100)))
         .selectAll("text")
-        .style("font-size", "12px");
+        .style("font-family", "Inter")
+        .style("font-size", "12px")
+        .style("fill", "#6D2A1A");
 
       // Tooltip div setup
       const tooltip = d3.select(tooltipRef.current);
@@ -215,26 +219,29 @@ const InterviewRoundsSection = () => {
         );
 
       const legendItems = ["FirstRound", "VirtualOnsite", "FinalRound"];
-      const legendColors = ["#4f8edb", "#ff9800", "#4caf50"];
+      const legendColors = ["#C45A1D", "#E9B260", "#6D2A1A"];
 
       legendItems.forEach((item, index) => {
         const legendGroup = legend
           .append("g")
-          .attr("transform", `translate(0, ${index * 20})`);
+          .attr("transform", `translate(0, ${index * 24})`);
 
         legendGroup
           .append("rect")
-          .attr("width", 15)
-          .attr("height", 15)
+          .attr("width", 16)
+          .attr("height", 16)
+          .attr("rx", 2)
           .attr("fill", legendColors[index]);
 
         legendGroup
           .append("text")
-          .attr("x", 20)
+          .attr("x", 22)
           .attr("y", 12)
           .text(item)
-          .style("font-size", "12px")
-          .style("fill", "white");
+          .style("font-family", "Inter")
+          .style("font-size", "14px")
+          .style("font-weight", "500")
+          .style("fill", "#3E130A");
       });
     };
 
@@ -246,16 +253,18 @@ const InterviewRoundsSection = () => {
 
   return (
     <div className="interview-rounds-section">
-      <Title level={2} className="section-title">
-        Top Interview Progress of our Mentees by Rounds
-      </Title>
-      <div className="chart-container" ref={chartRef}></div>
-      <div ref={tooltipRef} className="tooltip"></div>
-      <p className="note">
-        Note: In some cases, there are more final rounds than first rounds as
-        some internships directly invite candidates to the final rounds, while
-        new grads often start with initial rounds.
-      </p>
+      <div className="interview-rounds-content">
+        <Title level={2} className="section-title">
+          Top Interview Progress of our Mentees by Rounds
+        </Title>
+        <div className="chart-container" ref={chartRef}></div>
+        <div ref={tooltipRef} className="tooltip"></div>
+        <p className="note">
+          Note: In some cases, there are more final rounds than first rounds as
+          some internships directly invite candidates to the final rounds, while
+          new grads often start with initial rounds.
+        </p>
+      </div>
     </div>
   );
 };

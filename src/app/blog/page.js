@@ -57,7 +57,7 @@ const Blog = () => {
   };
 
   return (
-    <Layout>
+    <Layout style={{ backgroundColor: "#fff" }}>
       <HeaderComponent current={current} handleClick={handleClick} />
       <MentorshipContentLayout blogPosts={blogPosts} />
       <FooterComponent />

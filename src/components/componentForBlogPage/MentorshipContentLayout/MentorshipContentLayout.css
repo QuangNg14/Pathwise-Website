@@ -1,6 +1,6 @@
 /* General Layout */
 .mentorship-layout {
-  background-color: #f7f9fc;
+  background-color: #fff;
   padding: 40px 20px;
 }
 
@@ -8,22 +8,25 @@
 .hero-section {
   text-align: center;
   padding: 60px 20px;
-  background-color: #6a67ce;
+  background-color: var(--color-primary, #C45A1D);
   color: white;
   border-radius: 8px;
   margin-bottom: 40px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(196, 90, 29, 0.1);
 }
 
 .hero-title {
+  font-family: Inter;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 10px;
+  color: #fff;
 }
 
 .hero-description {
+  font-family: Inter;
   font-size: 1.2rem;
-  color: #d9d7f1;
+  color: rgba(255, 255, 255, 0.9);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -41,9 +44,14 @@
 }
 
 .search-input .ant-input-search-button {
-  background-color: #6a67ce;
-  border-color: #6a67ce;
+  background-color: var(--color-primary, #C45A1D);
+  border-color: var(--color-primary, #C45A1D);
   color: white;
+}
+
+.search-input .ant-input-search-button:hover {
+  background-color: #a94a0e;
+  border-color: #a94a0e;
 }
 
 /* Blog List */
@@ -58,7 +66,7 @@
   padding: 16px;
   transition: box-shadow 0.3s;
   cursor: pointer;
-  background-color: #fff;
+  background-color: var(--color-bg, #FDF7ED);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -68,15 +76,44 @@
 
 .blog-image {
   width: 100%;
-  height: 100px;
+  height: 160px;
   object-fit: cover;
   border-radius: 4px;
 }
 
 .blog-date {
+  font-family: Inter;
   font-size: 12px;
-  color: gray;
+  color: var(--color-primary, #C45A1D);
   margin-bottom: 8px;
+}
+
+.blog-card .ant-typography h5 {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-heading, #3E130A);
+  margin: 8px 0 12px 0;
+  line-height: 24px;
+}
+
+.blog-card .ant-typography h5 a {
+  color: var(--color-heading, #3E130A);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.blog-card .ant-typography h5 a:hover {
+  color: var(--color-primary, #C45A1D);
+}
+
+.blog-card .ant-typography:last-child {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text, #6D2A1A);
+  line-height: 20px;
+  margin: 0;
 }
 
 /* Sidebar */
@@ -88,9 +125,11 @@
 }
 
 .sidebar h5 {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 20px;
+  font-family: Inter;
+  font-size: 1.2rem;
+  color: var(--color-heading, #3E130A);
+  margin-bottom: 15px;
+  font-weight: 600;
 }
 
 .sidebar-list {
@@ -103,12 +142,14 @@
 }
 
 .sidebar-list a {
-  color: #6a67ce;
+  font-family: Inter;
+  color: var(--color-text, #6D2A1A);
   text-decoration: none;
   font-weight: 500;
 }
 
 .sidebar-list a:hover {
+  color: var(--color-primary, #C45A1D);
   text-decoration: underline;
 }
 
@@ -127,7 +168,7 @@
   }
 
   .blog-image {
-    height: 80px;
+    height: 120px;
   }
 
   .sidebar {

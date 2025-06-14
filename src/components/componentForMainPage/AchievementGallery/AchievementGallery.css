@@ -2,7 +2,7 @@
     width: 100%;
     margin: auto;
     padding: 40px 0;
-    background-color: var(--primary-color);
+    background-color: var(--color-primary);
     position: relative;
     text-align: center;
   }
@@ -41,7 +41,7 @@
   }
   
   .carousel-dots .slick-active {
-    background-color: var(--primary-color);
+    background-color: var(--color-primary);
   }
 
   .slick-arrow .slick-next .slick-prev{

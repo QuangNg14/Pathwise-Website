@@ -1,80 +1,118 @@
-:root {
-  --primary-color: #564497;
-  --secondary-color: #f8a025;
-  --background-color: #f0d394;
-  --text-color: white;
+.interview-rounds-section {
+  width: 100%;
+  background-color: var(--color-bg, #FDF7ED);
+  padding: 80px 0;
+  border-bottom: 1px solid rgba(62, 19, 10, 0.1);
 }
 
-.interview-rounds-section {
-  padding: 40px 10px;
-  color: var(--text-color);
+.interview-rounds-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 .section-title {
+  font-family: Inter;
   text-align: center;
-  color: var(--primary-color);
-  margin-bottom: 20px;
-  font-size: 24px;
+  color: var(--color-heading, #3E130A);
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin: 0 0 64px 0;
 }
 
 .chart-container {
   width: 100%;
-  max-width: 980px;
-  margin: 0 auto;
-  background-color: #222;
-  border-radius: 10px;
-  padding: 20px;
-  position: relative; /* For placing the legend */
-}
-
-.company-details {
-  background-color: #333;
-  color: var(--text-color);
-  padding: 15px;
-  margin: 20px auto;
-  width: 100%;
-  max-width: 500px;
-  border-radius: 8px;
-}
-
-.company-details h3 {
-  color: var(--secondary-color);
+  max-width: 1000px;
+  margin: 0 auto 48px auto;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  position: relative;
 }
 
 .tooltip {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(62, 19, 10, 0.95);
   color: white;
-  padding: 8px 12px;
-  border-radius: 4px;
-  font-size: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-family: Inter;
+  font-size: 14px;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.2s;
   z-index: 10;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .note {
-  font-size: 14px;
-  color: var(--secondary-color);
+  font-family: Inter;
+  font-size: 16px;
+  color: var(--color-text, #6D2A1A);
   text-align: center;
-  margin-top: 20px;
+  margin-top: 32px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .interview-rounds-content {
+    padding: 0 32px;
+  }
+  
+  .section-title {
+    font-size: 48px;
+  }
+  
+  .chart-container {
+    padding: 24px;
+  }
 }
 
 @media (max-width: 768px) {
-  .chart-container {
-    padding: 20px;
-    height: auto; /* Adjust height automatically on mobile */
+  .interview-rounds-section {
+    padding: 60px 0;
+  }
+  
+  .interview-rounds-content {
+    padding: 0 24px;
   }
 
   .section-title {
-    font-size: 20px;
+    font-size: 40px;
+    margin-bottom: 48px;
   }
 
-  .company-details {
+  .chart-container {
+    padding: 24px;
+    margin-bottom: 32px;
+  }
+
+  .note {
     font-size: 14px;
   }
+}
 
+@media (max-width: 480px) {
+  .interview-rounds-section {
+    padding: 48px 0;
+  }
+  
+  .interview-rounds-content {
+    padding: 0 16px;
+  }
+  
+  .section-title {
+    font-size: 32px;
+  }
+  
+  .chart-container {
+    padding: 20px;
+  }
+  
   .note {
     font-size: 12px;
   }

@@ -1,54 +1,126 @@
 .about-us-container {
-    padding: 80px 40px;
-    background-color: #f9f9f9;
+    width: 100%;
+    background-color: #fff;
+    padding: 80px 0;
+  }
+  
+  .about-us-header {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 40px;
+    text-align: center;
+    margin-bottom: 64px;
   }
   
   .about-us-title {
-    text-align: center;
-    font-size: 40px;
-    color: var(--primary-color);
-    margin-bottom: 40px;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--color-heading, #3E130A);
+    margin: 0 0 32px 0;
   }
   
   .about-us-intro {
-    text-align: center;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #555;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    color: var(--color-text, #6D2A1A);
     max-width: 800px;
-    margin: 0 auto 50px;
+    margin: 0 auto;
   }
   
-  .member-row {
+  .team-members {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+  
+  .member-card {
+    background: var(--color-bg, #FDF7ED);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+  }
+  
+  .member-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+  }
+  
+  .member-content {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .member-card-reverse .member-content {
+    grid-template-columns: 350px 1fr;
+  }
+  
+  .member-card-reverse .member-info {
+    order: 2;
+  }
+  
+  .member-card-reverse .member-image-container {
+    order: 1;
+  }
+  
+  .member-header {
     display: flex;
     align-items: center;
-    margin-bottom: 60px;
-  }
-  
-  .description-column {
-    padding-right: 20px;
+    gap: 16px;
+    margin-bottom: 24px;
   }
   
   .member-name {
-    font-size: 24px;
+    font-family: Inter;
+    font-size: 32px;
     font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    display: block;
+    color: var(--color-heading, #3E130A);
+    margin: 0;
+  }
+  
+  .role-label {
+    background-color: var(--color-primary, #C45A1D);
+    color: #fff;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .member-descriptions {
+    margin-bottom: 24px;
   }
   
   .member-description {
+    font-family: Inter;
     font-size: 16px;
-    line-height: 1.6;
-    color: #333;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--color-text, #6D2A1A);
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
   
-  .image-column {
-    position: relative;
+  .member-description:last-child {
+    margin-bottom: 0;
+  }
+  
+  .member-image-container {
     display: flex;
     justify-content: center;
   }
@@ -56,68 +128,191 @@
   .member-image {
     width: 100%;
     max-width: 350px;
-    border-radius: 10px;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    height: 400px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
   }
   
-  .role-label {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: var(--secondary-color);
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 5px 10px;
-    border-radius: 5px;
-    text-transform: uppercase;
+  .member-card:hover .member-image {
+    transform: scale(1.02);
   }
 
   .linkedin-link {
     display: inline-flex;
     align-items: center;
+    gap: 8px;
+    font-family: Inter;
     font-size: 16px;
-    color: #0077b5;
-    margin-top: 10px;
+    font-weight: 500;
+    color: var(--color-primary, #C45A1D);
+    text-decoration: none;
+    padding: 12px 24px;
+    border: 2px solid var(--color-primary, #C45A1D);
+    border-radius: 8px;
+    background: transparent;
+    transition: all 0.2s ease;
+    width: fit-content;
+  }
+  
+  .linkedin-link:hover {
+    background: var(--color-primary, #C45A1D);
+    color: #fff;
+    transform: translateY(-1px);
+    text-decoration: none;
   }
   
   .linkedin-icon {
-    font-size: 18px;
-    margin-right: 5px;
+    font-size: 16px;
   }
   
+  /* Tablet responsive */
+  @media (max-width: 1024px) {
+    .about-us-container {
+      padding: 60px 0;
+    }
+    
+    .about-us-header {
+      padding: 0 32px;
+      margin-bottom: 48px;
+    }
+    
+    .about-us-title {
+      font-size: 48px;
+    }
+    
+    .about-us-intro {
+      font-size: 18px;
+      line-height: 26px;
+    }
+    
+    .team-members {
+      padding: 0 32px;
+      gap: 40px;
+    }
+    
+    .member-card {
+      padding: 32px;
+    }
+    
+    .member-content {
+      grid-template-columns: 1fr 280px;
+      gap: 32px;
+    }
+    
+    .member-card-reverse .member-content {
+      grid-template-columns: 280px 1fr;
+    }
+    
+    .member-name {
+      font-size: 28px;
+    }
+    
+    .member-image {
+      max-width: 280px;
+      height: 320px;
+    }
+  }
+
+  /* Mobile responsive */
   @media (max-width: 768px) {
     .about-us-container {
-      padding: 60px 20px;
+      padding: 48px 0;
+    }
+    
+    .about-us-header {
+      padding: 0 24px;
+      margin-bottom: 40px;
     }
   
     .about-us-title {
-      font-size: 32px;
+      font-size: 40px;
     }
   
     .about-us-intro {
       font-size: 16px;
+      line-height: 24px;
+    }
+    
+    .team-members {
+      padding: 0 24px;
+      gap: 32px;
     }
   
-    .member-row {
+    .member-card {
+      padding: 24px;
+    }
+    
+    .member-content {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      text-align: center;
+    }
+    
+    .member-card-reverse .member-content {
+      grid-template-columns: 1fr;
+    }
+    
+    .member-card-reverse .member-info {
+      order: 2;
+    }
+    
+    .member-card-reverse .member-image-container {
+      order: 1;
+    }
+    
+    .member-header {
       flex-direction: column;
-      margin-bottom: 40px;
-    }
-  
-    .description-column {
-      padding-right: 0;
+      gap: 12px;
+      margin-bottom: 20px;
     }
   
     .member-name {
-      font-size: 20px;
+      font-size: 24px;
     }
   
     .member-description {
       font-size: 14px;
+      line-height: 20px;
     }
   
     .member-image {
       max-width: 100%;
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-us-container {
+      padding: 40px 0;
+    }
+    
+    .about-us-header {
+      padding: 0 16px;
+      margin-bottom: 32px;
+    }
+    
+    .about-us-title {
+      font-size: 32px;
+    }
+    
+    .team-members {
+      padding: 0 16px;
+      gap: 24px;
+    }
+    
+    .member-card {
+      padding: 20px;
+    }
+    
+    .member-name {
+      font-size: 22px;
+    }
+    
+    .linkedin-link {
+      padding: 10px 20px;
+      font-size: 14px;
     }
   }
   

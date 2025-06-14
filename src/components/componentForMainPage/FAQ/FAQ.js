@@ -1,11 +1,26 @@
-import React from "react";
-import { Collapse, Typography } from "antd";
+import React, { useState, useEffect } from "react";
+import { PlusOutlined, CloseOutlined } from "@ant-design/icons";
 import "./FAQ.css";
 
-const { Panel } = Collapse;
-const { Title, Text } = Typography;
-
 const FAQ = () => {
+  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [animatingIndex, setAnimatingIndex] = useState(null);
+
+  const handleToggle = (index) => {
+    if (expandedIndex === index) {
+      // Closing
+      setExpandedIndex(null);
+      setAnimatingIndex(null);
+    } else {
+      // Opening
+      setExpandedIndex(index);
+      // Small delay to ensure smooth animation
+      setTimeout(() => {
+        setAnimatingIndex(index);
+      }, 50);
+    }
+  };
+
   const faqData = [
     {
       question: "What is Pathwise?",
@@ -43,20 +58,48 @@ const FAQ = () => {
 
   return (
     <div className="faq-container">
-      <Title level={2} className="faq-title">
-        Frequently Asked Questions
-      </Title>
-      <Collapse accordion className="faq-collapse">
-        {faqData.map((item, index) => (
-          <Panel header={item.question} key={index} className="faq-panel">
-            {item.answer.map((text, idx) => (
-              <Text key={idx} className="faq-answer">
-                {text}
-              </Text>
-            ))}
-          </Panel>
-        ))}
-      </Collapse>
+      <div className="faq-content-wrapper">
+        <div className="faq-title-section">
+          <h2 className="faq-title">Frequently Asked Questions</h2>
+        </div>
+        <div className="faq-cards-stack">
+          {faqData.map((item, idx) => {
+            const expanded = expandedIndex === idx;
+            const animating = animatingIndex === idx;
+            return (
+              <div
+                key={idx}
+                className={`faq-card ${expanded ? "expanded" : "collapsed"}`}
+              >
+                <div
+                  className={`faq-card-header ${expanded ? "expanded" : ""}`}
+                  onClick={() => handleToggle(idx)}
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={expanded}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      handleToggle(idx);
+                    }
+                  }}
+                >
+                  <span className="faq-icon">
+                    {expanded ? <CloseOutlined /> : <PlusOutlined />}
+                  </span>
+                  <span className="faq-question">{item.question}</span>
+                </div>
+                <div className={`faq-card-content ${expanded ? "expanded" : ""}`}>
+                  <hr className="faq-divider" />
+                  {item.answer.map((text, i) => (
+                    <div className="faq-answer" key={i}>{text}</div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };

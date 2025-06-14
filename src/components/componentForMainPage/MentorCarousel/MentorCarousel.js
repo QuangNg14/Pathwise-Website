@@ -1,109 +1,146 @@
-import React from "react";
-import { Layout, Row, Col, Typography, Carousel, Card } from "antd";
-import { LinkedinOutlined } from "@ant-design/icons";
-import "antd/dist/reset.css";
+import React, { useState } from "react";
+import { PlusOutlined, LinkedinOutlined } from "@ant-design/icons";
 import "./MentorCarousel.css";
 
-const { Title } = Typography;
-const { Meta } = Card;
-
 const MentorCarousel = ({ mentors }) => {
+  const [expandedCard, setExpandedCard] = useState(null);
+
+  const toggleCard = (index) => {
+    setExpandedCard(expandedCard === index ? null : index);
+  };
+
+  // Enhanced mentor data with bio information
+  const mentorBioData = {
+    "Quang Nguyen": {
+      bio: [
+        "Quang Nguyen is currently a Software Engineer at Microsoft. He previously interned as a software engineer at NVIDIA (Summer 2023) and Facebook (Summer 2022).",
+        "He received a full-ride scholarship worth $73,000/year for 4 years at Rice University, majoring in Computer Science.",
+        "As the President of Rice Apps (Rice Software Engineering Club) at Rice University, he has mentored and taught over 60 members about professional web and mobile application development.",
+      ],
+      role: "Head Mentor",
+    },
+    "Anh Ngo": {
+      bio: [
+        "Anh Ngo is currently an Investment Banking Analyst at Deutsche Bank, working on high-profile M&A transactions and capital markets deals.",
+        "He previously worked as a consultant at BCG (Boston Consulting Group) where he advised Fortune 500 companies on strategic initiatives.",
+        "Anh graduated summa cum laude from his university with a degree in Finance and Economics, and has extensive experience in financial modeling and valuation.",
+      ],
+      role: "Advisor",
+    },
+    "Tri Bui": {
+      bio: [
+        "Tri Bui is a successful entrepreneur and software engineer who has founded multiple startups in the tech industry.",
+        "He has over 8 years of experience in software development, specializing in full-stack web development and mobile applications.",
+        "Tri has mentored numerous aspiring entrepreneurs and developers, helping them build and scale their technical products from ideation to market launch.",
+      ],
+      role: "Mentor",
+    },
+    "Lam Nguyen": {
+      bio: [
+        "Lam Nguyen is a Software Engineer at Microsoft, working on cloud infrastructure and distributed systems.",
+        "He has extensive experience in backend development, system design, and has contributed to several open-source projects.",
+        "Lam is passionate about mentoring junior developers and sharing knowledge about software engineering best practices and career development.",
+      ],
+      role: "Mentor",
+    },
+    "Jonathan Cheng": {
+      bio: [
+        "Jonathan Cheng is an Associate Consultant at Bain & Company, specializing in strategy consulting for technology and healthcare clients.",
+        "He has led multiple client engagements focused on digital transformation, operational efficiency, and market entry strategies.",
+        "Jonathan holds an MBA and has a strong background in business analytics and strategic planning.",
+      ],
+      role: "Mentor",
+    },
+  };
+
   return (
-    <Layout
-      style={{
-        padding: "64px 20px",
-        backgroundColor: "var(--mentor-color)",
-        width: "100%",
-        marginTop: 40,
-      }}
-    >
-      <Row justify="center">
-        <Col span={24}>
-          <Title
-            level={2}
-            style={{
-              fontWeight: 700,
-              textAlign: "center",
-              color: "#0F2442",
-              fontSize: "clamp(24px, 5vw, 40px)",
-            }}
-          >
-            Meet your mentors
-          </Title>
-        </Col>
-      </Row>
-      <div className="mentor-carousel-container">
-        <Carousel
-          dots={{ className: "carousel-dots" }}
-          arrows={true}
-          slidesToShow={3}
-          slidesToScroll={1}
-          infinite={true}
-          centerMode={false}
-          centerPadding="0"
-          autoplay={true}
-          autoplaySpeed={5000}
-          pauseOnHover={true}
-          responsive={[
-            {
-              breakpoint: 1200,
-              settings: { slidesToShow: 3 },
-            },
-            {
-              breakpoint: 992,
-              settings: { slidesToShow: 2 },
-            },
-            {
-              breakpoint: 768,
-              settings: { slidesToShow: 1 },
-            },
-          ]}
-        >
-          {mentors.map((mentor, index) => (
-            <div key={index} className="carousel-slide">
-              <Card hoverable className="mentor-card">
-                <div className="mentor-card-content">
-                  <img
-                    alt={mentor.name}
-                    src={mentor.image}
-                    className="mentor-image"
-                  />
-                  <Meta
-                    title={<span className="mentor-name">{mentor.name}</span>}
-                    description={
-                      <>
-                        <span className="mentor-title">{mentor.title}</span>
-                        <p className="mentor-company">{mentor.company}</p>
-                      </>
-                    }
-                  />
-                  <div className="company-logos">
-                    {mentor.companyLogos.map((logo, idx) => (
-                      <img
-                        key={idx}
-                        src={logo}
-                        alt={`${mentor.company}-${idx}`}
-                        className="logo-avatar"
-                      />
-                    ))}
+    <div className="mentor-section-container">
+      <div className="mentor-section-content">
+        <h2 className="mentor-section-title">Meet your mentors</h2>
+
+        <div className="mentor-cards-container">
+          {mentors.map((mentor, index) => {
+            const isExpanded = expandedCard === index;
+            const bioData = mentorBioData[mentor.name] || {
+              bio: ["Bio coming soon..."],
+              role: "Mentor",
+            };
+
+            return (
+              <div
+                key={index}
+                className={`mentor-card-item ${isExpanded ? "expanded" : ""}`}
+              >
+                <div
+                  className={`mentor-card-header ${
+                    isExpanded ? "expanded" : ""
+                  }`}
+                  onClick={() => toggleCard(index)}
+                >
+                  <div className="mentor-header-left">
+                    <PlusOutlined className="expand-icon" />
+                    <div className="mentor-header-text">
+                      <h3 className="mentor-name">{mentor.name}</h3>
+                      <p className="mentor-title">{mentor.company}</p>
+                    </div>
                   </div>
-                  {/* LinkedIn Link */}
-                  <a
-                    href={mentor.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="linkedin-link"
-                  >
-                    <LinkedinOutlined className="linkedin-icon" />
-                    <span>LinkedIn</span>
-                  </a>
+
+                  <div className="mentor-header-right">
+                    <div className="company-logos">
+                      {mentor.companyLogos.map((logo, logoIndex) => (
+                        <img
+                          key={logoIndex}
+                          src={logo}
+                          alt={`Company ${logoIndex + 1}`}
+                          className="company-logo"
+                        />
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </Card>
-            </div>
-          ))}
-        </Carousel>
+
+                <div
+                  className={`mentor-card-content ${
+                    isExpanded ? "expanded" : ""
+                  }`}
+                >
+                  <div className="mentor-content-inner">
+                    <img
+                      src={mentor.image}
+                      alt={mentor.name}
+                      className="mentor-image"
+                    />
+
+                    <div className="mentor-bio">
+                      {bioData.bio.map((paragraph, paragraphIndex) => (
+                        <div
+                          key={paragraphIndex}
+                          className="mentor-bio-section"
+                        >
+                          {paragraph}
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mentor-actions">
+                      <p className="mentor-role-text">{bioData.role}</p>
+                      <a
+                        href={mentor.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="linkedin-text"
+                      >
+                        Go to LinkedIn ↗
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </Layout>
+    </div>
   );
 };
 

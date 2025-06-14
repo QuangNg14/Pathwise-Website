@@ -1,120 +1,235 @@
 .company-interviews-section {
-  padding: 40px 60px;
-  background-color: #f5f6f9;
+  width: 100%;
+  background-color: #fff;
+  padding: 80px 0;
+}
+
+.company-interviews-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 .section-title {
+  font-family: Inter;
   text-align: center;
-  color: #564497;
-  margin-bottom: 30px;
-  font-size: 2.5rem;
+  color: var(--color-heading, #3E130A);
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin: 0 0 64px 0;
 }
 
-.company-category {
-  margin-top: 30px;
+.interview-process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 32px;
+  margin-bottom: 48px;
 }
 
-.category-title {
-  color: #564497;
-  margin-bottom: 15px;
-  font-weight: 500;
+.process-card {
+  background-color: var(--color-bg, #FDF7ED);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  border-color: var(--color-primary, #C45A1D);
+}
+
+.process-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.company-name {
+  font-family: Inter;
   font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary, #C45A1D);
+  margin-bottom: 8px;
 }
 
-.company-card {
-  border-radius: 8px;
-  text-align: center;
-  padding: 12px 16px; /* Increased padding for more spacing */
+.position-type {
+  font-family: Inter;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text, #6D2A1A);
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.process-step {
+  display: flex;
+  align-items: center;
+  padding: 16px;
   background-color: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  height: 90px; /* Increased height for better alignment */
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--color-primary, #C45A1D);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 240px; /* Set a slightly wider max width */
-  margin: 0 auto;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 14px;
+  margin-right: 16px;
+  flex-shrink: 0;
 }
 
-.company-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+.step-content {
+  flex: 1;
 }
 
-.company-card .ant-typography {
-  font-size: 1.25rem; /* Adjusted font size */
-  color: #564497;
+.step-title {
+  font-family: Inter;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-heading, #3E130A);
+  margin-bottom: 4px;
+}
+
+.step-description {
+  font-family: Inter;
+  font-size: 0.9rem;
+  color: var(--color-text, #6D2A1A);
+  line-height: 1.4;
+}
+
+.stats-section {
+  margin-top: 64px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 24px;
+  background-color: var(--color-bg, #FDF7ED);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.stat-number {
+  font-family: Inter;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary, #C45A1D);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-family: Inter;
+  font-size: 1rem;
   font-weight: 500;
-  white-space: nowrap; /* Prevent text wrapping */
+  color: var(--color-text, #6D2A1A);
 }
 
-/* Responsive adjustments for medium screens */
-@media (max-width: 992px) {
-  .company-interviews-section {
-      padding: 30px 40px;
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .company-interviews-content {
+    padding: 0 32px;
   }
-
+  
   .section-title {
-      font-size: 2.2rem;
+    font-size: 48px;
   }
-
-  .category-title {
-      font-size: 1.4rem;
+  
+  .interview-process-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
   }
-
-  .company-card {
-      padding: 10px 14px; /* Reduced padding slightly for medium screens */
-      height: 90px;
-      max-width: 200px; /* Adjusted max width for medium screens */
-  }
-
-  .company-card .ant-typography {
-      font-size: 1.15rem;
+  
+  .process-card {
+    padding: 24px;
   }
 }
 
-/* Responsive adjustments for small screens */
 @media (max-width: 768px) {
   .company-interviews-section {
-      padding: 20px 20px;
+    padding: 60px 0;
+  }
+  
+  .company-interviews-content {
+    padding: 0 24px;
   }
 
   .section-title {
-      font-size: 1.8rem;
+    font-size: 40px;
+    margin-bottom: 48px;
   }
 
-  .category-title {
-      font-size: 1.2rem;
+  .interview-process-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
-  .company-card {
-      padding: 8px 12px; /* Reduced padding for small screens */
-      height: 90px;
-      max-width: 150px; /* Further reduce width */
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
-
-  .company-card .ant-typography {
-      font-size: 1rem;
+  
+  .stat-number {
+    font-size: 2rem;
   }
 }
 
-/* Responsive adjustments for extra small screens */
-@media (max-width: 576px) {
+@media (max-width: 480px) {
+  .company-interviews-section {
+    padding: 48px 0;
+  }
+  
+  .company-interviews-content {
+    padding: 0 16px;
+  }
+  
   .section-title {
-      font-size: 1.5rem;
+    font-size: 32px;
   }
-
-  .category-title {
-      font-size: 1rem;
+  
+  .process-card {
+    padding: 20px;
   }
-
-  .company-card {
-      padding: 6px 10px; /* Reduced padding for extra small screens */
-      height: 80px;
-      max-width: 130px; /* Minimum width for extra small screens */
+  
+  .company-name {
+    font-size: 1.25rem;
   }
-
-  .company-card .ant-typography {
-      font-size: 0.9rem;
+  
+  .step-title {
+    font-size: 0.9rem;
+  }
+  
+  .step-description {
+    font-size: 0.8rem;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
   }
 }

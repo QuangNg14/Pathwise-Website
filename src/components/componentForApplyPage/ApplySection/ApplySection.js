@@ -41,7 +41,7 @@ const ProgramInfoSection = () => (
         </li>
         <li>
           <Link
-            href="https://www.facebook.com/pathwise.techmentorship/"
+            href="https://www.facebook.com/pathwise.mentorship/"
             target="_blank"
           >
             Facebook Page

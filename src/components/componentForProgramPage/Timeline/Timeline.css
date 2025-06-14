@@ -1,0 +1,755 @@
+/* Root variables for colors (assuming these are defined in your root CSS) */
+/* :root {
+  --color-primary: #0F2442;
+  --color-secondary: #F7941E;
+  --color-background: #ffffff;
+} */
+
+/* Timeline section styling */
+.timeline-section {
+  width: 100%;
+  background-color: var(--color-bg, #FDF7ED);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.timeline-title {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: var(--color-heading, #3E130A);
+  margin: 0 0 16px 0;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.timeline-subtitle {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  color: var(--color-text, #6D2A1A);
+  margin: 0 0 64px 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Timeline container */
+.timeline-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* The vertical timeline line with animation */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, 
+    rgba(196, 90, 29, 0.2), 
+    var(--color-primary, #C45A1D), 
+    var(--color-secondary, #E9B260),
+    rgba(233, 178, 96, 0.2)
+  );
+  transform: translateX(-50%);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.timeline-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(180deg, 
+    var(--color-primary, #C45A1D), 
+    var(--color-secondary, #E9B260)
+  );
+  animation: progressLine 2s ease-out 1s both;
+  box-shadow: 0 0 10px rgba(196, 90, 29, 0.5);
+}
+
+/* Timeline items */
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Left side */
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+/* Right side */
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+/* Content inside timeline item */
+.timeline-item .content {
+  position: relative;
+  background: #fff;
+  color: var(--color-text, #6D2A1A);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(196, 90, 29, 0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.timeline-item .content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary, #C45A1D), var(--color-secondary, #E9B260));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.timeline-item .content:hover::before {
+  transform: scaleX(1);
+}
+
+.timeline-item .content:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+  border-color: var(--color-primary, #C45A1D);
+}
+
+/* Event header with icon and meta */
+.event-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.event-icon {
+  font-size: 32px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary, #C45A1D), var(--color-secondary, #E9B260));
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(196, 90, 29, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.event-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.timeline-item.left .event-meta {
+  align-items: flex-start;
+}
+
+/* Add arrow pointers with enhanced styling */
+.timeline-item.left .content::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  right: -20px;
+  border-width: 12px;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  filter: drop-shadow(2px 0 4px rgba(0, 0, 0, 0.1));
+}
+
+.timeline-item.right .content::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: -20px;
+  border-width: 12px;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  filter: drop-shadow(-2px 0 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Circle indicators on the timeline line */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  right: -16px;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, var(--color-secondary, #E9B260), var(--color-primary, #C45A1D));
+  border: 4px solid #fff;
+  border-radius: 50%;
+  z-index: 2;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 16px rgba(196, 90, 29, 0.3);
+}
+
+.timeline-item.right::before {
+  left: -16px;
+}
+
+.timeline-item.visible::before {
+  transform: scale(1.2);
+  box-shadow: 0 6px 20px rgba(196, 90, 29, 0.4);
+}
+
+.timeline-item:hover::before {
+  transform: scale(1.4);
+  box-shadow: 0 8px 24px rgba(196, 90, 29, 0.5);
+}
+
+.event-date {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary, #C45A1D);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: rgba(196, 90, 29, 0.1);
+  padding: 4px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(196, 90, 29, 0.2);
+}
+
+.event-title {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-heading, #3E130A);
+  margin: 0 0 16px 0;
+  line-height: 120%;
+  transition: color 0.3s ease;
+}
+
+.timeline-item .content:hover .event-title {
+  color: var(--color-primary, #C45A1D);
+}
+
+.event-description {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-text, #6D2A1A);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Event details (expandable content) */
+.event-details {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(196, 90, 29, 0.1);
+  animation: expandDetails 0.4s ease-out;
+}
+
+.details-title {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-heading, #3E130A);
+  margin: 0 0 16px 0;
+}
+
+.details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-family: Inter;
+  font-size: 15px;
+  line-height: 22px;
+  color: var(--color-text, #6D2A1A);
+  animation: slideInLeft 0.3s ease-out;
+}
+
+.detail-item:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+.detail-item:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+.detail-bullet {
+  color: var(--color-primary, #C45A1D);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  flex-shrink: 0;
+}
+
+/* Expand button */
+.expand-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 20px;
+  margin-top: 20px;
+  background: linear-gradient(135deg, var(--color-primary, #C45A1D), var(--color-secondary, #E9B260));
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 16px rgba(196, 90, 29, 0.3);
+}
+
+.expand-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(196, 90, 29, 0.4);
+}
+
+.expand-button:active {
+  transform: translateY(0);
+}
+
+.expand-text {
+  transition: all 0.3s ease;
+}
+
+.expand-icon {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  font-size: 12px;
+}
+
+.expand-icon.expanded {
+  transform: rotate(180deg);
+}
+
+.event-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  background: var(--color-primary, #C45A1D);
+  color: #fff;
+  border-radius: 20px;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(196, 90, 29, 0.3);
+}
+
+.event-tag:hover {
+  background: var(--color-secondary, #E9B260);
+  color: var(--color-heading, #3E130A);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(233, 178, 96, 0.4);
+}
+
+/* Tag color variations */
+.event-tag.foundation { background: #3498db; }
+.event-tag.technical { background: #e74c3c; }
+.event-tag.strategy { background: #f39c12; }
+.event-tag.technical-practice { background: #9b59b6; }
+.event-tag.behavioral { background: #1abc9c; }
+.event-tag.networking { background: #34495e; }
+.event-tag.support { background: #27ae60; }
+.event-tag.resources { background: #e67e22; }
+.event-tag.insights { background: #8e44ad; }
+
+/* Achievement section */
+.achievement-section {
+  margin-top: 80px;
+  padding: 60px 40px;
+  background: linear-gradient(135deg, var(--color-primary, #C45A1D), var(--color-secondary, #E9B260));
+  border-radius: 24px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+.achievement-content {
+  position: relative;
+  z-index: 1;
+}
+
+.achievement-title {
+  font-family: Inter;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 32px 0;
+  color: #fff;
+}
+
+.achievement-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.stat-item:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.stat-item.highlight {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.stat-number {
+  display: block;
+  font-family: Inter;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 8px;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stat-label {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.achievement-description {
+  font-family: Inter;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progressLine {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes expandDetails {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive styling */
+@media screen and (max-width: 1024px) {
+  .timeline-section {
+    padding: 60px 0;
+  }
+  
+  .timeline-section-content {
+    padding: 0 32px;
+  }
+  
+  .timeline-title {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+  
+  .timeline-subtitle {
+    font-size: 18px;
+    margin-bottom: 48px;
+  }
+  
+  .timeline-item .content {
+    padding: 28px;
+  }
+  
+  .event-title {
+    font-size: 22px;
+  }
+  
+  .event-description {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .achievement-stats {
+    gap: 32px;
+  }
+
+  .achievement-title {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-section {
+    padding: 48px 0;
+  }
+  
+  .timeline-section-content {
+    padding: 0 24px;
+  }
+  
+  .timeline-title {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .timeline-subtitle {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    left: 0 !important;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .timeline-item .content {
+    margin-left: 30px;
+    padding: 24px;
+  }
+
+  .timeline-item.left .content::after,
+  .timeline-item.right .content::after {
+    left: -20px;
+    right: auto;
+    border-color: transparent #fff transparent transparent;
+  }
+
+  .timeline-item::before {
+    left: 15px;
+  }
+
+  .timeline-line {
+    left: 20px;
+  }
+
+  .event-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .event-meta {
+    align-items: flex-start !important;
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .event-icon {
+    font-size: 24px;
+    width: 48px;
+    height: 48px;
+  }
+  
+  .event-title {
+    font-size: 20px;
+  }
+  
+  .event-description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .achievement-section {
+    margin-top: 60px;
+    padding: 40px 24px;
+  }
+
+  .achievement-stats {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .stat-item {
+    min-width: 200px;
+  }
+
+  .achievement-title {
+    font-size: 28px;
+  }
+
+  .achievement-description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .timeline-section {
+    padding: 40px 0;
+  }
+  
+  .timeline-section-content {
+    padding: 0 16px;
+  }
+  
+  .timeline-title {
+    font-size: 28px;
+  }
+
+  .timeline-subtitle {
+    font-size: 14px;
+  }
+  
+  .timeline-item .content {
+    padding: 20px;
+    margin-left: 25px;
+  }
+  
+  .event-title {
+    font-size: 18px;
+  }
+  
+  .event-description {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  
+  .event-tag {
+    font-size: 11px;
+    padding: 4px 12px;
+  }
+
+  .expand-button {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+
+  .achievement-section {
+    padding: 32px 16px;
+  }
+
+  .stat-number {
+    font-size: 36px;
+  }
+
+  .achievement-title {
+    font-size: 24px;
+  }
+}
+  

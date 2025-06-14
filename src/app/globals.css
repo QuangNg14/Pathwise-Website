@@ -1,18 +1,26 @@
 /* src/app/globals.css */
 :root {
-  --primary-color: #564497;
-  --secondary-color: #f8a025;
-  --background-color: #f0d394;
-  --mentor-color: #e5cc95;
-  --text-color: white;
+  --color-primary: #C45A1D;
+  --color-secondary: #E9B260;
+  --color-heading: #3E130A;
+  --color-text: #6D2A1A;
+  --color-background: #FDF7ED;
 }
 
 html, body, #__next {
   height: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0px 40px 0px 40px;
   font-family: 'Anuphan', sans-serif !important;
-  color: #0F2442  
+  color: var(--color-text);
+  /* background: var(--color-background); */
+}
+
+/* Remove horizontal padding on mobile for maximum space */
+@media (max-width: 768px) {
+  html, body, #__next {
+    padding: 0;
+  }
 }
 
 .site-layout-content {
@@ -21,12 +29,7 @@ html, body, #__next {
   background: #fff;
 }
 
-.ant-menu-horizontal > .ant-menu-item::after {
-  border-bottom: none !important;
-}
-
 .ant-typography,
-.ant-menu,
 .ant-card,
 .ant-layout {
   font-family: 'Anuphan', sans-serif !important;
@@ -53,7 +56,7 @@ html, body, #__next {
   font-size: 1.0625rem;
   font-weight: 500;
   line-height: 1.6em;
-  background-color: var(--primary-color);
+  background-color: var(--color-primary);
   border-radius: .375rem .375rem .375rem .375rem;
   padding: 20px 20px 20px 20px;
 }
@@ -87,5 +90,58 @@ html, body, #__next {
 .fixed-height-card img {
   max-height: 60%; /* Adjust the height percentage as needed */
   object-fit: cover;
+}
+
+/* Header utility for vertical centering */
+.header-row, .ant-layout-header, .ant-menu-horizontal {
+  display: flex !important;
+  align-items: center !important;
+  height: 100%;
+}
+
+/* Hide drawer on desktop, show on mobile */
+.hide-on-desktop {
+  display: none !important;
+}
+@media (max-width: 768px) {
+  .hide-on-desktop {
+    display: block !important;
+  }
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+/* Remove border hover for non-register menu items globally */
+.ant-menu-horizontal > .ant-menu-item:not(.register-menu-item):hover,
+.ant-menu-horizontal > .ant-menu-item:not(.register-menu-item).ant-menu-item-selected {
+  border: none !important;
+  background: #fff !important;
+  color: var(--color-primary) !important;
+}
+
+/* Ensure all menu items are vertically centered */
+.ant-menu-horizontal > .ant-menu-item {
+  display: flex !important;
+  align-items: center !important;
+  height: 100%;
+}
+
+/* Responsive menu font size */
+@media (max-width: 768px) {
+  .ant-menu-horizontal > .ant-menu-item {
+    font-size: 15px;
+    padding: 0 10px;
+  }
+}
+
+.page-padding {
+  padding: 40px 120px 80px 120px;
+}
+
+@media (max-width: 768px) {
+  .page-padding {
+    padding: 24px;
+  }
 }
 
