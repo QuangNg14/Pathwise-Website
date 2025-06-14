@@ -61,7 +61,7 @@
   flex-shrink: 0;
 }
 
-/* Button styles with exact specifications */
+/* Enhanced Primary Button with animations */
 .peer-to-peer-primary-btn,
 .peer-to-peer-primary-btn.ant-btn,
 .peer-to-peer-primary-btn.ant-btn-primary {
@@ -78,11 +78,24 @@
   font-size: 16px !important;
   font-weight: 500 !important;
   box-shadow: 0 2px 8px rgba(196, 90, 29, 0.15) !important;
-  transition: all 0.2s ease !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   border: 1px solid var(--color-primary) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.peer-to-peer-primary-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
 }
 
 .peer-to-peer-primary-btn:hover,
@@ -94,54 +107,54 @@
   background-color: #a94a0e !important;
   border-color: #a94a0e !important;
   color: #fff !important;
-  box-shadow: 0 4px 16px rgba(196, 90, 29, 0.25) !important;
-  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(196, 90, 29, 0.3) !important;
+  transform: translateY(-2px);
 }
 
+.peer-to-peer-primary-btn:hover::before {
+  left: 100%;
+}
+
+.peer-to-peer-primary-btn:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 8px rgba(196, 90, 29, 0.2) !important;
+}
+
+/* Enhanced Secondary Button with border and clean animations */
 .peer-to-peer-secondary-btn {
   width: 180px;
   height: 43px;
   min-width: 100px;
-  padding: 12px 0;
+  padding: 12px 24px;
   gap: 10px;
   border-radius: 8px;
   color: var(--color-primary);
   font-weight: 500;
   font-size: 16px;
   font-family: "Inter", sans-serif;
-  border: none;
+  border: 1px solid var(--color-primary);
   background: transparent;
-  position: relative;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.peer-to-peer-secondary-btn::after {
-  content: '';
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 2px;
-  background-color: var(--color-primary);
-  transition: width 0.3s ease;
-}
-
-.peer-to-peer-secondary-btn:hover::after,
-.peer-to-peer-secondary-btn:focus::after {
-  width: 80%;
+  cursor: pointer;
 }
 
 .peer-to-peer-secondary-btn:hover,
 .peer-to-peer-secondary-btn:focus {
   color: var(--color-primary);
-  background: transparent;
+  border-color: var(--color-primary);
+  background: rgba(196, 90, 29, 0.05);
+  box-shadow: 0 2px 8px rgba(196, 90, 29, 0.15);
 }
 
-/* Row 3 - Image with exact specifications */
+.peer-to-peer-secondary-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 4px rgba(196, 90, 29, 0.1);
+}
+
+/* Row 3 - Image with enhanced animations */
 .peer-to-peer-image-row {
   width: 100%;
   display: flex;
@@ -161,12 +174,12 @@
   border: 1px solid #e5e5e5;
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .peer-to-peer-image-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
 }
 
 .peer-to-peer-image {
@@ -174,6 +187,11 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.4s ease;
+}
+
+.peer-to-peer-image-card:hover .peer-to-peer-image {
+  transform: scale(1.05);
 }
 
 /* Divider - hidden on desktop, shown on mobile */
@@ -212,15 +230,16 @@
   }
 }
 
-/* Mobile responsive */
+/* Mobile responsive - Remove horizontal padding */
 @media (max-width: 768px) {
   .peer-to-peer-container {
     padding: 60px 0;
   }
   
   .peer-to-peer-content {
-    padding: 0 24px;
+    padding: 0 20px;
     gap: 32px;
+    max-width: 100%;
   }
   
   .peer-to-peer-title {
@@ -242,6 +261,9 @@
   .peer-to-peer-buttons-column {
     order: 2;
     justify-content: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
   }
   
   .peer-to-peer-description {
@@ -249,16 +271,11 @@
     line-height: 26px;
   }
   
-  .peer-to-peer-buttons-column {
-    flex-direction: column;
-    gap: 16px;
-    align-items: stretch;
-  }
-  
   .peer-to-peer-primary-btn,
   .peer-to-peer-secondary-btn {
-    width: 100%;
-    max-width: 300px;
+    width: 100% !important;
+    max-width: 100%;
+    min-width: unset !important;
   }
   
   .peer-to-peer-image-card {
@@ -274,7 +291,7 @@
   }
 }
 
-/* Small mobile */
+/* Small mobile - Minimal padding */
 @media (max-width: 480px) {
   .peer-to-peer-container {
     padding: 48px 0;
@@ -297,5 +314,22 @@
   
   .peer-to-peer-image-card {
     height: 240px;
+  }
+}
+
+/* Extra small mobile - Maximum space utilization */
+@media (max-width: 360px) {
+  .peer-to-peer-content {
+    padding: 0 12px;
+  }
+  
+  .peer-to-peer-title {
+    font-size: 32px;
+    line-height: 38px;
+  }
+  
+  .peer-to-peer-description {
+    font-size: 15px;
+    line-height: 22px;
   }
 }

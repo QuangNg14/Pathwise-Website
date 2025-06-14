@@ -49,7 +49,7 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-.mentor-image-container {
+.mentee-avatar-container {
   width: 100px;
   height: 100px;
   margin: 0 auto 16px auto;
@@ -59,7 +59,7 @@
   flex-shrink: 0;
 }
 
-.mentor-image {
+.mentee-avatar {
   width: 100px;
   height: 100px;
   border-radius: 50%;

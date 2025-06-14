@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Row, Col, Card, Typography, Tabs } from "antd";
+import { useRouter } from "next/navigation";
 import "./OffersSection.css";
 
 const { Title, Text } = Typography;
@@ -428,20 +429,23 @@ const MenteeCard = ({ mentee }) => {
   };
 
   const cardClasses = [
-    'offer-card',
-    mentee.offers.length > 1 ? 'has-multiple-offers' : '',
-    isExpanded ? 'expanded' : ''
-  ].filter(Boolean).join(' ');
+    "offer-card",
+    mentee.offers.length > 1 ? "has-multiple-offers" : "",
+    isExpanded ? "expanded" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
-    <Col xs={24} sm={12} md={12} lg={8} xl={6}>
-      <Card 
-        className={cardClasses}
-        hoverable
-      >
+    <Col xs={24} sm={24} md={12} lg={8} xl={6}>
+      <Card className={cardClasses} hoverable>
         <div className="card-content">
           <div className="mentee-avatar-container">
-            <img src={mentee.avatar} alt={mentee.name} className="mentee-avatar" />
+            <img
+              src={mentee.avatar}
+              alt={mentee.name}
+              className="mentee-avatar"
+            />
           </div>
           <div className="mentee-details">
             <div className="mentee-info-section">
@@ -453,9 +457,11 @@ const MenteeCard = ({ mentee }) => {
               <Text className="offers-title">Offers:</Text>
               <ul className="offers-list">
                 {mentee.offers.map((offer, idx) => (
-                  <li 
-                    key={idx} 
-                    className={`offer-text ${idx === 0 ? 'primary-offer' : 'secondary-offer'}`}
+                  <li
+                    key={idx}
+                    className={`offer-text ${
+                      idx === 0 ? "primary-offer" : "secondary-offer"
+                    }`}
                   >
                     {offer}
                   </li>
@@ -463,7 +469,9 @@ const MenteeCard = ({ mentee }) => {
               </ul>
               {mentee.offers.length > 1 && (
                 <div className="expand-indicator" onClick={toggleExpanded}>
-                  {isExpanded ? '▲ Click to collapse' : `▼ +${mentee.offers.length - 1} more offers`}
+                  {isExpanded
+                    ? "▲ Click to collapse"
+                    : `▼ +${mentee.offers.length - 1} more offers`}
                 </div>
               )}
             </div>
@@ -476,6 +484,12 @@ const MenteeCard = ({ mentee }) => {
 
 const OffersSection = () => {
   const [activeTab, setActiveTab] = useState("software");
+  const router = useRouter();
+
+  const handleApplyClick = () => {
+    // Navigate to the main page and scroll to the application section
+    router.push("/#application");
+  };
 
   const tabItems = [
     {
@@ -540,6 +554,23 @@ const OffersSection = () => {
               <MenteeCard key={index} mentee={mentee} />
             ))}
           </Row>
+        </div>
+
+        {/* CTA Section */}
+        <div className="offers-cta-section">
+          <div className="offers-cta-content">
+            <Title level={3} className="offers-cta-title">
+              Ready to Join Our Success Stories?
+            </Title>
+            <Text className="offers-cta-description">
+              These amazing results speak for themselves. Join our next batch
+              and become part of our growing community of successful mentees
+              landing offers at top companies.
+            </Text>
+            <button className="offers-cta-button" onClick={handleApplyClick}>
+              Apply for Batch 5/2025
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,11 +1,12 @@
 "use client";
 import React, { useState } from "react";
-// import InterviewRoundsSection from "@/components/componentForActivitiesPage/InterviewRoundsSection/InterviewRoundsSection";
-// import OffersSection from "@/components/componentForActivitiesPage/OffersSection/OffersSection";
+// import InterviewRoundsSection from "@/components/componentForProgramPage/InterviewRoundsSection/InterviewRoundsSection";
+// import OffersSection from "@/components/componentForProgramPage/OffersSection/OffersSection";
 import dynamic from "next/dynamic";
 import { Layout } from "antd";
 import HeaderComponent from "@/components/header/header";
 import FooterComponent from "@/components/footer/Footer";
+import BatchSuccessSection from "@/components/componentForResultsPage/BatchSuccessSection/BatchSuccessSection";
 import TopCompaniesOffersSection from "@/components/componentForResultsPage/TopCompaniesOffersSection/TopCompaniesOffersSection";
 
 // Dynamically import the InterviewRoundsSection component
@@ -34,6 +35,7 @@ const Results = () => {
   return (
     <Layout>
       <HeaderComponent current={current} handleClick={handleClick} />
+      <BatchSuccessSection />
       {/* <TopCompaniesOffersSection /> */}
       <OffersSection />
       {/* <CompanyInterviews /> */}

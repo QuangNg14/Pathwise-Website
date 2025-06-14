@@ -8,7 +8,7 @@ import FooterComponent from "@/components/footer/Footer";
 import HeaderComponent from "@/components/header/header";
 
 export default function BlogPage({ params }) {
-  const { id } = params;
+  const [id, setId] = useState(null);
   const [content, setContent] = useState(null);
   const router = useRouter();
   const [current, setCurrent] = useState("blog");
@@ -17,7 +17,18 @@ export default function BlogPage({ params }) {
     setCurrent(e.key);
   };
 
+  // Handle async params
   useEffect(() => {
+    const getParams = async () => {
+      const resolvedParams = await params;
+      setId(resolvedParams.id);
+    };
+    getParams();
+  }, [params]);
+
+  useEffect(() => {
+    if (!id) return;
+
     const fetchBlogContent = async () => {
       try {
         const response = await fetch(`/api/blog/${id}`);
@@ -36,8 +47,14 @@ export default function BlogPage({ params }) {
     fetchBlogContent();
   }, [id, router]);
 
-  if (!content) {
-    return <div>Loading...</div>;
+  if (!id || !content) {
+    return (
+      <Layout style={{ backgroundColor: "#fff" }}>
+        <HeaderComponent current={current} handleClick={handleClick} />
+        <div style={{ padding: "50px", textAlign: "center" }}>Loading...</div>
+        <FooterComponent />
+      </Layout>
+    );
   }
 
   return (

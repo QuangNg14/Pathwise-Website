@@ -2,16 +2,25 @@
 import React, { useState, useEffect } from "react";
 import { Layout, Drawer } from "antd";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { MenuOutlined } from "@ant-design/icons";
-import "./header.css"
+import "./header.css";
 
 const { Header } = Layout;
 
-const menuItems = ["program", "services", "results", "blog", "about", "contact"];
+const menuItems = [
+  "program",
+  "services",
+  "results",
+  "blog",
+  "about",
+  "contact",
+];
 
 export default function HeaderComponent() {
   const [isMobile, setIsMobile] = useState(false);
   const [drawerVisible, setDrawerVisible] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const onResize = () => setIsMobile(window.innerWidth <= 768);
@@ -19,6 +28,14 @@ export default function HeaderComponent() {
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
+
+  const handleApplyClick = (e) => {
+    e.preventDefault();
+    router.push("/#application");
+    if (isMobile) {
+      setDrawerVisible(false);
+    }
+  };
 
   return (
     <Header className="custom-header">
@@ -28,7 +45,7 @@ export default function HeaderComponent() {
           <img
             src="/images/Pathwise Logo Black.png"
             alt="Pathwise Logo"
-            className="logo-image"
+            className="header-logo-image"
           />
         </Link>
 
@@ -45,9 +62,9 @@ export default function HeaderComponent() {
               </Link>
             ))}
 
-            <Link href="/apply" className="register-menu-item">
-              Register
-            </Link>
+            <button onClick={handleApplyClick} className="register-menu-item">
+              Apply
+            </button>
           </nav>
         )}
 
@@ -86,13 +103,9 @@ export default function HeaderComponent() {
               </Link>
             ))}
 
-            <Link
-              href="/apply"
-              className="drawer-register"
-              onClick={() => setDrawerVisible(false)}
-            >
-              Register
-            </Link>
+            <button onClick={handleApplyClick} className="drawer-register">
+              Apply
+            </button>
           </nav>
         </Drawer>
       )}

@@ -16,6 +16,13 @@ html, body, #__next {
   /* background: var(--color-background); */
 }
 
+/* Remove horizontal padding on mobile for maximum space */
+@media (max-width: 768px) {
+  html, body, #__next {
+    padding: 0;
+  }
+}
+
 .site-layout-content {
   /* padding: 50px; */
   min-height: 280px;

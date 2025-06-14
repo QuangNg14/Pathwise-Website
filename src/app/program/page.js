@@ -1,14 +1,14 @@
 "use client";
-import HeroSection from "@/components/componentForActivitiesPage/HeroSection/HeroSection";
-import ImpactSection from "@/components/componentForActivitiesPage/ImpactSection/ImpactSection";
-import Timeline from "@/components/componentForActivitiesPage/Timeline/Timeline";
+import HeroSection from "@/components/componentForProgramPage/HeroSection/HeroSection";
+import ImpactSection from "@/components/componentForProgramPage/ImpactSection/ImpactSection";
+import Timeline from "@/components/componentForProgramPage/Timeline/Timeline";
 import FooterComponent from "@/components/footer/Footer";
 import HeaderComponent from "@/components/header/header";
 import { Layout } from "antd";
 import React, { useState } from "react";
 
-const Activities = () => {
-  const [current, setCurrent] = useState("activities");
+const Program = () => {
+  const [current, setCurrent] = useState("program");
 
   const handleClick = (e) => {
     setCurrent(e.key);
@@ -25,4 +25,4 @@ const Activities = () => {
   );
 };
 
-export default Activities;
+export default Program;

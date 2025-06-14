@@ -34,7 +34,7 @@ const Community = () => {
           <div
             className="clickable-image"
             onClick={() =>
-              handleClick("https://www.facebook.com/pathwise.techmentorship")
+              handleClick("https://www.facebook.com/pathwise.mentorship")
             }
           >
             <img

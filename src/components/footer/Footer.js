@@ -18,7 +18,7 @@ const FooterComponent = () => {
               <img
                 src="/images/Pathwise Logo Black.png"
                 alt="Pathwise Logo"
-                className="logo-image"
+                className="footer-logo-image"
               />
             </div>
           </Col>
@@ -30,10 +30,16 @@ const FooterComponent = () => {
               <a className="footer-link" onClick={() => router.push("/about")}>
                 Our Mentors
               </a>
-              <a className="footer-link" onClick={() => router.push("/results")}>
+              <a
+                className="footer-link"
+                onClick={() => router.push("/results")}
+              >
                 Outcomes Report
               </a>
-              <a className="footer-link" onClick={() => router.push("/results")}>
+              <a
+                className="footer-link"
+                onClick={() => router.push("/results")}
+              >
                 Fellow Stories
               </a>
               <a className="footer-link" onClick={() => router.push("/")}>
@@ -49,10 +55,18 @@ const FooterComponent = () => {
               <a className="footer-link" onClick={() => router.push("/about")}>
                 About
               </a>
-              <a className="footer-link" onClick={() => router.push("/contact")}>
+              <a
+                className="footer-link"
+                onClick={() => router.push("/contact")}
+              >
                 Contact
               </a>
-              <a className="footer-link" href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                className="footer-link"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Blog ↗
               </a>
             </div>
@@ -62,13 +76,22 @@ const FooterComponent = () => {
           <Col xs={12} sm={6} md={4} lg={4}>
             <Text className="footer-title">Industry Tracks</Text>
             <div className="footer-links">
-              <a className="footer-link" onClick={() => router.push("/services")}>
+              <a
+                className="footer-link"
+                onClick={() => router.push("/services")}
+              >
                 Software Engineering
               </a>
-              <a className="footer-link" onClick={() => router.push("/services")}>
+              <a
+                className="footer-link"
+                onClick={() => router.push("/services")}
+              >
                 Data
               </a>
-              <a className="footer-link" onClick={() => router.push("/services")}>
+              <a
+                className="footer-link"
+                onClick={() => router.push("/services")}
+              >
                 Investment Banking
               </a>
             </div>
@@ -78,34 +101,34 @@ const FooterComponent = () => {
           <Col xs={12} sm={6} md={4} lg={4}>
             <Text className="footer-title">Social</Text>
             <div className="footer-links">
-              <a 
-                className="footer-link" 
-                href="https://www.linkedin.com/in/quang1401/" 
-                target="_blank" 
+              <a
+                className="footer-link"
+                href="https://www.linkedin.com/in/quang1401/"
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 LinkedIn ↗
               </a>
-              <a 
-                className="footer-link" 
-                href="https://www.facebook.com/pathwise.techmentorship" 
-                target="_blank" 
+              <a
+                className="footer-link"
+                href="https://www.facebook.com/pathwise.mentorship"
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 Facebook ↗
               </a>
-              <a 
-                className="footer-link" 
-                href="https://www.instagram.com/pathwise.tech/" 
-                target="_blank" 
+              <a
+                className="footer-link"
+                href="https://www.instagram.com/pathwise.tech/"
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 Instagram ↗
               </a>
-              <a 
-                className="footer-link" 
-                href="https://www.threads.com/@pathwise.tech" 
-                target="_blank" 
+              <a
+                className="footer-link"
+                href="https://www.threads.com/@pathwise.tech"
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 Threads ↗
@@ -117,11 +140,17 @@ const FooterComponent = () => {
         {/* Bottom Section */}
         <div className="footer-bottom">
           <div className="footer-bottom-left">
-            <Text className="footer-copyright">Copyright © 2025 thepathwise.org</Text>
+            <Text className="footer-copyright">
+              Copyright © 2025 thepathwise.org
+            </Text>
           </div>
           <div className="footer-bottom-right">
-            <a href="#" className="footer-bottom-link">Privacy Policy</a>
-            <a href="#" className="footer-bottom-link">Terms of Use</a>
+            <a href="#" className="footer-bottom-link">
+              Privacy Policy
+            </a>
+            <a href="#" className="footer-bottom-link">
+              Terms of Use
+            </a>
           </div>
         </div>
       </div>
