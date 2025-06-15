@@ -33,6 +33,20 @@ const ContactSection = () => {
 
         <div className="contact-methods">
           <div className="contact-item">
+            <LinkOutlined className="contact-icon" />
+            <div className="contact-item-content">
+              <Text className="contact-text">
+                Apply for the mentorship program:
+              </Text>
+              <button
+                onClick={handleApplyClick}
+                className="contact-link apply-button"
+              >
+                Apply
+              </button>
+            </div>
+          </div>
+          <div className="contact-item">
             <MailOutlined className="contact-icon" />
             <div className="contact-item-content">
               <Text className="contact-text">Email:</Text>
@@ -102,21 +116,6 @@ const ContactSection = () => {
               >
                 Pathwise LinkedIn
               </a>
-            </div>
-          </div>
-
-          <div className="contact-item">
-            <LinkOutlined className="contact-icon" />
-            <div className="contact-item-content">
-              <Text className="contact-text">
-                Apply for the mentorship program:
-              </Text>
-              <button
-                onClick={handleApplyClick}
-                className="contact-link apply-button"
-              >
-                Apply
-              </button>
             </div>
           </div>
         </div>

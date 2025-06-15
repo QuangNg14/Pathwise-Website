@@ -1,6 +1,6 @@
 "use client";
 import { Layout, Row, Col, Typography, Button } from "antd";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import HeaderComponent from "@/components/header/header";
 import MentorCarousel from "@/components/componentForMainPage/MentorCarousel/MentorCarousel";
 import LandYourDreamJob from "@/components/componentForMainPage/LandYourDreamJob/LandYourDreamJob";
@@ -84,10 +84,62 @@ const mentors = [
 
 export default function Home() {
   const [current, setCurrent] = useState("home");
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const handleClick = (e) => {
     setCurrent(e.key);
   };
+
+  // Ensure CSS is loaded before rendering
+  useEffect(() => {
+    // Add theme attribute to body for CSS variable consistency
+    document.body.setAttribute("data-theme", "pathwise");
+
+    // Small delay to ensure CSS is loaded
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 50);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Show loading state briefly to prevent FOUC
+  if (!isLoaded) {
+    return (
+      <Layout style={{ minHeight: "100vh", background: "#fff" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+            background: "#fff",
+          }}
+        >
+          <div
+            style={{
+              width: "40px",
+              height: "40px",
+              border: "3px solid #f3f3f3",
+              borderTop: "3px solid #C45A1D",
+              borderRadius: "50%",
+              animation: "spin 1s linear infinite",
+            }}
+          />
+        </div>
+        <style jsx>{`
+          @keyframes spin {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+        `}</style>
+      </Layout>
+    );
+  }
 
   return (
     <Layout>

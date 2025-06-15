@@ -45,9 +45,9 @@ const LandYourDreamJob = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           if (entry.target === researchLabRef.current) {
-            animateCount(setResearchLabCount, 10);
+            animateCount(setResearchLabCount, 12);
           } else if (entry.target === dellInternshipRef.current) {
-            animateCount(setDellInternshipCount, 28);
+            animateCount(setDellInternshipCount, 58);
           } else if (entry.target === dowJonesInternshipRef.current) {
             animateCount(setDowJonesInternshipCount, 5);
           }
@@ -78,16 +78,17 @@ const LandYourDreamJob = () => {
           <Text className="description">
             In the first year of launching the 2024 program, we helped{" "}
             <span className="primary-color">32 mentees</span> secure multiple{" "}
-            <span className="primary-color">interviews and job offers</span> from
-            major companies in the U.S. like Meta, Microsoft, Google, Palantir,
-            Bank of America, Amazon, Morgan Stanley, and HubSpot. Our mentors have experience in various fields such as{" "}
+            <span className="primary-color">interviews and job offers</span>{" "}
+            from major companies in the U.S. like Meta, Microsoft, Google,
+            Palantir, Bank of America, Amazon, Morgan Stanley, and HubSpot. Our
+            mentors have experience in various fields such as{" "}
             <span className="primary-color">
               Software, Data, Finance, and Consulting
             </span>
           </Text>
         </div>
       </div>
-      
+
       {/* Company Logos Carousel */}
       <div className="dream-job-logos-section">
         <div className="dream-job-logos-carousel">

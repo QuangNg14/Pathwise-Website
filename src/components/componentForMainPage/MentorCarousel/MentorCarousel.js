@@ -1,12 +1,22 @@
 import React, { useState } from "react";
-import { PlusOutlined, LinkedinOutlined } from "@ant-design/icons";
+import { useRouter } from "next/navigation";
+import {
+  PlusOutlined,
+  LinkedinOutlined,
+  TeamOutlined,
+} from "@ant-design/icons";
 import "./MentorCarousel.css";
 
 const MentorCarousel = ({ mentors }) => {
   const [expandedCard, setExpandedCard] = useState(null);
+  const router = useRouter();
 
   const toggleCard = (index) => {
     setExpandedCard(expandedCard === index ? null : index);
+  };
+
+  const handleViewTeamClick = () => {
+    router.push("/about");
   };
 
   // Enhanced mentor data with bio information
@@ -56,7 +66,17 @@ const MentorCarousel = ({ mentors }) => {
   return (
     <div className="mentor-section-container">
       <div className="mentor-section-content">
-        <h2 className="mentor-section-title">Meet your mentors</h2>
+        <div className="mentor-section-header">
+          <h2 className="mentor-section-title">Meet your mentors</h2>
+          <button
+            className="view-team-button"
+            onClick={handleViewTeamClick}
+            type="button"
+          >
+            <TeamOutlined className="view-team-icon" />
+            View our team
+          </button>
+        </div>
 
         <div className="mentor-cards-container">
           {mentors.map((mentor, index) => {
