@@ -23,11 +23,11 @@ const PeerToPeerMentoring = () => {
         <div className="peer-to-peer-content-row">
           <div className="peer-to-peer-description-column">
             <Text className="peer-to-peer-description">
-              Get targeted, affordable, and personalized 1-on-1 guidance optimized
-              for students applying to jobs at top companies!
+              Get targeted, affordable, and personalized 1-on-1 guidance
+              optimized for students applying to jobs at top companies!
             </Text>
           </div>
-          
+
           <div className="peer-to-peer-buttons-column">
             <Button
               type="primary"

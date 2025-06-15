@@ -153,6 +153,21 @@ const dataMentors = [
   },
 ];
 
+const financeMentors = [
+  {
+    name: "Le Minh Nghia",
+    linkedin: "https://www.linkedin.com/in/nlminh/",
+    achievements: [
+      "Blackstone – Summer Analyst (2024)",
+      "Lawrence, Evans & Co. – Summer Analyst (2023)",
+      "Rockfleet Financial Services – Private Capital Intern (2022)",
+      "Huntington National Bank – Business Analyst Intern (2022)",
+    ],
+    image:
+      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1750024121/502397810_1942109889922588_7235167056571089224_n_g8ixxx.png",
+  },
+];
+
 const AboutUs = () => (
   <div className="about-us-container">
     <div className="about-us-header">
@@ -271,6 +286,45 @@ const AboutUs = () => (
         </Title>
         <div className="mentors-grid">
           {dataMentors.map((mentor, index) => (
+            <div key={index} className="supporting-mentor-card">
+              <div className="supporting-mentor-image-container">
+                <img
+                  src={mentor.image}
+                  alt={mentor.name}
+                  className="supporting-mentor-image"
+                />
+              </div>
+              <div className="supporting-mentor-info">
+                <Text className="supporting-mentor-name">{mentor.name}</Text>
+                <ul className="achievements-list">
+                  {mentor.achievements.map((achievement, idx) => (
+                    <li key={idx} className="achievement-item">
+                      {achievement}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={mentor.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="supporting-mentor-linkedin"
+                >
+                  <LinkedinOutlined className="supporting-linkedin-icon" />
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Finance Mentors */}
+      <div className="mentor-category">
+        <Title level={3} className="category-title">
+          Finance Mentors
+        </Title>
+        <div className="mentors-grid">
+          {financeMentors.map((mentor, index) => (
             <div key={index} className="supporting-mentor-card">
               <div className="supporting-mentor-image-container">
                 <img

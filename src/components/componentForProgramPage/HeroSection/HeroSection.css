@@ -17,7 +17,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(62, 19, 10, 0.75), rgba(196, 90, 29, 0.65));
+    background: linear-gradient(135deg, rgba(62, 19, 10, 0.85), rgba(196, 90, 29, 0.75));
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,7 +32,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.45);
     z-index: 1;
   }
   
@@ -51,7 +53,7 @@
   letter-spacing: -0.02em !important;
   color: #fff !important;
   margin: 0 0 32px 0 !important;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(0, 0, 0, 0.5) !important;
 }
 
 .hero-section .hero-description {
@@ -62,10 +64,29 @@
   letter-spacing: 0% !important;
   color: rgba(255, 255, 255, 0.95) !important;
   margin-bottom: 48px !important;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3) !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6), 0 1px 4px rgba(0, 0, 0, 0.4) !important;
   max-width: 800px !important;
   margin-left: auto !important;
   margin-right: auto !important;
+}
+
+/* Highlighted text styling */
+.hero-section .hero-description .highlight-text {
+  color: var(--color-secondary, #E9B260) !important;
+  font-weight: 600 !important;
+  text-shadow: 0 2px 8px rgba(233, 178, 96, 0.4), 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+  position: relative;
+}
+
+.hero-section .hero-description .highlight-text::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-secondary, #E9B260), transparent);
+  opacity: 0.6;
 }
   
   .hero-button {

@@ -8,7 +8,7 @@ const timelineData = [
     shortDescription:
       "Build a professional foundation with optimized resumes, LinkedIn profiles, and personal portfolios.",
     fullDescription:
-      "Master the art of professional profile creation with comprehensive guidance on Resume/CV crafting tailored to each company and position. Learn to leverage AI tools that optimize content to bypass Applicant Tracking Systems (ATS). Build an impressive personal portfolio showcasing practical skills and problem-solving abilities. Complete and optimize crucial online profiles like LinkedIn and GitHub to make a strong impression on recruiters.",
+      "Master professional profile creation with comprehensive guidance on Resume/CV crafting tailored to each company. Learn AI tools for ATS optimization and build impressive portfolios showcasing practical skills.",
     details: [
       "Professional Resume/CV creation with ATS optimization",
       "Personal branding and portfolio development",
@@ -25,7 +25,7 @@ const timelineData = [
     shortDescription:
       "Deep dive into technical skills for Software, Data, and Finance industries with hands-on workshops.",
     fullDescription:
-      "Comprehensive technical training covering Software Engineering (Data Structures & Algorithms, System Design), Data Science (SQL mastery, Python/Pandas, Machine Learning), and Finance (Financial Modeling, Excel proficiency, Market Analysis). Participate in practical workshops and real-world case studies.",
+      "Comprehensive technical training covering Software Engineering, Data Science, and Finance with practical workshops and real-world case studies.",
     details: [
       "Software: DSA, System Design, OOP Design patterns",
       "Data: SQL mastery, Python/Pandas, ML algorithms",
@@ -42,7 +42,7 @@ const timelineData = [
     shortDescription:
       "Learn effective strategies for applying to top companies and maximizing interview opportunities.",
     fullDescription:
-      "Master effective strategies for applying to internships and full-time jobs in Software, Data, and Finance industries in the USA. Discover tips and tricks to maximize your chances of getting interview calls, including application tailoring and ATS optimization. Gain access to specialized resources for online assessments (OAs) tailored to each company's requirements.",
+      "Master effective strategies for applying to internships and full-time jobs. Discover tips to maximize interview calls and gain access to specialized OA resources.",
     details: [
       "Industry-specific application strategies (Software, Data, Finance)",
       "ATS optimization and application tailoring techniques",
@@ -59,7 +59,7 @@ const timelineData = [
     shortDescription:
       "Intensive technical interview preparation with weekly LeetCode sessions and live coding reviews.",
     fullDescription:
-      "Get detailed guidance on effective LeetCode practice with weekly group sessions featuring live coding reviews. Master various technical question types including algorithms, data structures, system design, and low-level design. Participate in mock technical interviews with experienced mentors.",
+      "Get detailed guidance on effective LeetCode practice with weekly group sessions. Master technical question types and participate in mock interviews.",
     details: [
       "Weekly group LeetCode sessions with live reviews",
       "Coverage of 20+ key data structures and algorithms",
@@ -76,13 +76,13 @@ const timelineData = [
     shortDescription:
       "Master behavioral interviews with STAR method, storytelling, and company-specific preparation.",
     fullDescription:
-      "Learn to tell your compelling personal story showcasing experiences relevant to target positions. Master the STAR method for situational questions and gain deep understanding of company cultures. Practice mock behavioral interviews to build confidence and receive actionable feedback.",
+      "Learn to tell your compelling personal story and master the STAR method. Practice mock behavioral interviews with actionable feedback.",
     details: [
       "Personal storytelling and background narrative",
       "STAR method mastery for situational questions",
       "Company culture analysis and 'Why' questions",
       "Mock behavioral interviews with mentor feedback",
-      "Industry-specific behavioral question preparation",
+      "Industry-specific behavioral preparation",
     ],
     tag: "Behavioral",
     icon: "🗣️",
@@ -93,7 +93,7 @@ const timelineData = [
     shortDescription:
       "Build professional networks through strategic networking, referrals, and community engagement.",
     fullDescription:
-      "Master the art of effective networking including professional communication at conferences and recruitment events. Learn to write impactful cold emails and effectively request referrals. Develop strategies to navigate competitive job markets and join a strong community of mentors and peers.",
+      "Master effective networking including professional communication at events. Learn to write impactful cold emails and request referrals effectively.",
     details: [
       "Professional networking at conferences and events",
       "Strategic referral request techniques",
@@ -110,7 +110,7 @@ const timelineData = [
     shortDescription:
       "Receive tailored mentorship with resume reviews, mock interviews, and personalized guidance.",
     fullDescription:
-      "Get comprehensive personalized support including 100% resume/CV reviews, essay assistance for new graduates, and diverse mock interview rounds (Behavioral, Technical, Final Round). Receive specific, actionable feedback to improve your interview skills and application materials.",
+      "Get comprehensive personalized support including resume reviews, essay assistance, and diverse mock interview rounds with specific feedback.",
     details: [
       "100% Resume/CV review and optimization",
       "Essay reviews and 'Why' question assistance",
@@ -127,7 +127,7 @@ const timelineData = [
     shortDescription:
       "Access comprehensive resources and develop impactful projects for your portfolio.",
     fullDescription:
-      "Gain full access to job application platforms, fellowship programs, internships, and hackathons. Work on impactful projects including backend infrastructures, full-stack applications with AI integrations, and RAG projects to enhance your portfolio.",
+      "Gain access to job platforms, fellowships, and hackathons. Work on impactful projects including backend infrastructures and AI integrations.",
     details: [
       "Job application platforms and fellowship programs",
       "Internship and hackathon opportunities",
@@ -144,9 +144,9 @@ const timelineData = [
     shortDescription:
       "Learn from successful mentors and gain insights into top company interview processes.",
     fullDescription:
-      "Attend workshops and sharing sessions with experienced mentors from top companies. Hear success stories and get detailed insights into interview processes and tips for major companies, helping you prepare effectively for all interview stages.",
+      "Attend workshops with experienced mentors from top companies. Hear success stories and get detailed insights into interview processes.",
     details: [
-      "Success story sharing sessions with industry professionals",
+      "Success story sharing with industry professionals",
       "Interview process insights from top companies",
       "Tips and advice from experienced mentors",
       "Industry trends and market analysis",
@@ -237,7 +237,6 @@ const Timeline = () => {
                   <ul className="details-list">
                     {event.details.map((detail, detailIndex) => (
                       <li key={detailIndex} className="detail-item">
-                        <span className="detail-bullet">•</span>
                         {detail}
                       </li>
                     ))}
@@ -253,7 +252,7 @@ const Timeline = () => {
                 }
               >
                 <span className="expand-text">
-                  {expandedCards.has(index) ? "Show Less" : "Learn More"}
+                  {expandedCards.has(index) ? "Show Less" : "Skills Gained"}
                 </span>
                 <span
                   className={`expand-icon ${

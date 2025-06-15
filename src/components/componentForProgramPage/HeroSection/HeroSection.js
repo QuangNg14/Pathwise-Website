@@ -10,11 +10,16 @@ const HeroSection = () => {
             Introduction to the Pathwise Mentorship Program
           </h1>
           <p className="hero-description">
-            Pathwise is a peer-to-peer mentorship program for university
-            students seeking job opportunities in the USA. The program offers 12
-            weeks of guidance with essential, focused, and personalized
-            knowledge and information. It currently supports students applying
-            to industries such as Software, Data, and Finance.
+            <span className="highlight-text">Pathwise</span> connects university
+            students with{" "}
+            <span className="highlight-text">job opportunities</span> through{" "}
+            <span className="highlight-text">1-on-1 mentorship</span>,{" "}
+            <span className="highlight-text">career strategies</span>, and{" "}
+            <span className="highlight-text">insider insights</span> – designed
+            specifically for students aiming for roles in{" "}
+            <span className="highlight-text">Software</span>,{" "}
+            <span className="highlight-text">Data</span>, or{" "}
+            <span className="highlight-text">Finance</span>.
           </p>
           <a
             href="https://www.facebook.com/pathwise.mentorship"
@@ -22,7 +27,7 @@ const HeroSection = () => {
             rel="noopener noreferrer"
             className="hero-button"
           >
-            Learn More
+            View Page
           </a>
         </div>
       </div>

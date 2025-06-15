@@ -16,7 +16,7 @@ const ImpactSection = () => {
           </p>
         </div>
 
-        {/* First Layout - Keep Original Resume Content */}
+        {/* First Layout - Updated Resume Content with Bullet Points */}
         <div className="impact-item">
           <Row gutter={[32, 32]} align="middle">
             <Col xs={24} md={12}>
@@ -24,13 +24,28 @@ const ImpactSection = () => {
                 <div className="impact-icon">📄</div>
                 <h3 className="impact-title">Improve Profile</h3>
                 <span className="impact-subtitle">Resume + LinkedIn</span>
-                <p className="impact-description">
-                  Learn how to create a professional resume and get introduced
-                  to tools for building your profile. Receive specific feedback
-                  through individual resume reviews. Get support in creating a
-                  professional LinkedIn profile and guidance on how to upload
-                  projects and effectively use GitHub.
-                </p>
+                <div className="impact-description">
+                  <ul className="impact-list">
+                    <li>
+                      Create professional resumes with{" "}
+                      <span className="highlight-keyword">
+                        ATS optimization
+                      </span>
+                    </li>
+                    <li>Master industry-specific formatting and techniques</li>
+                    <li>
+                      Build compelling{" "}
+                      <span className="highlight-keyword">
+                        LinkedIn profiles
+                      </span>{" "}
+                      that attract recruiters
+                    </li>
+                    <li>Optimize GitHub portfolios with project showcases</li>
+                    <li>
+                      Receive personalized feedback through individual reviews
+                    </li>
+                  </ul>
+                </div>
               </div>
             </Col>
             <Col xs={24} md={12} className="image-column">
@@ -43,7 +58,7 @@ const ImpactSection = () => {
           </Row>
         </div>
 
-        {/* Second Layout - Updated Projects Content */}
+        {/* Second Layout - Updated Projects Content with Bullet Points */}
         <div className="impact-item">
           <Row gutter={[32, 32]} align="middle">
             <Col xs={24} md={12} className="image-column">
@@ -62,14 +77,31 @@ const ImpactSection = () => {
                 <span className="impact-subtitle">
                   Backend + AI + Full-stack + Cloud
                 </span>
-                <p className="impact-description">
-                  Master cutting-edge technologies by building scalable backend
-                  systems, AI-powered applications, and full-stack cloud
-                  solutions. Learn to create microservices architectures,
-                  implement AI agents with LLMs, and deploy production-ready
-                  applications using modern cloud platforms and DevOps
-                  practices.
-                </p>
+                <div className="impact-description">
+                  <ul className="impact-list">
+                    <li>
+                      Develop{" "}
+                      <span className="highlight-keyword">
+                        scalable backend systems
+                      </span>{" "}
+                      with microservices architecture
+                    </li>
+                    <li>
+                      Create{" "}
+                      <span className="highlight-keyword">
+                        AI-powered applications
+                      </span>{" "}
+                      using LLMs and machine learning
+                    </li>
+                    <li>
+                      Build full-stack cloud solutions with modern frameworks
+                    </li>
+                    <li>Implement DevOps practices and CI/CD pipelines</li>
+                    <li>
+                      Deploy production-ready applications on cloud platforms
+                    </li>
+                  </ul>
+                </div>
                 <div className="tech-stack">
                   <div className="tech-category">
                     <span className="category-label">Backend & Cloud:</span>
@@ -97,7 +129,7 @@ const ImpactSection = () => {
           </Row>
         </div>
 
-        {/* Third Layout - Keep Original Mock Interviews Content */}
+        {/* Third Layout - Updated Mock Interviews Content with Bullet Points */}
         <div className="impact-item">
           <Row gutter={[32, 32]} align="middle">
             <Col xs={24} md={12}>
@@ -105,13 +137,30 @@ const ImpactSection = () => {
                 <div className="impact-icon">🎯</div>
                 <h3 className="impact-title">Mock Interviews</h3>
                 <span className="impact-subtitle">Behavioral + Technical</span>
-                <p className="impact-description">
-                  Learn effective ways to prepare for behavioral interviews by
-                  researching the characteristics of each company and tailoring
-                  your answers. Get guidance on preparing for technical
-                  interviews through practice with LeetCode problems,
-                  object-oriented programming, and system design.
-                </p>
+                <div className="impact-description">
+                  <ul className="impact-list">
+                    <li>
+                      Master behavioral interview techniques with{" "}
+                      <span className="highlight-keyword">STAR method</span>
+                    </li>
+                    <li>
+                      Research company-specific cultures and tailor responses
+                    </li>
+                    <li>
+                      Practice technical interviews with{" "}
+                      <span className="highlight-keyword">LeetCode</span>{" "}
+                      problems
+                    </li>
+                    <li>
+                      Learn{" "}
+                      <span className="highlight-keyword">
+                        system design principles
+                      </span>{" "}
+                      and architecture patterns
+                    </li>
+                    <li>Develop object-oriented programming expertise</li>
+                  </ul>
+                </div>
               </div>
             </Col>
             <Col xs={24} md={12} className="image-column">
