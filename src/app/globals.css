@@ -5,6 +5,19 @@
   --color-heading: #3E130A;
   --color-text: #6D2A1A;
   --color-background: #FDF7ED;
+  --color-bg: #FDF7ED;
+  --color-dark: #3E130A;
+  --color-dark-alt: #6D2A1A;
+}
+
+/* Ensure CSS variables are inherited properly */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  /* Prevent layout shifts */
+  scroll-behavior: smooth;
 }
 
 html, body, #__next {
@@ -16,6 +29,18 @@ html, body, #__next {
   /* background: var(--color-background); */
 }
 
+/* Force CSS variables to be available immediately */
+html, body, #__next, [data-nextjs-scroll-focus-boundary] {
+  --color-primary: #C45A1D;
+  --color-secondary: #E9B260;
+  --color-heading: #3E130A;
+  --color-text: #6D2A1A;
+  --color-background: #FDF7ED;
+  --color-bg: #FDF7ED;
+  --color-dark: #3E130A;
+  --color-dark-alt: #6D2A1A;
+}
+
 /* Remove horizontal padding on mobile for maximum space */
 @media (max-width: 768px) {
   html, body, #__next {
@@ -23,15 +48,23 @@ html, body, #__next {
   }
 }
 
+/* Prevent flash of unstyled content */
 .site-layout-content {
   /* padding: 50px; */
   min-height: 280px;
   background: #fff;
+  opacity: 1;
+  transition: opacity 0.2s ease;
 }
 
+/* Ensure Ant Design components inherit our font */
 .ant-typography,
 .ant-card,
-.ant-layout {
+.ant-layout,
+.ant-menu,
+.ant-btn,
+.ant-input,
+.ant-select {
   font-family: 'Anuphan', sans-serif !important;
 }
 
@@ -143,5 +176,27 @@ html, body, #__next {
   .page-padding {
     padding: 24px;
   }
+}
+
+/* Prevent layout shifts during navigation */
+.ant-layout {
+  min-height: 100vh;
+}
+
+/* Ensure consistent styling across navigation */
+.ant-layout-content {
+  background: #fff;
+}
+
+/* Force immediate CSS variable application */
+body[data-theme] {
+  --color-primary: #C45A1D !important;
+  --color-secondary: #E9B260 !important;
+  --color-heading: #3E130A !important;
+  --color-text: #6D2A1A !important;
+  --color-background: #FDF7ED !important;
+  --color-bg: #FDF7ED !important;
+  --color-dark: #3E130A !important;
+  --color-dark-alt: #6D2A1A !important;
 }
 

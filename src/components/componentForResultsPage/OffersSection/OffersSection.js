@@ -318,6 +318,26 @@ const offersData = [
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733882589/x9rziqrmc1jfpy7e6umh.jpg",
   },
   {
+    name: "Ngô Quang Tùng",
+    school: "University of Massachusetts Amherst",
+    year: "Senior",
+    major: "Computer Science",
+    category: "software",
+    offers: ["UTS - Software Engineer Intern"],
+    avatar:
+      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1749969670/tung_ngo_ovjra8.jpg",
+  },
+  {
+    name: "Vũ Minh Hoàng",
+    school: "University of South Florida",
+    year: "Sophomore",
+    major: "Data Science",
+    category: "data",
+    offers: ["IDEXX - Data Engineer Intern"],
+    avatar:
+      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1749969670/475818142_1130407918587484_8109007352114431096_n_gztz8p.jpg",
+  },
+  {
     name: "Hà Duy Linh",
     school: "University of South Florida",
     year: "Sophomore",
@@ -337,7 +357,10 @@ const offersData = [
     year: "Sophomore",
     major: "Computer Science",
     category: "software",
-    offers: ["Actualization.ai - Software Engineer Intern"],
+    offers: [
+      "RepRally - Software Engineer Intern",
+      "Actualization.ai - Software Engineer Intern",
+    ],
     avatar:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1734133665/wo8x573yzafpbbpiucwc.jpg",
   },

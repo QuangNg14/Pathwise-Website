@@ -306,6 +306,27 @@
     font-size: 40px;
   }
   
+  .company-logos-section {
+    margin-bottom: 60px;
+  }
+  
+  .logos-header {
+    margin-bottom: 40px;
+  }
+  
+  .logos-title {
+    font-size: 32px;
+  }
+  
+  .logos-subtitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .logos-image {
+    border-radius: 16px;
+  }
+  
   .success-highlights {
     gap: 24px;
     margin-bottom: 60px;
@@ -366,6 +387,32 @@
   
   .stat-number {
     font-size: 36px;
+  }
+  
+  .company-logos-section {
+    margin-bottom: 48px;
+  }
+  
+  .logos-header {
+    margin-bottom: 32px;
+  }
+  
+  .logos-title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  
+  .logos-subtitle {
+    font-size: 15px;
+    line-height: 22px;
+  }
+  
+  .logos-image-container:hover {
+    transform: translateY(-4px);
+  }
+  
+  .logos-image {
+    border-radius: 12px;
   }
   
   .success-highlights {
@@ -446,6 +493,32 @@
     font-size: 12px;
   }
   
+  .company-logos-section {
+    margin-bottom: 40px;
+  }
+  
+  .logos-header {
+    margin-bottom: 24px;
+  }
+  
+  .logos-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .logos-subtitle {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .logos-image-container:hover {
+    transform: translateY(-2px);
+  }
+  
+  .logos-image {
+    border-radius: 8px;
+  }
+  
   .highlight-item {
     padding: 16px;
   }
@@ -478,4 +551,64 @@
     width: 100%;
     padding: 16px;
   }
+}
+
+/* Company Logos Section */
+.company-logos-section {
+  margin-bottom: 80px;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.logos-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.logos-title {
+  font-family: Inter;
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 16px 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  line-height: 110%;
+  letter-spacing: -0.01em;
+}
+
+.logos-subtitle {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  line-height: 26px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logos-image-container {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  position: relative;
+}
+
+.logos-image-container:hover {
+  transform: translateY(-8px);
+}
+
+.logos-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  filter: brightness(1.1) contrast(1.1) saturate(1.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.logos-image-container:hover .logos-image {
+  transform: scale(1.03);
+  filter: brightness(1.15) contrast(1.15) saturate(1.1);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
 } 

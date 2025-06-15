@@ -167,6 +167,196 @@
     font-size: 16px;
   }
   
+  /* Supporting Mentors Section */
+  .supporting-mentors-section {
+    max-width: 1200px;
+    margin: 80px auto 0;
+    padding: 0 40px;
+  }
+
+  .supporting-mentors-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .supporting-mentors-title {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--color-heading, #3E130A);
+    margin: 0 0 24px 0;
+  }
+
+  .supporting-mentors-intro {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0%;
+    color: var(--color-text, #6D2A1A);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .mentor-category {
+    margin-bottom: 80px;
+  }
+
+  .mentor-category:first-child {
+    margin-top: 40px;
+  }
+
+  .category-title {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 100%;
+    color: var(--color-heading, #3E130A);
+    margin: 0 0 48px 0;
+    text-align: center;
+    position: relative;
+    padding-top: 20px;
+  }
+
+  .category-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--color-primary, #C45A1D);
+    border-radius: 2px;
+  }
+
+  .mentors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .supporting-mentor-card {
+    background: var(--color-bg, #FDF7ED);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .supporting-mentor-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+  }
+
+  .supporting-mentor-image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .supporting-mentor-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .supporting-mentor-card:hover .supporting-mentor-image {
+    transform: scale(1.05);
+  }
+
+  .supporting-mentor-info {
+    flex: 1;
+    text-align: center;
+  }
+
+  .supporting-mentor-name {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-heading, #3E130A);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .achievements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  .achievement-item {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--color-text, #6D2A1A);
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .achievement-item::before {
+    content: '•';
+    color: var(--color-primary, #C45A1D);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 16px;
+  }
+
+  .achievement-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Supporting Mentor LinkedIn Link */
+  .supporting-mentor-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-primary, #C45A1D);
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1.5px solid var(--color-primary, #C45A1D);
+    border-radius: 6px;
+    background: transparent;
+    transition: all 0.2s ease;
+    width: fit-content;
+    margin-top: 16px;
+    align-self: center;
+  }
+  
+  .supporting-mentor-linkedin:hover {
+    background: var(--color-primary, #C45A1D);
+    color: #fff;
+    transform: translateY(-1px);
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(196, 90, 29, 0.2);
+  }
+  
+  .supporting-linkedin-icon {
+    font-size: 14px;
+    transition: transform 0.2s ease;
+  }
+
+  .supporting-mentor-linkedin:hover .supporting-linkedin-icon {
+    transform: scale(1.1);
+  }
+  
   /* Tablet responsive */
   @media (max-width: 1024px) {
     .about-us-container {
@@ -212,6 +402,70 @@
     .member-image {
       max-width: 280px;
       height: 320px;
+    }
+
+    .supporting-mentors-section {
+      margin-top: 60px;
+      padding: 0 32px;
+    }
+
+    .supporting-mentors-header {
+      margin-bottom: 48px;
+    }
+
+    .supporting-mentors-title {
+      font-size: 40px;
+    }
+
+    .supporting-mentors-intro {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .mentor-category {
+      margin-bottom: 64px;
+    }
+
+    .mentor-category:first-child {
+      margin-top: 32px;
+    }
+
+    .category-title {
+      font-size: 28px;
+      margin-bottom: 40px;
+      padding-top: 16px;
+    }
+
+    .mentors-grid {
+      gap: 24px;
+    }
+
+    .supporting-mentor-card {
+      padding: 20px;
+    }
+
+    .supporting-mentor-image {
+      width: 100px;
+      height: 100px;
+    }
+
+    .supporting-mentor-name {
+      font-size: 18px;
+    }
+
+    .achievement-item {
+      font-size: 13px;
+      line-height: 18px;
+    }
+
+    .supporting-mentor-linkedin {
+      font-size: 13px;
+      padding: 7px 14px;
+      margin-top: 14px;
+    }
+
+    .supporting-linkedin-icon {
+      font-size: 13px;
     }
   }
 
@@ -281,6 +535,74 @@
       max-width: 100%;
       height: 300px;
     }
+
+    .supporting-mentors-section {
+      margin-top: 48px;
+      padding: 0 24px;
+    }
+
+    .supporting-mentors-header {
+      margin-bottom: 40px;
+    }
+
+    .supporting-mentors-title {
+      font-size: 32px;
+    }
+
+    .supporting-mentors-intro {
+      font-size: 15px;
+      line-height: 22px;
+    }
+
+    .mentor-category {
+      margin-bottom: 56px;
+    }
+
+    .mentor-category:first-child {
+      margin-top: 28px;
+    }
+
+    .category-title {
+      font-size: 24px;
+      margin-bottom: 32px;
+      padding-top: 12px;
+    }
+
+    .mentors-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .supporting-mentor-card {
+      padding: 20px;
+    }
+
+    .supporting-mentor-image {
+      width: 90px;
+      height: 90px;
+    }
+
+    .supporting-mentor-name {
+      font-size: 18px;
+      margin-bottom: 14px;
+    }
+
+    .achievement-item {
+      font-size: 13px;
+      line-height: 18px;
+      margin-bottom: 6px;
+    }
+
+    .supporting-mentor-linkedin {
+      font-size: 12px;
+      padding: 6px 12px;
+      margin-top: 12px;
+      gap: 5px;
+    }
+
+    .supporting-linkedin-icon {
+      font-size: 12px;
+    }
   }
 
   @media (max-width: 480px) {
@@ -313,6 +635,73 @@
     .linkedin-link {
       padding: 10px 20px;
       font-size: 14px;
+    }
+
+    .supporting-mentors-section {
+      margin-top: 40px;
+      padding: 0 16px;
+    }
+
+    .supporting-mentors-header {
+      margin-bottom: 32px;
+    }
+
+    .supporting-mentors-title {
+      font-size: 28px;
+    }
+
+    .supporting-mentors-intro {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .mentor-category {
+      margin-bottom: 48px;
+    }
+
+    .mentor-category:first-child {
+      margin-top: 24px;
+    }
+
+    .category-title {
+      font-size: 22px;
+      margin-bottom: 28px;
+      padding-top: 10px;
+    }
+
+    .mentors-grid {
+      gap: 16px;
+    }
+
+    .supporting-mentor-card {
+      padding: 16px;
+    }
+
+    .supporting-mentor-image {
+      width: 80px;
+      height: 80px;
+    }
+
+    .supporting-mentor-name {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .achievement-item {
+      font-size: 12px;
+      line-height: 16px;
+      margin-bottom: 5px;
+    }
+
+    .supporting-mentor-linkedin {
+      font-size: 11px;
+      padding: 5px 10px;
+      margin-top: 10px;
+      gap: 4px;
+    }
+
+    .supporting-linkedin-icon {
+      font-size: 11px;
     }
   }
   

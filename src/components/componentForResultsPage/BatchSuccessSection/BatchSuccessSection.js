@@ -47,6 +47,23 @@ const BatchSuccessSection = () => {
           </div>
         </div>
 
+        {/* Company Logos Section */}
+        <div className="company-logos-section">
+          <div className="logos-header">
+            <h3 className="logos-title">Where Our Students Landed</h3>
+            <p className="logos-subtitle">
+              Our mentees secured positions at these top-tier companies
+            </p>
+          </div>
+          <div className="logos-image-container">
+            <img
+              src="https://res.cloudinary.com/dbqcioj2g/image/upload/v1749970658/501126546_1445408036898909_2834472440713575263_n_m5bux1.png"
+              alt="Pathwise Mentorship Offers - Companies including Adobe, Amazon, Bank of America, Meta, eBay, PayPal, Palantir, Microsoft, Google, HubSpot, Affirm, Morgan Stanley, Dell, Dow Jones, Alcon, United Healthcare"
+              className="logos-image"
+            />
+          </div>
+        </div>
+
         <div className="success-highlights">
           <div className="highlight-item">
             <div className="highlight-icon">🏆</div>

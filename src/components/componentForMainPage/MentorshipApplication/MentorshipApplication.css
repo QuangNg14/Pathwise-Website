@@ -339,7 +339,6 @@
   .mentorship-app-section {
     padding: 60px 0;
     border-bottom: 1px solid #9A9A9A !important;
-    position: relative;
   }
   
   .mentorship-app-section::after {
@@ -382,10 +381,6 @@
 @media (max-width: 480px) {
   .mentorship-app-section {
     padding: 48px 0;
-  }
-  
-  .mentorship-app-container {
-    padding: 0 16px;
   }
   
   .mentorship-app-title {
