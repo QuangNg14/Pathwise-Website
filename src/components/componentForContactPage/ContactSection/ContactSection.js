@@ -8,6 +8,7 @@ import {
   LinkedinOutlined,
   LinkOutlined,
 } from "@ant-design/icons";
+import { navigateToApplication } from "@/utils/navigation";
 import "./ContactSection.css";
 
 const { Title, Text } = Typography;
@@ -17,7 +18,7 @@ const ContactSection = () => {
 
   const handleApplyClick = (e) => {
     e.preventDefault();
-    router.push("/#application");
+    navigateToApplication(router);
   };
 
   return (

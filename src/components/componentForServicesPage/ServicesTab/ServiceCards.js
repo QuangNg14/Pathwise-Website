@@ -6,6 +6,7 @@ import {
   UsergroupAddOutlined,
   DollarOutlined,
 } from "@ant-design/icons";
+import { navigateToApplication } from "@/utils/navigation";
 import "./ServiceCards.css";
 
 const services = [
@@ -121,7 +122,7 @@ const ServicesSection = () => {
 
   const handleApplyClick = (e) => {
     e.preventDefault();
-    router.push("/#application");
+    navigateToApplication(router);
   };
 
   return (

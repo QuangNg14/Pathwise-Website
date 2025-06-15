@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/navigation";
+import { navigateToApplication } from "@/utils/navigation";
 import "./BatchSuccessSection.css";
 
 const BatchSuccessSection = () => {
@@ -7,7 +8,7 @@ const BatchSuccessSection = () => {
 
   const handleApplyClick = () => {
     // Navigate to the main page and scroll to the application section
-    router.push("/#application");
+    navigateToApplication(router);
   };
 
   return (

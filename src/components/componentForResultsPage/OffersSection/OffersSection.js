@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Row, Col, Card, Typography, Tabs } from "antd";
 import { useRouter } from "next/navigation";
+import { navigateToApplication } from "@/utils/navigation";
 import "./OffersSection.css";
 
 const { Title, Text } = Typography;
@@ -511,7 +512,7 @@ const OffersSection = () => {
 
   const handleApplyClick = () => {
     // Navigate to the main page and scroll to the application section
-    router.push("/#application");
+    navigateToApplication(router);
   };
 
   const tabItems = [

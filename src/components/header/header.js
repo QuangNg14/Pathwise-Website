@@ -4,6 +4,7 @@ import { Layout, Drawer } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { MenuOutlined } from "@ant-design/icons";
+import { navigateToApplication } from "@/utils/navigation";
 import "./header.css";
 
 const { Header } = Layout;
@@ -31,7 +32,7 @@ export default function HeaderComponent() {
 
   const handleApplyClick = (e) => {
     e.preventDefault();
-    router.push("/#application");
+    navigateToApplication(router);
     if (isMobile) {
       setDrawerVisible(false);
     }
