@@ -26,24 +26,26 @@ const MentorCarousel = ({ mentors }) => {
         "Quang Nguyen is currently a Software Engineer at Microsoft. He previously interned as a software engineer at NVIDIA (Summer 2023) and Facebook (Summer 2022).",
         "He received a full-ride scholarship worth $73,000/year for 4 years at Rice University, majoring in Computer Science.",
         "As the President of Rice Apps (Rice Software Engineering Club) at Rice University, he has mentored and taught over 60 members about professional web and mobile application development.",
+        "Quang has been our head mentor since day 1 and has led and guided over 60 mentees to successful internship applications at top companies.",
       ],
       role: "Head Mentor",
     },
-    "Anh Ngo": {
-      bio: [
-        "Anh Ngo is currently an Investment Banking Analyst at Deutsche Bank, working on high-profile M&A transactions and capital markets deals.",
-        "He previously worked as a consultant at BCG (Boston Consulting Group) where he advised Fortune 500 companies on strategic initiatives.",
-        "Anh graduated summa cum laude from his university with a degree in Finance and Economics, and has extensive experience in financial modeling and valuation.",
-      ],
-      role: "Advisor",
-    },
     "Tri Bui": {
       bio: [
-        "Tri Bui is a successful entrepreneur and software engineer who has founded multiple startups in the tech industry.",
-        "He has over 8 years of experience in software development, specializing in full-stack web development and mobile applications.",
-        "Tri has mentored numerous aspiring entrepreneurs and developers, helping them build and scale their technical products from ideation to market launch.",
+        "Tri Bui currently works in Risk Management at Revantage, a Blackstone portfolio company, and has interned as a Software Engineer at Daikin, DetectAuto, and Deloitte Vietnam.",
+        "Founder/CEO of Esmart Solutions, a company providing communication and technology solutions to small and medium-sized businesses in Vietnam.",
+        "President of the Entrepreneurship and Investment Clubs at Macalester College. He has won multiple awards in technology, finance, and entrepreneurship, with a total value exceeding $15,000.",
       ],
       role: "Mentor",
+    },
+    "Anh Ngo": {
+      bio: [
+        "Anh Ngo is currently an Investment Banking Analyst at Deutsche Bank.",
+        "She received a scholarship to study Economics at the University of Pennsylvania (UPenn).",
+        "Vice President of the Wharton Finance Club and a member of the International Student Advisory Board at UPenn.",
+        "She has extensive experience working at UPenn Career Services, where she has assisted over 200 students with resume reviews and career guidance.",
+      ],
+      role: "Advisor",
     },
     "Lam Nguyen": {
       bio: [
