@@ -1,19 +1,8 @@
-import React, { useState } from "react";
-import {
-  Form,
-  Input,
-  Button,
-  Select,
-  Upload,
-  Typography,
-  message,
-  notification,
-} from "antd";
-import {
-  UploadOutlined,
-  CheckCircleOutlined,
-  ExclamationCircleOutlined,
-} from "@ant-design/icons";
+import React, { useState, useEffect } from "react";
+import { Form, Input, Button, Select, Upload, Typography, message } from "antd";
+import { UploadOutlined, CheckCircleOutlined } from "@ant-design/icons";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./MentorshipApplication.css";
 
 const { Title, Text } = Typography;
@@ -32,10 +21,13 @@ const MentorshipApplication = () => {
 
     // Show success message when file is uploaded
     if (newFileList.length > 0 && newFileList[0].name) {
-      message.success({
-        content: `File "${newFileList[0].name}" uploaded successfully!`,
-        duration: 3,
-        icon: <CheckCircleOutlined style={{ color: "#52c41a" }} />,
+      toast.success(`File "${newFileList[0].name}" uploaded successfully!`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
       });
     }
   };
@@ -75,91 +67,67 @@ const MentorshipApplication = () => {
         setFileList([]);
         setWaitlistSelection("No");
 
+        console.log("Form submitted successfully, showing notification...");
+
         // Show success notification with enhanced styling
         if (values.waitlistConsideration === "Yes") {
-          notification.success({
-            message: "🎉 Application Submitted Successfully!",
-            description: (
-              <div>
-                <p style={{ marginBottom: "8px", fontSize: "14px" }}>
-                  Thank you for your application! Since you opted for the
-                  waitlist for the July 2025 batch (applying for Summer 2026
-                  only), please message{" "}
-                  <a
-                    href="https://www.facebook.com/tribuidinh0901/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      color: "#C45A1D",
-                      textDecoration: "underline",
-                      fontWeight: "500",
-                    }}
-                  >
-                    Tri Bui
-                  </a>{" "}
-                  to inform us, and we will consider your application.
-                </p>
-                <p
-                  style={{
-                    margin: 0,
-                    fontSize: "12px",
-                    color: "#52c41a",
-                    fontWeight: "500",
-                  }}
-                >
-                  This notification will disappear in 4 seconds.
-                </p>
-              </div>
-            ),
-            duration: 4,
-            icon: (
-              <CheckCircleOutlined
-                style={{ color: "#52c41a", fontSize: "20px" }}
-              />
-            ),
-            style: {
-              backgroundColor: "#f6ffed",
-              border: "2px solid #b7eb8f",
-              borderRadius: "8px",
-              boxShadow: "0 4px 12px rgba(82, 196, 26, 0.15)",
-            },
-            placement: "topRight",
+          console.log("Showing waitlist notification");
+
+          toast.success("🎉 Application Submitted Successfully!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            className: "success-toast",
+            bodyClassName: "success-toast-body",
           });
+
+          // Additional info toast
+          setTimeout(() => {
+            toast.info(
+              "📞 Please message Tri Bui on Facebook to inform us about your waitlist consideration.",
+              {
+                position: "top-right",
+                autoClose: 6000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                className: "info-toast",
+              }
+            );
+          }, 1000);
         } else {
-          notification.success({
-            message: "🎉 Application Submitted Successfully!",
-            description: (
-              <div>
-                <p style={{ marginBottom: "8px", fontSize: "14px" }}>
-                  Thank you for your application! We will review your submission
-                  and get back to you shortly.
-                </p>
-                <p
-                  style={{
-                    margin: 0,
-                    fontSize: "12px",
-                    color: "#52c41a",
-                    fontWeight: "500",
-                  }}
-                >
-                  This notification will disappear in 3 seconds.
-                </p>
-              </div>
-            ),
-            duration: 3,
-            icon: (
-              <CheckCircleOutlined
-                style={{ color: "#52c41a", fontSize: "20px" }}
-              />
-            ),
-            style: {
-              backgroundColor: "#f6ffed",
-              border: "2px solid #b7eb8f",
-              borderRadius: "8px",
-              boxShadow: "0 4px 12px rgba(82, 196, 26, 0.15)",
-            },
-            placement: "topRight",
+          console.log("Showing regular success notification");
+
+          toast.success("🎉 Application Submitted Successfully!", {
+            position: "top-right",
+            autoClose: 4000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            className: "success-toast",
+            bodyClassName: "success-toast-body",
           });
+
+          // Additional info toast
+          setTimeout(() => {
+            toast.info(
+              "✅ We will review your submission and get back to you shortly.",
+              {
+                position: "top-right",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                className: "info-toast",
+              }
+            );
+          }, 1000);
         }
       } else {
         throw new Error(
@@ -167,80 +135,67 @@ const MentorshipApplication = () => {
         );
       }
     } catch (error) {
+      console.log("Error occurred:", error);
       // Show enhanced error notification
-      notification.error({
-        message: "❌ Submission Failed",
-        description: (
-          <div>
-            <p style={{ marginBottom: "8px", fontSize: "14px" }}>
-              {error.message ||
-                "An unexpected error occurred. Please check your information and try again."}
-            </p>
-            <p
-              style={{
-                margin: 0,
-                fontSize: "12px",
-                color: "#ff4d4f",
-                fontWeight: "500",
-              }}
-            >
-              This notification will disappear in 4 seconds.
-            </p>
-          </div>
-        ),
-        duration: 4,
-        icon: (
-          <ExclamationCircleOutlined
-            style={{ color: "#ff4d4f", fontSize: "20px" }}
-          />
-        ),
-        style: {
-          backgroundColor: "#fff2f0",
-          border: "2px solid #ffccc7",
-          borderRadius: "8px",
-          boxShadow: "0 4px 12px rgba(255, 77, 79, 0.15)",
-        },
-        placement: "topRight",
+      toast.error("❌ Submission Failed", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        className: "error-toast",
+        bodyClassName: "error-toast-body",
       });
+
+      // Additional error details
+      setTimeout(() => {
+        toast.error(
+          error.message ||
+            "An unexpected error occurred. Please check your information and try again.",
+          {
+            position: "top-right",
+            autoClose: 6000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            className: "error-details-toast",
+          }
+        );
+      }, 500);
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const onFinishFailed = (errorInfo) => {
-    notification.error({
-      message: "⚠️ Form Validation Failed",
-      description: (
-        <div>
-          <p style={{ marginBottom: "8px", fontSize: "14px" }}>
-            Please fill out all required fields correctly before submitting.
-          </p>
-          <p
-            style={{
-              margin: 0,
-              fontSize: "12px",
-              color: "#ff4d4f",
-              fontWeight: "500",
-            }}
-          >
-            This notification will disappear in 3 seconds.
-          </p>
-        </div>
-      ),
-      duration: 3,
-      icon: (
-        <ExclamationCircleOutlined
-          style={{ color: "#ff4d4f", fontSize: "20px" }}
-        />
-      ),
-      style: {
-        backgroundColor: "#fff2f0",
-        border: "2px solid #ffccc7",
-        borderRadius: "8px",
-        boxShadow: "0 4px 12px rgba(255, 77, 79, 0.15)",
-      },
-      placement: "topRight",
+    console.log("Form validation failed:", errorInfo);
+    toast.error("⚠️ Form Validation Failed", {
+      position: "top-right",
+      autoClose: 4000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      className: "error-toast",
     });
+
+    // Additional validation details
+    setTimeout(() => {
+      toast.warning(
+        "Please fill out all required fields correctly before submitting.",
+        {
+          position: "top-right",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          className: "warning-toast",
+        }
+      );
+    }, 500);
   };
 
   return (
@@ -253,6 +208,11 @@ const MentorshipApplication = () => {
             will review your application and get back to you as soon as
             possible.
           </Text>
+          <div className="deadline-notice">
+            <Text className="deadline-text">
+              📅 <strong>Application Deadline:</strong> July 1st, 2025
+            </Text>
+          </div>
           <div className="mentorship-app-image-wrapper">
             <img
               src="https://res.cloudinary.com/dbqcioj2g/image/upload/v1730176142/sr5gza9fnfa6buyxzhh7.png"
@@ -480,6 +440,19 @@ const MentorshipApplication = () => {
           </Form>
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        className="custom-toast-container"
+      />
     </div>
   );
 };

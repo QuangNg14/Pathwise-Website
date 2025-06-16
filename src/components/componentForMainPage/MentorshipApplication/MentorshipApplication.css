@@ -42,6 +42,28 @@
   margin-bottom: 40px;
 }
 
+.deadline-notice {
+  background: rgba(196, 90, 29, 0.1);
+  border: 1px solid rgba(196, 90, 29, 0.3);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 32px;
+}
+
+.deadline-text {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-dark, #3E130A);
+  margin: 0;
+}
+
+.deadline-text strong {
+  font-weight: 600;
+  color: var(--color-primary, #C45A1D);
+}
+
 .mentorship-app-image-wrapper {
   display: flex;
   justify-content: flex-start;
@@ -61,7 +83,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-top: 40px;
+  padding-top: 0;
 }
 
 .mentorship-app-form {
@@ -70,12 +92,15 @@
 
 .mentorship-app-form-row {
   display: flex;
+  flex-wrap: wrap;
   gap: 24px;
   margin-bottom: 8px;
 }
 
 .mentorship-app-form-col {
   flex: 1;
+  min-width: 0;
+  max-width: calc(50% - 12px);
 }
 
 .mentorship-app-form .ant-form-item {
@@ -333,23 +358,21 @@
   .mentorship-app-right {
     padding-top: 0;
   }
+  
+  .deadline-notice {
+    margin-bottom: 24px;
+  }
+  
+  .deadline-text {
+    font-size: 15px;
+    line-height: 22px;
+  }
 }
 
 @media (max-width: 768px) {
   .mentorship-app-section {
     padding: 60px 0;
-    border-bottom: 1px solid #9A9A9A !important;
-  }
-  
-  .mentorship-app-section::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background-color: #9A9A9A;
-    z-index: 1;
+    border-bottom: none;
   }
   
   .mentorship-app-container {
@@ -365,6 +388,20 @@
     flex-direction: column;
     gap: 0;
     margin-bottom: 0;
+  }
+  
+  .mentorship-app-form-col {
+    max-width: 100%;
+  }
+  
+  .deadline-notice {
+    margin-bottom: 16px;
+    padding: 10px;
+  }
+  
+  .deadline-text {
+    font-size: 13px;
+    line-height: 18px;
   }
   
   .mentorship-app-form-footer {
@@ -523,4 +560,80 @@
   font-family: Inter !important;
   line-height: 1 !important;
   content: "*" !important;
+}
+
+  /* React-Toastify Custom Styling */
+  .custom-toast-container {
+    z-index: 9999 !important;
+  }
+
+/* ───────────────────────────────────────────────────────────
+   Beautified Toasts
+   ─────────────────────────────────────────────────────────── */
+
+/* 1) Rounded container, extra padding & subtle shadow */
+.Toastify__toast {
+  border-radius: 12px !important;
+  padding: 16px 20px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 2) White circular “backdrop” behind each icon */
+.Toastify__toast-icon {
+  background: #ffffff !important;
+  border-radius: 50% !important;
+  padding: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-right: 12px !important;
+}
+
+/* 3) Tame the SVG size so it sits neatly in the circle */
+.Toastify__toast-icon {
+  background: #ffffff !important;
+  border-radius: 50% !important;
+  padding: 12px !important;
+  /* enforce square container */
+  width: 44px !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-right: 16px !important;
+}
+
+.Toastify__toast-icon svg {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* 4) Re-color each icon to match its toast type */
+.Toastify__toast--success .Toastify__toast-icon svg,
+.success-toast .Toastify__toast-icon svg {
+  color: #22c55e !important;
+}
+
+.Toastify__toast--error .Toastify__toast-icon svg,
+.error-toast .Toastify__toast-icon svg {
+  color: #dc2626 !important;
+}
+
+.Toastify__toast--info .Toastify__toast-icon svg,
+.info-toast .Toastify__toast-icon svg {
+  color: #3b82f6 !important;
+}
+
+.Toastify__toast--warning .Toastify__toast-icon svg,
+.warning-toast .Toastify__toast-icon svg {
+  color: #f59e0b !important;
+}
+
+/* 5) Adjust text/icon spacing for legibility */
+.Toastify__toast-body {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
 }

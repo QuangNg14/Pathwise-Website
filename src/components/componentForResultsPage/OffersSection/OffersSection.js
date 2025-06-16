@@ -324,7 +324,7 @@ const offersData = [
     year: "Senior",
     major: "Computer Science",
     category: "software",
-    offers: ["UTS - Software Engineer Intern"],
+    offers: ["UST - Software Engineer Intern"],
     avatar:
       "https://res.cloudinary.com/dbqcioj2g/image/upload/v1749969670/tung_ngo_ovjra8.jpg",
   },

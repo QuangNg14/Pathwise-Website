@@ -14,6 +14,7 @@ const teamMembers = [
       "Quang Nguyen is currently a Software Engineer at Microsoft. He previously interned as a software engineer at NVIDIA (Summer 2023) and Facebook (Summer 2022).",
       "He received a full-ride scholarship worth $73,000/year for 4 years at Rice University, majoring in Computer Science.",
       "As the President of Rice Apps (Rice Software Engineering Club) at Rice University, he has mentored and taught over 60 members about professional web and mobile application development.",
+      "Quang has been our head mentor since day 1 and has led and guided over 60 mentees to successful internship applications at top companies.",
     ],
     image:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1730786179/qz0r41jqmatncyl9h6py.jpg",
