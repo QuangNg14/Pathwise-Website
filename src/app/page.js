@@ -103,6 +103,30 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
+  // smooth-scroll to #application on load or hash change
+  useEffect(() => {
+    if (!isLoaded) return;
+    const scrollToHash = (hash) => {
+      if (!hash) return;
+      const id = hash.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) {
+        // small offset if you have a sticky header
+        const yOffset = -80;
+        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    };
+
+    // on initial load
+    scrollToHash(window.location.hash);
+
+    // if you ever change hash client-side
+    const handleHashChange = () => scrollToHash(window.location.hash);
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, [isLoaded]);
+
   // Show loading state briefly to prevent FOUC
   if (!isLoaded) {
     return (
