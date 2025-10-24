@@ -31,6 +31,22 @@ export default function BlogPage({ params }) {
 
     const fetchBlogContent = async () => {
       try {
+        // First try to fetch from Firestore (new posts)
+        const firestoreResponse = await fetch(`/api/admin/posts/${id}`);
+        
+        if (firestoreResponse.ok) {
+          const data = await firestoreResponse.json();
+          if (data.success && data.post) {
+            // Format Firestore post content to match expected structure
+            setContent({
+              ...data.post,
+              isFirestore: true,
+            });
+            return;
+          }
+        }
+        
+        // If not found in Firestore, try legacy markdown files
         const response = await fetch(`/api/blog/${id}`);
         if (response.status === 404) {
           // router.push("/404");
@@ -38,7 +54,10 @@ export default function BlogPage({ params }) {
         }
 
         const data = await response.json();
-        setContent(data.content); // Use raw markdown content
+        setContent({
+          content: data.content,
+          isFirestore: false,
+        }); // Use raw markdown content
       } catch (error) {
         console.error("Error fetching blog content:", error);
       }

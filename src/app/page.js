@@ -12,6 +12,7 @@ import Community from "@/components/componentForMainPage/Community/Community";
 import FAQ from "@/components/componentForMainPage/FAQ/FAQ";
 import FooterComponent from "@/components/footer/Footer";
 import MentorshipApplication from "@/components/componentForMainPage/MentorshipApplication/MentorshipApplication";
+import ChatBot from "@/components/ChatBot/ChatBot";
 
 const { Header, Content } = Layout;
 const { Title, Text } = Typography;
@@ -182,6 +183,7 @@ export default function Home() {
           <FooterComponent />
         </div>
       </Content>
+      <ChatBot />
     </Layout>
   );
 }

@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "antd/dist/reset.css";
 import "./globals.css";
+import { AuthProvider } from "@/contexts/AuthContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,7 +36,7 @@ function CSSLoadingWrapper({ children }) {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="vi">
+    <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -67,7 +68,11 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={inter.className}>
-        <CSSLoadingWrapper>{children}</CSSLoadingWrapper>
+        <CSSLoadingWrapper>
+          <AuthProvider>
+            {children}
+          </AuthProvider>
+        </CSSLoadingWrapper>
       </body>
     </html>
   );

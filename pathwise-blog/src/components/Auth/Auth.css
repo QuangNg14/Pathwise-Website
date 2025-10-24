@@ -1,0 +1,131 @@
+.auth-modal .ant-modal-content {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.auth-card {
+  border: none;
+  box-shadow: none;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.auth-title {
+  color: #1e3c72;
+  margin-bottom: 8px !important;
+}
+
+.auth-subtitle {
+  color: #666;
+  font-size: 14px;
+}
+
+.auth-form {
+  margin-bottom: 16px;
+}
+
+.auth-button {
+  background: linear-gradient(135deg, #1e3c72 0%, #7b2cbf 100%);
+  border: none;
+  height: 45px;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.auth-button:hover {
+  background: linear-gradient(135deg, #2d4a7c 0%, #8c3dcf 100%);
+}
+
+.google-button {
+  height: 45px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.google-button:hover {
+  border-color: #1e3c72;
+  color: #1e3c72;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.auth-link {
+  padding: 0;
+  color: #1e3c72;
+  font-weight: 600;
+}
+
+.auth-link:hover {
+  color: #ff9800;
+}
+
+/* User Menu Styles */
+.user-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  height: auto;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.user-button:hover {
+  background: white;
+  border-color: #1e3c72;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-name {
+  color: #333;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.login-signup-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.login-button, .signup-button {
+  height: 40px;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 0 24px;
+  transition: all 0.3s ease;
+}
+
+.login-button {
+  background: white;
+  color: #1e3c72;
+  border: 2px solid #1e3c72;
+}
+
+.login-button:hover {
+  background: #1e3c72;
+  color: white;
+}
+
+.signup-button {
+  background: linear-gradient(135deg, #1e3c72 0%, #7b2cbf 100%);
+  color: white;
+  border: none;
+}
+
+.signup-button:hover {
+  background: linear-gradient(135deg, #2d4a7c 0%, #8c3dcf 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 60, 114, 0.3);
+}
+
+
