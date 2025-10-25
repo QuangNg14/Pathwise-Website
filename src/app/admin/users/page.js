@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import { useRole } from '@/hooks/useRole';
-import { getAllUsers, setUserRole, ROLES } from '@/lib/rbac';
+import { getAllUsers, setUserRole, ROLES } from '@/lib/rbac-client';
 import AdminNav from '@/components/Admin/AdminNav';
 import { Shield, UserCheck, User, RefreshCw, Crown, Edit2, AlertCircle } from 'lucide-react';
 import './users.css';
@@ -226,6 +226,7 @@ export default function UsersManagementPage() {
             Editors: <strong>{users.filter(u => u.role === ROLES.EDITOR).length}</strong>
           </p>
         </div>
+      </div>
       </div>
     </>
   );

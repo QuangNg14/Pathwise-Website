@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
-import { setUserRole, getAllUsers, ROLES } from '@/lib/rbac';
+import { setUserRole, getAllUsers, ROLES } from '@/lib/rbac-client';
 import { Shield, CheckCircle, AlertCircle } from 'lucide-react';
 import './setup.css';
 

@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
-import { getUserRole, hasPermission, isAdmin, isEditorOrAbove } from '@/lib/rbac';
+import { getUserRole, hasPermission, isAdmin, isEditorOrAbove } from '@/lib/rbac-client';
 
 /**
  * Custom hook for role-based access control

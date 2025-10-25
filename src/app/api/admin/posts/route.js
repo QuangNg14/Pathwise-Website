@@ -1,15 +1,14 @@
 import { NextResponse } from 'next/server';
-import { db, storage } from '@/lib/firebase';
-import { 
-  collection, 
-  addDoc, 
-  getDocs, 
-  query, 
-  orderBy, 
-  where,
-  serverTimestamp 
-} from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import clientPromise from '@/lib/mongodb';
+import { ObjectId } from 'mongodb';
+import { v2 as cloudinary } from 'cloudinary';
+
+// Configure Cloudinary
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 // GET - Fetch all blog posts
 export async function GET(request) {
@@ -18,31 +17,39 @@ export async function GET(request) {
     const status = searchParams.get('status') || 'all';
     const limit = parseInt(searchParams.get('limit') || '50');
 
-    const postsRef = collection(db, 'blogPosts');
-    let q;
+    const client = await clientPromise;
+    const db = client.db(process.env.MONGODB_DB || 'pathwise');
+    const postsCollection = db.collection('blogPosts');
 
-    if (status === 'all') {
-      q = query(postsRef, orderBy('createdAt', 'desc'));
-    } else {
-      q = query(
-        postsRef, 
-        where('status', '==', status),
-        orderBy('createdAt', 'desc')
-      );
+    let query = {};
+    if (status !== 'all') {
+      query.status = status;
     }
 
-    const snapshot = await getDocs(q);
-    const posts = snapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data(),
-      createdAt: doc.data().createdAt?.toDate?.()?.toISOString() || null,
-      updatedAt: doc.data().updatedAt?.toDate?.()?.toISOString() || null,
-    })).slice(0, limit);
+    const posts = await postsCollection
+      .find(query)
+      .sort({ createdAt: -1 })
+      .limit(limit)
+      .toArray();
+
+    // Transform MongoDB _id to id and format dates
+    const formattedPosts = posts.map(post => ({
+      ...post,
+      id: post._id.toString(),
+      _id: undefined,
+      views: post.views || 0,
+      featured: post.featured || false,
+      image: post.imageUrl || post.image || 'https://via.placeholder.com/1200x500/667eea/ffffff?text=Blog+Post',
+      createdAt: post.createdAt?.toISOString() || new Date().toISOString(),
+      updatedAt: post.updatedAt?.toISOString() || new Date().toISOString(),
+      date: post.createdAt?.toLocaleDateString() || new Date().toLocaleDateString(),
+      excerpt: post.excerpt || post.content?.substring(0, 200) + '...' || '',
+    }));
 
     return NextResponse.json({
       success: true,
-      posts,
-      count: posts.length
+      posts: formattedPosts,
+      count: formattedPosts.length
     });
   } catch (error) {
     console.error('Error fetching posts:', error);
@@ -64,6 +71,7 @@ export async function POST(request) {
     const author = formData.get('author');
     const authorId = formData.get('authorId');
     const status = formData.get('status') || 'draft';
+    const featured = formData.get('featured') === 'true';
     const tags = formData.get('tags') ? JSON.parse(formData.get('tags')) : [];
     const image = formData.get('image');
 
@@ -75,13 +83,35 @@ export async function POST(request) {
     }
 
     let imageUrl = null;
+    let cloudinaryPublicId = null;
 
-    // Upload image to Firebase Storage if provided
+    // Upload image to Cloudinary if provided
     if (image && image.size > 0) {
-      const imageRef = ref(storage, `blog-images/${Date.now()}-${image.name}`);
-      const snapshot = await uploadBytes(imageRef, image);
-      imageUrl = await getDownloadURL(snapshot.ref);
+      const bytes = await image.arrayBuffer();
+      const buffer = Buffer.from(bytes);
+      
+      // Upload to Cloudinary
+      const result = await new Promise((resolve, reject) => {
+        cloudinary.uploader.upload_stream(
+          {
+            folder: 'pathwise-blog',
+            resource_type: 'auto',
+          },
+          (error, result) => {
+            if (error) reject(error);
+            else resolve(result);
+          }
+        ).end(buffer);
+      });
+      
+      imageUrl = result.secure_url;
+      cloudinaryPublicId = result.public_id;
     }
+
+    // Connect to MongoDB
+    const client = await clientPromise;
+    const db = client.db(process.env.MONGODB_DB || 'pathwise');
+    const postsCollection = db.collection('blogPosts');
 
     // Create blog post document
     const postData = {
@@ -91,19 +121,25 @@ export async function POST(request) {
       author: author || 'Anonymous',
       authorId,
       imageUrl,
+      cloudinaryPublicId,
       status,
       tags,
       views: 0,
-      likes: 0,
-      createdAt: serverTimestamp(),
-      updatedAt: serverTimestamp(),
+      featured: featured,
+      reactions: {
+        love: 0,
+        helpful: 0,
+        fire: 0
+      },
+      createdAt: new Date(),
+      updatedAt: new Date(),
     };
 
-    const docRef = await addDoc(collection(db, 'blogPosts'), postData);
+    const result = await postsCollection.insertOne(postData);
 
     return NextResponse.json({
       success: true,
-      postId: docRef.id,
+      postId: result.insertedId.toString(),
       message: 'Blog post created successfully'
     });
   } catch (error) {

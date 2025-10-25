@@ -1,38 +1,45 @@
 import { NextResponse } from 'next/server';
-import { db, storage } from '@/lib/firebase';
-import { 
-  doc, 
-  getDoc, 
-  updateDoc, 
-  deleteDoc,
-  serverTimestamp 
-} from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
+import clientPromise from '@/lib/mongodb';
+import { ObjectId } from 'mongodb';
+import { v2 as cloudinary } from 'cloudinary';
+
+// Configure Cloudinary
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 // GET - Fetch single post by ID
 export async function GET(request, { params }) {
   try {
     const { id } = params;
-    const docRef = doc(db, 'blogPosts', id);
-    const docSnap = await getDoc(docRef);
+    
+    const client = await clientPromise;
+    const db = client.db(process.env.MONGODB_DB || 'pathwise');
+    const postsCollection = db.collection('blogPosts');
 
-    if (!docSnap.exists()) {
+    const post = await postsCollection.findOne({ _id: new ObjectId(id) });
+
+    if (!post) {
       return NextResponse.json(
         { success: false, error: 'Post not found' },
         { status: 404 }
       );
     }
 
-    const post = {
-      id: docSnap.id,
-      ...docSnap.data(),
-      createdAt: docSnap.data().createdAt?.toDate?.()?.toISOString() || null,
-      updatedAt: docSnap.data().updatedAt?.toDate?.()?.toISOString() || null,
+    // Transform MongoDB _id to id
+    const formattedPost = {
+      ...post,
+      id: post._id.toString(),
+      _id: undefined,
+      createdAt: post.createdAt?.toISOString() || null,
+      updatedAt: post.updatedAt?.toISOString() || null,
     };
 
     return NextResponse.json({
       success: true,
-      post
+      post: formattedPost
     });
   } catch (error) {
     console.error('Error fetching post:', error);
@@ -53,13 +60,18 @@ export async function PUT(request, { params }) {
     const content = formData.get('content');
     const excerpt = formData.get('excerpt');
     const status = formData.get('status');
+    const featured = formData.get('featured');
     const tags = formData.get('tags') ? JSON.parse(formData.get('tags')) : null;
     const image = formData.get('image');
 
-    const docRef = doc(db, 'blogPosts', id);
-    const docSnap = await getDoc(docRef);
+    const client = await clientPromise;
+    const db = client.db(process.env.MONGODB_DB || 'pathwise');
+    const postsCollection = db.collection('blogPosts');
 
-    if (!docSnap.exists()) {
+    // Check if post exists
+    const existingPost = await postsCollection.findOne({ _id: new ObjectId(id) });
+
+    if (!existingPost) {
       return NextResponse.json(
         { success: false, error: 'Post not found' },
         { status: 404 }
@@ -67,35 +79,52 @@ export async function PUT(request, { params }) {
     }
 
     const updateData = {
-      updatedAt: serverTimestamp(),
+      updatedAt: new Date(),
     };
 
     if (title) updateData.title = title;
     if (content) updateData.content = content;
     if (excerpt) updateData.excerpt = excerpt;
     if (status) updateData.status = status;
+    if (featured !== null) updateData.featured = featured === 'true';
     if (tags) updateData.tags = tags;
 
     // Upload new image if provided
     if (image && image.size > 0) {
-      const imageRef = ref(storage, `blog-images/${Date.now()}-${image.name}`);
-      const snapshot = await uploadBytes(imageRef, image);
-      const imageUrl = await getDownloadURL(snapshot.ref);
-      updateData.imageUrl = imageUrl;
+      const bytes = await image.arrayBuffer();
+      const buffer = Buffer.from(bytes);
+      
+      // Upload to Cloudinary
+      const result = await new Promise((resolve, reject) => {
+        cloudinary.uploader.upload_stream(
+          {
+            folder: 'pathwise-blog',
+            resource_type: 'auto',
+          },
+          (error, result) => {
+            if (error) reject(error);
+            else resolve(result);
+          }
+        ).end(buffer);
+      });
+      
+      updateData.imageUrl = result.secure_url;
+      updateData.cloudinaryPublicId = result.public_id;
 
-      // Delete old image if exists
-      const oldImageUrl = docSnap.data().imageUrl;
-      if (oldImageUrl) {
+      // Delete old image from Cloudinary if exists
+      if (existingPost.cloudinaryPublicId) {
         try {
-          const oldImageRef = ref(storage, oldImageUrl);
-          await deleteObject(oldImageRef);
+          await cloudinary.uploader.destroy(existingPost.cloudinaryPublicId);
         } catch (error) {
           console.log('Error deleting old image:', error);
         }
       }
     }
 
-    await updateDoc(docRef, updateData);
+    await postsCollection.updateOne(
+      { _id: new ObjectId(id) },
+      { $set: updateData }
+    );
 
     return NextResponse.json({
       success: true,
@@ -114,28 +143,32 @@ export async function PUT(request, { params }) {
 export async function DELETE(request, { params }) {
   try {
     const { id } = params;
-    const docRef = doc(db, 'blogPosts', id);
-    const docSnap = await getDoc(docRef);
+    
+    const client = await clientPromise;
+    const db = client.db(process.env.MONGODB_DB || 'pathwise');
+    const postsCollection = db.collection('blogPosts');
 
-    if (!docSnap.exists()) {
+    // Check if post exists and get cloudinary info
+    const existingPost = await postsCollection.findOne({ _id: new ObjectId(id) });
+
+    if (!existingPost) {
       return NextResponse.json(
         { success: false, error: 'Post not found' },
         { status: 404 }
       );
     }
 
-    // Delete image from storage if exists
-    const imageUrl = docSnap.data().imageUrl;
-    if (imageUrl) {
+    // Delete image from Cloudinary if exists
+    if (existingPost.cloudinaryPublicId) {
       try {
-        const imageRef = ref(storage, imageUrl);
-        await deleteObject(imageRef);
+        await cloudinary.uploader.destroy(existingPost.cloudinaryPublicId);
       } catch (error) {
-        console.log('Error deleting image:', error);
+        console.log('Error deleting image from Cloudinary:', error);
       }
     }
 
-    await deleteDoc(docRef);
+    // Delete post from MongoDB
+    await postsCollection.deleteOne({ _id: new ObjectId(id) });
 
     return NextResponse.json({
       success: true,
@@ -149,4 +182,3 @@ export async function DELETE(request, { params }) {
     );
   }
 }
-

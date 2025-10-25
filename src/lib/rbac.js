@@ -1,5 +1,5 @@
-import { db } from './firebase';
-import { doc, getDoc, setDoc, updateDoc, collection, query, where, getDocs } from 'firebase/firestore';
+import clientPromise from './mongodb';
+import { ObjectId } from 'mongodb';
 
 // User roles
 export const ROLES = {
@@ -30,23 +30,27 @@ export const PERMISSIONS = {
 };
 
 /**
- * Get user role from Firestore
+ * Get user role from MongoDB
  * @param {string} userId - Firebase user ID
  * @returns {Promise<string>} User role
  */
 export async function getUserRole(userId) {
   try {
-    const userDocRef = doc(db, 'users', userId);
-    const userDoc = await getDoc(userDocRef);
+    const client = await clientPromise;
+    const db = client.db(process.env.MONGODB_DB || 'pathwise');
+    const usersCollection = db.collection('users');
     
-    if (userDoc.exists()) {
-      return userDoc.data().role || ROLES.USER;
+    const user = await usersCollection.findOne({ _id: userId });
+    
+    if (user) {
+      return user.role || ROLES.USER;
     }
     
     // If user doesn't exist, create with default role
-    await setDoc(userDocRef, {
+    await usersCollection.insertOne({
+      _id: userId,
       role: ROLES.USER,
-      createdAt: new Date().toISOString()
+      createdAt: new Date()
     });
     
     return ROLES.USER;
@@ -57,26 +61,35 @@ export async function getUserRole(userId) {
 }
 
 /**
- * Set user role in Firestore
+ * Set user role in MongoDB
  * @param {string} userId - Firebase user ID
  * @param {string} role - Role to assign
  * @param {Object} additionalData - Additional user data
  */
 export async function setUserRole(userId, role, additionalData = {}) {
   try {
-    const userDocRef = doc(db, 'users', userId);
-    const userDoc = await getDoc(userDocRef);
+    const client = await clientPromise;
+    const db = client.db(process.env.MONGODB_DB || 'pathwise');
+    const usersCollection = db.collection('users');
     
-    if (userDoc.exists()) {
-      await updateDoc(userDocRef, {
-        role,
-        updatedAt: new Date().toISOString(),
-        ...additionalData
-      });
+    const user = await usersCollection.findOne({ _id: userId });
+    
+    if (user) {
+      await usersCollection.updateOne(
+        { _id: userId },
+        {
+          $set: {
+            role,
+            updatedAt: new Date(),
+            ...additionalData
+          }
+        }
+      );
     } else {
-      await setDoc(userDocRef, {
+      await usersCollection.insertOne({
+        _id: userId,
         role,
-        createdAt: new Date().toISOString(),
+        createdAt: new Date(),
         ...additionalData
       });
     }
@@ -121,12 +134,16 @@ export function isEditorOrAbove(role) {
  */
 export async function getAllUsers() {
   try {
-    const usersRef = collection(db, 'users');
-    const snapshot = await getDocs(usersRef);
+    const client = await clientPromise;
+    const db = client.db(process.env.MONGODB_DB || 'pathwise');
+    const usersCollection = db.collection('users');
     
-    return snapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
+    const users = await usersCollection.find({}).toArray();
+    
+    return users.map(user => ({
+      id: user._id,
+      ...user,
+      _id: undefined
     }));
   } catch (error) {
     console.error('Error getting all users:', error);
@@ -141,17 +158,19 @@ export async function getAllUsers() {
  */
 export async function getUsersByRole(role) {
   try {
-    const usersRef = collection(db, 'users');
-    const q = query(usersRef, where('role', '==', role));
-    const snapshot = await getDocs(q);
+    const client = await clientPromise;
+    const db = client.db(process.env.MONGODB_DB || 'pathwise');
+    const usersCollection = db.collection('users');
     
-    return snapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
+    const users = await usersCollection.find({ role }).toArray();
+    
+    return users.map(user => ({
+      id: user._id,
+      ...user,
+      _id: undefined
     }));
   } catch (error) {
     console.error('Error getting users by role:', error);
     return [];
   }
 }
-

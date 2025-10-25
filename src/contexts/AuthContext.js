@@ -9,7 +9,7 @@ import {
   signInWithPopup
 } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
-import { getUserRole } from '@/lib/rbac';
+import { getUserRole } from '@/lib/rbac-client';
 
 const AuthContext = createContext();
 

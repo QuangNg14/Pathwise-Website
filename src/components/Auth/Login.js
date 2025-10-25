@@ -107,7 +107,7 @@ const Login = ({ onClose, switchToSignup }) => {
       </Button>
 
       <div className="auth-footer">
-        <Text>Don't have an account? </Text>
+        <Text>Don&apos;t have an account? </Text>
         <Button type="link" onClick={switchToSignup} className="auth-link">
           Sign up here
         </Button>
