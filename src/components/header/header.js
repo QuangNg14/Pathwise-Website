@@ -21,8 +21,7 @@ const menuItems = [
   "contact",
 ];
 
-// Blog URL - change to production URL when deployed
-const BLOG_URL = process.env.NEXT_PUBLIC_BLOG_URL || "http://localhost:3001";
+// Blog is now integrated into the main site at /blog
 
 export default function HeaderComponent() {
   const [isMobile, setIsMobile] = useState(false);
@@ -71,15 +70,13 @@ export default function HeaderComponent() {
               </Link>
             ))}
             
-            {/* Blog Link - Opens blog app in new tab */}
-            <a 
-              href={BLOG_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* Blog Link - Internal navigation to /blog */}
+            <Link 
+              href="/blog"
               className="custom-menu-item"
             >
               Blog
-            </a>
+            </Link>
 
             {currentUser ? (
               <UserMenu />
@@ -134,16 +131,14 @@ export default function HeaderComponent() {
               </Link>
             ))}
             
-            {/* Blog Link - Opens blog app in new tab */}
-            <a 
-              href={BLOG_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* Blog Link - Internal navigation to /blog */}
+            <Link 
+              href="/blog"
               className="drawer-link"
               onClick={() => setDrawerVisible(false)}
             >
               Blog
-            </a>
+            </Link>
 
             {currentUser ? (
               <div className="drawer-user-section">

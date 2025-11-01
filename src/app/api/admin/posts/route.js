@@ -39,7 +39,11 @@ export async function GET(request) {
       _id: undefined,
       views: post.views || 0,
       featured: post.featured || false,
-      image: post.imageUrl || post.image || 'https://via.placeholder.com/1200x500/667eea/ffffff?text=Blog+Post',
+      // Backward compatibility: prioritize new fields, fallback to old
+      image: post.previewImage || post.coverImage || post.imageUrl || post.image || null,
+      imageUrl: post.coverImage || post.imageUrl || post.image || null,
+      previewImage: post.previewImage || null,
+      coverImage: post.coverImage || null,
       createdAt: post.createdAt?.toISOString() || new Date().toISOString(),
       updatedAt: post.updatedAt?.toISOString() || new Date().toISOString(),
       date: post.createdAt?.toLocaleDateString() || new Date().toLocaleDateString(),
@@ -73,7 +77,11 @@ export async function POST(request) {
     const status = formData.get('status') || 'draft';
     const featured = formData.get('featured') === 'true';
     const tags = formData.get('tags') ? JSON.parse(formData.get('tags')) : [];
-    const image = formData.get('image');
+    const category = formData.get('category') || null;
+    const image = formData.get('image'); // This will be the cover image
+    const previewImage = formData.get('previewImage'); // Optional thumbnail
+    const contentImagesJson = formData.get('contentImages'); // JSON array of image URLs for content
+    const contentImages = contentImagesJson ? JSON.parse(contentImagesJson) : [];
 
     if (!title || !content || !authorId) {
       return NextResponse.json(
@@ -82,15 +90,13 @@ export async function POST(request) {
       );
     }
 
-    let imageUrl = null;
-    let cloudinaryPublicId = null;
-
-    // Upload image to Cloudinary if provided
-    if (image && image.size > 0) {
-      const bytes = await image.arrayBuffer();
+    // Helper function to upload image
+    const uploadToCloudinary = async (imageFile) => {
+      if (!imageFile || imageFile.size === 0) return null;
+      
+      const bytes = await imageFile.arrayBuffer();
       const buffer = Buffer.from(bytes);
       
-      // Upload to Cloudinary
       const result = await new Promise((resolve, reject) => {
         cloudinary.uploader.upload_stream(
           {
@@ -104,9 +110,20 @@ export async function POST(request) {
         ).end(buffer);
       });
       
-      imageUrl = result.secure_url;
-      cloudinaryPublicId = result.public_id;
-    }
+      return {
+        url: result.secure_url,
+        publicId: result.public_id
+      };
+    };
+
+    // Upload images
+    const coverImageData = await uploadToCloudinary(image);
+    const previewImageData = await uploadToCloudinary(previewImage);
+    
+    const coverImageUrl = coverImageData?.url || null;
+    const coverImagePublicId = coverImageData?.publicId || null;
+    const previewImageUrl = previewImageData?.url || null;
+    const previewImagePublicId = previewImageData?.publicId || null;
 
     // Connect to MongoDB
     const client = await clientPromise;
@@ -120,10 +137,14 @@ export async function POST(request) {
       excerpt: excerpt || content.substring(0, 200) + '...',
       author: author || 'Anonymous',
       authorId,
-      imageUrl,
-      cloudinaryPublicId,
+      coverImage: coverImageUrl,
+      coverImagePublicId: coverImagePublicId,
+      previewImage: previewImageUrl,
+      previewImagePublicId: previewImagePublicId,
+      contentImages: contentImages, // Array of image URLs for content
       status,
       tags,
+      category,
       views: 0,
       featured: featured,
       reactions: {

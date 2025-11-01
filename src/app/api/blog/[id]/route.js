@@ -1,138 +1,81 @@
-import { NextResponse } from 'next/server';
-import clientPromise from '@/lib/mongodb';
-import { ObjectId } from 'mongodb';
+import fs from "fs";
+import path from "path";
+import { NextResponse } from "next/server";
+import clientPromise from "@/lib/mongodb";
+import { ObjectId } from "mongodb";
 
-// GET - Fetch blog post by ID and increment view count
 export async function GET(request, { params }) {
   try {
     const { id } = await params;
 
-    const client = await clientPromise;
-    const db = client.db(process.env.MONGODB_DB || 'pathwise');
-    const postsCollection = db.collection('blogPosts');
+    // First, try to find it in MongoDB (Facebook posts)
+    try {
+      const client = await clientPromise;
+      const db = client.db(process.env.MONGODB_DB || 'pathwise');
+      const postsCollection = db.collection('posts');
 
-    // Find the post
-    const post = await postsCollection.findOne({ _id: new ObjectId(id) });
+      // Try to find by MongoDB _id
+      let post = null;
+      if (ObjectId.isValid(id)) {
+        post = await postsCollection.findOne({ _id: new ObjectId(id) });
+      }
 
-    if (!post) {
+      // If found in MongoDB, return Facebook post content
+      if (post) {
+        // Split message into title and content
+        const lines = post.message.split('\n').filter(line => line.trim());
+        const title = lines[0] || 'Facebook Post';
+        const contentText = lines.slice(1).join('\n\n') || post.message;
+        
+        // Format as markdown to match existing blog post style
+        const content = `# ${title}
+
+![${title}](${post.cloudinaryImage || post.originalImage})
+
+${contentText}
+
+---
+
+**Tác giả:** ${post.author}  
+**Ngày đăng:** ${new Date(post.createdTime).toLocaleDateString('vi-VN', { 
+  day: 'numeric', 
+  month: 'long', 
+  year: 'numeric' 
+})}
+
+${post.permalink ? `\n[Xem bài viết gốc trên Facebook →](${post.permalink})` : ''}`;
+
+        return NextResponse.json({ 
+          content: content,
+          type: 'facebook',
+          post: post
+        });
+      }
+    } catch (mongoError) {
+      console.log('Not found in MongoDB, trying markdown files...', mongoError.message);
+    }
+
+    // If not in MongoDB, try markdown files (original posts)
+    const blogPath = path.join(
+      process.cwd(),
+      `src/content/blogs/${id}/index.md`
+    );
+
+    // Check if the file exists
+    if (!fs.existsSync(blogPath)) {
       return NextResponse.json(
-        { error: 'Blog post not found' },
+        { error: "Blog post not found" },
         { status: 404 }
       );
     }
 
-    // Increment view count
-    await postsCollection.updateOne(
-      { _id: new ObjectId(id) },
-      { $inc: { views: 1 } }
-    );
-
-    // Transform MongoDB _id to id
-    const formattedPost = {
-      ...post,
-      id: post._id.toString(),
-      _id: undefined,
-      views: (post.views || 0) + 1, // Return incremented view count
-      createdAt: post.createdAt?.toISOString() || null,
-      updatedAt: post.updatedAt?.toISOString() || null,
-    };
-
-    return NextResponse.json({
-      success: true,
-      post: formattedPost
-    });
+    // Read and send the markdown content
+    const markdownContent = fs.readFileSync(blogPath, "utf8");
+    return NextResponse.json({ content: markdownContent, type: 'markdown' });
   } catch (error) {
-    console.error('Error reading blog content:', error);
+    console.error("Error reading blog content:", error);
     return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
-  }
-}
-
-// POST - Handle reactions (love, helpful, fire)
-export async function POST(request, { params }) {
-  try {
-    const { id } = await params;
-    const body = await request.json();
-    const { reactionType, userId } = body;
-
-    if (!reactionType || !userId) {
-      return NextResponse.json(
-        { error: 'Missing reactionType or userId' },
-        { status: 400 }
-      );
-    }
-
-    const client = await clientPromise;
-    const db = client.db(process.env.MONGODB_DB || 'pathwise');
-    const postsCollection = db.collection('blogPosts');
-    const reactionsCollection = db.collection('reactions');
-
-    // Check if user already reacted
-    const existingReaction = await reactionsCollection.findOne({
-      postId: id,
-      userId: userId
-    });
-
-    if (existingReaction) {
-      // Remove old reaction count
-      await postsCollection.updateOne(
-        { _id: new ObjectId(id) },
-        { $inc: { [`reactions.${existingReaction.reactionType}`]: -1 } }
-      );
-
-      if (existingReaction.reactionType === reactionType) {
-        // User is removing their reaction
-        await reactionsCollection.deleteOne({
-          postId: id,
-          userId: userId
-        });
-
-        return NextResponse.json({
-          success: true,
-          message: 'Reaction removed'
-        });
-      } else {
-        // User is changing their reaction
-        await reactionsCollection.updateOne(
-          { postId: id, userId: userId },
-          { $set: { reactionType: reactionType, updatedAt: new Date() } }
-        );
-
-        await postsCollection.updateOne(
-          { _id: new ObjectId(id) },
-          { $inc: { [`reactions.${reactionType}`]: 1 } }
-        );
-
-        return NextResponse.json({
-          success: true,
-          message: 'Reaction updated'
-        });
-      }
-    } else {
-      // New reaction
-      await reactionsCollection.insertOne({
-        postId: id,
-        userId: userId,
-        reactionType: reactionType,
-        createdAt: new Date()
-      });
-
-      await postsCollection.updateOne(
-        { _id: new ObjectId(id) },
-        { $inc: { [`reactions.${reactionType}`]: 1 } }
-      );
-
-      return NextResponse.json({
-        success: true,
-        message: 'Reaction added'
-      });
-    }
-  } catch (error) {
-    console.error('Error handling reaction:', error);
-    return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: "Internal server error" },
       { status: 500 }
     );
   }

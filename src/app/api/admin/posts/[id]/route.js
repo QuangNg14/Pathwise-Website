@@ -13,7 +13,9 @@ cloudinary.config({
 // GET - Fetch single post by ID
 export async function GET(request, { params }) {
   try {
-    const { id } = params;
+    const { id } = await params;
+    const { searchParams } = new URL(request.url);
+    const shouldIncrementView = searchParams.get('incrementView') === 'true';
     
     const client = await clientPromise;
     const db = client.db(process.env.MONGODB_DB || 'pathwise');
@@ -25,6 +27,14 @@ export async function GET(request, { params }) {
       return NextResponse.json(
         { success: false, error: 'Post not found' },
         { status: 404 }
+      );
+    }
+
+    // Increment view count if requested (for public viewing)
+    if (shouldIncrementView) {
+      await postsCollection.updateOne(
+        { _id: new ObjectId(id) },
+        { $inc: { views: 1 } }
       );
     }
 
@@ -53,7 +63,7 @@ export async function GET(request, { params }) {
 // PUT - Update post
 export async function PUT(request, { params }) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const formData = await request.formData();
     
     const title = formData.get('title');
@@ -62,7 +72,11 @@ export async function PUT(request, { params }) {
     const status = formData.get('status');
     const featured = formData.get('featured');
     const tags = formData.get('tags') ? JSON.parse(formData.get('tags')) : null;
-    const image = formData.get('image');
+    const category = formData.get('category');
+    const image = formData.get('image'); // Cover image
+    const previewImage = formData.get('previewImage'); // Preview image
+    const contentImagesJson = formData.get('contentImages'); // JSON array of image URLs
+    const contentImages = contentImagesJson ? JSON.parse(contentImagesJson) : null;
 
     const client = await clientPromise;
     const db = client.db(process.env.MONGODB_DB || 'pathwise');
@@ -88,13 +102,16 @@ export async function PUT(request, { params }) {
     if (status) updateData.status = status;
     if (featured !== null) updateData.featured = featured === 'true';
     if (tags) updateData.tags = tags;
+    if (category) updateData.category = category;
+    if (contentImages !== null) updateData.contentImages = contentImages;
 
-    // Upload new image if provided
-    if (image && image.size > 0) {
-      const bytes = await image.arrayBuffer();
+    // Helper function to upload image
+    const uploadToCloudinary = async (imageFile) => {
+      if (!imageFile || imageFile.size === 0) return null;
+      
+      const bytes = await imageFile.arrayBuffer();
       const buffer = Buffer.from(bytes);
       
-      // Upload to Cloudinary
       const result = await new Promise((resolve, reject) => {
         cloudinary.uploader.upload_stream(
           {
@@ -108,15 +125,41 @@ export async function PUT(request, { params }) {
         ).end(buffer);
       });
       
-      updateData.imageUrl = result.secure_url;
-      updateData.cloudinaryPublicId = result.public_id;
+      return {
+        url: result.secure_url,
+        publicId: result.public_id
+      };
+    };
 
-      // Delete old image from Cloudinary if exists
-      if (existingPost.cloudinaryPublicId) {
+    // Upload cover image if provided
+    if (image && image.size > 0) {
+      const coverImageData = await uploadToCloudinary(image);
+      updateData.coverImage = coverImageData.url;
+      updateData.coverImagePublicId = coverImageData.publicId;
+
+      // Delete old cover image from Cloudinary if exists
+      const oldPublicId = existingPost.coverImagePublicId || existingPost.cloudinaryPublicId;
+      if (oldPublicId) {
         try {
-          await cloudinary.uploader.destroy(existingPost.cloudinaryPublicId);
+          await cloudinary.uploader.destroy(oldPublicId);
         } catch (error) {
-          console.log('Error deleting old image:', error);
+          console.log('Error deleting old cover image:', error);
+        }
+      }
+    }
+
+    // Upload preview image if provided
+    if (previewImage && previewImage.size > 0) {
+      const previewImageData = await uploadToCloudinary(previewImage);
+      updateData.previewImage = previewImageData.url;
+      updateData.previewImagePublicId = previewImageData.publicId;
+
+      // Delete old preview image from Cloudinary if exists
+      if (existingPost.previewImagePublicId) {
+        try {
+          await cloudinary.uploader.destroy(existingPost.previewImagePublicId);
+        } catch (error) {
+          console.log('Error deleting old preview image:', error);
         }
       }
     }
@@ -142,7 +185,7 @@ export async function PUT(request, { params }) {
 // DELETE - Delete post
 export async function DELETE(request, { params }) {
   try {
-    const { id } = params;
+    const { id } = await params;
     
     const client = await clientPromise;
     const db = client.db(process.env.MONGODB_DB || 'pathwise');

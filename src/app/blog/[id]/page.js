@@ -3,19 +3,15 @@
 import { useEffect, useState } from "react";
 import { Layout } from "antd";
 import { useRouter } from "next/navigation";
-import IndividualBlogPost from "@/components/componentForBlogPage/IndividualBlogPost/IndividualBlogPost";
-import FooterComponent from "@/components/footer/Footer";
-import HeaderComponent from "@/components/header/header";
+import Header from "@/components/BlogHeader/Header";
+import Footer from "@/components/BlogFooter/Footer";
+import BlogPost from "@/components/BlogPost/BlogPost";
 
-export default function BlogPage({ params }) {
+export default function BlogPostPage({ params }) {
   const [id, setId] = useState(null);
   const [content, setContent] = useState(null);
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
-  const [current, setCurrent] = useState("blog");
-
-  const handleClick = (e) => {
-    setCurrent(e.key);
-  };
 
   // Handle async params
   useEffect(() => {
@@ -31,56 +27,93 @@ export default function BlogPage({ params }) {
 
     const fetchBlogContent = async () => {
       try {
-        // First try to fetch from Firestore (new posts)
-        const firestoreResponse = await fetch(`/api/admin/posts/${id}`);
+        setLoading(true);
         
-        if (firestoreResponse.ok) {
-          const data = await firestoreResponse.json();
-          if (data.success && data.post) {
-            // Format Firestore post content to match expected structure
+        // First, try to fetch from database (new admin posts) and increment view count
+        const adminResponse = await fetch(`/api/admin/posts/${id}?incrementView=true`);
+        
+        if (adminResponse.ok) {
+          const adminData = await adminResponse.json();
+          if (adminData.success && adminData.post) {
+            // Remove first image tag and first heading from markdown content
+            let cleanContent = adminData.post.content;
+            // Remove first <img> tag if exists
+            cleanContent = cleanContent.replace(/^<img[^>]*>\s*\n?/i, '');
+            // Remove first heading if exists (lines starting with #)
+            cleanContent = cleanContent.replace(/^#+\s+.+\n?/m, '');
+            
+            // Format admin post for display
             setContent({
-              ...data.post,
-              isFirestore: true,
+              title: adminData.post.title,
+              content: cleanContent,
+              excerpt: adminData.post.excerpt,
+              author: adminData.post.author,
+              date: new Date(adminData.post.createdAt).toLocaleDateString('vi-VN', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+              }),
+              imageUrl: adminData.post.coverImage || adminData.post.imageUrl,
+              tags: adminData.post.tags,
+              isFirestore: true
             });
+            setLoading(false);
             return;
           }
         }
         
-        // If not found in Firestore, try legacy markdown files
-        const response = await fetch(`/api/blog/${id}`);
-        if (response.status === 404) {
-          // router.push("/404");
+        // If not found in database, try markdown files (legacy posts)
+        const markdownResponse = await fetch(`/api/blog/${id}`);
+        
+        if (markdownResponse.status === 404) {
+          router.push("/blog");
           return;
         }
 
-        const data = await response.json();
+        const markdownData = await markdownResponse.json();
         setContent({
-          content: data.content,
-          isFirestore: false,
-        }); // Use raw markdown content
+          ...markdownData,
+          isFirestore: false
+        });
       } catch (error) {
         console.error("Error fetching blog content:", error);
+        router.push("/blog");
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchBlogContent();
   }, [id, router]);
 
-  if (!id || !content) {
+  if (loading || !content) {
     return (
-      <Layout style={{ backgroundColor: "#fff" }}>
-        <HeaderComponent current={current} handleClick={handleClick} />
-        <div style={{ padding: "50px", textAlign: "center" }}>Loading...</div>
-        <FooterComponent />
+      <div data-blog-page>
+        <Layout style={{ minHeight: "100vh", background: "transparent" }}>
+          <Header current="blog" />
+        <div
+          style={{
+            padding: "100px 50px",
+            textAlign: "center",
+            color: "white",
+            fontSize: "20px",
+          }}
+        >
+          Loading...
+        </div>
+        <Footer />
       </Layout>
+      </div>
     );
   }
 
   return (
-    <Layout style={{ backgroundColor: "#fff" }}>
-      <HeaderComponent current={current} handleClick={handleClick} />
-      <IndividualBlogPost content={content} id={id} />
-      <FooterComponent />
+    <div data-blog-page>
+      <Layout style={{ minHeight: "100vh", background: "transparent" }}>
+        <Header current="blog" />
+      <BlogPost content={content} id={id} />
+      <Footer />
     </Layout>
+    </div>
   );
 }

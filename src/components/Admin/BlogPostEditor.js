@@ -1,7 +1,10 @@
 'use client';
 import { useState, useRef } from 'react';
-import { Upload, X, Image as ImageIcon, Send, Eye, Save } from 'lucide-react';
+import { Upload, X, Image as ImageIcon, Send, Eye, Save, Bold, Italic, Heading1, Heading2, Heading3, List, ListOrdered, Link as LinkIcon, Code, Quote, Minus } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import './BlogPostEditor.css';
 
 const BlogPostEditor = ({ onPostCreated, editPost = null }) => {
@@ -9,32 +12,162 @@ const BlogPostEditor = ({ onPostCreated, editPost = null }) => {
   const [title, setTitle] = useState(editPost?.title || '');
   const [content, setContent] = useState(editPost?.content || '');
   const [excerpt, setExcerpt] = useState(editPost?.excerpt || '');
-  const [tags, setTags] = useState(editPost?.tags?.join(', ') || '');
-  const [image, setImage] = useState(null);
-  const [imagePreview, setImagePreview] = useState(editPost?.imageUrl || null);
+  const [category, setCategory] = useState(editPost?.category || 'Resources');
+  const [tags, setTags] = useState(editPost?.tags?.join(', ') || editPost?.category || 'Resources');
+  const [coverImage, setCoverImage] = useState(null);
+  const [coverImagePreview, setCoverImagePreview] = useState(editPost?.coverImage || editPost?.imageUrl || null);
+  const [previewImage, setPreviewImage] = useState(null);
+  const [previewImagePreview, setPreviewImagePreview] = useState(editPost?.previewImage || null);
+  const [contentImages, setContentImages] = useState(editPost?.contentImages || []);
+  const [uploadingContentImages, setUploadingContentImages] = useState(false);
   const [status, setStatus] = useState(editPost?.status || 'draft');
   const [loading, setLoading] = useState(false);
   const [showPreview, setShowPreview] = useState(false);
-  const fileInputRef = useRef(null);
+  const coverImageInputRef = useRef(null);
+  const previewImageInputRef = useRef(null);
+  const contentImagesInputRef = useRef(null);
+  const contentTextareaRef = useRef(null);
 
-  const handleImageChange = (e) => {
+  const CATEGORIES = ['Resources', 'Job Applications', 'Careers'];
+
+  const handleCoverImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setImage(file);
+      setCoverImage(file);
       const reader = new FileReader();
       reader.onloadend = () => {
-        setImagePreview(reader.result);
+        setCoverImagePreview(reader.result);
       };
       reader.readAsDataURL(file);
     }
   };
 
-  const removeImage = () => {
-    setImage(null);
-    setImagePreview(null);
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
+  const handlePreviewImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setPreviewImage(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreviewImagePreview(reader.result);
+      };
+      reader.readAsDataURL(file);
     }
+  };
+
+  const removeCoverImage = () => {
+    setCoverImage(null);
+    setCoverImagePreview(null);
+    if (coverImageInputRef.current) {
+      coverImageInputRef.current.value = '';
+    }
+  };
+
+  const removePreviewImage = () => {
+    setPreviewImage(null);
+    setPreviewImagePreview(null);
+    if (previewImageInputRef.current) {
+      previewImageInputRef.current.value = '';
+    }
+  };
+
+  const handleContentImagesUpload = async (e) => {
+    const files = Array.from(e.target.files);
+    if (!files.length) return;
+
+    setUploadingContentImages(true);
+    const uploadedUrls = [];
+
+    for (const file of files) {
+      try {
+        const formData = new FormData();
+        formData.append('image', file);
+        
+        const response = await fetch('/api/admin/upload-image', {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await response.json();
+        if (data.success && data.imageUrl) {
+          uploadedUrls.push(data.imageUrl);
+        } else {
+          alert(`Failed to upload image: ${data.error || 'Unknown error'}`);
+        }
+      } catch (error) {
+        console.error('Error uploading image:', error);
+        alert(`Error uploading image: ${error.message}`);
+      }
+    }
+
+    setUploadingContentImages(false);
+    
+    // Also store URLs in contentImages array
+    if (uploadedUrls.length > 0) {
+      setContentImages(prev => [...prev, ...uploadedUrls]);
+    }
+    
+    // Insert images into content markdown at cursor position
+    if (uploadedUrls.length > 0) {
+      const textarea = contentTextareaRef.current;
+      if (textarea) {
+        const start = textarea.selectionStart;
+        const imageMarkdown = uploadedUrls.map(url => `<img src="${url}" alt="Image" style="width: 100%; height: auto; border-radius: 8px; margin: 20px 0; display: block;" />`).join('\n\n');
+        const newContent = 
+          content.substring(0, start) + 
+          '\n' + imageMarkdown + '\n\n' +
+          content.substring(start);
+        setContent(newContent);
+        
+        // Reset cursor position
+        setTimeout(() => {
+          const newCursorPos = start + imageMarkdown.length + 3;
+          textarea.focus();
+          textarea.setSelectionRange(newCursorPos, newCursorPos);
+        }, 0);
+      }
+    }
+    
+    if (contentImagesInputRef.current) {
+      contentImagesInputRef.current.value = '';
+    }
+  };
+
+  // Markdown formatting helpers
+  const insertMarkdown = (before, after = '', placeholder = '') => {
+    const textarea = contentTextareaRef.current;
+    if (!textarea) return;
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const selectedText = content.substring(start, end);
+    const textToInsert = selectedText || placeholder;
+    const newContent = 
+      content.substring(0, start) + 
+      before + textToInsert + after + 
+      content.substring(end);
+    setContent(newContent);
+    setTimeout(() => {
+      const newCursorPos = start + before.length + textToInsert.length;
+      textarea.focus();
+      textarea.setSelectionRange(newCursorPos, newCursorPos);
+    }, 0);
+  };
+
+  const formatBold = () => insertMarkdown('**', '**', 'bold text');
+  const formatItalic = () => insertMarkdown('*', '*', 'italic text');
+  const formatHeading1 = () => insertMarkdown('# ', '', 'Heading 1');
+  const formatHeading2 = () => insertMarkdown('## ', '', 'Heading 2');
+  const formatHeading3 = () => insertMarkdown('### ', '', 'Heading 3');
+  const formatBulletList = () => insertMarkdown('- ', '', 'list item');
+  const formatNumberedList = () => insertMarkdown('1. ', '', 'list item');
+  const formatCode = () => insertMarkdown('`', '`', 'code');
+  const formatLink = () => insertMarkdown('[', '](url)', 'link text');
+  const formatBlockquote = () => insertMarkdown('> ', '', 'quote text');
+  const formatHorizontalRule = () => insertMarkdown('\n---\n', '', '');
+
+  const handleCategoryChange = (e) => {
+    const selectedCategory = e.target.value;
+    setCategory(selectedCategory);
+    setTags(selectedCategory); // Auto-fill tags with category
   };
 
   const handleSubmit = async (publishStatus) => {
@@ -54,11 +187,22 @@ const BlogPostEditor = ({ onPostCreated, editPost = null }) => {
       formData.append('authorId', currentUser.uid);
       formData.append('status', publishStatus);
       
-      const tagsArray = tags.split(',').map(tag => tag.trim()).filter(tag => tag);
+      // Use category as the main tag, or split if user typed custom tags
+      const tagsArray = category ? [category] : tags.split(',').map(tag => tag.trim()).filter(tag => tag);
       formData.append('tags', JSON.stringify(tagsArray));
+      formData.append('category', category);
       
-      if (image) {
-        formData.append('image', image);
+      if (coverImage) {
+        formData.append('image', coverImage); // Cover image
+      }
+      
+      if (previewImage) {
+        formData.append('previewImage', previewImage);
+      }
+      
+      // Send content images as JSON array
+      if (contentImages.length > 0) {
+        formData.append('contentImages', JSON.stringify(contentImages));
       }
 
       const url = editPost 
@@ -82,9 +226,13 @@ const BlogPostEditor = ({ onPostCreated, editPost = null }) => {
           setTitle('');
           setContent('');
           setExcerpt('');
-          setTags('');
-          setImage(null);
-          setImagePreview(null);
+          setCategory('Resources');
+          setTags('Resources');
+          setCoverImage(null);
+          setCoverImagePreview(null);
+          setPreviewImage(null);
+          setPreviewImagePreview(null);
+          setContentImages([]);
           setStatus('draft');
         }
         
@@ -112,8 +260,8 @@ const BlogPostEditor = ({ onPostCreated, editPost = null }) => {
           </button>
         </div>
         <div className="preview-content">
-          {imagePreview && (
-            <img src={imagePreview} alt="Preview" className="preview-image" />
+          {coverImagePreview && (
+            <img src={coverImagePreview} alt="Preview" className="preview-image" />
           )}
           <h1 className="preview-title">{title}</h1>
           <div className="preview-meta">
@@ -128,7 +276,13 @@ const BlogPostEditor = ({ onPostCreated, editPost = null }) => {
               ))}
             </div>
           )}
-          <div className="preview-body" dangerouslySetInnerHTML={{ __html: content.replace(/\n/g, '<br>') }} />
+          <ReactMarkdown
+            className="preview-body"
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw]}
+          >
+            {content}
+          </ReactMarkdown>
         </div>
       </div>
     );
@@ -175,12 +329,50 @@ const BlogPostEditor = ({ onPostCreated, editPost = null }) => {
         />
 
         {/* Content Input */}
+        <div className="markdown-toolbar">
+          <button type="button" onClick={formatBold} className="toolbar-btn" title="Bold"><Bold size={18} /></button>
+          <button type="button" onClick={formatItalic} className="toolbar-btn" title="Italic"><Italic size={18} /></button>
+          <div className="toolbar-divider"></div>
+          <button type="button" onClick={formatHeading1} className="toolbar-btn" title="Heading 1"><Heading1 size={18} /></button>
+          <button type="button" onClick={formatHeading2} className="toolbar-btn" title="Heading 2"><Heading2 size={18} /></button>
+          <button type="button" onClick={formatHeading3} className="toolbar-btn" title="Heading 3"><Heading3 size={18} /></button>
+          <div className="toolbar-divider"></div>
+          <button type="button" onClick={formatBulletList} className="toolbar-btn" title="Bullet List"><List size={18} /></button>
+          <button type="button" onClick={formatNumberedList} className="toolbar-btn" title="Numbered List"><ListOrdered size={18} /></button>
+          <div className="toolbar-divider"></div>
+          <button type="button" onClick={formatLink} className="toolbar-btn" title="Link"><LinkIcon size={18} /></button>
+          <button type="button" onClick={formatCode} className="toolbar-btn" title="Code"><Code size={18} /></button>
+          <div className="toolbar-divider"></div>
+          <input
+            ref={contentImagesInputRef}
+            type="file"
+            accept="image/*"
+            multiple
+            onChange={handleContentImagesUpload}
+            style={{ display: 'none' }}
+          />
+          <button 
+            type="button" 
+            onClick={() => contentImagesInputRef.current?.click()} 
+            className="toolbar-btn" 
+            title="Add Images"
+            disabled={uploadingContentImages}
+          >
+            <ImageIcon size={18} />
+          </button>
+          <div className="toolbar-divider"></div>
+          <button type="button" onClick={formatBlockquote} className="toolbar-btn" title="Quote"><Quote size={18} /></button>
+          <button type="button" onClick={formatHorizontalRule} className="toolbar-btn" title="Horizontal Rule"><Minus size={18} /></button>
+        </div>
+        {uploadingContentImages && <div style={{ padding: '10px', color: '#666' }}>Uploading images...</div>}
         <textarea
-          placeholder="What's on your mind? Share your thoughts..."
+          ref={contentTextareaRef}
+          placeholder="What's on your mind? Share your thoughts... (Supports Markdown)"
           value={content}
           onChange={(e) => setContent(e.target.value)}
           className="content-input"
           rows={8}
+          spellCheck={false}
         />
 
         {/* Excerpt Input */}
@@ -192,44 +384,95 @@ const BlogPostEditor = ({ onPostCreated, editPost = null }) => {
           rows={2}
         />
 
-        {/* Tags Input */}
-        <input
-          type="text"
-          placeholder="Tags (comma separated, e.g., tech, career, tips)"
-          value={tags}
-          onChange={(e) => setTags(e.target.value)}
-          className="tags-input"
-        />
+        {/* Category Dropdown */}
+        <select
+          value={category}
+          onChange={handleCategoryChange}
+          className="category-dropdown"
+        >
+          {CATEGORIES.map((cat) => (
+            <option key={cat} value={cat}>
+              {cat}
+            </option>
+          ))}
+        </select>
 
-        {/* Image Preview */}
-        {imagePreview && (
-          <div className="image-preview">
-            <img src={imagePreview} alt="Preview" />
-            <button onClick={removeImage} className="remove-image-btn">
-              <X size={20} />
+        {/* Image Previews and Uploads */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+          {/* Cover Image */}
+          <div>
+            <label style={{ display: 'block', marginBottom: '8px', fontWeight: 600, color: '#1c1e21' }}>
+              Cover Image (Main header)
+            </label>
+            <input
+              ref={coverImageInputRef}
+              type="file"
+              accept="image/*"
+              onChange={handleCoverImageChange}
+              style={{ display: 'none' }}
+            />
+            <button
+              onClick={() => coverImageInputRef.current?.click()}
+              className="action-btn"
+              disabled={loading}
+              type="button"
+            >
+              <ImageIcon size={20} />
+              <span>{coverImagePreview ? 'Change Cover' : 'Upload Cover'}</span>
             </button>
+            {coverImagePreview && (
+              <div className="image-preview" style={{ marginTop: '10px' }}>
+                <img src={coverImagePreview} alt="Cover" />
+                <button onClick={removeCoverImage} className="remove-image-btn">
+                  <X size={20} />
+                </button>
+              </div>
+            )}
           </div>
-        )}
+
+          {/* Preview Image */}
+          <div>
+            <label style={{ display: 'block', marginBottom: '8px', fontWeight: 600, color: '#1c1e21' }}>
+              Preview Image (Thumbnail for list)
+            </label>
+            <input
+              ref={previewImageInputRef}
+              type="file"
+              accept="image/*"
+              onChange={handlePreviewImageChange}
+              style={{ display: 'none' }}
+            />
+            <button
+              onClick={() => previewImageInputRef.current?.click()}
+              className="action-btn"
+              disabled={loading}
+              type="button"
+            >
+              <ImageIcon size={20} />
+              <span>{previewImagePreview ? 'Change Preview' : 'Upload Preview'}</span>
+            </button>
+            {previewImagePreview && (
+              <div className="image-preview" style={{ marginTop: '10px' }}>
+                <img src={previewImagePreview} alt="Preview" />
+                <button onClick={removePreviewImage} className="remove-image-btn">
+                  <X size={20} />
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
 
         {/* Action Buttons */}
         <div className="editor-actions">
           <div className="left-actions">
             <button
-              onClick={() => fileInputRef.current?.click()}
+              onClick={() => contentImagesInputRef.current?.click()}
               className="action-btn"
-              disabled={loading}
+              disabled={loading || uploadingContentImages}
             >
               <ImageIcon size={20} />
-              <span>Photo</span>
+              <span>{uploadingContentImages ? 'Uploading...' : 'Photo'}</span>
             </button>
-            <input
-              ref={fileInputRef}
-              type="file"
-              accept="image/*"
-              onChange={handleImageChange}
-              style={{ display: 'none' }}
-            />
-            
             <button
               onClick={() => setShowPreview(true)}
               className="action-btn"
@@ -266,4 +509,3 @@ const BlogPostEditor = ({ onPostCreated, editPost = null }) => {
 };
 
 export default BlogPostEditor;
-
