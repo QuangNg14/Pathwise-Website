@@ -3,6 +3,7 @@
   flex-direction: column;
   background-color: var(--color-background);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .content-container {
@@ -10,6 +11,8 @@
   margin: 0 auto;
   padding: 80px 24px;
   background: transparent;
+  width: 100%;
+  min-width: 0;
 }
 
 .go-back-button {
@@ -37,6 +40,7 @@
   line-height: 1.8;
   font-size: 18px;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-wrap: anywhere;
 }
 
 .blog-markdown-content h1 {
@@ -46,6 +50,7 @@
   color: var(--color-heading);
   letter-spacing: -1.5px;
   line-height: 1.1;
+  word-break: break-word;
 }
 
 .blog-markdown-content h2 {
@@ -54,6 +59,7 @@
   margin: 48px 0 24px;
   color: var(--color-heading);
   letter-spacing: -0.5px;
+  word-break: break-word;
 }
 
 .blog-markdown-content h3 {
@@ -61,6 +67,7 @@
   font-weight: 700;
   margin: 32px 0 16px;
   color: var(--color-heading);
+  word-break: break-word;
 }
 
 .blog-markdown-content p {
@@ -72,6 +79,30 @@
   height: auto;
   border-radius: 8px;
   margin: 40px 0;
+}
+
+.blog-markdown-content pre {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+}
+
+.blog-markdown-content code {
+  overflow-wrap: anywhere;
+}
+
+.blog-markdown-content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.blog-markdown-content a {
+  overflow-wrap: anywhere;
 }
 
 .blog-markdown-content blockquote {
@@ -214,12 +245,20 @@
 }
 
 @media (max-width: 768px) {
+  .content-container {
+    padding: 48px 16px;
+  }
+
   .blog-markdown-content h1 {
     font-size: 32px;
   }
   
   .related-posts-grid {
     grid-template-columns: 1fr;
+  }
+
+  .blog-markdown-content blockquote {
+    font-size: 18px;
   }
 }
 

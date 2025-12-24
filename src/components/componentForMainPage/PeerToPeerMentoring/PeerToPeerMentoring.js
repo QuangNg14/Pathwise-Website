@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Typography, Button } from "antd";
 import { useRouter } from "next/navigation";
+import { navigateToApplication } from "@/utils/navigation";
 import "./PeerToPeerMentoring.css";
 
 const { Title, Text } = Typography;
@@ -35,6 +36,13 @@ const PeerToPeerMentoring = () => {
               onClick={() => router.push("/results")}
             >
               View result
+            </Button>
+            <Button
+              type="primary"
+              className="peer-to-peer-primary-btn peer-to-peer-apply-btn"
+              onClick={() => navigateToApplication(router)}
+            >
+              Apply
             </Button>
             <Button
               type="text"

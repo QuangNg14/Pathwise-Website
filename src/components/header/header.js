@@ -98,7 +98,14 @@ export default function HeaderComponent() {
 
         {/* Mobile burger menu button */}
         {isMobile && (
-          <div className="menu-button-col">
+          <div className="mobile-header-actions">
+            <button
+              onClick={handleApplyClick}
+              className="mobile-apply-btn"
+              aria-label="Apply for mentorship"
+            >
+              Apply
+            </button>
             <button
               className="burger-btn"
               onClick={() => setDrawerVisible(true)}

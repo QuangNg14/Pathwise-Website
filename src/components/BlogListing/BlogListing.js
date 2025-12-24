@@ -90,7 +90,6 @@ const BlogListing = ({ blogPosts }) => {
           options={searchOptions}
           onSearch={handleSearch}
           onSelect={handleSelect}
-          placeholder="Search blog posts by title..."
           className="search-autocomplete"
           notFoundContent={
             searchValue ? <div style={{ padding: "8px" }}>No results found</div> : null
@@ -100,6 +99,7 @@ const BlogListing = ({ blogPosts }) => {
             size="large"
             suffix={<SearchOutlined />}
             className="search-input"
+            placeholder="Search blog posts by title..."
           />
         </AutoComplete>
       </div>
