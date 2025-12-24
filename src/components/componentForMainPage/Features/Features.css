@@ -1,9 +1,9 @@
 /* Features container */
 .features-container {
   width: 100%;
-  background-color: #fff;
+  background-color: var(--color-background);
   padding: 80px 0;
-  border-bottom: 1px solid #9A9A9A;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .features-content {

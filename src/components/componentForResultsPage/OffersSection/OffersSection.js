@@ -561,7 +561,7 @@ const OffersSection = () => {
     <div className="offers-section">
       <div className="offers-content">
         <Title level={2} className="section-title">
-          Internship Offers Summer 2025
+          Internship Offers Summer 2025 + 2026
         </Title>
         <Tabs
           defaultActiveKey="software"
@@ -571,7 +571,7 @@ const OffersSection = () => {
         />
         <div className="new-grad-section">
           <Title level={2} className="section-title new-grad-title">
-            New Grad Offers 2025
+            New Grad Offers 2025 + 2026
           </Title>
           <Row gutter={[32, 32]}>
             {newGradOffersData.map((mentee, index) => (
@@ -587,12 +587,12 @@ const OffersSection = () => {
               Ready to Join Our Success Stories?
             </Title>
             <Text className="offers-cta-description">
-              These amazing results speak for themselves. Join our next batch
-              and become part of our growing community of successful mentees
-              landing offers at top companies.
+              These results span Summer 2026 internships and new grad roles.
+              Join our next batch and become part of our growing community of
+              successful mentees landing offers at top companies.
             </Text>
             <button className="offers-cta-button" onClick={handleApplyClick}>
-              Apply for Batch 5/2025
+              Apply for Batch 6/2025
             </button>
           </div>
         </div>

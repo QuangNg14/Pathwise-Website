@@ -3,16 +3,18 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Menu, Button } from "antd";
+import { ExportOutlined } from "@ant-design/icons";
 import { useAuth } from "@/contexts/AuthContext";
 import UserMenu from "@/components/Auth/UserMenu";
 import AuthModal from "@/components/Auth/AuthModal";
+import ThemeToggle from "@/components/ThemeToggle";
 import "./Header.css";
 import "../Auth/Auth.css";
 
 const Header = ({ current }) => {
   const { currentUser } = useAuth();
   const [authModalOpen, setAuthModalOpen] = useState(false);
-  const [authMode, setAuthMode] = useState('login');
+  const [authMode, setAuthMode] = useState("login");
 
   const items = [
     {
@@ -34,12 +36,12 @@ const Header = ({ current }) => {
   ];
 
   const openLoginModal = () => {
-    setAuthMode('login');
+    setAuthMode("login");
     setAuthModalOpen(true);
   };
 
   const openSignupModal = () => {
-    setAuthMode('signup');
+    setAuthMode("signup");
     setAuthModalOpen(true);
   };
 
@@ -47,16 +49,31 @@ const Header = ({ current }) => {
     <>
       <header className="blog-header">
         <div className="header-container">
-          <Link href="/" className="logo">
-            <h1>TechConnect Vietnam</h1>
+          <Link
+            href="https://www.facebook.com/groups/756561709660282"
+            target="_blank"
+            className="logo"
+          >
+            <h1>
+              Pathwise Network Vietnam
+              <ExportOutlined
+                style={{
+                  fontSize: "14px",
+                  marginLeft: "8px",
+                  verticalAlign: "middle",
+                  opacity: 0.7,
+                }}
+              />
+            </h1>
           </Link>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
             <Menu
               selectedKeys={[current]}
               mode="horizontal"
               items={items}
               className="header-menu"
             />
+            <ThemeToggle />
             {currentUser ? (
               <UserMenu />
             ) : (
@@ -73,8 +90,8 @@ const Header = ({ current }) => {
         </div>
       </header>
 
-      <AuthModal 
-        isOpen={authModalOpen} 
+      <AuthModal
+        isOpen={authModalOpen}
         onClose={() => setAuthModalOpen(false)}
         defaultMode={authMode}
       />
@@ -83,4 +100,3 @@ const Header = ({ current }) => {
 };
 
 export default Header;
-

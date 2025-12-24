@@ -16,17 +16,19 @@
   background: none;
   border: none;
   font-size: 18px;
-  color: #666;
+  color: var(--color-text);
   cursor: pointer;
   z-index: 10;
   padding: 8px;
   border-radius: 50%;
   transition: all 0.2s ease;
+  opacity: 0.6;
 }
 
 .auth-close-btn:hover {
-  background: #f5f5f5;
-  color: #333;
+  background: var(--color-subtle-bg);
+  color: var(--color-heading);
+  opacity: 1;
 }
 
 /* Auth Card Styles */
@@ -48,7 +50,8 @@
 }
 
 .auth-subtitle {
-  color: #666;
+  color: var(--color-text);
+  opacity: 0.8;
   font-size: 16px;
 }
 
@@ -58,7 +61,7 @@
 }
 
 .auth-form .ant-form-item-label > label {
-  color: #333;
+  color: var(--color-heading);
   font-weight: 500;
 }
 
@@ -71,15 +74,17 @@
 }
 
 .auth-button:hover {
-  background: #2d1b69;
-  border-color: #2d1b69;
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+  opacity: 0.9;
 }
 
 /* Google Button Styles */
 .google-button {
   height: 48px;
-  border: 2px solid #ddd;
-  color: #333;
+  border: 2px solid var(--color-border);
+  color: var(--color-text);
+  background: var(--color-card-bg);
   font-weight: 500;
   font-size: 16px;
   margin-bottom: 24px;
@@ -98,7 +103,8 @@
 /* Footer Styles */
 .auth-footer {
   text-align: center;
-  color: #666;
+  color: var(--color-text);
+  opacity: 0.8;
 }
 
 .auth-link {
@@ -109,7 +115,7 @@
 }
 
 .auth-link:hover {
-  color: #2d1b69;
+  color: var(--color-secondary);
 }
 
 /* User Menu Styles */
@@ -127,12 +133,12 @@
 }
 
 .user-button:hover {
-  background: rgba(61, 42, 105, 0.1);
+  background: var(--color-subtle-bg);
 }
 
 .user-name {
   font-weight: 500;
-  color: #333;
+  color: var(--color-heading);
 }
 
 /* Responsive Design */

@@ -1,9 +1,9 @@
 /* Mentorship Application Section */
 .mentorship-app-section {
-  background: #fdf7ed;
+  background: var(--color-background);
   padding: 80px 0;
   width: 100%;
-  border-bottom: 1px solid #9A9A9A;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .mentorship-app-container {
@@ -28,7 +28,7 @@
   font-size: 64px;
   line-height: 100%;
   letter-spacing: 0%;
-  color: var(--color-dark, #3E130A);
+  color: var(--color-heading);
   margin: 0 0 24px 0;
 }
 
@@ -38,13 +38,13 @@
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0%;
-  color: var(--color-dark-alt, #6D2A1A);
+  color: var(--color-text);
   margin-bottom: 40px;
 }
 
 .deadline-notice {
-  background: rgba(196, 90, 29, 0.1);
-  border: 1px solid rgba(196, 90, 29, 0.3);
+  background: var(--color-subtle-bg);
+  border: 1px solid var(--color-primary);
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 32px;
@@ -55,7 +55,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: var(--color-dark, #3E130A);
+  color: var(--color-heading);
   margin: 0;
 }
 
@@ -79,7 +79,7 @@
 
 .mentorship-app-right {
   flex: 1;
-  background: #fdf7ed;
+  background: var(--color-background);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -111,7 +111,7 @@
   font-family: Inter;
   font-weight: 600;
   font-size: 16px;
-  color: var(--color-dark, #3E130A);
+  color: var(--color-heading);
   margin-bottom: 6px;
 }
 
@@ -159,18 +159,19 @@
 .mentorship-app-form .ant-input-affix-wrapper {
   background: transparent;
   border: none;
-  border-bottom: 1px solid #d9d9d9;
+  border-bottom: 1px solid var(--color-border);
   border-radius: 0;
   font-family: Inter;
   font-size: 16px;
-  color: var(--color-dark-alt, #6D2A1A);
+  color: var(--color-text);
   box-shadow: none !important;
   padding: 8px 0;
 }
 
 .mentorship-app-form .ant-input::placeholder,
 .mentorship-app-form .ant-input-affix-wrapper input::placeholder {
-  color: #bfbfbf;
+  color: var(--color-text);
+  opacity: 0.5;
   font-family: Inter;
   font-size: 16px;
 }
@@ -189,11 +190,11 @@
 .mentorship-app-form .ant-select .ant-select-selector {
   background: transparent;
   border: none;
-  border-bottom: 1px solid #d9d9d9;
+  border-bottom: 1px solid var(--color-border);
   border-radius: 0;
   font-family: Inter;
   font-size: 16px;
-  color: var(--color-dark-alt, #6D2A1A);
+  color: var(--color-text);
   box-shadow: none !important;
   padding: 8px 0;
   height: auto;
@@ -206,7 +207,8 @@
 }
 
 .mentorship-app-form .ant-select .ant-select-selection-placeholder {
-  color: #bfbfbf;
+  color: var(--color-text);
+  opacity: 0.5;
   font-family: Inter;
   font-size: 16px;
 }
@@ -218,11 +220,12 @@
 .mentorship-app-form .ant-upload .ant-btn {
   background: transparent;
   border: none;
-  border-bottom: 1px solid #d9d9d9;
+  border-bottom: 1px solid var(--color-border);
   border-radius: 0;
   font-family: Inter;
   font-size: 16px;
-  color: #bfbfbf;
+  color: var(--color-text);
+  opacity: 0.5;
   padding: 8px 0;
   text-align: left;
   box-shadow: none;
@@ -230,8 +233,9 @@
 }
 
 .mentorship-app-form .ant-upload .ant-btn:hover {
-  border-bottom: 2px solid var(--color-primary, #C45A1D);
-  color: var(--color-dark-alt, #6D2A1A);
+  border-bottom: 2px solid var(--color-primary);
+  color: var(--color-text);
+  opacity: 1;
 }
 
 .mentorship-app-form .ant-input[maxlength] {
@@ -249,7 +253,7 @@
 .mentorship-app-privacy {
   font-family: Inter;
   font-size: 14px;
-  color: var(--color-dark-alt, #6D2A1A);
+  color: var(--color-text);
 }
 
 .mentorship-app-privacy a {
@@ -315,8 +319,8 @@
 }
 
 .waitlist-message {
-  background: #fff3cd;
-  border: 1px solid #ffeaa7;
+  background: var(--color-subtle-bg);
+  border: 1px solid var(--color-primary);
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 24px;
@@ -324,7 +328,7 @@
 
 .waitlist-message .ant-typography {
   margin: 0;
-  color: var(--color-dark-alt, #6D2A1A);
+  color: var(--color-text);
 }
 
 .waitlist-message a {
@@ -521,13 +525,15 @@
 
 /* Optional Field Label Styling */
 .mentorship-app-form .ant-form-item-label > label:not(.ant-form-item-required) {
-  color: rgba(62, 19, 10, 0.7);
+  color: var(--color-text);
+  opacity: 0.85;
 }
 
 .mentorship-app-form .ant-form-item-label > label:not(.ant-form-item-required)::after {
   content: " (Optional)";
-  color: rgba(62, 19, 10, 0.5);
-  font-weight: 400;
+  color: var(--color-text);
+  opacity: 0.65;
+  font-weight: 500;
   font-size: 14px;
 }
 

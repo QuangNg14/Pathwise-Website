@@ -11,8 +11,8 @@
 .faq-container {
   width: 100%;
   padding: 80px 0;
-  border-bottom: 1px solid #9A9A9A;
-  background: var(--color-bg, #fff);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-background);
 }
 
 .faq-content-wrapper {
@@ -49,8 +49,8 @@
 
 .faq-card {
   border-radius: 12px;
-  border: 1px solid #e8e8e8;
-  background: #fdf7ed;
+  border: 1px solid var(--color-border);
+  background: var(--color-background);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
   transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
@@ -63,8 +63,8 @@
 }
 
 .faq-card.expanded {
-  background: #E9B260;
-  border: 1px solid #C45A1D;
+  background: var(--color-secondary);
+  border: 1px solid var(--color-primary);
   box-shadow: 0 8px 24px rgba(196, 90, 29, 0.15);
   transform: translateY(-4px);
 }
@@ -137,7 +137,7 @@
 
 .faq-divider {
   border: none;
-  border-top: 1px solid #3E130A;
+  border-top: 1px solid var(--color-border);
   margin: 0 0 16px 0;
   width: 0;
   transition: width 0.28s cubic-bezier(0.4, 0, 0.2, 1);

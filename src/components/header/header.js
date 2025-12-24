@@ -1,4 +1,4 @@
-'use client';
+"use client";
 // components/HeaderComponent.jsx
 import React, { useState, useEffect } from "react";
 import { Layout, Drawer, Button } from "antd";
@@ -7,19 +7,15 @@ import { useRouter } from "next/navigation";
 import { MenuOutlined, UserOutlined } from "@ant-design/icons";
 import { navigateToApplication } from "@/utils/navigation";
 import { useAuth } from "@/contexts/AuthContext";
+import { useTheme } from "@/contexts/ThemeContext";
 import AuthModal from "@/components/Auth/AuthModal";
 import UserMenu from "@/components/Auth/UserMenu";
+import ThemeToggle from "@/components/ThemeToggle";
 import "./header.css";
 
 const { Header } = Layout;
 
-const menuItems = [
-  "program",
-  "services",
-  "results",
-  "about",
-  "contact",
-];
+const menuItems = ["program", "services", "results", "about", "contact"];
 
 // Blog is now integrated into the main site at /blog
 
@@ -29,6 +25,7 @@ export default function HeaderComponent() {
   const [authModalVisible, setAuthModalVisible] = useState(false);
   const router = useRouter();
   const { currentUser } = useAuth();
+  const { theme } = useTheme();
 
   useEffect(() => {
     const onResize = () => setIsMobile(window.innerWidth <= 768);
@@ -51,7 +48,11 @@ export default function HeaderComponent() {
         {/* Logo on the far left */}
         <Link href="/" className="logo-container">
           <img
-            src="/images/Pathwise Logo Black.png"
+            src={
+              theme === "dark"
+                ? "/images/Pathwise Logo White.png"
+                : "/images/Pathwise Logo Black.png"
+            }
             alt="Pathwise Logo"
             className="header-logo-image"
           />
@@ -69,27 +70,26 @@ export default function HeaderComponent() {
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </Link>
             ))}
-            
+
             {/* Blog Link - Internal navigation to /blog */}
-            <Link 
-              href="/blog"
-              className="custom-menu-item"
-            >
+            <Link href="/blog" className="custom-menu-item">
               Blog
             </Link>
+
+            <ThemeToggle />
 
             {currentUser ? (
               <UserMenu />
             ) : (
-              <Button 
-                onClick={() => setAuthModalVisible(true)} 
+              <Button
+                onClick={() => setAuthModalVisible(true)}
                 className="login-menu-item"
                 icon={<UserOutlined />}
               >
                 Login
               </Button>
             )}
-            
+
             <button onClick={handleApplyClick} className="register-menu-item">
               Apply
             </button>
@@ -130,9 +130,9 @@ export default function HeaderComponent() {
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </Link>
             ))}
-            
+
             {/* Blog Link - Internal navigation to /blog */}
-            <Link 
+            <Link
               href="/blog"
               className="drawer-link"
               onClick={() => setDrawerVisible(false)}
@@ -144,10 +144,15 @@ export default function HeaderComponent() {
               <div className="drawer-user-section">
                 <div className="drawer-user-info">
                   <UserOutlined />
-                  <span>{currentUser.displayName || currentUser.email?.split('@')[0]}</span>
+                  <span>
+                    {currentUser.displayName ||
+                      currentUser.email?.split("@")[0]}
+                  </span>
                 </div>
-                <Button 
-                  onClick={() => {/* Add logout logic */}} 
+                <Button
+                  onClick={() => {
+                    /* Add logout logic */
+                  }}
                   className="drawer-logout"
                   size="small"
                 >
@@ -155,11 +160,11 @@ export default function HeaderComponent() {
                 </Button>
               </div>
             ) : (
-              <Button 
+              <Button
                 onClick={() => {
                   setAuthModalVisible(true);
                   setDrawerVisible(false);
-                }} 
+                }}
                 className="drawer-login"
                 icon={<UserOutlined />}
                 block
@@ -167,7 +172,7 @@ export default function HeaderComponent() {
                 Login
               </Button>
             )}
-            
+
             <button onClick={handleApplyClick} className="drawer-register">
               Apply
             </button>
@@ -176,9 +181,9 @@ export default function HeaderComponent() {
       )}
 
       {/* Auth Modal */}
-      <AuthModal 
-        isOpen={authModalVisible} 
-        onClose={() => setAuthModalVisible(false)} 
+      <AuthModal
+        isOpen={authModalVisible}
+        onClose={() => setAuthModalVisible(false)}
       />
     </Header>
   );

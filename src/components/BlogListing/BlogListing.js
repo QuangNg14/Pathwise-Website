@@ -72,13 +72,19 @@ const BlogListing = ({ blogPosts }) => {
 
   return (
     <div className="blog-listing-layout">
+      {/* Hero Section */}
+      <div className="hero-section">
+        <Title level={1} className="hero-title">
+          Explore Our Latest Blog Posts
+        </Title>
+        <Text className="hero-description">
+          Những thông tin chuyên sâu mới nhất, đầy đủ, và sâu sắc để tìm việc và
+          thăng tiến sự nghiệp trong lĩnh vực công nghệ
+        </Text>
+      </div>
+
       {/* Search Bar */}
-      <motion.div
-        className="search-bar"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.4, delay: 0.2 }}
-      >
+      <div className="search-bar">
         <AutoComplete
           value={searchValue}
           options={searchOptions}
@@ -96,33 +102,12 @@ const BlogListing = ({ blogPosts }) => {
             className="search-input"
           />
         </AutoComplete>
-      </motion.div>
-
-      {/* Hero Section */}
-      <motion.div
-        className="hero-section"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <Title level={1} className="hero-title">
-          Explore Our Latest Blog Posts
-        </Title>
-        <Text className="hero-description">
-          Những thông tin chuyên sâu mới nhất, đầy đủ, và sâu sắc để tìm việc và
-          thăng tiến sự nghiệp trong lĩnh vực công nghệ
-        </Text>
-      </motion.div>
+      </div>
 
       {/* Category Tabs */}
-      <motion.div
-        className="category-tabs"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      >
+      <div className="category-tabs">
         <div className="custom-tabs-wrapper">
-          {["Resources", "Job Applications", "Careers"].map((category) => (
+          {["All", "Resources", "Job Applications", "Careers"].map((category) => (
             <button
               key={category}
               className={`custom-tab ${activeCategory === category ? 'active' : ''}`}
@@ -132,7 +117,7 @@ const BlogListing = ({ blogPosts }) => {
             </button>
           ))}
         </div>
-      </motion.div>
+      </div>
 
       <div className="content-wrapper">
         {/* Featured Blog - First Post (Large) */}

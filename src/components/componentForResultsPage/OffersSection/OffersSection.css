@@ -1,9 +1,9 @@
 /* OffersSection.css */
 .offers-section {
   width: 100%;
-  background-color: #fff;
+  background-color: var(--color-background);
   padding: 80px 0;
-  border-bottom: 1px solid rgba(62, 19, 10, 0.1);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .offers-content {
@@ -82,9 +82,9 @@
 .offer-card {
   border-radius: 16px;
   padding: 0;
-  background-color: var(--color-bg, #FDF7ED);
+  background-color: var(--color-card-bg);
   transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--color-border);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   height: auto;
   min-height: 400px;
@@ -516,7 +516,8 @@
 .offers-cta-section {
   margin-top: 80px;
   padding: 60px 40px;
-  background: linear-gradient(135deg, var(--color-primary, #C45A1D), var(--color-secondary, #E9B260));
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
   border-radius: 24px;
   text-align: center;
   position: relative;
@@ -530,7 +531,8 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+  opacity: 0.05;
   animation: rotate 20s linear infinite;
 }
 
@@ -545,16 +547,15 @@
   font-family: Inter !important;
   font-size: 36px !important;
   font-weight: 700 !important;
-  color: #fff !important;
+  color: var(--color-heading) !important;
   margin: 0 0 24px 0 !important;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .offers-cta-description {
   font-family: Inter !important;
   font-size: 18px !important;
   font-weight: 400 !important;
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: var(--color-text) !important;
   line-height: 26px !important;
   margin: 0 0 32px 0 !important;
   display: block !important;
@@ -563,9 +564,9 @@
 .offers-cta-button {
   display: inline-block;
   padding: 18px 36px;
-  background: #fff;
-  color: var(--color-primary, #C45A1D);
-  border: 2px solid #fff;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
   border-radius: 12px;
   font-family: Inter;
   font-size: 16px;
@@ -574,7 +575,7 @@
   letter-spacing: 0.5px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(196, 90, 29, 0.3);
   text-decoration: none;
 }
 

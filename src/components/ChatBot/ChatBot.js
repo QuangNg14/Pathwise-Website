@@ -1,6 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { CloseOutlined, SendOutlined, MessageOutlined, LoadingOutlined } from '@ant-design/icons';
-import './ChatBot.css';
+import React, { useState, useRef, useEffect } from "react";
+import {
+  CloseOutlined,
+  SendOutlined,
+  MessageOutlined,
+  LoadingOutlined,
+} from "@ant-design/icons";
+import "./ChatBot.css";
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,20 +13,23 @@ const ChatBot = () => {
     {
       id: 1,
       text: "Hi! I'm your Pathwise AI assistant. How can I help you with your career journey today?",
-      sender: 'bot',
-      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-    }
+      sender: "bot",
+      timestamp: new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
+    },
   ]);
-  const [newMessage, setNewMessage] = useState('');
+  const [newMessage, setNewMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
   const quickReplies = [
     "Help with resume review",
-    "Interview preparation tips", 
+    "Interview preparation tips",
     "Career guidance",
     "About Pathwise program",
-    "Application process"
+    "Application process",
   ];
 
   const scrollToBottom = () => {
@@ -37,29 +45,32 @@ const ChatBot = () => {
       const userMessage = {
         id: Date.now(),
         text: newMessage,
-        sender: 'user',
-        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        sender: "user",
+        timestamp: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
       };
-      
-      setMessages(prev => [...prev, userMessage]);
-      setNewMessage('');
+
+      setMessages((prev) => [...prev, userMessage]);
+      setNewMessage("");
       setIsLoading(true);
-      
+
       try {
         // Prepare chat history for context
-        const chatHistory = messages.slice(-10).map(msg => ({
-          role: msg.sender === 'user' ? 'user' : 'assistant',
-          content: msg.text
+        const chatHistory = messages.slice(-10).map((msg) => ({
+          role: msg.sender === "user" ? "user" : "assistant",
+          content: msg.text,
         }));
 
-        const response = await fetch('/api/chat', {
-          method: 'POST',
+        const response = await fetch("/api/chat", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({
             message: newMessage,
-            chatHistory: chatHistory
+            chatHistory: chatHistory,
           }),
         });
 
@@ -69,22 +80,33 @@ const ChatBot = () => {
           const botMessage = {
             id: Date.now() + 1,
             text: data.message,
-            sender: 'bot',
-            timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+            sender: "bot",
+            timestamp: new Date().toLocaleTimeString([], {
+              hour: "2-digit",
+              minute: "2-digit",
+            }),
           };
-          setMessages(prev => [...prev, botMessage]);
+          setMessages((prev) => [...prev, botMessage]);
         } else {
-          throw new Error(data.error || 'Failed to get response');
+          const extraHint = data?.hint ? `\n\n${data.hint}` : "";
+          throw new Error(
+            (data?.error || "Failed to get response") + extraHint
+          );
         }
       } catch (error) {
-        console.error('Chat error:', error);
+        console.error("Chat error:", error);
         const errorMessage = {
           id: Date.now() + 1,
-          text: "Sorry, I'm having trouble connecting right now. Please try again later or contact our team directly.",
-          sender: 'bot',
-          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+          text:
+            error?.message ||
+            "Sorry, I'm having trouble connecting right now. Please try again later or contact our team directly.",
+          sender: "bot",
+          timestamp: new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          }),
         };
-        setMessages(prev => [...prev, errorMessage]);
+        setMessages((prev) => [...prev, errorMessage]);
       } finally {
         setIsLoading(false);
       }
@@ -95,27 +117,30 @@ const ChatBot = () => {
     const userMessage = {
       id: Date.now(),
       text: reply,
-      sender: 'user',
-      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      sender: "user",
+      timestamp: new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
     };
-    
-    setMessages(prev => [...prev, userMessage]);
+
+    setMessages((prev) => [...prev, userMessage]);
     setIsLoading(true);
-    
+
     try {
-      const chatHistory = messages.slice(-10).map(msg => ({
-        role: msg.sender === 'user' ? 'user' : 'assistant',
-        content: msg.text
+      const chatHistory = messages.slice(-10).map((msg) => ({
+        role: msg.sender === "user" ? "user" : "assistant",
+        content: msg.text,
       }));
 
-      const response = await fetch('/api/chat', {
-        method: 'POST',
+      const response = await fetch("/api/chat", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           message: reply,
-          chatHistory: chatHistory
+          chatHistory: chatHistory,
         }),
       });
 
@@ -125,29 +150,38 @@ const ChatBot = () => {
         const botMessage = {
           id: Date.now() + 1,
           text: data.message,
-          sender: 'bot',
-          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+          sender: "bot",
+          timestamp: new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          }),
         };
-        setMessages(prev => [...prev, botMessage]);
+        setMessages((prev) => [...prev, botMessage]);
       } else {
-        throw new Error(data.error || 'Failed to get response');
+        const extraHint = data?.hint ? `\n\n${data.hint}` : "";
+        throw new Error((data?.error || "Failed to get response") + extraHint);
       }
     } catch (error) {
-      console.error('Chat error:', error);
+      console.error("Chat error:", error);
       const errorMessage = {
         id: Date.now() + 1,
-        text: "Sorry, I'm having trouble connecting right now. Please try again later or contact our team directly.",
-        sender: 'bot',
-        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        text:
+          error?.message ||
+          "Sorry, I'm having trouble connecting right now. Please try again later or contact our team directly.",
+        sender: "bot",
+        timestamp: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
       };
-      setMessages(prev => [...prev, errorMessage]);
+      setMessages((prev) => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
     }
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
     }
@@ -172,8 +206,8 @@ const ChatBot = () => {
                 <h3 className="chatbot-title">Pathwise AI Assistant</h3>
                 <p className="chatbot-subtitle">Powered by Google Gemini AI</p>
               </div>
-              <button 
-                className="chatbot-close" 
+              <button
+                className="chatbot-close"
                 onClick={() => setIsOpen(false)}
               >
                 <CloseOutlined />
@@ -184,15 +218,11 @@ const ChatBot = () => {
             <div className="chatbot-messages">
               {messages.map((message) => (
                 <div key={message.id} className={`message ${message.sender}`}>
-                  <div className="message-bubble">
-                    {message.text}
-                  </div>
-                  <div className="message-time">
-                    {message.timestamp}
-                  </div>
+                  <div className="message-bubble">{message.text}</div>
+                  <div className="message-time">{message.timestamp}</div>
                 </div>
               ))}
-              
+
               {/* Loading indicator */}
               {isLoading && (
                 <div className="message bot">
@@ -201,12 +231,12 @@ const ChatBot = () => {
                   </div>
                 </div>
               )}
-              
+
               {/* Quick Reply Buttons (only show after first bot message) */}
               {messages.length === 1 && (
                 <div className="quick-replies">
                   {quickReplies.map((reply, index) => (
-                    <button 
+                    <button
                       key={index}
                       className="quick-reply-btn"
                       onClick={() => handleQuickReply(reply)}
@@ -217,7 +247,7 @@ const ChatBot = () => {
                   ))}
                 </div>
               )}
-              
+
               <div ref={messagesEndRef} />
             </div>
 
@@ -233,7 +263,7 @@ const ChatBot = () => {
                   onKeyPress={handleKeyPress}
                   disabled={isLoading}
                 />
-                <button 
+                <button
                   className="send-button"
                   onClick={handleSendMessage}
                   disabled={!newMessage.trim() || isLoading}

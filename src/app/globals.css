@@ -1,13 +1,32 @@
 /* src/app/globals.css */
 :root {
+  /* Default Light Theme */
   --color-primary: #C45A1D;
   --color-secondary: #E9B260;
   --color-heading: #3E130A;
   --color-text: #6D2A1A;
-  --color-background: #FDF7ED;
-  --color-bg: #FDF7ED;
+  --color-background: #ffffff;
+  --color-bg: #ffffff;
   --color-dark: #3E130A;
   --color-dark-alt: #6D2A1A;
+  --color-card-bg: #ffffff;
+  --color-border: #9a9a9a;
+  --color-subtle-bg: #FDF7ED;
+}
+
+/* Dark Theme Overrides */
+[data-theme='dark'] {
+  --color-primary: #ff9800;
+  --color-secondary: #E9B260;
+  --color-heading: #ffffff;
+  --color-text: #f5f5f5;
+  --color-background: #0a0a0a;
+  --color-bg: #0a0a0a;
+  --color-dark: #ffffff;
+  --color-dark-alt: #ffffff;
+  --color-card-bg: #1a1a1a;
+  --color-border: white;
+  --color-subtle-bg: #222222;
 }
 
 /* Ensure CSS variables are inherited properly */
@@ -16,29 +35,68 @@
 }
 
 html {
-  /* Prevent layout shifts */
   scroll-behavior: smooth;
 }
 
-html, body, #__next {
-  height: 100%;
+body {
   margin: 0;
-  padding: 0px 40px 0px 40px;
+  padding: 0;
   font-family: 'Anuphan', sans-serif !important;
   color: var(--color-text);
-  /* background: var(--color-background); */
+  background: var(--color-background);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Force CSS variables to be available immediately */
-html, body, #__next, [data-nextjs-scroll-focus-boundary] {
-  --color-primary: #C45A1D;
-  --color-secondary: #E9B260;
-  --color-heading: #3E130A;
-  --color-text: #6D2A1A;
-  --color-background: #FDF7ED;
-  --color-bg: #FDF7ED;
-  --color-dark: #3E130A;
-  --color-dark-alt: #6D2A1A;
+/* Ensure all headings use the heading color variable */
+h1, h2, h3, h4, h5, h6, 
+[class*="ant-typography"],
+.ant-typography,
+.ant-typography h1, 
+.ant-typography h2, 
+.ant-typography h3, 
+.ant-typography h4 {
+  color: var(--color-heading) !important;
+}
+
+/* Ensure common text elements use the text color variable */
+p, li, div:not(.ant-btn):not(.ant-badge):not(.ant-tag):not(.ant-btn-icon) {
+  color: var(--color-text);
+}
+
+/* Logo handling */
+.header-logo-image, 
+.footer-logo-image {
+  width: 200px !important;
+  height: 30px !important;
+  object-fit: contain !important;
+  transition: opacity .2s ease;
+}
+
+/* Remove filter logic as we use separate files */
+[data-theme='dark'] .header-logo-image,
+[data-theme='dark'] .footer-logo-image {
+  filter: none;
+}
+
+/* Ant Design overrides for theme consistency */
+[data-theme='dark'] .ant-layout,
+[data-theme='dark'] .ant-layout-content,
+[data-theme='dark'] .ant-drawer-content,
+[data-theme='dark'] .ant-modal-content {
+  background-color: var(--color-background) !important;
+}
+
+[data-theme='dark'] .ant-menu {
+  background-color: transparent !important;
+  color: var(--color-text) !important;
+}
+
+[data-theme='dark'] .ant-menu-item {
+  color: var(--color-text) !important;
+}
+
+[data-theme='dark'] .ant-menu-item-selected {
+  color: var(--color-primary) !important;
 }
 
 /* Remove horizontal padding on mobile for maximum space */
@@ -52,20 +110,26 @@ html, body, #__next, [data-nextjs-scroll-focus-boundary] {
 .site-layout-content {
   /* padding: 50px; */
   min-height: 280px;
-  background: #fff;
+  background: var(--color-background);
   opacity: 1;
   transition: opacity 0.2s ease;
 }
 
-/* Ensure Ant Design components inherit our font */
+/* Ensure Ant Design components inherit our font and respect theme */
 .ant-typography,
 .ant-card,
 .ant-layout,
 .ant-menu,
 .ant-btn,
 .ant-input,
-.ant-select {
+.ant-select,
+.ant-drawer-content,
+.ant-modal-content {
   font-family: 'Anuphan', sans-serif !important;
+}
+
+.ant-layout {
+  background: var(--color-background) !important;
 }
 
 .ant-layout-header {
@@ -73,6 +137,10 @@ html, body, #__next, [data-nextjs-scroll-focus-boundary] {
   top: 0;
   z-index: 1;
   width: 100%;
+}
+
+.ant-layout-content {
+  background: var(--color-background) !important;
 }
 
 /* Peer to peer mentoring CSS */
@@ -149,7 +217,7 @@ html, body, #__next, [data-nextjs-scroll-focus-boundary] {
 .ant-menu-horizontal > .ant-menu-item:not(.register-menu-item):hover,
 .ant-menu-horizontal > .ant-menu-item:not(.register-menu-item).ant-menu-item-selected {
   border: none !important;
-  background: #fff !important;
+  background: transparent !important;
   color: var(--color-primary) !important;
 }
 
@@ -185,18 +253,6 @@ html, body, #__next, [data-nextjs-scroll-focus-boundary] {
 
 /* Ensure consistent styling across navigation */
 .ant-layout-content {
-  background: #fff;
-}
-
-/* Force immediate CSS variable application */
-body[data-theme] {
-  --color-primary: #C45A1D !important;
-  --color-secondary: #E9B260 !important;
-  --color-heading: #3E130A !important;
-  --color-text: #6D2A1A !important;
-  --color-background: #FDF7ED !important;
-  --color-bg: #FDF7ED !important;
-  --color-dark: #3E130A !important;
-  --color-dark-alt: #6D2A1A !important;
+  background: var(--color-background);
 }
 

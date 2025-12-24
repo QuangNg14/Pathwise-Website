@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button, Dropdown, Avatar, message } from 'antd';
 import { UserOutlined, LogoutOutlined, SettingOutlined } from '@ant-design/icons';
 import { useAuth } from '@/contexts/AuthContext';
@@ -7,12 +8,14 @@ import { useAuth } from '@/contexts/AuthContext';
 const UserMenu = () => {
   const { currentUser, logout } = useAuth();
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const handleLogout = async () => {
     setLoading(true);
     try {
       await logout();
       message.success('Logged out successfully!');
+      router.push('/');
     } catch (error) {
       console.error('Logout error:', error);
       message.error(error?.message || 'Failed to log out');
@@ -21,20 +24,15 @@ const UserMenu = () => {
     }
   };
 
+  const handleMenuClick = ({ key }) => {
+    if (key === 'profile') {
+      router.push('/profile');
+    } else if (key === 'settings') {
+      router.push('/settings');
+    }
+  };
+
   const items = [
-    {
-      key: 'profile',
-      label: 'Profile',
-      icon: <UserOutlined />,
-    },
-    {
-      key: 'settings',
-      label: 'Settings',
-      icon: <SettingOutlined />,
-    },
-    {
-      type: 'divider',
-    },
     {
       key: 'logout',
       label: 'Logout',

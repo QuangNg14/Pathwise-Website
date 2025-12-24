@@ -1,7 +1,6 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// Initialize Gemini AI
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+export const runtime = "nodejs";
 
 export async function POST(request) {
   try {
@@ -9,17 +8,20 @@ export async function POST(request) {
 
     if (!process.env.GEMINI_API_KEY) {
       return Response.json(
-        { error: 'Gemini API key not configured' },
+        {
+          error: "Gemini API key not configured",
+          hint: "Set GEMINI_API_KEY in .env.local (local) or environment variables (deployment) and restart the server.",
+        },
         { status: 500 }
       );
     }
 
     if (!message) {
-      return Response.json(
-        { error: 'Message is required' },
-        { status: 400 }
-      );
+      return Response.json({ error: "Message is required" }, { status: 400 });
     }
+
+    // Initialize Gemini only after we know the key exists (avoids module-load failures)
+    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
     // Get the generative model
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
@@ -36,7 +38,9 @@ Your role is to:
 
 Keep responses concise (2-3 sentences), professional, and helpful. If you don't know something specific about Pathwise, politely suggest contacting the team directly.
 
-Previous conversation context: ${chatHistory.map(msg => `${msg.role}: ${msg.content}`).join('\n')}
+Previous conversation context: ${chatHistory
+      .map((msg) => `${msg.role}: ${msg.content}`)
+      .join("\n")}
 
 User's current message: ${message}`;
 
@@ -45,26 +49,18 @@ User's current message: ${message}`;
     const response = await result.response;
     const text = response.text();
 
-    return Response.json({ 
+    return Response.json({
       message: text,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     });
-
   } catch (error) {
-    console.error('Gemini API Error:', error);
+    console.error("Gemini API Error:", error);
     return Response.json(
-      { 
-        error: 'Failed to get response from AI',
-        details: error.message 
+      {
+        error: "Failed to get response from AI",
+        details: error?.message || String(error),
       },
       { status: 500 }
     );
   }
 }
-
-
-
-
-
-
-

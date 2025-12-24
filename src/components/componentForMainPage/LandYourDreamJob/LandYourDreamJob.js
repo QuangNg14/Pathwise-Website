@@ -45,11 +45,11 @@ const LandYourDreamJob = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           if (entry.target === researchLabRef.current) {
-            animateCount(setResearchLabCount, 12);
+            animateCount(setResearchLabCount, 15);
           } else if (entry.target === dellInternshipRef.current) {
-            animateCount(setDellInternshipCount, 58);
+            animateCount(setDellInternshipCount, 71);
           } else if (entry.target === dowJonesInternshipRef.current) {
-            animateCount(setDowJonesInternshipCount, 5);
+            animateCount(setDowJonesInternshipCount, 8);
           }
         }
       });
@@ -83,7 +83,7 @@ const LandYourDreamJob = () => {
             Palantir, Bank of America, Amazon, Morgan Stanley, and HubSpot. Our
             mentors have experience in various fields such as{" "}
             <span className="primary-color">
-              Software, Data, Finance, and Consulting
+              Tech (Software, Data), Finance, and US Admissions
             </span>
           </Text>
         </div>

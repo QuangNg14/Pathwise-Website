@@ -44,7 +44,7 @@ const TopCompaniesOffersSection = () => {
     <div className="top-companies-section">
       <div className="top-companies-content">
         <Title level={2} className="section-title">
-          🎉 Top Offers in the US 2025 🎉
+          🎉 Top Offers in the US 2026 🎉
         </Title>
         <Row gutter={[24, 24]} justify="center">
           {topCompaniesData.map((company, index) => (

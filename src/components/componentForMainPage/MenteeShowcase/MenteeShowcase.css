@@ -1,8 +1,8 @@
 .mentor-showcase-container {
-  background-color: #fff;
+  background-color: var(--color-background);
   padding: 80px 0;
   color: var(--color-heading);
-  border-bottom: 1px solid #9A9A9A;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .section-title {
@@ -28,10 +28,10 @@
 }
 
 .mentor-card {
-  background-color: #FDF7ED;
+  background-color: var(--color-subtle-bg);
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--color-border);
   text-align: center;
   padding: 32px;
   display: flex;
@@ -64,7 +64,7 @@
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #e5e5e5;
+  border: 2px solid var(--color-border);
 }
 
 .mentor-meta {
@@ -81,7 +81,7 @@
   letter-spacing: 0%;
   text-align: center;
   vertical-align: middle;
-  color: #3E130A;
+  color: var(--color-heading);
   margin-bottom: 8px;
 }
 
@@ -92,7 +92,7 @@
   line-height: 24px;
   letter-spacing: 0%;
   text-align: center;
-  color: #6D2A1A;
+  color: var(--color-text);
   margin-bottom: 0;
 }
 
@@ -103,7 +103,7 @@
   line-height: 24px;
   letter-spacing: 0%;
   text-align: center;
-  color: #6D2A1A;
+  color: var(--color-text);
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -134,7 +134,7 @@
 }
 
 .custom-button {
-  background: #C45A1D;
+  background: var(--color-primary);
   color: #fff;
   border: none;
   border-radius: 8px;

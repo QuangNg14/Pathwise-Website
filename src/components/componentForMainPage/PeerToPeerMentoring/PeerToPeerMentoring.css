@@ -1,9 +1,9 @@
 /* Container with proper page padding */
 .peer-to-peer-container {
   width: 100%;
-  /* background: var(--color-background); */
+  background: var(--color-background);
   padding: 80px 0;
-  border-bottom: 1px solid #9A9A9A;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .peer-to-peer-content {
@@ -143,15 +143,21 @@
 
 .peer-to-peer-secondary-btn:hover,
 .peer-to-peer-secondary-btn:focus {
-  color: var(--color-primary);
-  border-color: var(--color-primary);
-  background: rgba(196, 90, 29, 0.05);
+  color: #fff !important;
+  border-color: var(--color-primary) !important;
+  background: var(--color-primary) !important;
   box-shadow: 0 2px 8px rgba(196, 90, 29, 0.15);
 }
 
 .peer-to-peer-secondary-btn:active {
   transform: scale(0.98);
   box-shadow: 0 1px 4px rgba(196, 90, 29, 0.1);
+}
+
+/* Dark theme: ensure hover contrast stays readable (Ant can override text button styles) */
+[data-theme='dark'] .peer-to-peer-secondary-btn:hover,
+[data-theme='dark'] .peer-to-peer-secondary-btn:focus {
+  color: #ffffff !important;
 }
 
 /* Row 3 - Image with enhanced animations */
@@ -171,7 +177,8 @@
   height: 434px;
   max-width: 100%;
   border-radius: 16px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--color-border);
+  background: var(--color-card-bg);
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -287,7 +294,7 @@
   .peer-to-peer-divider {
     display: block;
     border: none;
-    border-top: 1px solid #9A9A9A;
+    border-top: 1px solid var(--color-border);
     margin: 40px 0 0 0;
   }
 }
