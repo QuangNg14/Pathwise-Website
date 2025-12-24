@@ -1,0 +1,134 @@
+.blog-header {
+  background: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.logo {
+  text-decoration: none;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-heading);
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+.header-menu {
+  border-bottom: none !important;
+  background: transparent !important;
+  min-width: 220px;
+}
+
+/* Hide Ant Design's default indicator to fix "double hover" effect */
+.header-menu .ant-menu-item::after,
+.header-menu.ant-menu-horizontal > .ant-menu-item::after {
+  display: none !important;
+}
+
+.header-menu .ant-menu-item,
+.header-menu.ant-menu-horizontal > .ant-menu-item {
+  font-weight: 600 !important;
+  color: var(--color-heading) !important;
+  padding: 0 16px !important;
+  height: 72px !important;
+  line-height: 72px !important;
+  border-bottom: 2px solid transparent !important;
+  transition: all 0.2s ease !important;
+}
+
+.header-menu.ant-menu-horizontal > .ant-menu-item:hover,
+.header-menu.ant-menu-horizontal > .ant-menu-item-active,
+.header-menu.ant-menu-horizontal > .ant-menu-item-selected {
+  color: var(--color-primary) !important;
+  border-bottom: 2px solid var(--color-primary) !important;
+}
+
+.header-menu .ant-menu-item a {
+  color: inherit !important;
+}
+
+.login-signup-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.login-button {
+  height: 36px !important;
+  font-weight: 700 !important;
+  border-radius: 4px !important;
+  padding: 0 16px !important;
+  border: 1px solid var(--color-border) !important;
+  background: var(--color-card-bg) !important;
+  color: var(--color-text) !important;
+  box-shadow: none !important;
+}
+
+.signup-button {
+  height: 36px !important;
+  font-weight: 700 !important;
+  border-radius: 4px !important;
+  padding: 0 16px !important;
+  background: var(--color-primary) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.login-button:hover {
+  background: var(--color-subtle-bg) !important;
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary) !important;
+}
+
+.signup-button:hover {
+  background: var(--color-secondary) !important;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .blog-header {
+    height: auto;
+    padding: 12px 0;
+  }
+
+  .header-container {
+    padding: 0 16px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .logo h1 {
+    font-size: 16px;
+  }
+
+  .header-menu {
+    display: none;
+  }
+
+  .login-signup-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+}
+

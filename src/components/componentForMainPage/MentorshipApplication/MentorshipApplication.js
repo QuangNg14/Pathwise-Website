@@ -204,13 +204,13 @@ const MentorshipApplication = () => {
         <div className="mentorship-app-left">
           <Title className="mentorship-app-title">Mentorship Application</Title>
           <Text className="mentorship-app-desc">
-            Please fill out the form to register for our mentorship program. We
-            will review your application and get back to you as soon as
-            possible.
+            Applications for 2026 are open! Please fill out the form to register
+            for our mentorship program. We will review your application and get
+            back to you as soon as possible.
           </Text>
           <div className="deadline-notice">
             <Text className="deadline-text">
-              📅 <strong>Application Deadline:</strong> June 26th, 2025
+              📅 <strong>Application Deadline:</strong> January 12th, 2026
             </Text>
           </div>
           <div className="mentorship-app-image-wrapper">
@@ -382,6 +382,24 @@ const MentorshipApplication = () => {
                 </Upload>
               </Form.Item>
             </div>
+            <div className="mentorship-app-form-row">
+              <Form.Item
+                name="leetcode"
+                label="LeetCode Link (Optional)"
+                rules={[{ type: "url", message: "Please enter a valid URL" }]}
+                className="mentorship-app-form-col"
+              >
+                <Input placeholder="https://leetcode.com/u/yourprofile" />
+              </Form.Item>
+              <Form.Item
+                name="github"
+                label="GitHub Link (Optional)"
+                rules={[{ type: "url", message: "Please enter a valid URL" }]}
+                className="mentorship-app-form-col"
+              >
+                <Input placeholder="https://github.com/yourprofile" />
+              </Form.Item>
+            </div>
             <Form.Item
               name="waitlistConsideration"
               label="Do you want to be considered for the waitlist of this batch?"
@@ -398,10 +416,10 @@ const MentorshipApplication = () => {
             {waitlistSelection === "Yes" && (
               <div className="waitlist-message">
                 <Text type="secondary">
-                  Since you opted for the waitlist for the July 2025 batch
-                  (applying for Summer 2026 only), please message{" "}
+                  Since you opted for the waitlist for the Batch 6/2025 (January
+                  2026 - June 2026), please message{" "}
                   <a
-                    href="https://www.facebook.com/tribuidinh0901/"
+                    href="https://www.facebook.com/nguyen.banhs"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

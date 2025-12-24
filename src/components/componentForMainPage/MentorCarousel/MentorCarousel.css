@@ -2,7 +2,8 @@
 .mentor-section-container {
   width: 100%;
   padding: 80px 0 90px 0;
-  border-bottom: 1px solid #9A9A9A;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-background);
 }
 
 /* Remove border-bottom on mobile */
@@ -72,11 +73,11 @@
 }
 
 .view-team-button:hover {
-  background: #fff;
-  color: var(--color-primary, #C45A1D);
-  border-color: var(--color-primary, #C45A1D);
+  background: var(--color-background);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(196, 90, 29, 0.25);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .view-team-button:hover::before {
@@ -106,15 +107,16 @@
 
 /* Individual mentor card */
 .mentor-card-item {
-  background: #FDF7ED;
+  background: var(--color-card-bg);
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.3s ease;
   margin: 0;
+  border: 1px solid var(--color-border);
 }
 
 .mentor-card-item.expanded {
-  border: 1px solid #6D2A1A;
+  border: 1px solid var(--color-primary);
 }
 
 /* Mentor card header - always visible */
@@ -127,18 +129,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #FDF7ED;
+  background: var(--color-card-bg);
   transition: background-color 0.2s ease;
   box-sizing: border-box;
 }
 
 .mentor-card-header:hover {
-  background: #f8f9fa;
+  background: var(--color-background);
 }
 
 .mentor-card-header.expanded {
-  background: #E9B260;
-  color: var(--color-text);
+  background: var(--color-secondary);
+  color: var(--color-heading);
 }
 
 .mentor-header-left {
@@ -198,7 +200,7 @@
   border-radius: 4px;
   object-fit: contain;
   background: #fff;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--color-border);
 }
 
 .expand-icon {
@@ -217,7 +219,7 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, padding 0.3s ease;
-  background: #E9B260;
+  background: var(--color-secondary);
   border-radius: 0 0 16px 16px;
   padding: 0;
 }
@@ -276,7 +278,7 @@
   align-items: center;
   padding-top: 20px;
   margin-top: 20px;
-  border-top: 1px solid #3E130A;
+  border-top: 1px solid var(--color-border);
   grid-column: 2;
   grid-row: 2;
   width: 100%;

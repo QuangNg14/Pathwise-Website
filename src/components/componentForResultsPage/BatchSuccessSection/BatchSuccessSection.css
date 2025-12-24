@@ -1,9 +1,10 @@
 .batch-success-section {
   width: 100%;
-  background: linear-gradient(135deg, var(--color-primary, #C45A1D), var(--color-secondary, #E9B260));
+  background: var(--color-background);
   padding: 100px 0;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .batch-success-section::before {
@@ -13,7 +14,8 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+  opacity: 0.03; /* Reduced from 0.05 to make it cleaner on white */
   animation: rotate 20s linear infinite;
 }
 
@@ -36,9 +38,8 @@
   font-family: Inter;
   font-size: 56px;
   font-weight: 700;
-  color: #fff;
+  color: var(--color-heading);
   margin: 0 0 24px 0;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   line-height: 110%;
   letter-spacing: -0.02em;
 }
@@ -47,7 +48,7 @@
   font-family: Inter;
   font-size: 20px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-text);
   margin: 0;
   max-width: 700px;
   margin-left: auto;
@@ -65,12 +66,12 @@
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-card-bg);
   border-radius: 20px;
   padding: 40px 32px;
   text-align: center;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--color-border);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   min-width: 200px;
   flex: 1;
@@ -88,32 +89,37 @@
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
 }
 
-.stat-card.highlight {
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  transform: scale(1.05);
-}
-
-.stat-card.highlight:hover {
-  transform: scale(1.08) translateY(-8px);
-}
+/* highlight style removed to keep all three cards consistent */
 
 .stat-number {
   font-family: Inter;
   font-size: 48px;
   font-weight: 700;
-  color: #fff;
+  color: var(--color-primary);
   line-height: 1;
   margin-bottom: 12px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  display: block;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
 }
 
+.stat-number-main {
+  font: inherit;
+}
+
+.stat-number-suffix {
+  font-size: 0.6em;
+  font-weight: 700;
+  letter-spacing: 0;
+  opacity: 0.95;
+}
 .stat-label {
   font-family: Inter;
   font-size: 16px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-heading);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 8px;
@@ -124,7 +130,7 @@
   font-family: Inter;
   font-size: 14px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-text);
   line-height: 20px;
 }
 
@@ -137,11 +143,11 @@
 }
 
 .highlight-item {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-card-bg);
   border-radius: 16px;
   padding: 32px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--color-border);
   transition: all 0.3s ease;
   animation: fadeInUp 0.8s ease-out;
 }
@@ -152,8 +158,8 @@
 
 .highlight-item:hover {
   transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .highlight-icon {
@@ -166,16 +172,15 @@
   font-family: Inter;
   font-size: 24px;
   font-weight: 700;
-  color: #fff;
+  color: var(--color-heading);
   margin: 0 0 16px 0;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .highlight-description {
   font-family: Inter;
   font-size: 16px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-text);
   line-height: 24px;
   margin: 0;
 }
@@ -184,10 +189,9 @@
 .cta-section {
   text-align: center;
   padding: 60px 40px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-primary);
   border-radius: 24px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--color-border);
   animation: fadeInUp 0.8s ease-out 0.9s both;
 }
 
@@ -195,9 +199,8 @@
   font-family: Inter;
   font-size: 32px;
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
   margin: 0 0 16px 0;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .cta-description {
@@ -215,9 +218,9 @@
 .cta-button {
   display: inline-block;
   padding: 18px 36px;
-  background: #fff;
-  color: var(--color-primary, #C45A1D);
-  border: 2px solid #fff;
+  background: #ffffff;
+  color: var(--color-primary);
+  border: 2px solid #ffffff;
   border-radius: 12px;
   font-family: Inter;
   font-size: 16px;
@@ -226,7 +229,7 @@
   letter-spacing: 0.5px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   text-decoration: none;
 }
 
@@ -568,9 +571,8 @@
   font-family: Inter;
   font-size: 36px;
   font-weight: 700;
-  color: #fff;
+  color: var(--color-heading);
   margin: 0 0 16px 0;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   line-height: 110%;
   letter-spacing: -0.01em;
 }
@@ -579,7 +581,7 @@
   font-family: Inter;
   font-size: 18px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-text);
   margin: 0;
   line-height: 26px;
   max-width: 600px;

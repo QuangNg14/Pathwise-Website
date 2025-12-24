@@ -159,22 +159,28 @@ const InterviewRoundsSection = () => {
       svg
         .append("g")
         .call(d3.axisLeft(y).tickSize(0))
+        .call((g) =>
+          g.selectAll("path,line").style("stroke", "var(--color-border)")
+        )
         .selectAll("text")
         .style("text-anchor", "end")
         .style("font-family", "Inter")
         .style("font-size", "14px")
         .style("font-weight", "500")
         .style("cursor", "pointer")
-        .style("fill", "#3E130A");
+        .style("fill", "var(--color-heading)");
 
       svg
         .append("g")
         .attr("transform", `translate(0,${adjustedHeight})`)
         .call(d3.axisBottom(x).ticks(Math.min(6, width / 100)))
+        .call((g) =>
+          g.selectAll("path,line").style("stroke", "var(--color-border)")
+        )
         .selectAll("text")
         .style("font-family", "Inter")
         .style("font-size", "12px")
-        .style("fill", "#6D2A1A");
+        .style("fill", "var(--color-text)");
 
       // Tooltip div setup
       const tooltip = d3.select(tooltipRef.current);
@@ -241,7 +247,7 @@ const InterviewRoundsSection = () => {
           .style("font-family", "Inter")
           .style("font-size", "14px")
           .style("font-weight", "500")
-          .style("fill", "#3E130A");
+          .style("fill", "var(--color-heading)");
       });
     };
 

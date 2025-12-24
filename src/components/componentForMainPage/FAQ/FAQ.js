@@ -25,7 +25,7 @@ const FAQ = () => {
     {
       question: "What is Pathwise?",
       answer: [
-        "Pathwise is a peer-to-peer mentorship program designed for university students in Vietnam, the USA, Australia, Canada, and Singapore to help them find internship opportunities at corporations, businesses, research labs, and secure full-time jobs upon graduation. With experienced mentors, we assist mentees with resumes, profiles, projects, interviews, and expanding connections within professional communities.",
+        "Pathwise is a premier peer-to-peer mentorship program designed for students in Tech (Software, Data), Finance, and US Admissions. We help university students in Vietnam, the USA, and globally secure top internships, full-time roles, and graduate school admissions through personalized coaching, project building, and high-signal networking.",
       ],
     },
     {

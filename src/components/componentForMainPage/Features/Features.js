@@ -37,7 +37,7 @@ const Features = () => {
         {/* Right side - Features Grid */}
         <div className="features-grid">
           {featuresData.map((feature, index) => (
-            <Card key={index} className="feature-item" bordered={false}>
+            <Card key={index} className="feature-item" variant="borderless">
               <Title level={3} className="feature-heading">
                 {feature.title}
               </Title>

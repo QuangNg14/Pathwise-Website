@@ -1,13 +1,16 @@
 import React from "react";
 import { Row, Col, Typography } from "antd";
 import Link from "next/link";
-import "./Footer.css";
 import { useRouter } from "next/navigation";
+import { useTheme } from "@/contexts/ThemeContext";
+import "./Footer.css";
 
 const { Text } = Typography;
 
 const FooterComponent = () => {
   const router = useRouter();
+  const { theme } = useTheme();
+
   return (
     <div className="footer">
       <div className="footer-container">
@@ -16,7 +19,11 @@ const FooterComponent = () => {
           <Col xs={24} sm={24} md={6} lg={6} className="footer-logo-col">
             <div className="footer-logo">
               <img
-                src="/images/Pathwise Logo Black.png"
+                src={
+                  theme === "dark"
+                    ? "/images/Pathwise Logo White.png"
+                    : "/images/Pathwise Logo Black.png"
+                }
                 alt="Pathwise Logo"
                 className="footer-logo-image"
               />
@@ -74,25 +81,25 @@ const FooterComponent = () => {
 
           {/* Industry Tracks Links */}
           <Col xs={12} sm={6} md={4} lg={4}>
-            <Text className="footer-title">Industry Tracks</Text>
+            <Text className="footer-title">Fields of Mentorship</Text>
             <div className="footer-links">
               <a
                 className="footer-link"
                 onClick={() => router.push("/services")}
               >
-                Software Engineering
+                Tech (Software & Data)
               </a>
               <a
                 className="footer-link"
                 onClick={() => router.push("/services")}
               >
-                Data
+                Finance
               </a>
               <a
                 className="footer-link"
                 onClick={() => router.push("/services")}
               >
-                Investment Banking
+                US Admissions
               </a>
             </div>
           </Col>

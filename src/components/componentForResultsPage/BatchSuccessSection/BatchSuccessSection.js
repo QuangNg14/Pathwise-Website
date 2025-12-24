@@ -15,36 +15,46 @@ const BatchSuccessSection = () => {
     <div className="batch-success-section">
       <div className="batch-success-content">
         <div className="success-header">
-          <h1 className="batch-title">🎉 Batch 4/2025 Success Story 🎉</h1>
+          <h1 className="batch-title">
+            🎉 Batch 5/2025 Success Story (Jul 2025 - Jan 2026) 🎉
+          </h1>
           <p className="batch-subtitle">
-            Exceptional results achieved during the off-season for summer
-            internships
+            Training for both off-season and on-season recruiting to land Summer
+            2026 internships and new grad roles, even in an incredibly
+            competitive year.
           </p>
         </div>
 
         <div className="success-stats">
           <div className="stat-card">
-            <div className="stat-number">22</div>
+            <div className="stat-number">
+              <span className="stat-number-main">30</span>
+              <span className="stat-number-suffix">+</span>
+            </div>
             <div className="stat-label">Total Students</div>
             <div className="stat-description">
-              Dedicated mentees in our latest cohort
-            </div>
-          </div>
-
-          <div className="stat-card highlight">
-            <div className="stat-number">64%</div>
-            <div className="stat-label">Success Rate</div>
-            <div className="stat-description">
-              Industry-leading placement rate
+              20+ new mentees + 10 returning mentees
             </div>
           </div>
 
           <div className="stat-card">
-            <div className="stat-number">14</div>
-            <div className="stat-label">Secured Internships</div>
-            <div className="stat-description">
-              Summer 2026 US internship offers
+            <div className="stat-number">
+              <span className="stat-number-main">16</span>
+              <span className="stat-number-suffix">+</span>
             </div>
+            <div className="stat-label">Offers Secured</div>
+            <div className="stat-description">
+              Across internships and new grad roles
+            </div>
+          </div>
+
+          <div className="stat-card">
+            <div className="stat-number">
+              <span className="stat-number-main">6</span>
+              <span className="stat-number-suffix">months</span>
+            </div>
+            <div className="stat-label">Program Timeline</div>
+            <div className="stat-description">July 2025 - January 2026</div>
           </div>
         </div>
 
@@ -90,9 +100,10 @@ const BatchSuccessSection = () => {
             <div className="highlight-icon">🚀</div>
             <h3 className="highlight-title">Proven Methodology</h3>
             <p className="highlight-description">
-              Our comprehensive 12-week program combining technical skills,
-              interview preparation, and personalized mentorship delivers
-              consistent results.
+              Our 6-month intensive training and mentoring program improves
+              everything from resume and projects to interviews, networking, and
+              personalized coaching—delivering consistent results year after
+              year.
             </p>
           </div>
         </div>
@@ -100,11 +111,11 @@ const BatchSuccessSection = () => {
         <div className="cta-section">
           <h3 className="cta-title">Ready to Join Our Next Success Story?</h3>
           <p className="cta-description">
-            Applications for Batch 5/2025 are now open. Don&apos;t miss your
+            Applications for Batch 6/2025 are now open! Don &apos;t miss your
             chance to be part of our next cohort of successful mentees.
           </p>
           <button className="cta-button" onClick={handleApplyClick}>
-            Apply for Batch 5/2025
+            Apply for Batch 6/2025
           </button>
         </div>
       </div>

@@ -17,7 +17,7 @@ const { TextArea } = Input;
 
 const ProgramInfoSection = () => (
   <div className="program-info-section">
-    <Card className="program-info-card" bordered={false}>
+    <Card className="program-info-card" variant="borderless">
       <Title level={3} className="program-info-title">
         Peer-to-peer Mentorship for Job Search
       </Title>
@@ -114,10 +114,9 @@ const ApplySection = () => {
             content: (
               <span>
                 Form submitted successfully! Since you opted for the waitlist
-                for the July 2025 batch (applying for Summer 2026 only), please
-                message{" "}
+                for the Batch 6/2025 (January 2026 - June 2026), please message{" "}
                 <a
-                  href="https://www.facebook.com/tribuidinh0901/"
+                  href="https://www.facebook.com/nguyen.banhs"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -171,9 +170,9 @@ const ApplySection = () => {
           Internship/New Grad Mentorship Application
         </Title>
         <Text className="form-description">
-          Please fill out the form below to register for our mentorship program.
-          We will review your application and get back to you as soon as
-          possible.
+          Applications for 2026 are open! Please fill out the form below to
+          register for our mentorship program. We will review your application
+          and get back to you as soon as possible.
         </Text>
         <Form
           form={form}
@@ -191,63 +190,57 @@ const ApplySection = () => {
             <Input placeholder="John Doe" />
           </Form.Item>
 
-          <Form.Item
-            name="email"
-            label="Email"
-            rules={[
-              { required: true, message: "Please enter your email" },
-              { type: "email", message: "Please enter a valid email" },
-            ]}
-          >
-            <Input placeholder="johndoe@example.com" />
-          </Form.Item>
+          <div className="form-row">
+            <Form.Item
+              name="email"
+              label="Email"
+              rules={[
+                { required: true, message: "Please enter your email" },
+                { type: "email", message: "Please enter a valid email" },
+              ]}
+              className="form-col"
+            >
+              <Input placeholder="johndoe@example.com" />
+            </Form.Item>
 
-          <Form.Item
-            name="phoneNumber"
-            label="Phone Number"
-            rules={[
-              { required: true, message: "Please enter your phone number" },
-            ]}
-          >
-            <Input placeholder="+1234567890" />
-          </Form.Item>
+            <Form.Item
+              name="phone"
+              label="Phone Number"
+              rules={[
+                { required: true, message: "Please enter your phone number" },
+              ]}
+              className="form-col"
+            >
+              <Input placeholder="+1234567890" />
+            </Form.Item>
+          </div>
 
-          <Form.Item
-            name="location"
-            label="Where are you currently located?"
-            rules={[{ required: true, message: "Please select your location" }]}
-          >
-            <Select placeholder="Select your location">
-              <Select.Option value="Vietnam">Vietnam</Select.Option>
-              <Select.Option value="USA">USA</Select.Option>
-              <Select.Option value="Australia">Australia</Select.Option>
-              <Select.Option value="Singapore">Singapore</Select.Option>
-              <Select.Option value="Other">Other</Select.Option>
-            </Select>
-          </Form.Item>
+          <div className="form-row">
+            <Form.Item
+              name="school"
+              label="School"
+              rules={[{ required: true, message: "Please enter your school" }]}
+              className="form-col"
+            >
+              <Input placeholder="University of Pennsylvania" />
+            </Form.Item>
 
-          <Form.Item
-            name="school"
-            label="What school are you currently attending?"
-            rules={[{ required: true, message: "Please enter your school" }]}
-          >
-            <Input placeholder="University of Pennsylvania" />
-          </Form.Item>
-
-          <Form.Item
-            name="currentYear"
-            label="What is your current academic year?"
-            rules={[
-              { required: true, message: "Please select your current year" },
-            ]}
-          >
-            <Select placeholder="Select your current year">
-              <Select.Option value="Freshman">Freshman</Select.Option>
-              <Select.Option value="Sophomore">Sophomore</Select.Option>
-              <Select.Option value="Junior">Junior</Select.Option>
-              <Select.Option value="Senior">Senior</Select.Option>
-            </Select>
-          </Form.Item>
+            <Form.Item
+              name="currentYear"
+              label="Academic Year"
+              rules={[
+                { required: true, message: "Please select your current year" },
+              ]}
+              className="form-col"
+            >
+              <Select placeholder="Select your current year">
+                <Select.Option value="Freshman">Freshman</Select.Option>
+                <Select.Option value="Sophomore">Sophomore</Select.Option>
+                <Select.Option value="Junior">Junior</Select.Option>
+                <Select.Option value="Senior">Senior</Select.Option>
+              </Select>
+            </Form.Item>
+          </div>
 
           <Form.Item
             name="industryPreference"
@@ -269,38 +262,67 @@ const ApplySection = () => {
             </Select>
           </Form.Item>
 
-          <Form.Item
-            name="helpDescription"
-            label="(Optional) Please answer the question in English: What do you need help with and what do you want to gain from this program?"
-          >
-            <TextArea rows={4} placeholder="Be as specific as you can" />
-          </Form.Item>
-
-          <Form.Item
-            name="resume"
-            label="Upload your latest Resume (PDF format)"
-            rules={[{ required: true, message: "Please upload your resume" }]}
-          >
-            <Upload
-              fileList={fileList}
-              beforeUpload={() => false}
-              onChange={handleUploadChange}
-              multiple={false}
+          <div className="form-row">
+            <Form.Item
+              name="linkedin"
+              label="LinkedIn Link"
+              rules={[
+                {
+                  required: true,
+                  message: "Please enter your LinkedIn profile link",
+                },
+                { type: "url", message: "Please enter a valid LinkedIn URL" },
+              ]}
+              className="form-col"
             >
-              <Button icon={<UploadOutlined />}>Click to Upload</Button>
-            </Upload>
-          </Form.Item>
+              <Input placeholder="https://linkedin.com/in/yourprofile" />
+            </Form.Item>
 
-          <Form.Item
-            name="questionsForUs"
-            label="Do you have any questions for us?"
-          >
-            <TextArea rows={2} placeholder="Your question here..." />
-          </Form.Item>
+            <Form.Item
+              name="resume"
+              label="Upload your latest Resume (PDF format)"
+              rules={[{ required: true, message: "Please upload your resume" }]}
+              className="form-col"
+            >
+              <Upload
+                fileList={fileList}
+                beforeUpload={() => false}
+                onChange={handleUploadChange}
+                multiple={false}
+              >
+                <Button
+                  icon={<UploadOutlined />}
+                  style={{ width: "100%", textAlign: "left" }}
+                >
+                  {fileList.length > 0 ? fileList[0].name : "Click to Upload"}
+                </Button>
+              </Upload>
+            </Form.Item>
+          </div>
+
+          <div className="form-row">
+            <Form.Item
+              name="leetcode"
+              label="LeetCode Link (Optional)"
+              rules={[{ type: "url", message: "Please enter a valid URL" }]}
+              className="form-col"
+            >
+              <Input placeholder="https://leetcode.com/u/yourprofile" />
+            </Form.Item>
+
+            <Form.Item
+              name="github"
+              label="GitHub Link (Optional)"
+              rules={[{ type: "url", message: "Please enter a valid URL" }]}
+              className="form-col"
+            >
+              <Input placeholder="https://github.com/yourprofile" />
+            </Form.Item>
+          </div>
 
           <Form.Item
             name="waitlistConsideration"
-            label="Do you want to be considered for the waitlist for the July 2025 batch? (Applying for Summer 2026 only)"
+            label="Do you want to be considered for the waitlist for the Batch 6/2025? (January 2026 - June 2026)"
             rules={[{ required: true, message: "Please select an option" }]}
           >
             <Select
@@ -315,10 +337,10 @@ const ApplySection = () => {
           {waitlistSelection === "Yes" && (
             <div className="waitlist-message">
               <Text type="secondary">
-                Since you opted for the waitlist for the July 2025 batch
-                (applying for Summer 2026 only), please message{" "}
+                Since you opted for the waitlist for the Batch 6/2025 (January
+                2026 - June 2026), please message{" "}
                 <a
-                  href="https://www.facebook.com/tribuidinh0901/"
+                  href="https://www.facebook.com/nguyen.banhs"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -328,6 +350,10 @@ const ApplySection = () => {
               </Text>
             </div>
           )}
+
+          <Form.Item name="message" label="Message for our Program (Optional)">
+            <TextArea rows={4} placeholder="I'm thinking of ..." />
+          </Form.Item>
 
           <Form.Item>
             <Button className="submit-button" type="primary" htmlType="submit">

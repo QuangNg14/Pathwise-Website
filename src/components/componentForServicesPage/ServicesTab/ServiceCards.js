@@ -11,63 +11,77 @@ import "./ServiceCards.css";
 
 const services = [
   {
-    title: "Internships & Research for Freshman & Sophomore",
+    title: "Software Engineering Track (Pathwise Mentorship 2026)",
     description:
-      "Comprehensive program helping underclassmen secure internships and research opportunities in Software Engineering and Data Science through profile optimization, technical projects, and interview preparation.",
+      "A structured, deep technical track for Software Engineering — designed from recent Big Tech OA/interview patterns (Fall 2025) and focused on job-ready capability (not short-term trends).",
     details: [
-      "Profile Analysis & Personal Branding - Resume, LinkedIn, GitHub optimization",
-      "8 Interactive Technical Sessions - Skills training and career orientation",
-      "Group Technology Projects - Full-stack development in Software Engineering or Data",
-      "Access to Elite Programs - Google STEP, Microsoft Explore, and research opportunities",
+      "LeetCode roadmap built around core topics + patterns that show up most in recent OA & interviews",
+      "Core focus: (1) algorithm analysis + pattern recognition, (2) choosing the right approach, (3) implementing + explaining solutions clearly",
+      "Interview rehearsal: consistent mock interviews + feedback to build strong communication under pressure",
+      "Profile & strategy support: resume/LinkedIn positioning + weekly plan to stay disciplined and consistent",
     ],
-    start: "July 2025",
-    duration: "6 months",
-    people: "5 - 10 mentees",
+    start: "Applications open: 27/12",
+    duration: "Cohort-based (2026)",
+    people: "Selective intake",
     fee: "Contact us",
   },
   {
-    title: "Internships & Full-time for Juniors & Seniors",
+    title: "Data Track (Analytics/Engineering + optional Data Science)",
     description:
-      "Advanced program for upperclassmen focusing on technical interview mastery, behavioral preparation, and strategic job search for Software Engineering and Data roles.",
+      "A practical, business-aligned data track focusing on SQL core, plus Python & Power BI — tailored for Data Analyst, Data Engineer (entry-level), and Data/Finance-related roles.",
     details: [
-      "Complete Study Materials - Session recordings, slides, and development courses",
-      "Internship Search Support - 6-8 weekly updates on opportunities and programs",
-      "LeetCode Mastery - Data structures, algorithms, and system design preparation",
-      "Interview Excellence - Technical, behavioral, and company-specific strategies",
-      "Community Network - Connect with peers through forums and group practice",
+      "Clear roadmap by starting level (foundation → intermediate → interview-ready) with a realistic timeline",
+      "Role matching: guidance on which roles fit your current profile (DA / DE / Data–Finance) and how to close gaps",
+      "End-to-end Data Project support: build a complete project you can put on your CV and discuss in interviews",
+      "Decision-making with data: learn how data is actually used in business, not just tools and dashboards",
+      "Curated U.S. fellowships + data programs (selected and integrated into the path) for Apply 2027 goals",
     ],
-    start: "July 2025",
-    duration: "6 months",
-    people: "10 - 15 mentees",
+    start: "Applications open: 27/12",
+    duration: "Cohort-based (2026)",
+    people: "Selective intake",
     fee: "Contact us",
   },
   {
-    title: "Investment Banking & Finance",
+    title: "US Admissions & Graduate Prep",
     description:
-      "Specialized program for Finance and Investment Banking career preparation, covering industry fundamentals, networking strategies, and technical finance concepts.",
+      "Comprehensive support for students applying to Master’s and PhD programs in the US — with a structured strategy that complements Tech/Finance recruiting.",
     details: [
-      "Industry Deep Dive - Finance and Investment Banking landscape",
-      "Profile Building - Tailored resume and application strategies",
-      "Strategic Networking - Effective relationship building in Finance",
-      "Core Finance Topics - Capital budgeting, financial analysis, and corporate finance",
-      "Role Preparation - Corporate Finance, FP&A, Treasury, and Accounting focus",
+      "Program strategy: shortlist building (fit, outcomes, ROI), timeline, and application checkpoints",
+      "Profile building: research/projects plan + recommendation strategy + narrative positioning",
+      "Essays & materials: SOP/personal statement guidance, experience framing, and revision cycles",
+      "Admissions coaching: interview preparation, fellowship suggestions, and long-term academic goals",
     ],
-    start: "September 2025",
-    duration: "2 months",
-    people: "~5 mentees",
+    start: "Seasonal cycle",
+    duration: "6-12 months",
+    people: "Small cohort",
     fee: "Contact us",
   },
   {
-    title: "Professional Workshops & Fireside Chats",
+    title: "Selective Intake — High-Signal Talent Community",
     description:
-      "Regular networking sessions with industry professionals sharing insights, career tips, and success strategies across Software, Data, AI, and Finance sectors.",
+      "Pathwise applies mandatory intake interviews for all applicants to maintain a high-quality, focused learning cohort.",
     details: [
-      "Success Stories - Learn from recent internship and job placement winners",
-      "Industry Insights - Current trends in Software, Data, ML, AI, and Finance",
-      "Application Strategies - Critical tips for upcoming recruitment cycles",
-      "Q&A Sessions - Direct access to industry professionals",
+      "Interview required for all applicants (skills + commitment + learning readiness)",
+      "Ensures a high standard of cohort quality and a productive learning environment",
+      "Keeps the community small, focused, and high-signal — where people can rely on each other",
+      "Built for those ready to learn deep, build discipline, and grow long-term with clear standards",
     ],
-    start: "June 2025",
+    start: "Applications open: 27/12/2025",
+    duration: "Rolling interviews",
+    people: "Limited seats",
+    fee: "Free to apply",
+  },
+  {
+    title: "Workshops, Fireside Chats & Rehearsals",
+    description:
+      "Regular sessions with mentors and industry guests across Tech, Finance, US Admissions, and AI — focused on real interview signal, career strategy, and high-quality Q&A.",
+    details: [
+      "Hiring-manager style rehearsals: turn interviews into friendly, productive conversations",
+      "Technical + behavioral signal training: how to show qualities, collaboration, and judgment",
+      "Career strategy updates: what’s changing in recruiting and how to respond",
+      "Open Q&A + community practice: learn faster through high-quality peer + mentor feedback",
+    ],
+    start: "Rolling",
     duration: "Bi-weekly sessions",
     people: "Unlimited",
     fee: "Free",
@@ -83,6 +97,7 @@ const ServiceCard = ({ service }) => {
         <h3 className="service-title">{service.title}</h3>
         <p className="service-description">{service.description}</p>
       </div>
+
       <div className="service-info">
         <div className="info-item">
           <CalendarOutlined className="icon" />
@@ -101,9 +116,11 @@ const ServiceCard = ({ service }) => {
           <span className="info-text">{service.fee}</span>
         </div>
       </div>
+
       <button className="expand-button" onClick={() => setExpanded(!expanded)}>
         {expanded ? "Hide Details" : "View Details"}
       </button>
+
       {expanded && (
         <ul className="service-details">
           {service.details.map((detail, index) => (
@@ -127,12 +144,35 @@ const ServicesSection = () => {
 
   return (
     <div className="services-section">
-      <h2 className="services-title">Our Services</h2>
+      <div className="services-hero">
+        <div className="services-eyebrow">
+          <span className="services-badge">Applications open</span>
+          <span className="services-date">27/12</span>
+        </div>
+
+        <h2 className="services-title">
+          Pathwise Mentorship <span className="services-title-year">2026</span>
+        </h2>
+
+        <p className="services-subtitle">Restructure • Rebuild • Rehearsal</p>
+
+        {/* <p className="services-intro">
+          Rebuilt after 2 years and 100+ mentees - deeper core technical
+          training, selective intake, and a high-signal community.
+        </p> */}
+
+        {/* <p className="services-intro services-intro-vi">
+          Tái cấu trúc toàn diện: học sâu kỹ năng cốt lõi, tuyển chọn đầu vào,
+          xây cộng đồng học tập chất lượng cao.
+        </p> */}
+      </div>
+
       <div className="services-grid">
         {services.map((service, index) => (
           <ServiceCard key={index} service={service} />
         ))}
       </div>
+
       <div className="global-action-buttons">
         <a
           className="custom-action-button"

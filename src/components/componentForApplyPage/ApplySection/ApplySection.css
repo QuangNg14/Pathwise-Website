@@ -79,10 +79,32 @@
     margin-bottom: 20px;
     color: #0f2442;
   }
+
+  .form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 0;
+  }
+
+  .form-col {
+    flex: 1;
+  }
   
   .ant-form-custom .ant-form-item-label > label {
     font-weight: bold;
-    color: #0f2442;
+    color: var(--color-heading);
+  }
+
+  /* Optional label readability in dark mode */
+  [data-theme='dark'] .ant-form-custom .ant-form-item-label > label {
+    color: var(--color-heading);
+  }
+
+  [data-theme='dark'] .ant-form-custom .ant-form-item-label > label:not(.ant-form-item-required)::after {
+    content: " (Optional)";
+    color: rgba(245, 245, 245, 0.7);
+    font-weight: 500;
+    font-size: 14px;
   }
   
   .submit-button {
@@ -130,6 +152,11 @@
   
     .form-title {
       font-size: 1.3rem;
+    }
+
+    .form-row {
+      flex-direction: column;
+      gap: 0;
     }
   }
   

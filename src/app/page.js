@@ -12,6 +12,7 @@ import Community from "@/components/componentForMainPage/Community/Community";
 import FAQ from "@/components/componentForMainPage/FAQ/FAQ";
 import FooterComponent from "@/components/footer/Footer";
 import MentorshipApplication from "@/components/componentForMainPage/MentorshipApplication/MentorshipApplication";
+import ChatBot from "@/components/ChatBot/ChatBot";
 
 const { Header, Content } = Layout;
 const { Title, Text } = Typography;
@@ -92,9 +93,6 @@ export default function Home() {
 
   // Ensure CSS is loaded before rendering
   useEffect(() => {
-    // Add theme attribute to body for CSS variable consistency
-    document.body.setAttribute("data-theme", "pathwise");
-
     // Small delay to ensure CSS is loaded
     const timer = setTimeout(() => {
       setIsLoaded(true);
@@ -130,22 +128,22 @@ export default function Home() {
   // Show loading state briefly to prevent FOUC
   if (!isLoaded) {
     return (
-      <Layout style={{ minHeight: "100vh", background: "#fff" }}>
+      <Layout style={{ minHeight: "100vh", background: "var(--color-background)" }}>
         <div
           style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             height: "100vh",
-            background: "#fff",
+            background: "var(--color-background)",
           }}
         >
           <div
             style={{
               width: "40px",
               height: "40px",
-              border: "3px solid #f3f3f3",
-              borderTop: "3px solid #C45A1D",
+              border: "3px solid var(--color-border)",
+              borderTop: "3px solid var(--color-primary)",
               borderRadius: "50%",
               animation: "spin 1s linear infinite",
             }}
@@ -182,6 +180,7 @@ export default function Home() {
           <FooterComponent />
         </div>
       </Content>
+      <ChatBot />
     </Layout>
   );
 }

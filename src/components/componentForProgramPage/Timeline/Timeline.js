@@ -194,10 +194,14 @@ const Timeline = () => {
 
   return (
     <div className="timeline-section">
-      <h2 className="timeline-title">Mentorship Program Journey</h2>
+      <h2 className="timeline-title">
+        PATHWISE MENTORSHIP 2026: RESTRUCTURE - REBUILD - REHEARSAL
+      </h2>
       <div className="timeline-subtitle">
-        A comprehensive 12-week program designed to launch your career in
-        Software, Data, and Finance
+        A comprehensive curriculum restructure based on 2+ years and 100+ mentees.
+        Pathwise Mentorship 2026 focuses on deep core technical skills, selective
+        intake, and a high-signal learning community for Tech (Software, Data),
+        Finance, and US Admissions.
       </div>
       <div className="timeline-container">
         {timelineData.map((event, index) => (
