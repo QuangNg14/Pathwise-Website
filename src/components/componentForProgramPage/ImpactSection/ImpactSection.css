@@ -207,8 +207,24 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .impact-section {
+    padding: 64px 0;
+  }
+
+  .impact-section-content {
+    padding: 0 16px;
+  }
+
+  .section-header {
+    margin-bottom: 64px;
+  }
+
   .section-title {
     font-size: 36px;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
   }
 
   .section-pillars {
@@ -220,12 +236,16 @@
     font-size: 28px;
   }
 
+  .impact-list-clean li {
+    font-size: 16px;
+  }
+
   .order-1-mobile {
     order: 1;
   }
 
   .order-2-mobile {
     order: 2;
-}
+  }
 }
   
