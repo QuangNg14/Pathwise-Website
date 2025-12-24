@@ -66,7 +66,7 @@ const Header = ({ current }) => {
               />
             </h1>
           </Link>
-          <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+          <div className="header-actions">
             <Menu
               selectedKeys={[current]}
               mode="horizontal"

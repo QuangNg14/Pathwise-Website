@@ -33,6 +33,40 @@
   padding: 0 24px;
 }
 
+.search-autocomplete {
+  width: 100%;
+  display: block;
+}
+
+/* AntD AutoComplete renders placeholder as a separate element (not always ::placeholder) */
+.search-autocomplete .ant-select-selector {
+  background: var(--color-card-bg) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 4px !important;
+  height: 56px !important;
+  align-items: center !important;
+}
+
+.search-autocomplete .ant-select-selection-placeholder {
+  color: var(--color-text) !important;
+  opacity: 0.6;
+}
+
+[data-theme='dark'] .search-autocomplete .ant-select-selection-placeholder {
+  color: rgba(245, 245, 245, 0.75) !important;
+  opacity: 1;
+}
+
+.search-autocomplete .ant-select-selection-search-input::placeholder {
+  color: var(--color-text) !important;
+  opacity: 0.6;
+}
+
+[data-theme='dark'] .search-autocomplete .ant-select-selection-search-input::placeholder {
+  color: rgba(245, 245, 245, 0.75) !important;
+  opacity: 1;
+}
+
 .search-input {
   height: 56px !important;
   border-radius: 4px !important;
@@ -41,6 +75,7 @@
   padding-left: 20px !important;
   font-size: 16px !important;
   color: var(--color-text) !important;
+  width: 100% !important;
 }
 
 .search-input input {
@@ -72,6 +107,7 @@
   display: flex;
   gap: 24px;
   border-bottom: 1px solid var(--color-border);
+  min-width: 0;
 }
 
 .custom-tab {
@@ -85,6 +121,11 @@
   cursor: pointer;
   position: relative;
   transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+[data-theme='dark'] .custom-tab {
+  opacity: 0.78;
 }
 
 .custom-tab:hover {
@@ -265,6 +306,27 @@
 @media (max-width: 768px) {
   .hero-title {
     font-size: 36px !important;
+  }
+
+  .hero-section {
+    padding: 48px 16px 24px;
+  }
+
+  .search-bar {
+    padding: 0 16px;
+    margin-bottom: 28px;
+  }
+
+  /* Prevent category tabs from forcing horizontal overflow on small screens */
+  .custom-tabs-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    gap: 18px;
+  }
+
+  .custom-tabs-wrapper::-webkit-scrollbar {
+    height: 0;
   }
 
   .featured-image-wrapper {

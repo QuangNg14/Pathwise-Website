@@ -269,8 +269,9 @@
   .peer-to-peer-buttons-column {
     order: 2;
     justify-content: flex-start;
-    flex-direction: column;
-    gap: 16px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
     align-items: stretch;
   }
   
@@ -279,8 +280,16 @@
     line-height: 26px;
   }
   
-  .peer-to-peer-primary-btn,
-  .peer-to-peer-secondary-btn {
+  .peer-to-peer-buttons-column .peer-to-peer-primary-btn,
+  .peer-to-peer-buttons-column .peer-to-peer-apply-btn {
+    flex: 1 1 calc(50% - 6px);
+    width: calc(50% - 6px) !important;
+    max-width: 100%;
+    min-width: unset !important;
+  }
+
+  .peer-to-peer-buttons-column .peer-to-peer-secondary-btn {
+    flex: 1 1 100%;
     width: 100% !important;
     max-width: 100%;
     min-width: unset !important;

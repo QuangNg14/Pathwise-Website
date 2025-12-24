@@ -20,6 +20,15 @@
   padding: 0 40px;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
 .logo {
   text-decoration: none;
 }
@@ -118,8 +127,15 @@
     gap: 12px;
   }
 
+  .header-actions {
+    width: 100%;
+    justify-content: center;
+    gap: 12px;
+  }
+
   .logo h1 {
     font-size: 16px;
+    text-align: center;
   }
 
   .header-menu {
@@ -129,6 +145,8 @@
   .login-signup-buttons {
     width: 100%;
     justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 10px;
   }
 }
 
