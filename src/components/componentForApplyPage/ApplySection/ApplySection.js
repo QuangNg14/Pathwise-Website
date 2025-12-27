@@ -322,7 +322,7 @@ const ApplySection = () => {
 
           <Form.Item
             name="waitlistConsideration"
-            label="Do you want to be considered for the waitlist for the Batch 6/2025? (January 2026 - June 2026)"
+            label="If not selected, do you want to be considered for the waitlist for the Batch 6/2025 (January 2026 - June 2026)?"
             rules={[{ required: true, message: "Please select an option" }]}
           >
             <Select
