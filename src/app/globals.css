@@ -99,6 +99,50 @@ p, li, div:not(.ant-btn):not(.ant-badge):not(.ant-tag):not(.ant-btn-icon) {
   color: var(--color-primary) !important;
 }
 
+/* ───────────────────────────────────────────────────────────
+   Ant Design Select: dark mode dropdown readability (portal-safe)
+   Ant Select dropdown is rendered into document.body, so keep these
+   overrides in globals.css (not component-local CSS).
+   ─────────────────────────────────────────────────────────── */
+html[data-theme='dark'] .ant-select-dropdown {
+  background-color: var(--color-card-bg) !important;
+  border: 1px solid var(--color-border) !important;
+}
+
+html[data-theme='dark'] .ant-select-dropdown .ant-select-item-option-content,
+html[data-theme='dark'] .ant-select-dropdown .ant-select-item {
+  color: var(--color-text) !important;
+}
+
+html[data-theme='dark']
+  .ant-select-dropdown
+  .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+  background-color: rgba(255, 152, 0, 0.18) !important;
+}
+
+html[data-theme='dark']
+  .ant-select-dropdown
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: rgba(255, 152, 0, 0.26) !important;
+}
+
+html[data-theme='dark'] .ant-select .ant-select-selector {
+  background-color: var(--color-card-bg) !important;
+  border-color: var(--color-border) !important;
+}
+
+html[data-theme='dark'] .ant-select .ant-select-selection-item {
+  color: var(--color-text) !important;
+}
+
+html[data-theme='dark'] .ant-select .ant-select-selection-placeholder {
+  color: rgba(245, 245, 245, 0.65) !important;
+}
+
+html[data-theme='dark'] .ant-select-arrow {
+  color: rgba(245, 245, 245, 0.75) !important;
+}
+
 /* Remove horizontal padding on mobile for maximum space */
 @media (max-width: 768px) {
   html, body, #__next {

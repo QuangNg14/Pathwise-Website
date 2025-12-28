@@ -227,7 +227,7 @@ const ApplySection = () => {
 
             <Form.Item
               name="currentYear"
-              label="Academic Year"
+              label="Current academic year"
               rules={[
                 { required: true, message: "Please select your current year" },
               ]}
@@ -238,6 +238,7 @@ const ApplySection = () => {
                 <Select.Option value="Sophomore">Sophomore</Select.Option>
                 <Select.Option value="Junior">Junior</Select.Option>
                 <Select.Option value="Senior">Senior</Select.Option>
+                <Select.Option value="Master">Master</Select.Option>
               </Select>
             </Form.Item>
           </div>
@@ -322,7 +323,7 @@ const ApplySection = () => {
 
           <Form.Item
             name="waitlistConsideration"
-            label="If not selected, do you want to be considered for the waitlist for the Batch 6/2025 (January 2026 - June 2026)?"
+            label="If not selected, do you want to be considered for the waitlist of this batch?"
             rules={[{ required: true, message: "Please select an option" }]}
           >
             <Select

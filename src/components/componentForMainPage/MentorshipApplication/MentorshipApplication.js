@@ -310,6 +310,7 @@ const MentorshipApplication = () => {
                   <Select.Option value="Sophomore">Sophomore</Select.Option>
                   <Select.Option value="Junior">Junior</Select.Option>
                   <Select.Option value="Senior">Senior</Select.Option>
+                  <Select.Option value="Master">Master</Select.Option>
                 </Select>
               </Form.Item>
               <Form.Item
@@ -402,7 +403,7 @@ const MentorshipApplication = () => {
             </div>
             <Form.Item
               name="waitlistConsideration"
-              label="Do you want to be considered for the waitlist of this batch?"
+              label="If not selected, do you want to be considered for the waitlist of this batch?"
               rules={[{ required: true, message: "Please select an option" }]}
             >
               <Select
