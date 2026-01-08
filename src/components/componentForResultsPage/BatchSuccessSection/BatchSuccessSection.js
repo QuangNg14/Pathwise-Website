@@ -39,7 +39,7 @@ const BatchSuccessSection = () => {
 
           <div className="stat-card">
             <div className="stat-number">
-              <span className="stat-number-main">16</span>
+              <span className="stat-number-main">21</span>
               <span className="stat-number-suffix">+</span>
             </div>
             <div className="stat-label">Offers Secured</div>

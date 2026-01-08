@@ -43,10 +43,6 @@
   justify-content: center;
 }
 
-.offers-tabs .ant-tabs-nav::before {
-  /* border-bottom: none; */
-}
-
 .offers-tabs .ant-tabs-tab {
   font-family: Inter;
   padding: 16px 32px;

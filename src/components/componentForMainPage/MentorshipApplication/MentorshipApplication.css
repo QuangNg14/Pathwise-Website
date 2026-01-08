@@ -584,6 +584,27 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
+/* Dark mode: ensure toast background/text are readable */
+html[data-theme='dark'] .Toastify__toast {
+  background: var(--color-card-bg) !important;
+  color: var(--color-text) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+html[data-theme='dark'] .Toastify__toast-body {
+  color: var(--color-text) !important;
+}
+
+html[data-theme='dark'] .Toastify__close-button {
+  color: rgba(245, 245, 245, 0.85) !important;
+  opacity: 0.9 !important;
+}
+
+html[data-theme='dark'] .Toastify__progress-bar {
+  background: var(--color-primary) !important;
+}
+
 /* 2) White circular “backdrop” behind each icon */
 .Toastify__toast-icon {
   background: #ffffff !important;
@@ -607,6 +628,11 @@
   align-items: center !important;
   justify-content: center !important;
   margin-right: 16px !important;
+}
+
+/* Dark mode: soften icon backdrop so it doesn't look like a white blotch */
+html[data-theme='dark'] .Toastify__toast-icon {
+  background: rgba(255, 255, 255, 0.08) !important;
 }
 
 .Toastify__toast-icon svg {

@@ -10,7 +10,6 @@ const offersData = [
   {
     name: "Hoàng Quỳnh Hương",
     school: "New York University",
-    year: "Junior",
     major: "Computer Science",
     category: "software",
     offers: [
@@ -24,7 +23,6 @@ const offersData = [
   {
     name: "Gia Hy",
     school: "University of South Florida",
-    year: "Sophomore",
     major: "Computer Science",
     category: "software",
     offers: [
@@ -37,7 +35,6 @@ const offersData = [
   {
     name: "Mentee",
     school: "University of Washington",
-    year: "Junior",
     major: "Computer Science",
     category: "software",
     offers: ["Meta - Software Engineer Intern"],
@@ -47,17 +44,66 @@ const offersData = [
   {
     name: "Đặng Thanh Vân",
     school: "Vanderbilt University",
-    year: "Sophomore",
     major: "Computer Science",
     category: "software",
-    offers: ["Google STEP - Software Engineer Intern"],
+    offers: [
+      "Google - Software Engineer Intern",
+      "Google STEP - Software Engineer Intern",
+    ],
     avatar:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1733952244/oueigloxkovcns1mhnpd.jpg",
   },
   {
+    name: "Trang Phan",
+    school: "University of South Florida",
+    major: "Computer Science",
+    category: "software",
+    offers: ["Bank of America - Software Engineer Intern"],
+    avatar:
+      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1767830453/trang_phan_bank_of_america_rdskcn.jpg",
+  },
+  {
+    name: "Bách Nguyễn",
+    school: "Iowa State University",
+    major: "Computer Science",
+    category: "software",
+    offers: ["Microsoft - Software Engineer Intern"],
+    avatar:
+      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1767830456/bach_nguyen_microsoft_w5utws.jpg",
+  },
+  {
+    name: "Trần Hoàng Quân",
+    school: "University of South Florida",
+    major: "Computer Science",
+    category: "data",
+    offers: ["Publix Super Market - Data Analyst Intern"],
+    avatar:
+      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1767830596/quan_tran_data_publix_wlkq4t.jpg",
+  },
+  {
+    name: "Hà Tố Như",
+    school: "Lehigh University",
+    major: "Computer Science",
+    category: "software",
+    offers: ["Lutron Electronics - Software Engineer Intern"],
+    avatar:
+      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1767830451/nhu_ha_lutron_saqah0.jpg",
+  },
+  {
+    name: "Lê Đức Minh",
+    school: "Georgia Institute of Technology",
+    major: "Computer Science",
+    category: "data",
+    offers: [
+      "A37 - Machine Learning Engineer Intern",
+      "Total Energies - MLE Intern",
+    ],
+    avatar:
+      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1767830452/le_duc_minh_A37_lvegzq.jpg",
+  },
+  {
     name: "Cao Phương An",
     school: "Texas Christian University",
-    year: "Sophomore",
     major: "Data Science",
     category: "data",
     offers: ["Alcon - Data Science Intern", "Netflix X Formation Program"],
@@ -67,7 +113,6 @@ const offersData = [
   {
     name: "Minh Thiều",
     school: "University of South Florida",
-    year: "Junior",
     major: "Statistics",
     category: "data",
     offers: [
@@ -80,7 +125,6 @@ const offersData = [
   {
     name: "Trương Khánh Hưng",
     school: "University of South Florida",
-    year: "Junior",
     major: "Computer Science",
     category: "software",
     offers: [
@@ -96,7 +140,6 @@ const offersData = [
   {
     name: "Đỗ Hoàng Long",
     school: "University of South Florida",
-    year: "Junior",
     major: "Computer Science",
     category: "software",
     offers: [
@@ -106,20 +149,21 @@ const offersData = [
     avatar:
       "https://res.cloudinary.com/dbqcioj2g/image/upload/v1743519564/zu270d8swx3ag6pm5m9u.jpg",
   },
-  // {
-  //   name: "Ngô Phương Anh",
-  //   school: "Gettysburg College",
-  //   year: "Sophomore",
-  //   major: "Computer Science",
-  //   category: "software",
-  //   offers: ["A&T Technology Development Program Internship"],
-  //   avatar:
-  //     "http://res.cloudinary.com/dbqcioj2g/image/upload/v1744173236/kflrsx3spzxexjxyo6uf.jpg",
-  // },
+  {
+    name: "Ngô Phương Anh",
+    school: "Gettysburg College",
+    major: "Computer Science",
+    category: "software",
+    offers: [
+      "Rippling - Software Engineer Intern",
+      "A&T Technology Development Program Internship",
+    ],
+    avatar:
+      "http://res.cloudinary.com/dbqcioj2g/image/upload/v1744173236/kflrsx3spzxexjxyo6uf.jpg",
+  },
   {
     name: "Bảo Trân",
     school: "Lehigh University",
-    year: "Junior",
     major: "Computer Science",
     category: "software",
     offers: ["AWS - Software Engineer Intern"],
@@ -129,7 +173,6 @@ const offersData = [
   {
     name: "Cao Minh Hiếu",
     school: "Georgia State University",
-    year: "Junior",
     major: "Computer Science",
     category: "software",
     offers: ["LexisNexis - Software Engineer Intern"],
@@ -139,7 +182,6 @@ const offersData = [
   {
     name: "Riley Phan",
     school: "Texas Christian University",
-    year: "Junior",
     major: "Computer Science",
     category: "software",
     offers: ["Doordash - Software Engineer Intern"],
@@ -149,7 +191,6 @@ const offersData = [
   {
     name: "Ngô Nhật Uyên",
     school: "DePauw University",
-    year: "Freshmen",
     major: "Computer Science",
     category: "software",
     offers: ["Veryable - Software Engineer Intern"],
@@ -159,37 +200,46 @@ const offersData = [
   {
     name: "Lê Duy Khanh",
     school: "Villanova University",
-    year: "Sophomore",
     major: "Computer Science",
     category: "software",
-    offers: ["Perpay - Software Engineer Intern"],
+    offers: [
+      "Bloomberg - Software Engineer Intern",
+      "Perpay - Software Engineer Intern",
+    ],
     avatar:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1744173067/dy1yr5tksvngh4tmbmzc.jpg",
   },
   {
     name: "Gia Mẫn",
     school: "University of South Florida",
-    year: "Sophomore",
     major: "Computer Science",
     category: "software",
-    offers: ["Goldman Sachs - Software Engineer Intern"],
+    offers: [
+      "Bloomberg - Software Engineer Intern",
+      "Arista Network - Software Engineer Intern",
+      "Morgan Stanley - Software Engineer Intern",
+      "Goldman Sachs - Software Engineer Intern",
+    ],
     avatar:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1743520120/fbck0mbj5wegivrmya5n.jpg",
   },
   {
     name: "Quỳnh Anh",
     school: "Rose-Hulman Institute of Technology",
-    year: "Junior",
     major: "Computer Science",
     category: "software",
-    offers: ["Toast - Software Engineer Intern"],
+    offers: [
+      "Snowflake - Software Engineer Intern",
+      "Coinbase - Software Engineer Intern",
+      "Wayfair - Software Engineer Intern",
+      "Toast - Software Engineer Intern",
+    ],
     avatar:
       "http://res.cloudinary.com/dbqcioj2g/image/upload/v1743520513/oyyyqgfx5bxjc62tkrti.jpg",
   },
   {
     name: "Phương Tâm",
     school: "University of South Florida",
-    year: "Sophomore",
     major: "Business Analytics",
     category: "data",
     offers: ["VSP - Data Analyst Intern"],
@@ -199,7 +249,6 @@ const offersData = [
   {
     name: "Phạm Minh Hạnh",
     school: "Mount Holyoke College",
-    year: "Junior",
     major: "Data Science",
     category: "data",
     offers: ["The Chemours Company - Data Science Intern"],
@@ -209,7 +258,6 @@ const offersData = [
   {
     name: "Bảo Nhi",
     school: "Drexel University",
-    year: "Senior",
     major: "Computer Science",
     category: "data",
     offers: ["Amazon - Business Intelligence Engineer Intern"],
@@ -219,7 +267,6 @@ const offersData = [
   {
     name: "Trang Dang",
     school: "Davidson College",
-    year: "Sophomore",
     major: "Economics",
     category: "finance",
     offers: [
@@ -232,7 +279,6 @@ const offersData = [
   {
     name: "Thu Vu",
     school: "Colby College",
-    year: "Sophomore",
     major: "Mathematical Science and Economics",
     category: "finance",
     offers: ["Bank of America - Investment Banking Summer Analyst 2026"],
@@ -242,7 +288,6 @@ const offersData = [
   {
     name: "Hiệp Nguyễn",
     school: "Villanova University",
-    year: "Sophomore",
     major: "Computer Science",
     category: "data",
     offers: ["Dell - Data Science Intern"],
@@ -252,7 +297,6 @@ const offersData = [
   {
     name: "Minh Nguyen",
     school: "Northeastern University",
-    year: "Master",
     major: "Computer Science",
     category: "software",
     offers: [
@@ -265,7 +309,6 @@ const offersData = [
   {
     name: "Phạm Thục Quyên",
     school: "Washington and Lee University",
-    year: "Junior",
     major: "Computer Science",
     category: "software",
     offers: ["Bank of America - Software Engineer Intern"],
@@ -275,7 +318,6 @@ const offersData = [
   {
     name: "Nguyễn Thu Huệ",
     school: "DePauw University",
-    year: "Junior",
     major: "Computer Science",
     category: "software",
     offers: [
@@ -288,17 +330,18 @@ const offersData = [
   {
     name: "Phạm Quang Hưng",
     school: "University of South Florida",
-    year: "Sophomore",
     major: "Computer Science",
     category: "software",
-    offers: ["Dell - Software Engineer Intern"],
+    offers: [
+      "Google - Software Engineer Intern",
+      "Dell - Software Engineer Intern",
+    ],
     avatar:
       "https://res.cloudinary.com/dbqcioj2g/image/upload/v1743515468/r44bm5jqbnqjtkfjnvhy.jpg",
   },
   {
     name: "Minh Trí",
     school: "Indiana University",
-    year: "Junior",
     major: "Computer Science",
     category: "software",
     offers: ["DwyerOmega - Software Engineer Intern"],
@@ -308,7 +351,6 @@ const offersData = [
   {
     name: "Lê Hoàng Minh",
     school: "University of California, Berkeley",
-    year: "Master",
     major: "Statistics",
     category: "data",
     offers: [
@@ -321,7 +363,6 @@ const offersData = [
   {
     name: "Ngô Quang Tùng",
     school: "University of Massachusetts Amherst",
-    year: "Senior",
     major: "Computer Science",
     category: "software",
     offers: ["UST - Software Engineer Intern"],
@@ -331,7 +372,6 @@ const offersData = [
   {
     name: "Vũ Minh Hoàng",
     school: "University of South Florida",
-    year: "Sophomore",
     major: "Data Science",
     category: "data",
     offers: ["IDEXX - Data Engineer Intern"],
@@ -341,10 +381,12 @@ const offersData = [
   {
     name: "Hà Duy Linh",
     school: "University of South Florida",
-    year: "Sophomore",
     major: "Computer Science",
     category: "software",
     offers: [
+      "HubSpot - Software Engineer Intern",
+      "Robinhood - Software Engineer Intern",
+      "Bloomberg - Software Engineer Intern",
       "Palantir - Software Engineer Intern",
       "Adobe - Software Engineer Intern",
       "Ryco.io - Software Engineer Intern",
@@ -355,10 +397,10 @@ const offersData = [
   {
     name: "Phạm Anh Dũng",
     school: "University of South Florida",
-    year: "Sophomore",
     major: "Computer Science",
     category: "software",
     offers: [
+      "Tesla - Software Engineer Intern",
       "RepRally - Software Engineer Intern",
       "Actualization.ai - Software Engineer Intern",
     ],
@@ -368,10 +410,11 @@ const offersData = [
   {
     name: "Tony Nguyễn",
     school: "University of South Florida",
-    year: "Sophomore",
     major: "Computer Science",
     category: "software",
     offers: [
+      "Tesla - Software Engineer Intern",
+      "HubSpot - Software Engineer Intern",
       "Microsoft - Software Engineer Intern",
       "Dow Jones - Software Engineer Intern",
     ],
@@ -381,7 +424,6 @@ const offersData = [
   {
     name: "Mentee",
     school: "Soka Univeristy",
-    year: "Sophomore",
     major: "Computer Science",
     category: "software",
     offers: ["HubSpot - Software Engineer Intern"],
@@ -391,7 +433,6 @@ const offersData = [
   {
     name: "Minh Đỗ",
     school: "DePauw University",
-    year: "Senior",
     major: "Actuarial Science, Computer Science",
     category: "finance",
     offers: [
@@ -405,9 +446,16 @@ const offersData = [
 
 const newGradOffersData = [
   {
+    name: "Thông Nguyễn",
+    school: "University of Wisconsin-Madison",
+    major: "Computer Science",
+    offers: ["Bloomberg - Software Engineer"],
+    avatar:
+      "https://res.cloudinary.com/dbqcioj2g/image/upload/v1767830450/thong_nguyen_bloomberg_o662iq.jpg",
+  },
+  {
     name: "Thịnh Nguyễn",
     school: "University of Massachusetts Amherst",
-    year: "Senior",
     major: "Computer Science",
     offers: [
       "Affirm - Software Engineer",
@@ -419,7 +467,6 @@ const newGradOffersData = [
   {
     name: "Linda Nguyễn",
     school: "University of South Florida",
-    year: "Senior",
     major: "Computer Science",
     offers: ["Microsoft - Software Engineer"],
     avatar:
@@ -428,7 +475,6 @@ const newGradOffersData = [
   {
     name: "Nguyên Trần",
     school: "Columbia University",
-    year: "Senior",
     major: "Computer Science",
     offers: ["Morgan Stanley - Software Engineer"],
     avatar:
@@ -437,7 +483,6 @@ const newGradOffersData = [
   {
     name: "Xuân Thu",
     school: "Reed College",
-    year: "Senior",
     major: "Computer Science",
     offers: ["Morgan Stanley - Investment Analyst Parametric"],
     avatar:
@@ -474,7 +519,7 @@ const MenteeCard = ({ mentee }) => {
           <div className="mentee-details">
             <div className="mentee-info-section">
               <Text className="mentee-name">{mentee.name}</Text>
-              <Text className="mentee-info">{`${mentee.school} - ${mentee.year}`}</Text>
+              <Text className="mentee-info">{mentee.school}</Text>
               <Text className="mentee-info">{mentee.major}</Text>
             </div>
             <div className="mentee-offers">

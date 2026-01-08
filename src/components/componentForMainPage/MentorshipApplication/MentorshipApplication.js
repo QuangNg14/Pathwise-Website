@@ -3,12 +3,14 @@ import { Form, Input, Button, Select, Upload, Typography, message } from "antd";
 import { UploadOutlined, CheckCircleOutlined } from "@ant-design/icons";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useTheme } from "@/contexts/ThemeContext";
 import "./MentorshipApplication.css";
 
 const { Title, Text } = Typography;
 const { TextArea } = Input;
 
 const MentorshipApplication = () => {
+  const { theme } = useTheme();
   const [form] = Form.useForm();
   const [fileList, setFileList] = useState([]);
   const [waitlistSelection, setWaitlistSelection] = useState("No");
@@ -469,7 +471,7 @@ const MentorshipApplication = () => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="light"
+        theme={theme === "dark" ? "dark" : "light"}
         className="custom-toast-container"
       />
     </div>

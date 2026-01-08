@@ -143,6 +143,38 @@ html[data-theme='dark'] .ant-select-arrow {
   color: rgba(245, 245, 245, 0.75) !important;
 }
 
+/* ───────────────────────────────────────────────────────────
+   Ant Design message (toast): dark mode readability (portal-safe)
+   ─────────────────────────────────────────────────────────── */
+html[data-theme='dark'] .ant-message-notice-content {
+  background: var(--color-card-bg) !important;
+  color: var(--color-text) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55) !important;
+}
+
+html[data-theme='dark'] .ant-message-notice-content * {
+  color: var(--color-text) !important;
+}
+
+html[data-theme='dark'] .ant-message-success .anticon,
+html[data-theme='dark'] .success-message .anticon {
+  color: #22c55e !important;
+}
+
+html[data-theme='dark'] .ant-message-error .anticon,
+html[data-theme='dark'] .error-message .anticon {
+  color: #ef4444 !important;
+}
+
+html[data-theme='dark'] .ant-message-warning .anticon {
+  color: #f59e0b !important;
+}
+
+html[data-theme='dark'] .ant-message-info .anticon {
+  color: #3b82f6 !important;
+}
+
 /* Remove horizontal padding on mobile for maximum space */
 @media (max-width: 768px) {
   html, body, #__next {
