@@ -150,12 +150,13 @@ const offersData = [
       "https://res.cloudinary.com/dbqcioj2g/image/upload/v1743519564/zu270d8swx3ag6pm5m9u.jpg",
   },
   {
-    name: "Ngô Phương Anh",
+    name: "Phương Anh",
     school: "Gettysburg College",
     major: "Computer Science",
     category: "software",
     offers: [
       "Rippling - Software Engineer Intern",
+      "Wayfair - Software Engineer Intern",
       "A&T Technology Development Program Internship",
     ],
     avatar:
