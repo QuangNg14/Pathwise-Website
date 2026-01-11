@@ -212,7 +212,7 @@ const MentorshipApplication = () => {
           </Text>
           <div className="deadline-notice">
             <Text className="deadline-text">
-              📅 <strong>Application Deadline:</strong> January 12th, 2026
+              📅 <strong>Application Deadline:</strong> January 19th, 2026
             </Text>
           </div>
           <div className="mentorship-app-image-wrapper">
