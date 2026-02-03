@@ -57,7 +57,7 @@ const MentorshipApplication = () => {
         const errorData = await res.json();
         throw new Error(
           errorData.message ||
-            "Failed to submit the form. Please try again later."
+            "Failed to submit the form. Please try again later.",
         );
       }
 
@@ -98,7 +98,7 @@ const MentorshipApplication = () => {
                 pauseOnHover: true,
                 draggable: true,
                 className: "info-toast",
-              }
+              },
             );
           }, 1000);
         } else {
@@ -127,13 +127,13 @@ const MentorshipApplication = () => {
                 pauseOnHover: true,
                 draggable: true,
                 className: "info-toast",
-              }
+              },
             );
           }, 1000);
         }
       } else {
         throw new Error(
-          data.message || "Something went wrong. Please try again."
+          data.message || "Something went wrong. Please try again.",
         );
       }
     } catch (error) {
@@ -163,7 +163,7 @@ const MentorshipApplication = () => {
             pauseOnHover: true,
             draggable: true,
             className: "error-details-toast",
-          }
+          },
         );
       }, 500);
     } finally {
@@ -195,7 +195,7 @@ const MentorshipApplication = () => {
           pauseOnHover: true,
           draggable: true,
           className: "warning-toast",
-        }
+        },
       );
     }, 500);
   };
@@ -210,11 +210,11 @@ const MentorshipApplication = () => {
             for our mentorship program. We will review your application and get
             back to you as soon as possible.
           </Text>
-          <div className="deadline-notice">
+          {/* <div className="deadline-notice">
             <Text className="deadline-text">
               📅 <strong>Application Deadline:</strong> January 26th, 2026
             </Text>
-          </div>
+          </div> */}
           <div className="mentorship-app-image-wrapper">
             <img
               src="https://res.cloudinary.com/dbqcioj2g/image/upload/v1730176142/sr5gza9fnfa6buyxzhh7.png"
