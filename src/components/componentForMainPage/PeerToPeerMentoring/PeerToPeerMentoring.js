@@ -59,7 +59,7 @@ const PeerToPeerMentoring = () => {
           <div className="peer-to-peer-image-wrapper">
             <div className="peer-to-peer-image-card">
               <img
-                src="https://res.cloudinary.com/dbqcioj2g/image/upload/v1730332025/lwvuognn4fmmqwnrpmdi.jpg"
+                src="https://res.cloudinary.com/dbqcioj2g/image/upload/v1775193765/Screenshot_2026-04-03_at_1.16.22_AM_cuoqqu.png"
                 alt="Students collaborating and receiving mentorship guidance"
                 className="peer-to-peer-image"
               />

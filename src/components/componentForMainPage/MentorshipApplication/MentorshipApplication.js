@@ -203,27 +203,13 @@ const MentorshipApplication = () => {
   return (
     <div id="application" className="mentorship-app-section">
       <div className="mentorship-app-container">
-        <div className="mentorship-app-left">
+        <div className="mentorship-app-right">
           <Title className="mentorship-app-title">Mentorship Application</Title>
           <Text className="mentorship-app-desc">
             Applications for 2026 are open! Please fill out the form to register
             for our mentorship program. We will review your application and get
             back to you as soon as possible.
           </Text>
-          {/* <div className="deadline-notice">
-            <Text className="deadline-text">
-              📅 <strong>Application Deadline:</strong> January 26th, 2026
-            </Text>
-          </div> */}
-          <div className="mentorship-app-image-wrapper">
-            <img
-              src="https://res.cloudinary.com/dbqcioj2g/image/upload/v1730176142/sr5gza9fnfa6buyxzhh7.png"
-              alt="Mentorship Application"
-              className="mentorship-app-image"
-            />
-          </div>
-        </div>
-        <div className="mentorship-app-right">
           <Form
             form={form}
             layout="vertical"

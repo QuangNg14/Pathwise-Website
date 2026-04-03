@@ -1,5 +1,4 @@
 "use client";
-import AboutUs from "@/components/componentForAboutPage/AboutUs/AboutUs";
 import FooterComponent from "@/components/footer/Footer";
 import HeaderComponent from "@/components/header/header";
 import { Layout } from "antd";
@@ -15,7 +14,10 @@ const About = () => {
   return (
     <Layout>
       <HeaderComponent current={current} handleClick={handleClick} />
-      <AboutUs />
+      <div style={{ padding: "100px 24px", textAlign: "center" }}>
+        <h1>About page is temporarily hidden</h1>
+        <p>The About section is currently not exposed.</p>
+      </div>
       <FooterComponent />
     </Layout>
   );

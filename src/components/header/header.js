@@ -15,7 +15,7 @@ import "./header.css";
 
 const { Header } = Layout;
 
-const menuItems = ["program", "services", "results", "about", "contact"];
+const menuItems = ["program", "services", "results", "contact"];
 
 // Blog is now integrated into the main site at /blog
 
